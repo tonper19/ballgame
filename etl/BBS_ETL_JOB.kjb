@@ -8,9 +8,64 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2023/12/16 16:32:20.142</modified_date>
+  <modified_date>2023/12/29 19:38:22.624</modified_date>
   <parameters>
     </parameters>
+  <connection>
+    <name>Oracle Docker Ballgame</name>
+    <server>localhost</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>xe</database>
+    <port>1521</port>
+    <username>c##baseball</username>
+    <password>Encrypted 2be98afc86aa7c1b7bf0cbe75d096ff9b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1521</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STRICT_NUMBER_38_INTERPRETATION</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>Oracle Docker Baseball</name>
     <server>localhost</server>
@@ -332,10 +387,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_batting_stats.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_batting_stats</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -396,10 +452,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_pitching.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_pitching</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -435,10 +492,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_fielding.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_fielding</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -474,10 +532,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/dimensions.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>dimensions</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -513,10 +572,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_player.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_player</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -552,10 +612,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/rslt_player.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>rslt_player</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -591,10 +652,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/facts.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>facts</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -630,7 +692,7 @@
       <description/>
       <type>TRUNCATE_TABLES</type>
       <attributes/>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <arg_from_previous>N</arg_from_previous>
       <fields>
         <field>
@@ -698,11 +760,11 @@
       <description/>
       <type>JOB</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <job_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/BBS_ETL_CREATE_DWH_JOB.sql.kjb</filename>
-      <jobname/>
-      <directory/>
+      <filename/>
+      <jobname>BBS_ETL_CREATE_DWH_JOBsql</jobname>
+      <directory>/</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -738,7 +800,7 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/drop_stg_rslt.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}drop_stg_rslt.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>Oracle Docker Baseball</connection>
       <parallel>N</parallel>
@@ -753,10 +815,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_batting_stats_sd.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_batting_stats_sd</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -792,10 +855,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_pitching_sd.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_pitching_sd</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -831,10 +895,11 @@
       <description/>
       <type>TRANS</type>
       <attributes/>
-      <specification_method>filename</specification_method>
+      <specification_method>rep_name</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/stage_fielding_sd.ktr</filename>
-      <transname/>
+      <filename/>
+      <transname>stage_fielding_sd</transname>
+      <directory>${Internal.Job.Repository.Directory}</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>

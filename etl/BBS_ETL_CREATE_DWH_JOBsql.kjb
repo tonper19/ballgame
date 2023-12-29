@@ -8,11 +8,11 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.601</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2023/12/26 11:49:17.775</modified_date>
+  <modified_date>2023/12/29 19:16:49.599</modified_date>
   <parameters>
     </parameters>
   <connection>
-    <name>Oracle Docker Baseball</name>
+    <name>Oracle Docker Ballgame</name>
     <server>localhost</server>
     <type>ORACLE</type>
     <access>Native</access>
@@ -25,8 +25,44 @@
     <index_tablespace/>
     <attributes>
       <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
         <code>PORT_NUMBER</code>
         <attribute>1521</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STRICT_NUMBER_38_INTERPRETATION</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
       </attribute>
     </attributes>
   </connection>
@@ -334,7 +370,7 @@
       <attributes/>
       <tablename>STG_PLAYER</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -350,9 +386,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/stg_player.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}stg_player.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -368,9 +404,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/stg_pitching_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}stg_pitching_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -385,7 +421,7 @@
       <attributes/>
       <tablename>STG_PITCHING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -400,7 +436,7 @@
       <attributes/>
       <tablename>STG_FIELDING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -416,9 +452,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/stg_fielding_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}stg_fielding_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -433,7 +469,7 @@
       <attributes/>
       <tablename>STG_BATTING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -449,9 +485,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/stg_batting_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}stg_batting_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -466,7 +502,7 @@
       <attributes/>
       <tablename>RSLT_PLAYER</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -482,9 +518,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/rslt_player.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}rslt_player.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -499,7 +535,7 @@
       <attributes/>
       <tablename>DIM_SPORT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -515,9 +551,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/dim_sport.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_sport.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -532,7 +568,7 @@
       <attributes/>
       <tablename>DIM_CATEGORY</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -548,9 +584,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/dim_category.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_category.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -565,7 +601,7 @@
       <attributes/>
       <tablename>DIM_CLUB</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -581,9 +617,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/dim_club.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_club.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -598,7 +634,7 @@
       <attributes/>
       <tablename>DIM_SEASON</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -614,9 +650,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/dim_season.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_season.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -631,7 +667,7 @@
       <attributes/>
       <tablename>DIM_PLAYER</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -647,9 +683,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/dim_player.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_player.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -664,7 +700,7 @@
       <attributes/>
       <tablename>FACT_BATTING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -680,9 +716,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/fact_batting_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}fact_batting_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -722,7 +758,7 @@
       <attributes/>
       <tablename>FACT_PITCHING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -738,9 +774,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/fact_pitching_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}fact_pitching_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
@@ -755,7 +791,7 @@
       <attributes/>
       <tablename>FACT_FIELDING_STAT</tablename>
       <schemaname>C##BASEBALL</schemaname>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
@@ -771,9 +807,9 @@
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/ETL/ddl/fact_fielding_stat.sql</sqlfilename>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}fact_fielding_stat.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection>Oracle Docker Baseball</connection>
+      <connection>Oracle Docker Ballgame</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>

@@ -429,14 +429,36 @@
     <created_user/>
     <created_date>2023/12/29 11:42:11.229</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2023/12/14 18:37:23.965</modified_date>
+    <modified_date>2023/12/29 19:51:08.432</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>Repository
+Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+      <width>425</width>
+      <heigth>42</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
-    <name>Oracle Baseball Docker</name>
+    <name>Oracle Docker Ballgame</name>
     <server>localhost</server>
     <type>ORACLE</type>
     <access>Native</access>
@@ -902,7 +924,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_AND.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_AND.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1105,7 +1127,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_BEV.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_BEV.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1308,7 +1330,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_BOR.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_BOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1511,7 +1533,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_BRA.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_BRA.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1714,7 +1736,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_BRI.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_BRI.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1917,7 +1939,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_BRU.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_BRU.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2120,7 +2142,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_DEU.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_DEU.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2323,7 +2345,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_GEN.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_GEN.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2526,7 +2548,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_HOB.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_HOB.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2729,7 +2751,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_LEU.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_LEU.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2932,7 +2954,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_LIE.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_LIE.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3135,7 +3157,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_MER.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_MER.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3338,7 +3360,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_MOR.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_MOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3541,7 +3563,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_MSG.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_MSG.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3744,7 +3766,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_NAM.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_NAM.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3908,7 +3930,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Oracle Baseball Docker</connection>
+    <connection>Oracle Docker Ballgame</connection>
     <schema>c##baseball</schema>
     <table>stg_player</table>
     <commit>1000</commit>
@@ -5899,7 +5921,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_WIE.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_WIE.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -6102,7 +6124,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_ZON.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_ZON.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -6305,7 +6327,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/Users/tonper/Development/miguel/hogent/DataBases/exercises/baseball/oracle/data/player_raw_2023_ZOT.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}player_raw_2023_ZOT.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
