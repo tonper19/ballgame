@@ -429,7 +429,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.932</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2023/12/29 19:52:08.266</modified_date>
+    <modified_date>2023/12/31 17:40:49.342</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -439,6 +439,48 @@
       <xloc>18</xloc>
       <yloc>11</yloc>
       <width>75</width>
+      <heigth>26</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Softball Ladies</note>
+      <xloc>336</xloc>
+      <yloc>32</yloc>
+      <width>100</width>
+      <heigth>26</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Softball Men</note>
+      <xloc>950</xloc>
+      <yloc>47</yloc>
+      <width>87</width>
       <heigth>26</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
@@ -529,12 +571,12 @@
     </hop>
     <hop>
       <from>Last / First Name Split</from>
-      <to>Add constants</to>
+      <to>Add constants: Softball + Ladies</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Add constants</from>
-      <to>STG Batting Table Out</to>
+      <from>Add constants: Softball + Ladies</from>
+      <to>STG Batting SD Table Out</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -577,6 +619,56 @@
       <to>SD D1</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>2022 SM D1</from>
+      <to>SM D1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2022 SM D1 Batting</from>
+      <to>2022 SM D1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2023 SM D1</from>
+      <to>SM D1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2023 SM D1 Batting</from>
+      <to>2023 SM D1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2023 SM Reserves</from>
+      <to>SM Reserves</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2023 SM Reserves Batting</from>
+      <to>2023 SM Reserves</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants: Softball + Men</from>
+      <to>STG Batting SM Table Out</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Last / First Name Split 2</from>
+      <to>Add constants: Softball + Men</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SM D1</from>
+      <to>Last / First Name Split 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SM Reserves</from>
+      <to>Last / First Name Split 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>2022 SD D1</name>
@@ -612,8 +704,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>128</yloc>
+      <xloc>160</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -895,8 +987,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>48</yloc>
+      <xloc>160</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -934,8 +1026,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>128</yloc>
+      <xloc>336</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1217,8 +1309,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>48</yloc>
+      <xloc>304</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1256,8 +1348,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>112</yloc>
+      <xloc>544</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1539,8 +1631,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>48</yloc>
+      <xloc>544</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1578,8 +1670,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>352</yloc>
+      <xloc>224</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1861,13 +1953,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>416</yloc>
+      <xloc>176</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Add constants</name>
+    <name>Add constants: Softball + Ladies</name>
     <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
@@ -1912,8 +2004,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>368</yloc>
+      <xloc>448</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1972,8 +2064,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>272</yloc>
+      <xloc>448</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2011,8 +2103,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>192</yloc>
+      <xloc>368</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2050,8 +2142,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>192</yloc>
+      <xloc>544</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2089,13 +2181,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>272</yloc>
+      <xloc>320</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>STG Batting Table Out</name>
+    <name>STG Batting SD Table Out</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2241,8 +2333,1315 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>464</yloc>
+      <xloc>448</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2022 SM D1</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>season_year</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2022</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2022 SM D1 Batting</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_batting_raw_smd1_2022.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>Y</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Player</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>255</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Team</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>R</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H2</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H3</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HR</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>RBI</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>TB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AVG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SLG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OBP</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OPS</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HBP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SO</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>GDP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SF</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SH</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CS</name>
+        <type>Number</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>both</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2023 SM D1</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>season_year</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2023</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2023 SM D1 Batting</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_batting_raw_smd1_2023.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>Y</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Player</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>255</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Team</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>R</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H2</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H3</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HR</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>RBI</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>TB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AVG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SLG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OBP</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OPS</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HBP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SO</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>GDP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SF</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SH</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CS</name>
+        <type>Number</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>both</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>896</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2023 SM Reserves</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>season_year</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2023</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>2023 SM Reserves Batting</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_batting_raw_sres_2023.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>Y</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Player</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>255</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Team</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>R</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H2</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>H3</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HR</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>RBI</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>TB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>AVG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SLG</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OBP</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>OPS</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>HBP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SO</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>GDP</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SF</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SH</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SB</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CS</name>
+        <type>Number</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>both</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Add constants: Softball + Men</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>sport_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>SBFP</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>gender_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>M</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Last / First Name Split 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <splitfield>Player</splitfield>
+    <delimiter>$[0A]</delimiter>
+    <enclosure/>
+    <fields>
+      <field>
+        <name>last_name</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>
+      <field>
+        <name>first_name</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SM D1</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Division</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>D1</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SM Reserves</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Division</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>RESERVES</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>STG Batting SM Table Out</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Oracle Docker Ballgame</connection>
+    <schema>c##baseball</schema>
+    <table>stg_batting_stat</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAST_NAME</column_name>
+        <stream_name>last_name</stream_name>
+      </field>
+      <field>
+        <column_name>FIRST_NAME</column_name>
+        <stream_name>first_name</stream_name>
+      </field>
+      <field>
+        <column_name>TEAM</column_name>
+        <stream_name>Team</stream_name>
+      </field>
+      <field>
+        <column_name>AB</column_name>
+        <stream_name>AB</stream_name>
+      </field>
+      <field>
+        <column_name>R</column_name>
+        <stream_name>R</stream_name>
+      </field>
+      <field>
+        <column_name>H</column_name>
+        <stream_name>H</stream_name>
+      </field>
+      <field>
+        <column_name>H2</column_name>
+        <stream_name>H2</stream_name>
+      </field>
+      <field>
+        <column_name>H3</column_name>
+        <stream_name>H3</stream_name>
+      </field>
+      <field>
+        <column_name>HR</column_name>
+        <stream_name>HR</stream_name>
+      </field>
+      <field>
+        <column_name>RBI</column_name>
+        <stream_name>RBI</stream_name>
+      </field>
+      <field>
+        <column_name>TB</column_name>
+        <stream_name>TB</stream_name>
+      </field>
+      <field>
+        <column_name>AVG</column_name>
+        <stream_name>AVG</stream_name>
+      </field>
+      <field>
+        <column_name>SLG</column_name>
+        <stream_name>SLG</stream_name>
+      </field>
+      <field>
+        <column_name>OBP</column_name>
+        <stream_name>OBP</stream_name>
+      </field>
+      <field>
+        <column_name>OPS</column_name>
+        <stream_name>OPS</stream_name>
+      </field>
+      <field>
+        <column_name>BB</column_name>
+        <stream_name>BB</stream_name>
+      </field>
+      <field>
+        <column_name>HBP</column_name>
+        <stream_name>HBP</stream_name>
+      </field>
+      <field>
+        <column_name>SO</column_name>
+        <stream_name>SO</stream_name>
+      </field>
+      <field>
+        <column_name>GDP</column_name>
+        <stream_name>GDP</stream_name>
+      </field>
+      <field>
+        <column_name>SF</column_name>
+        <stream_name>SF</stream_name>
+      </field>
+      <field>
+        <column_name>SH</column_name>
+        <stream_name>SH</stream_name>
+      </field>
+      <field>
+        <column_name>SB</column_name>
+        <stream_name>SB</stream_name>
+      </field>
+      <field>
+        <column_name>CS</column_name>
+        <stream_name>CS</stream_name>
+      </field>
+      <field>
+        <column_name>DIVISION</column_name>
+        <stream_name>Division</stream_name>
+      </field>
+      <field>
+        <column_name>SEASON_YEAR</column_name>
+        <stream_name>season_year</stream_name>
+      </field>
+      <field>
+        <column_name>SPORT_ID</column_name>
+        <stream_name>sport_id</stream_name>
+      </field>
+      <field>
+        <column_name>GENDER_ID</column_name>
+        <stream_name>gender_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
