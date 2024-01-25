@@ -14,15 +14,6 @@ with sport_category as
 ,batting_stat as
 (
   select fbs.*
-        ,dpl.last_name  bat_last_name
-        ,dpl.first_name  bat_first_name
-        ,dpl.position  bat_position
-        ,dpl.bats  bat_bats
-        ,dpl.throws  bat_throws
-        ,dpl.yob  bat_yob
-        ,dpl.uniform_number  bat_uniform_number
-        ,dpl.license_number  bat_license_number
-        ,dpl.license_type  bat_license_type
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
         ,dcl.city  bat_club_city
@@ -36,28 +27,21 @@ with sport_category as
         ,dcl.treasurer  bat_club_treasurer
         ,dcl.governance_person  bat_governance_person
     from c##baseball.fact_batting_stat  fbs
-   inner join c##baseball.dim_player  dpl
-      on fbs.player_id = dpl.id
+   inner join sport_category  sc
+      on fbs.sport_id = sc.sport_id
+     and fbs.gender_id = sc.gender_id
+     and fbs.category_id = sc.category_id
    inner join c##baseball.dim_club  dcl
       on fbs.club_id = dcl.id
 )
 ,pitching_stat as
 (
   select fps.*
-         case
+        ,case
            when fps.sport_id = 'BB'  then 9
-           when fps.sport_id in ('SBFP', 'SBSP')  the 7
+           when fps.sport_id in ('SBFP', 'SBSP')  then 7
            else null  -- I don't know how many innings to calculate ERA on BB5
          end  era_innings  
-        ,dpl.last_name  pit_last_name
-        ,dpl.first_name  pit_first_name
-        ,dpl.position  pit_position
-        ,dpl.bats  pit_bats
-        ,dpl.throws  pit_throws
-        ,dpl.yob  pit_yob
-        ,dpl.uniform_number  pit_uniform_number
-        ,dpl.license_number  pit_license_number
-        ,dpl.license_type  pit_license_type
         ,dcl.name  pit_club_name
         ,dcl.address  pit_club_address
         ,dcl.city  pit_club_city
@@ -71,23 +55,16 @@ with sport_category as
         ,dcl.treasurer  pit_club_treasurer
         ,dcl.governance_person  pit_governance_person
     from c##baseball.fact_pitching_stat  fps
-   inner join c##baseball.dim_player  dpl
-      on fps.player_id = dpl.id
+   inner join sport_category  sc
+      on fps.sport_id = sc.sport_id
+     and fps.gender_id = sc.gender_id
+     and fps.category_id = sc.category_id
    inner join c##baseball.dim_club  dcl
       on fps.club_id = dcl.id
 )
 ,fielding_stat as
 (
   select ffs.*
-        ,dpl.last_name  fld_last_name
-        ,dpl.first_name  fld_first_name
-        ,dpl.position  fld_position
-        ,dpl.bats  fld_bats
-        ,dpl.throws  fld_throws
-        ,dpl.yob  fld_yob
-        ,dpl.uniform_number  fld_uniform_number
-        ,dpl.license_number  fld_license_number
-        ,dpl.license_type  fld_license_type
         ,dcl.name  fld_club_name
         ,dcl.address  fld_club_address
         ,dcl.city  fld_club_city
@@ -101,36 +78,183 @@ with sport_category as
         ,dcl.treasurer  fld_club_treasurer
         ,dcl.governance_person  fld_governance_person
     from c##baseball.fact_fielding_stat  ffs
-   inner join c##baseball.dim_player  dpl
-      on ffs.player_id = dpl.id
+   inner join sport_category  sc
+      on ffs.sport_id = sc.sport_id
+     and ffs.gender_id = sc.gender_id
+     and ffs.category_id = sc.category_id
    inner join c##baseball.dim_club  dcl
       on ffs.club_id = dcl.id
 )
-
-select sc.*
-      ,coalesce(bat_last_name,pit_last_name,fld_last_name)  player_last_name
-      ,coalesce(bat_first_name,pit_first_name,fld_first_name)  player_first_name
-      ,coalesce(bat_position,pit_position,fld_position)  player_position
-      ,coalesce(bat_bats,pit_bats,fld_bats)  player_bats
-      ,coalesce(bat_throws,pit_throws,fld_throws)  player_throws
-      ,coalesce(fld_yob
-      ,coalesce(fld_uniform_number
-      ,coalesce(fld_license_number
-      ,coalesce(fld_license_type
-      ,coalesce(fld_club_name
-      ,coalesce(fld_club_address
-      ,coalesce(fld_club_city
-      ,coalesce(fld_club_province
-      ,coalesce(fld_club_country
-      ,coalesce(fld_club_email
-      ,coalesce(fld_club_webpage
-      ,coalesce(fld_ballpark_id
-      ,coalesce(fld_club_president
-      ,coalesce(fld_club_secretary
-      ,coalesce(fld_club_treasurer
-      ,coalesce(fld_governance_person
-
-  from sport_category sc
-  left outer join batting_stat
-  left outer join pitching_stat
-  left outer join fielding_stat
+,stats_bp as
+(
+  select coalesce(fbs.sport_id,fps.sport_id)  sport_id
+        ,coalesce(fbs.gender_id,fps.gender_id)  gender_id
+        ,coalesce(fbs.category_id,fps.category_id)  category_id
+        ,coalesce(fbs.club_id,fps.club_id)  club_id
+        ,coalesce(fbs.season_year,fps.season_year)  season_year
+        ,coalesce(fbs.player_id,fps.player_id)  player_id
+        ,coalesce(fbs.team_id,fps.team_id)  team_id
+        ,fbs.at_bats  fbs_at_bats
+        ,fbs.runs  fbs_runs
+        ,fbs.hits  fbs_hits
+        ,fbs.doubles  fbs_doubles
+        ,fbs.triples  fbs_triples
+        ,fbs.home_runs  fbs_home_runs
+        ,fbs.rbi  fbs_rbi
+        ,fbs.total_bases  fbs_total_bases
+        ,fbs.base_on_balls  fbs_base_on_balls
+        ,fbs.hit_by_pitchs  fbs_hit_by_pitchs
+        ,fbs.strike_outs  fbs_strike_outs
+        ,fbs.ground_into_doubleplays  fbs_ground_into_doubleplays
+        ,fbs.sacrfice_flies  fbs_sacrfice_flies
+        ,fbs.bunts  fbs_bunts
+        ,fbs.stolen_bases  fbs_stolen_bases
+        ,fbs.caught_stealing  fbs_caught_stealing
+        ,fps.wins  fps_wins
+        ,fps.losses  fps_losses
+        ,fps.games  fps_games
+        ,fps.games_started  fps_games_started
+        ,fps.saves  fps_saves
+        ,fps.complete_games  fps_complete_games
+        ,fps.shutouts  fps_shutouts
+        ,fps.innings_pitched_label  fps_innings_pitched_label
+        ,fps.innings_pitched_dec  fps_innings_pitched_dec
+        ,fps.inning_outs_pitched  fps_inning_outs_pitched
+        ,fps.hits  fps_hits
+        ,fps.runs  fps_runs
+        ,fps.earned_runs  fps_earned_runs
+        ,fps.walks  fps_walks
+        ,fps.strike_outs  fps_strike_outs
+        ,fps.doubles  fps_doubles
+        ,fps.triples  fps_triples
+        ,fps.home_runs  fps_home_runs
+        ,fps.at_bats  fps_at_bats
+        ,fps.wild_pitches  fps_wild_pitches
+        ,fps.hit_by_pitchs  fps_hit_by_pitchs
+        ,fps.balks  fps_balks
+        ,fps.sacrifice_flies_against  fps_sacrifice_flies_against
+        ,fps.bunts_against  fps_bunts_against
+        ,fps.ground_outs  fps_ground_outs
+        ,fps.fly_outs  fps_fly_outs
+        ,coalesce(bat_club_name,pit_club_name)  club_name
+        ,coalesce(bat_club_address,pit_club_address)  club_address
+        ,coalesce(bat_club_city,pit_club_city)  club_city
+        ,coalesce(bat_club_province,pit_club_province)  club_province
+        ,coalesce(bat_club_country,pit_club_country)  club_country
+        ,coalesce(bat_club_email,pit_club_email)  club_email
+        ,coalesce(bat_club_webpage,pit_club_webpage)  club_webpage
+        ,coalesce(bat_ballpark_id,pit_ballpark_id)  ballpark_id
+        ,coalesce(bat_club_president,pit_club_president)  club_president
+        ,coalesce(bat_club_secretary,pit_club_secretary)  club_secretary
+        ,coalesce(bat_club_treasurer,pit_club_treasurer)  club_treasurer
+        ,coalesce(bat_governance_person,pit_governance_person)  club_governance_person
+     from batting_stat  fbs 
+     full outer join pitching_stat  fps
+       on fbs.sport_id = fps.sport_id
+      and fbs.gender_id = fps.gender_id
+      and fbs.category_id = fps.category_id
+      and fbs.club_id = fps.club_id
+      and fbs.season_year = fps.season_year
+      and fbs.player_id = fps.player_id
+      and fbs.team_id = fps.team_id
+)
+,all_stats as
+(
+  select coalesce(sbp.sport_id,ffs.sport_id)  sport_id
+        ,coalesce(sbp.gender_id,ffs.gender_id)  gender_id
+        ,coalesce(sbp.category_id,ffs.category_id)  category_id
+        ,coalesce(sbp.club_id,ffs.club_id)  club_id
+        ,coalesce(sbp.season_year,ffs.season_year)  season_year
+        ,coalesce(sbp.player_id,ffs.player_id)  player_id
+        ,coalesce(sbp.team_id,ffs.team_id)  team_id
+        ,fbs_at_bats
+        ,fbs_runs
+        ,fbs_hits
+        ,fbs_doubles
+        ,fbs_triples
+        ,fbs_home_runs
+        ,fbs_rbi
+        ,fbs_total_bases
+        ,fbs_base_on_balls
+        ,fbs_hit_by_pitchs
+        ,fbs_strike_outs
+        ,fbs_ground_into_doubleplays
+        ,fbs_sacrfice_flies
+        ,fbs_bunts
+        ,fbs_stolen_bases
+        ,fbs_caught_stealing
+        ,fps_wins
+        ,fps_losses
+        ,fps_games
+        ,fps_games_started
+        ,fps_saves
+        ,fps_complete_games
+        ,fps_shutouts
+        ,fps_innings_pitched_label
+        ,fps_innings_pitched_dec
+        ,fps_inning_outs_pitched
+        ,fps_hits
+        ,fps_runs
+        ,fps_earned_runs
+        ,fps_walks
+        ,fps_strike_outs
+        ,fps_doubles
+        ,fps_triples
+        ,fps_home_runs
+        ,fps_at_bats
+        ,fps_wild_pitches
+        ,fps_hit_by_pitchs
+        ,fps_balks
+        ,fps_sacrifice_flies_against
+        ,fps_bunts_against
+        ,fps_ground_outs
+        ,fps_fly_outs
+        ,ffs.games_played_at_position  ffs_games_played_at_position
+        ,ffs.total_chances  ffs_total_chances
+        ,ffs.total_successful_chances  ffs_total_successful_chances
+        ,ffs.putouts  ffs_putouts
+        ,ffs.assists  ffs_assists
+        ,ffs.errors  ffs_errors
+        ,ffs.doubleplays  ffs_doubleplays
+        ,ffs.stolen_bases_against  ffs_stolen_bases_against
+        ,ffs.players_caught_steeling  ffs_players_caught_steeling
+        ,ffs.passed_balls  ffs_passed_balls
+        ,ffs.catcher_interferences  ffs_catcher_interferences
+        ,coalesce(club_name,fld_club_name)  club_name
+        ,coalesce(club_address,fld_club_address)  club_address
+        ,coalesce(club_city,fld_club_city)  club_city
+        ,coalesce(club_province,fld_club_province)  club_province
+        ,coalesce(club_country,fld_club_country)  club_country
+        ,coalesce(club_email,fld_club_email)  club_email
+        ,coalesce(club_webpage,fld_club_webpage)  club_webpage
+        ,coalesce(ballpark_id,fld_ballpark_id)  ballpark_id
+        ,coalesce(club_president,fld_club_president)  club_president
+        ,coalesce(club_secretary,fld_club_secretary)  club_secretary
+        ,coalesce(club_treasurer,fld_club_treasurer)  club_treasurer
+        ,coalesce(club_governance_person,fld_governance_person)  club_governance_person
+     from stats_bp  sbp 
+     full outer join fielding_stat  ffs
+       on sbp.sport_id = ffs.sport_id
+      and sbp.gender_id = ffs.gender_id
+      and sbp.category_id = ffs.category_id
+      and sbp.club_id = ffs.club_id
+      and sbp.season_year = ffs.season_year
+      and sbp.player_id = ffs.player_id
+      and sbp.team_id = ffs.team_id
+)
+select dpl.id  player_id
+      ,dpl.last_name  player_last_name
+      ,dpl.first_name  player_first_name
+      ,dpl.position  player_position
+      ,dpl.bats  player_bats
+      ,dpl.throws  player_throws
+      ,dpl.yob  player_yob
+      ,dpl.uniform_number  player_uniform_number
+      ,dpl.license_number  player_license_number
+      ,dpl.license_type  player_license_type
+      ,stat.*
+  from c##baseball.dim_player  dpl
+  left outer join all_stats  stat
+    on dpl.id  = stat.player_id
+ order by 1   
+;
