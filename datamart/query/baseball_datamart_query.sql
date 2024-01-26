@@ -16,6 +16,7 @@ with sport_category as
   select fbs.*
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
+        ,dcl.postal_code  bat_club_postal_code
         ,dcl.city  bat_club_city
         ,dcl.province  bat_club_province
         ,dcl.country  bat_club_country
@@ -44,6 +45,7 @@ with sport_category as
          end  era_innings  
         ,dcl.name  pit_club_name
         ,dcl.address  pit_club_address
+        ,dcl.postal_code  pit_club_postal_code
         ,dcl.city  pit_club_city
         ,dcl.province  pit_club_province
         ,dcl.country  pit_club_country
@@ -67,6 +69,7 @@ with sport_category as
   select ffs.*
         ,dcl.name  fld_club_name
         ,dcl.address  fld_club_address
+        ,dcl.postal_code  fld_club_postal_code
         ,dcl.city  fld_club_city
         ,dcl.province  fld_club_province
         ,dcl.country  fld_club_country
@@ -119,6 +122,7 @@ with sport_category as
         ,fps.shutouts  fps_shutouts
         ,fps.innings_pitched_label  fps_innings_pitched_label
         ,fps.innings_pitched_dec  fps_innings_pitched_dec
+        ,fps.era_innings  fps_era_innings_calc
         ,fps.inning_outs_pitched  fps_inning_outs_pitched
         ,fps.hits  fps_hits
         ,fps.runs  fps_runs
@@ -138,6 +142,7 @@ with sport_category as
         ,fps.fly_outs  fps_fly_outs
         ,coalesce(bat_club_name,pit_club_name)  club_name
         ,coalesce(bat_club_address,pit_club_address)  club_address
+        ,coalesce(bat_club_postal_code,pit_club_postal_code)  club_postal_code
         ,coalesce(bat_club_city,pit_club_city)  club_city
         ,coalesce(bat_club_province,pit_club_province)  club_province
         ,coalesce(bat_club_country,pit_club_country)  club_country
@@ -192,6 +197,7 @@ with sport_category as
         ,fps_shutouts
         ,fps_innings_pitched_label
         ,fps_innings_pitched_dec
+        ,fps_era_innings_calc
         ,fps_inning_outs_pitched
         ,fps_hits
         ,fps_runs
@@ -222,6 +228,7 @@ with sport_category as
         ,ffs.catcher_interferences  ffs_catcher_interferences
         ,coalesce(club_name,fld_club_name)  club_name
         ,coalesce(club_address,fld_club_address)  club_address
+        ,coalesce(club_postal_code,fld_club_postal_code)  club_postal_code
         ,coalesce(club_city,fld_club_city)  club_city
         ,coalesce(club_province,fld_club_province)  club_province
         ,coalesce(club_country,fld_club_country)  club_country
@@ -242,8 +249,7 @@ with sport_category as
       and sbp.player_id = ffs.player_id
       and sbp.team_id = ffs.team_id
 )
-select dpl.id  player_id
-      ,dpl.last_name  player_last_name
+select dpl.last_name  player_last_name
       ,dpl.first_name  player_first_name
       ,dpl.position  player_position
       ,dpl.bats  player_bats
