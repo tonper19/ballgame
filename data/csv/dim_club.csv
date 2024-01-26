@@ -1,39 +1,40 @@
-"ID","NAME","ADDRESS","POSTAL_CODE","CITY","PROVINCE","COUNTRY","EMAIL","WEBPAGE","BALLPARK_ID","PRESIDENT","SECRETARY","TREASURER","GOVERNANCE_PERSON"
-"DEU","Deurne Spartans","","","","","","","","","","","",""
-"HOB","Hoboken Pioneers","","","","","","","","","","","",""
-"MER","Merchtem Cats","","","","","","","","","","","",""
-"MSG","Mont-Saint-Guibert Phoenix","","","","","","","","","","","",""
-"MOR","Mortsel Stars","","","","","","","","","","","",""
-"NAM","Namur Angels","","","","","","","","","","","",""
-"BOR","Borgerehout Squirrels","","","","","","","","","","","",""
-"BRA","Braaschaat Braves","","","","","","","","","","","",""
-"BRU","Brussels Kangaroos","","","","","","","","","","","",""
-"GEN","Gent Knights","","","","","","","","","","","",""
-"ZON","Zonhoven Tigers","","","","","","","","","","","",""
-"ANT","Antwerp Eagles","","","","","","","","","","","",""
-"BEV","Beveren Lions","","","","","","","","","","","",""
-"CHI","Chicaboos Stabroek","","","","","","","","","","","",""
-"BRI","Braine Black Rickers","","","","","","","","","","","",""
-"HEI","Heist o/d Afterburners","","","","","","","","","","","",""
-"MON","Mons Athletics","","","","","","","","","","","",""
-"SER","Seraing Brown Boys","","","","","","","","","","","",""
-"AND","Andenne Black Bears","","","","","","","","","","","",""
-"LEU","Leuven Twins","","","","","","","","","","","",""
-"LIE","Liège Rebels","","","","","","","","","","","",""
-"WIE","Wielsbeke Pitbulls","","","","","","","","","","","",""
-"ZOT","Zottegem Bebops","","","","","","","","","","","",""
-"BIN","Binche Guardians","","","","","","","","","","","",""
-"TOU","Tournai Celtics","","","","","","","","","","","",""
-"WBA","WBA Foxes","","","","","","","","","","","",""
-"OOS","Oostende Piranhas","","","","","","","","","","","",""
-"GRE","Rayal Greys","","","","","","","","","","","",""
-"TBS","Olen Titans","","","","","","","","","","","",""
-"BER","Berendrecht Bears","","","","","","","","","","","",""
-"BRG","Brugge Braves","","","","","","","","","","","",""
-"LIM","Limburg White Sox","","","","","","","","","","","",""
-"OUD","Oudernaarde Frogs","","","","","","","","","","","",""
-"PEL","Pelt Nstars","","","","","","","","","","","",""
-"POP","Poperinge Frontliners","","","","","","","","","","","",""
-"TON","Tongeren Sharks","","","","","","","","","","","",""
-"JEM","Jemeppe White Sharks","","","","","","","","","","","",""
-"MAR","Marche-en-Famenne Cracks","","","","","","","","","","","",""
+ID,NAME,ADDRESS,POSTAL_CODE,CITY,PROVINCE,COUNTRY,EMAIL,WEBPAGE,BALLPARK_ID,PRESIDENT,SECRETARY,TREASURER,GOVERNANCE_PERSON
+DEU,Deurne Spartans,Ruimtevaartlaan 22,2100,Deurne,Antwerpen,Belgium,info@spartans.be,http://www.spartans.be/,,Luc Van Hove,Nicole Van Den Broek,,
+HOB,Hoboken Pioneers,Schansstraat 1,2660,Hoboken,Antwerpen,Belgium,info@pioneers.be,http://www.pioneers.be/,,Tom Lorrentop,Jill Lorrentop,Patsy Michielsen,
+MER,Merchtem Cats,J. Stallaertstraat 10,1785,Merchtem,Vlaams-Brabant,Belgium,info@merchtemcats.com,http://www.merchtemcats.com/,,Anton Siebelink,Veronique Vandermersche,Bart Saerens,
+MSG,Mont-Saint-Guibert Phoenix,Avenue du Cerisier,1435,Mont-Saint-Guibert,Walloon Brabant,Belgium,info@msgphoenix.be,https://www.msgphoenix.be/,,,,,
+MOR,Mortsel Stars,Gasthuishoeve 1,2640,Morstel,Antwerpen,Belgium,info@mortselstars.be,http://mortselstars.be/,,Damon Baesen,Els Hendrickx,,
+NAM,Namur Angels,"Rue de la 1ère Armée Américaine, 135",5100,Wépion,Namur,Belgium,info@namur-angels.be,http://www.namur-angels.be/,,,,,
+BOR,Borgerehout Squirrels,Vosstraat 109,2140,Borgerhout,Antwerpen,Belgium,secretaris@borgerhoutsquirrels.be,http://www.borgerhoutsquirrels.be/,,Yannick Gontier,Sigrid Gontier,,
+BRA,Braaschaat Braves,Bijsterveld 3,2930,Brasschaat,Antwerpen,Belgium,info@brasschaatbraves.be,http://www.brasschaatbraves.be/,,,,,
+BRU,Brussels Kangaroos,"Avenue J.F. De Becker, 64",1200,Woluwé-Saint-Lambert,Bruxelles,Belgium,secretary@brusselskangaroos.be,https://brusselskangaroos.be/,,,,,
+GEN,Gent Knights,Oude Scheldeweg 2,9050,Gentbrugge,Oost-Vlaanderen,Belgium,info@gentknights.be,http://gentknights.be/,,Kevin Devos,Annelies Willekens,Leen Polfliet,
+ZON,Zonhoven Tigers,Kleebergweg 27,3520,Zonhoven,Limburg,Belgium,info@sunville-tigers.be,http://sunville-tigers.be/,,Patrick Kuenen,Dirk Hendriks,Koen Stalmans,
+ANT,Antwerp Eagles,Eglantierlaan 66,2610,Wilrijk,Antwerpen,Belgium,secretariaat@antwerpeagles.com,http://www.antwerpeagles.com/,,Peter Van Ackeren,Nick Van Den Bosch,Gert Van Den Berg,
+BEV,Beveren Lions,Klapperstraat 103,9120,Beveren,Oost-Vlaanderen,Belgium,info@beverenlions.be,http://www.beverenlions.be/,,Jo Van Der Herten,Jean-pierre Bosman,Jakob Van Poucke,
+CHI,Chicaboos Stabroek,Hasenpad 1,2940,Stabroek,Antwerpen,Belgium,info@chicaboos.be,http://www.chicaboos.be/,,Dirk De Cock,Frank De Nijs,Evi De Nijs,
+BRI,Braine Black Rickers,"Rue Landuyt, 2",1440,Braine-le-Château,Walloon Brabant,Belgium,info@black-rickers.be,https://www.black-rickers.be/,,,,,
+HEI,Heist o/d Afterburners,Kloosterveldstraat 7,2221,Booischot,Antwerpen,Belgium,info@afterburners.be,http://www.afterburners.be/,,Mario Verbruggen,Ellen Bruynseels,Anja Van Der Veken,
+MON,Mons Athletics,"Cité des Espinois, 1/Z",7020,Mons,Hainaut,Belgium,mons.baseball.softball@gmail.com,https://www.facebook.com/MonsAthleticsBaseballSoftball/about,,,,,
+SER,Seraing Brown Boys,"Clos des Roselières, 27",4101,Jemeppe-sur-Meuse,Liège,Belgium,info@brownboys.be,https://www.brownboys.be/,,,,,
+AND,Andenne Black Bears,Rue sous Meuse de la Déportation,5300,Namêche,Namur,Belgium,david.delvenne@skynet.be,https://www.andenne-baseball.be/,,,,,
+LEU,Leuven Twins,Tervuursevest 101,3001,Heverlee,Vlaams-Brabant,Belgium,info@leuventwins.be,,,Arno Aarts,Fiona Hermans,Stefan Verelst,
+LIE,Liège Rebels,"Voie Mélotte, 16B",4020,Liège,Liège,Belgium,secretariat@liegebaseball.be,https://www.liegebaseball.be/,,,,,
+WIE,Wielsbeke Pitbulls,Loverstraat 108,8710,Wielsbeke,West-Vlaanderen,Belgium,eric.secember@gmail.com,http://www.pitbulls.be/,,Tijs Van Canneyt,Eric Secember,,
+ZOT,Zottegem Bebops,Zwembadstraat,9620,Zottegem,Oost-Vlaanderen,Belgium,bestuur@bebops.be,http://www.bebops.be/,,Johan De Zutter,Filip Callebaut,Frederik Plasschaert,
+BIN,Binche Guardians,Cité Des Espinois 1/z,7020,Mons,Hainaut,Belgium,sebastien.murer@lfbbs.be,https://baseballbinche.be/,,,,,
+TOU,Tournai Celtics,"Avenue De Gaule, 2",7500,Tournai,Hainaut,Belgium,info@tournaiceltics.be,https://tournaiceltics.be/,,,,,
+WBA,WBA Foxes,Modernadreef,9100,Sint-Niklaas,Oost-Vlaanderen,Belgium,info@wbafoxes.be,https://wbafoxes.be/,,Marcel Vanlooy,Mathias Bruggeman,Michael Van Hove,
+OOS,Oostende Piranhas,Sportparklaan 6,8400,Oostende,Oost-Vlaanderen,Belgium,info@piranhas.be,http://www.piranhas.be/,,Dirk Gunst,Marc Leniere,Sylvia Derycker,
+GRE,Royal Greys,Alkstraat 57,2170,Merksem,Antwerpen,Belgium,royalgreys@telenet.be,http://www.royalgreys.be/,,Ronnie Driessens,Marina Dorny,Edith Wagemans,
+TBS,Olen Titans,Missestraat 12,2250,Olen,Antwerpen,Belgium,info@titans-bsc.be,https://www.titans-bsc.be/,,Ludo Van Tendeloo,Peter Allaerts,,
+BER,Berendrecht Bears,Steenovenstraat 1,2040,Berendrecht,Antwerpen,Belgium,john.hoirelbeke@skynet.be,http://www.bsc-bears.be/,,John Hoirelbeke,Daniella Pauwels,Viviane Schuerewegen,
+BRG,Brugge Braves,Geralaan 50,8310,Brugge,Oost-Vlaanderen,Belgium,brugge.braves@gmail.com,http://www.brugge-braves.be/,,Erwin Warrinnier,Filip Moerman,,
+LIM,Limburg White Sox,Herkenrodestraat 22,3600,Genk,Limburg,Belgium,info@whitesox.be,https://whitesox.be/,,Eric Crauwels,Sandra Leurs,Thijs Mangelschots,
+OUD,Oudernaarde Frogs,Rodelos 4,9700,Oudenaarde,Oost-Vlaanderen,Belgium,info@thefrogs.be,https://thefrogs.be/,,Jonas Hoebeke,Lisa Biasino,Céline De Roeck,
+PEL,Pelt Nstars,Wandeldreef,3910,Pelt,Limburg,Belgium,Info@nstars.be,https://www.nstars.be/,,Hans Ronkes,Koen Loyens,,
+POP,Poperinge Frontliners,Reningelstseweg 1-21,8970,Poperinge,West-Vlaanderen,Belgium,info@frontliners.be,https://www.frontliners.be/,,Geoffrey Andries,Maarten Kiebooms,Fabienne Lowier,
+TON,Tongeren Sharks,Rietmusweg 7,3700,Tongeren,Limburg,Belgium,info@sharks.be,https://baseball.be/,,Marc Swers,Hans Pleumeekers,,
+JEM,Jemeppe White Sharks,"Rue Saint-Martin, 21",5190,Jemeppe-sur-Sambre,Namur,Belgium,whitesharks.secretariat@gmail.com,https://www.facebook.com/whitesharksbb/,,,,,
+MAR,Marche-en-Famenne Cracks,"Rue Victor Libert, 36",6900,Marche-en-Famenne,Luxembourg,Belgium,cenatair@marche.be,https://www.facebook.com/people/Les-Cracks/100057186112286/,,,,,
+TZH,Terneuzen Zeeuwse Honk, Vliegende Vaart 11,4537DH,Terneuzen,Zeeland,Netherlands,info@zeeuwsehonk.nl,http://www.zeeuwsehonk.nl/,,,,,
