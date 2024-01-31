@@ -1,3 +1,6 @@
+-- Belgian Baseball & Softball Datamart Query
+-- 31/01/2024  Tony Pérez
+
 with sport_category as
 (
   select dsp.id  sport_id
@@ -14,6 +17,65 @@ with sport_category as
 ,batting_stat as
 (
   select fbs.*
+         -- stats+ calculations
+         -- League/Season OBS (used to calculate OPS+ in a MicroStrategy metric)
+        ,( sum(fbs.hits) over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  
+         + sum(fbs.base_on_balls) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)                      
+         + sum(fbs.hit_by_pitchs) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         )  league_obp_dividend
+        ,( sum(fbs.at_bats) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         + sum(fbs.base_on_balls) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)                      
+         + sum(fbs.hit_by_pitchs) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         + sum(fbs.sacrfice_flies) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+
+         )  league_obp_divisor
+         -- League/Season SLG (used to calculate OPS+ in a MicroStrategy metric)
+        ,sum(fbs.total_bases)
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  league_slg_dividend
+        ,sum(fbs.at_bats)
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
         ,dcl.postal_code  bat_club_postal_code
@@ -113,6 +175,10 @@ with sport_category as
         ,fbs.bunts  fbs_bunts
         ,fbs.stolen_bases  fbs_stolen_bases
         ,fbs.caught_stealing  fbs_caught_stealing
+         -- stats+
+        ,round((fbs.league_obp_dividend / fbs.league_obp_divisor), 3) fbs_league_obp
+        ,round((fbs.league_slg_dividend / fbs.league_slg_divisor), 3) fbs_league_slg 
+         --
         ,fps.wins  fps_wins
         ,fps.losses  fps_losses
         ,fps.games  fps_games
@@ -188,6 +254,10 @@ with sport_category as
         ,fbs_bunts
         ,fbs_stolen_bases
         ,fbs_caught_stealing
+         -- stats+
+        ,fbs_league_obp
+        ,fbs_league_slg
+         -- 
         ,fps_wins
         ,fps_losses
         ,fps_games
@@ -251,6 +321,7 @@ with sport_category as
 )
 select dpl.last_name  player_last_name
       ,dpl.first_name  player_first_name
+      ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name)  player_full_name 
       ,dpl.position  player_position
       ,dpl.bats  player_bats
       ,dpl.throws  player_throws
