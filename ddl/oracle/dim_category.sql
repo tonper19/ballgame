@@ -1,47 +1,43 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree. 
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree. 
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023   
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table DIM_CATEGORY
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."DIM_CATEGORY" 
-   (	"SPORT_ID" VARCHAR2(8 BYTE), 
-	"GENDER" VARCHAR2(8 BYTE), 
-	"ID" VARCHAR2(8 BYTE), 
-	"NAME" VARCHAR2(50 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index CATEGORY_PK
+--  ddl for table dim_category
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."CATEGORY_PK" ON "C##BASEBALL"."DIM_CATEGORY" ("SPORT_ID", "GENDER", "ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.dim_category 
+   (	sport_id varchar2(8 byte), 
+	gender varchar2(8 byte), 
+	id varchar2(8 byte), 
+  era_innings number,
+	name varchar2(50 byte)
+   ) 
+;
 --------------------------------------------------------
---  Constraints for Table DIM_CATEGORY
+--  ddl for index category_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."DIM_CATEGORY" ADD CONSTRAINT "CATEGORY_PK" PRIMARY KEY ("SPORT_ID", "GENDER", "ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  create unique index c##baseball.category_pk on c##baseball.dim_category (sport_id, gender, id) 
+  pctfree 10 initrans 2 maxtrans 255 compute statistics 
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
+--------------------------------------------------------
+--  constraints for table dim_category
+--------------------------------------------------------
+
+  alter table c##baseball.dim_category add constraint category_pk primary key (sport_id, gender, id)
+  using index pctfree 10 initrans 2 maxtrans 255 compute statistics 
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users  enable;
