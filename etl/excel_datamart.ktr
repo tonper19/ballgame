@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2024/01/21 20:30:51.633</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/01/28 16:57:34.881</modified_date>
+    <modified_date>2024/02/01 14:44:59.121</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -492,12 +492,17 @@
   <order>
     <hop>
       <from>Datamart</from>
-      <to>Datamart XLSX</to>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Datamart</from>
+      <from>Select values</from>
       <to>Datamart CSV</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Datamart XLSX</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -513,13 +518,25 @@
       <schema_name/>
     </partitioning>
     <connection>Oracle Docker Ballgame</connection>
-    <sql>with sport_category as
+    <sql>/*
+copyright (c) 2024, antonio alberto pérez pérez
+all rights reserved.
+
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree. 
+*/
+
+-- Belgian Baseball &amp; Softball Datamart Query
+-- 31/01/2024  Tony Pérez
+
+with sport_category as
 (
   select dsp.id  sport_id
         ,dsp.gender  gender_id 
         ,dsp.name  sport_name
         ,dsp.wiki  sport_wiki
         ,dca.id  category_id
+        ,dca.era_innings
         ,dca.name  category_name
     from c##baseball.dim_sport  dsp
    inner join c##baseball.dim_category  dca
@@ -529,6 +546,65 @@
 ,batting_stat as
 (
   select fbs.*
+         -- SABR metric calculations
+         -- League/Season OBS (used to calculate OPS+ in a MicroStrategy metric)
+        ,( sum(fbs.hits) over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  
+         + sum(fbs.base_on_balls) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)                      
+         + sum(fbs.hit_by_pitchs) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         )  league_obp_dividend
+        ,( sum(fbs.at_bats) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         + sum(fbs.base_on_balls) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)                      
+         + sum(fbs.hit_by_pitchs) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+         + sum(fbs.sacrfice_flies) 
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)
+
+         )  league_obp_divisor
+         -- League/Season SLG (used to calculate OPS+ in a MicroStrategy metric)
+        ,sum(fbs.total_bases)
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  league_slg_dividend
+        ,sum(fbs.at_bats)
+                         over (partition by 
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
         ,dcl.postal_code  bat_club_postal_code
@@ -553,11 +629,44 @@
 ,pitching_stat as
 (
   select fps.*
-        ,case
-           when fps.sport_id = 'BB'  then 9
-           when fps.sport_id in ('SBFP', 'SBSP')  then 7
-           else null  -- I don't know how many innings to calculate ERA on BB5
-         end  era_innings  
+         -- SABR metrics
+        ,sum(fps.earned_runs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_earned_runs
+        ,sum(fps.innings_pitched_dec) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_innings_pitched
+        ,sum(fps.home_runs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_home_runs
+        ,sum(fps.walks) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_walks
+        ,sum(fps.hit_by_pitchs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_hit_by_pitchs
+        ,sum(fps.strike_outs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_strike_outs
+        ,sc.era_innings  
         ,dcl.name  pit_club_name
         ,dcl.address  pit_club_address
         ,dcl.postal_code  pit_club_postal_code
@@ -628,6 +737,10 @@
         ,fbs.bunts  fbs_bunts
         ,fbs.stolen_bases  fbs_stolen_bases
         ,fbs.caught_stealing  fbs_caught_stealing
+         -- SABR metrics
+        ,round((fbs.league_obp_dividend / fbs.league_obp_divisor), 3) fbs_league_obp
+        ,round((fbs.league_slg_dividend / fbs.league_slg_divisor), 3) fbs_league_slg 
+         --
         ,fps.wins  fps_wins
         ,fps.losses  fps_losses
         ,fps.games  fps_games
@@ -655,6 +768,20 @@
         ,fps.bunts_against  fps_bunts_against
         ,fps.ground_outs  fps_ground_outs
         ,fps.fly_outs  fps_fly_outs
+         -- SABR metrics
+        ,fps.league_earned_runs  fps_league_earned_runs 
+        ,fps.league_innings_pitched  fps_league_innings_pitched
+        ,fps.league_home_runs  fps_league_home_runs
+        ,fps.league_walks  fps_league_walks
+        ,fps.league_hit_by_pitchs  fps_league_hit_by_pitchs
+        ,fps.league_strike_outs  fps_league_strike_outs
+        ,(fps.era_innings * (fps.league_earned_runs / fps.league_innings_pitched))
+         -
+         (((13 * fps.league_home_runs)
+          +(3 * (fps.league_walks + fps.league_hit_by_pitchs))
+          -(2 *  fps.league_strike_outs)
+          ) / fps.league_innings_pitched)  fps_fip_constant
+         --
         ,coalesce(bat_club_name,pit_club_name)  club_name
         ,coalesce(bat_club_address,pit_club_address)  club_address
         ,coalesce(bat_club_postal_code,pit_club_postal_code)  club_postal_code
@@ -703,6 +830,10 @@
         ,fbs_bunts
         ,fbs_stolen_bases
         ,fbs_caught_stealing
+         -- SABR metrics
+        ,fbs_league_obp
+        ,fbs_league_slg
+         -- 
         ,fps_wins
         ,fps_losses
         ,fps_games
@@ -730,6 +861,15 @@
         ,fps_bunts_against
         ,fps_ground_outs
         ,fps_fly_outs
+         -- SABR metrics
+        ,fps_league_earned_runs 
+        ,fps_league_innings_pitched
+        ,fps_league_home_runs
+        ,fps_league_walks
+        ,fps_league_hit_by_pitchs
+        ,fps_league_strike_outs
+        ,fps_fip_constant
+         --
         ,ffs.games_played_at_position  ffs_games_played_at_position
         ,ffs.total_chances  ffs_total_chances
         ,ffs.total_successful_chances  ffs_total_successful_chances
@@ -778,6 +918,7 @@ select dpl.last_name  player_last_name
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
+ order by 1   
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -1546,6 +1687,52 @@ select dpl.last_name  player_last_name
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FBS_LEAGUE_OBP</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FBS_LEAGUE_OBP</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FBS_LEAGUE_SLG</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FBS_LEAGUE_SLG</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>FPS_WINS</name>
@@ -2167,6 +2354,167 @@ select dpl.last_name  player_last_name
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_EARNED_RUNS</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_EARNED_RUNS</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_INNINGS_PITCHED</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_INNINGS_PITCHED</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_HOME_RUNS</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_HOME_RUNS</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_WALKS</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_WALKS</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_HIT_BY_PITCHS</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_HIT_BY_PITCHS</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_LEAGUE_STRIKE_OUTS</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_LEAGUE_STRIKE_OUTS</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_FIP_CONSTANT</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_FIP_CONSTANT</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>FFS_GAMES_PLAYED_AT_POSITION</name>
@@ -2728,8 +3076,8 @@ select dpl.last_name  player_last_name
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>208</yloc>
+      <xloc>128</xloc>
+      <yloc>199</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2752,7 +3100,7 @@ select dpl.last_name  player_last_name
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
@@ -2776,1022 +3124,1118 @@ select dpl.last_name  player_last_name
     </file>
     <fields>
       <field>
-        <name>PLAYER_LAST_NAME</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_FIRST_NAME</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_FULL_NAME</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_POSITION</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_BATS</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_THROWS</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_YOB</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_UNIFORM_NUMBER</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_LICENSE_NUMBER</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_LICENSE_TYPE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>SPORT_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>GENDER_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CATEGORY_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>SEASON_YEAR</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PLAYER_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>TEAM_ID</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_AT_BATS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_RUNS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_HITS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_DOUBLES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_TRIPLES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_HOME_RUNS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_RBI</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_TOTAL_BASES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_BASE_ON_BALLS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_STRIKE_OUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_SACRFICE_FLIES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_BUNTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_STOLEN_BASES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_CAUGHT_STEALING</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_WINS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_LOSSES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_GAMES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_GAMES_STARTED</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_SAVES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_COMPLETE_GAMES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_SHUTOUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_INNINGS_PITCHED_LABEL</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_INNINGS_PITCHED_DEC</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_ERA_INNINGS_CALC</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_INNING_OUTS_PITCHED</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_HITS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_RUNS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_EARNED_RUNS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_WALKS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_STRIKE_OUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_DOUBLES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_TRIPLES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_HOME_RUNS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_AT_BATS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_WILD_PITCHES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_BALKS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_SACRIFICE_FLIES_AGAINST</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_BUNTS_AGAINST</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_GROUND_OUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FPS_FLY_OUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_GAMES_PLAYED_AT_POSITION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_TOTAL_CHANCES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_PUTOUTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_ASSISTS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_ERRORS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_DOUBLEPLAYS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_STOLEN_BASES_AGAINST</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_PLAYERS_CAUGHT_STEELING</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_PASSED_BALLS</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FFS_CATCHER_INTERFERENCES</name>
-        <type>Integer</type>
-        <format>0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_NAME</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_ADDRESS</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_POSTAL_CODE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_CITY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_PROVINCE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_COUNTRY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_EMAIL</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_WEBPAGE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BALLPARK_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_PRESIDENT</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_SECRETARY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_TREASURER</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_GOVERNANCE_PERSON</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FBS_CAUGHT_STEALING</name>
+        <name>Player_Last_Name</name>
         <type>None</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_First_Name</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Full_Name</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Position</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Bats</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Throws</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Yob</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Uniform_Number</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_License_Number</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_License_Type</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Sport_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Gender_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Category_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Season_Year</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Player_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Team_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_At_Bats</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Hits</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Doubles</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Triples</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Home_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Rbi</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Total_Bases</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Base_On_Balls</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Hit_By_Pitchs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Strike_Outs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Ground_Into_Doubleplays</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Sacrfice_Flies</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Bunts</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Stolen_Bases</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_Caught_Stealing</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_League_Obp</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fbs_League_Slg</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Wins</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Losses</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Games</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Games_Started</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Saves</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Complete_Games</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Shutouts</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Innings_Pitched_Label</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Innings_Pitched_Dec</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Era_Innings_Calc</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Inning_Outs_Pitched</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Hits</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Earned_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Walks</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Strike_Outs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Doubles</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Triples</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Home_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_At_Bats</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Wild_Pitches</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Hit_By_Pitchs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Balks</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Sacrifice_Flies_Against</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Bunts_Against</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Ground_Outs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Fly_Outs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Earned_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Innings_Pitched</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Home_Runs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Walks</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Hit_By_Pitchs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_League_Strike_Outs</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Fps_Fip_Constant</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Games_Played_At_Position</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Total_Chances</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Total_Successful_Chances</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Putouts</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Assists</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Errors</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Doubleplays</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Stolen_Bases_Against</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Players_Caught_Steeling</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Passed_Balls</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ffs_Catcher_Interferences</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Name</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Address</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Postal_Code</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_City</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Province</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Country</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Email</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Webpage</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Ballpark_Id</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_President</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Secretary</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Treasurer</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Club_Governance_Person</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -3805,7 +4249,7 @@ select dpl.last_name  player_last_name
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>496</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3861,10 +4305,10 @@ select dpl.last_name  player_last_name
     </template>
     <fields>
       <field>
-        <name>PLAYER_LAST_NAME</name>
-        <type>String</type>
+        <name>Player_Last_Name</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_LAST_NAME</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3873,10 +4317,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_FIRST_NAME</name>
-        <type>String</type>
+        <name>Player_First_Name</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_FIRST_NAME</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3885,10 +4329,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_FULL_NAME</name>
-        <type>String</type>
+        <name>Player_Full_Name</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_FULL_NAME</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3897,10 +4341,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_POSITION</name>
-        <type>String</type>
+        <name>Player_Position</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_POSITION</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3909,10 +4353,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_BATS</name>
-        <type>String</type>
+        <name>Player_Bats</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_BATS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3921,10 +4365,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_THROWS</name>
-        <type>String</type>
+        <name>Player_Throws</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_THROWS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3933,10 +4377,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_YOB</name>
-        <type>BigNumber</type>
+        <name>Player_Yob</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_YOB</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3945,10 +4389,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_UNIFORM_NUMBER</name>
-        <type>String</type>
+        <name>Player_Uniform_Number</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_UNIFORM_NUMBER</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3957,10 +4401,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_LICENSE_NUMBER</name>
-        <type>String</type>
+        <name>Player_License_Number</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_LICENSE_NUMBER</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3969,10 +4413,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_LICENSE_TYPE</name>
-        <type>String</type>
+        <name>Player_License_Type</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_LICENSE_TYPE</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3981,10 +4425,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>SPORT_ID</name>
-        <type>String</type>
+        <name>Sport_Id</name>
+        <type>None</type>
         <format/>
-        <title>SPORT_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3993,10 +4437,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>GENDER_ID</name>
-        <type>String</type>
+        <name>Gender_Id</name>
+        <type>None</type>
         <format/>
-        <title>GENDER_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4005,10 +4449,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CATEGORY_ID</name>
-        <type>String</type>
+        <name>Category_Id</name>
+        <type>None</type>
         <format/>
-        <title>CATEGORY_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4017,10 +4461,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_ID</name>
-        <type>String</type>
+        <name>Club_Id</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4029,10 +4473,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>SEASON_YEAR</name>
-        <type>BigNumber</type>
+        <name>Season_Year</name>
+        <type>None</type>
         <format/>
-        <title>SEASON_YEAR</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4041,10 +4485,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>PLAYER_ID</name>
-        <type>String</type>
+        <name>Player_Id</name>
+        <type>None</type>
         <format/>
-        <title>PLAYER_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4053,10 +4497,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>TEAM_ID</name>
-        <type>BigNumber</type>
+        <name>Team_Id</name>
+        <type>None</type>
         <format/>
-        <title>TEAM_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4065,10 +4509,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_AT_BATS</name>
-        <type>Integer</type>
+        <name>Fbs_At_Bats</name>
+        <type>None</type>
         <format/>
-        <title>FBS_AT_BATS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4077,10 +4521,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_RUNS</name>
-        <type>Integer</type>
+        <name>Fbs_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FBS_RUNS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4089,10 +4533,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_HITS</name>
-        <type>Integer</type>
+        <name>Fbs_Hits</name>
+        <type>None</type>
         <format/>
-        <title>FBS_HITS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4101,10 +4545,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_DOUBLES</name>
-        <type>Integer</type>
+        <name>Fbs_Doubles</name>
+        <type>None</type>
         <format/>
-        <title>FBS_DOUBLES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4113,10 +4557,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_TRIPLES</name>
-        <type>Integer</type>
+        <name>Fbs_Triples</name>
+        <type>None</type>
         <format/>
-        <title>FBS_TRIPLES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4125,10 +4569,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_HOME_RUNS</name>
-        <type>Integer</type>
+        <name>Fbs_Home_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FBS_HOME_RUNS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4137,10 +4581,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_RBI</name>
-        <type>Integer</type>
+        <name>Fbs_Rbi</name>
+        <type>None</type>
         <format/>
-        <title>FBS_RBI</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4149,10 +4593,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_TOTAL_BASES</name>
-        <type>Integer</type>
+        <name>Fbs_Total_Bases</name>
+        <type>None</type>
         <format/>
-        <title>FBS_TOTAL_BASES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4161,10 +4605,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_BASE_ON_BALLS</name>
-        <type>Integer</type>
+        <name>Fbs_Base_On_Balls</name>
+        <type>None</type>
         <format/>
-        <title>FBS_BASE_ON_BALLS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4173,10 +4617,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
+        <name>Fbs_Hit_By_Pitchs</name>
+        <type>None</type>
         <format/>
-        <title>FBS_HIT_BY_PITCHS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4185,10 +4629,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_STRIKE_OUTS</name>
-        <type>Integer</type>
+        <name>Fbs_Strike_Outs</name>
+        <type>None</type>
         <format/>
-        <title>FBS_STRIKE_OUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4197,10 +4641,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
-        <type>Integer</type>
+        <name>Fbs_Ground_Into_Doubleplays</name>
+        <type>None</type>
         <format/>
-        <title>FBS_GROUND_INTO_DOUBLEPLAYS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4209,10 +4653,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_SACRFICE_FLIES</name>
-        <type>Integer</type>
+        <name>Fbs_Sacrfice_Flies</name>
+        <type>None</type>
         <format/>
-        <title>FBS_SACRFICE_FLIES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4221,10 +4665,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_BUNTS</name>
-        <type>Integer</type>
+        <name>Fbs_Bunts</name>
+        <type>None</type>
         <format/>
-        <title>FBS_BUNTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4233,10 +4677,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_STOLEN_BASES</name>
-        <type>Integer</type>
+        <name>Fbs_Stolen_Bases</name>
+        <type>None</type>
         <format/>
-        <title>FBS_STOLEN_BASES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4245,10 +4689,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FBS_CAUGHT_STEALING</name>
-        <type>Integer</type>
+        <name>Fbs_Caught_Stealing</name>
+        <type>None</type>
         <format/>
-        <title>FBS_CAUGHT_STEALING</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4257,10 +4701,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_WINS</name>
-        <type>Integer</type>
+        <name>Fbs_League_Obp</name>
+        <type>None</type>
         <format/>
-        <title>FPS_WINS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4269,10 +4713,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_LOSSES</name>
-        <type>Integer</type>
+        <name>Fbs_League_Slg</name>
+        <type>None</type>
         <format/>
-        <title>FPS_LOSSES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4281,10 +4725,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_GAMES</name>
-        <type>Integer</type>
+        <name>Fps_Wins</name>
+        <type>None</type>
         <format/>
-        <title>FPS_GAMES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4293,10 +4737,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_GAMES_STARTED</name>
-        <type>Integer</type>
+        <name>Fps_Losses</name>
+        <type>None</type>
         <format/>
-        <title>FPS_GAMES_STARTED</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4305,10 +4749,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_SAVES</name>
-        <type>Integer</type>
+        <name>Fps_Games</name>
+        <type>None</type>
         <format/>
-        <title>FPS_SAVES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4317,10 +4761,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_COMPLETE_GAMES</name>
-        <type>Integer</type>
+        <name>Fps_Games_Started</name>
+        <type>None</type>
         <format/>
-        <title>FPS_COMPLETE_GAMES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4329,10 +4773,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_SHUTOUTS</name>
-        <type>Integer</type>
+        <name>Fps_Saves</name>
+        <type>None</type>
         <format/>
-        <title>FPS_SHUTOUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4341,10 +4785,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_INNINGS_PITCHED_LABEL</name>
-        <type>BigNumber</type>
+        <name>Fps_Complete_Games</name>
+        <type>None</type>
         <format/>
-        <title>FPS_INNINGS_PITCHED_LABEL</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4353,10 +4797,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_INNINGS_PITCHED_DEC</name>
-        <type>BigNumber</type>
+        <name>Fps_Shutouts</name>
+        <type>None</type>
         <format/>
-        <title>FPS_INNINGS_PITCHED_DEC</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4365,10 +4809,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_ERA_INNINGS_CALC</name>
-        <type>BigNumber</type>
+        <name>Fps_Innings_Pitched_Label</name>
+        <type>None</type>
         <format/>
-        <title>FPS_ERA_INNINGS_CALC</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4377,10 +4821,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_INNING_OUTS_PITCHED</name>
-        <type>Integer</type>
+        <name>Fps_Innings_Pitched_Dec</name>
+        <type>None</type>
         <format/>
-        <title>FPS_INNING_OUTS_PITCHED</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4389,10 +4833,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_HITS</name>
-        <type>Integer</type>
+        <name>Fps_Era_Innings_Calc</name>
+        <type>None</type>
         <format/>
-        <title>FPS_HITS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4401,10 +4845,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_RUNS</name>
-        <type>Integer</type>
+        <name>Fps_Inning_Outs_Pitched</name>
+        <type>None</type>
         <format/>
-        <title>FPS_RUNS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4413,10 +4857,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_EARNED_RUNS</name>
-        <type>Integer</type>
+        <name>Fps_Hits</name>
+        <type>None</type>
         <format/>
-        <title>FPS_EARNED_RUNS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4425,10 +4869,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_WALKS</name>
-        <type>Integer</type>
+        <name>Fps_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FPS_WALKS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4437,10 +4881,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_STRIKE_OUTS</name>
-        <type>Integer</type>
+        <name>Fps_Earned_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FPS_STRIKE_OUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4449,10 +4893,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_DOUBLES</name>
-        <type>Integer</type>
+        <name>Fps_Walks</name>
+        <type>None</type>
         <format/>
-        <title>FPS_DOUBLES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4461,10 +4905,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_TRIPLES</name>
-        <type>Integer</type>
+        <name>Fps_Strike_Outs</name>
+        <type>None</type>
         <format/>
-        <title>FPS_TRIPLES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4473,10 +4917,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_HOME_RUNS</name>
-        <type>Integer</type>
+        <name>Fps_Doubles</name>
+        <type>None</type>
         <format/>
-        <title>FPS_HOME_RUNS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4485,10 +4929,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_AT_BATS</name>
-        <type>Integer</type>
+        <name>Fps_Triples</name>
+        <type>None</type>
         <format/>
-        <title>FPS_AT_BATS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4497,10 +4941,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_WILD_PITCHES</name>
-        <type>Integer</type>
+        <name>Fps_Home_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FPS_WILD_PITCHES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4509,10 +4953,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
+        <name>Fps_At_Bats</name>
+        <type>None</type>
         <format/>
-        <title>FPS_HIT_BY_PITCHS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4521,10 +4965,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_BALKS</name>
-        <type>Integer</type>
+        <name>Fps_Wild_Pitches</name>
+        <type>None</type>
         <format/>
-        <title>FPS_BALKS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4533,10 +4977,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_SACRIFICE_FLIES_AGAINST</name>
-        <type>Integer</type>
+        <name>Fps_Hit_By_Pitchs</name>
+        <type>None</type>
         <format/>
-        <title>FPS_SACRIFICE_FLIES_AGAINST</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4545,10 +4989,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_BUNTS_AGAINST</name>
-        <type>Integer</type>
+        <name>Fps_Balks</name>
+        <type>None</type>
         <format/>
-        <title>FPS_BUNTS_AGAINST</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4557,10 +5001,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_GROUND_OUTS</name>
-        <type>Integer</type>
+        <name>Fps_Sacrifice_Flies_Against</name>
+        <type>None</type>
         <format/>
-        <title>FPS_GROUND_OUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4569,10 +5013,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FPS_FLY_OUTS</name>
-        <type>Integer</type>
+        <name>Fps_Bunts_Against</name>
+        <type>None</type>
         <format/>
-        <title>FPS_FLY_OUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4581,10 +5025,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_GAMES_PLAYED_AT_POSITION</name>
-        <type>Integer</type>
+        <name>Fps_Ground_Outs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_GAMES_PLAYED_AT_POSITION</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4593,10 +5037,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_TOTAL_CHANCES</name>
-        <type>Integer</type>
+        <name>Fps_Fly_Outs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_TOTAL_CHANCES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4605,10 +5049,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
-        <type>Integer</type>
+        <name>Fps_League_Earned_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_TOTAL_SUCCESSFUL_CHANCES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4617,10 +5061,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_PUTOUTS</name>
-        <type>Integer</type>
+        <name>Fps_League_Innings_Pitched</name>
+        <type>None</type>
         <format/>
-        <title>FFS_PUTOUTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4629,10 +5073,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_ASSISTS</name>
-        <type>Integer</type>
+        <name>Fps_League_Home_Runs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_ASSISTS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4641,10 +5085,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_ERRORS</name>
-        <type>Integer</type>
+        <name>Fps_League_Walks</name>
+        <type>None</type>
         <format/>
-        <title>FFS_ERRORS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4653,10 +5097,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_DOUBLEPLAYS</name>
-        <type>Integer</type>
+        <name>Fps_League_Hit_By_Pitchs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_DOUBLEPLAYS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4665,10 +5109,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_STOLEN_BASES_AGAINST</name>
-        <type>Integer</type>
+        <name>Fps_League_Strike_Outs</name>
+        <type>None</type>
         <format/>
-        <title>FFS_STOLEN_BASES_AGAINST</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4677,10 +5121,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_PLAYERS_CAUGHT_STEELING</name>
-        <type>Integer</type>
+        <name>Fps_Fip_Constant</name>
+        <type>None</type>
         <format/>
-        <title>FFS_PLAYERS_CAUGHT_STEELING</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4689,10 +5133,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_PASSED_BALLS</name>
-        <type>Integer</type>
+        <name>Ffs_Games_Played_At_Position</name>
+        <type>None</type>
         <format/>
-        <title>FFS_PASSED_BALLS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4701,10 +5145,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>FFS_CATCHER_INTERFERENCES</name>
-        <type>Integer</type>
+        <name>Ffs_Total_Chances</name>
+        <type>None</type>
         <format/>
-        <title>FFS_CATCHER_INTERFERENCES</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4713,10 +5157,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_NAME</name>
-        <type>String</type>
+        <name>Ffs_Total_Successful_Chances</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_NAME</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4725,10 +5169,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_ADDRESS</name>
-        <type>String</type>
+        <name>Ffs_Putouts</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_ADDRESS</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4737,10 +5181,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_POSTAL_CODE</name>
-        <type>String</type>
+        <name>Ffs_Assists</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_POSTAL_CODE</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4749,10 +5193,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_CITY</name>
-        <type>String</type>
+        <name>Ffs_Errors</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_CITY</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4761,10 +5205,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_PROVINCE</name>
-        <type>String</type>
+        <name>Ffs_Doubleplays</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_PROVINCE</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4773,10 +5217,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_COUNTRY</name>
-        <type>String</type>
+        <name>Ffs_Stolen_Bases_Against</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_COUNTRY</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4785,10 +5229,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_EMAIL</name>
-        <type>String</type>
+        <name>Ffs_Players_Caught_Steeling</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_EMAIL</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4797,10 +5241,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_WEBPAGE</name>
-        <type>String</type>
+        <name>Ffs_Passed_Balls</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_WEBPAGE</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4809,10 +5253,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>BALLPARK_ID</name>
-        <type>String</type>
+        <name>Ffs_Catcher_Interferences</name>
+        <type>None</type>
         <format/>
-        <title>BALLPARK_ID</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4821,10 +5265,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_PRESIDENT</name>
-        <type>String</type>
+        <name>Club_Name</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_PRESIDENT</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4833,10 +5277,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_SECRETARY</name>
-        <type>String</type>
+        <name>Club_Address</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_SECRETARY</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4845,10 +5289,10 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_TREASURER</name>
-        <type>String</type>
+        <name>Club_Postal_Code</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_TREASURER</title>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4857,10 +5301,118 @@ select dpl.last_name  player_last_name
         <hyperlinkField/>
       </field>
       <field>
-        <name>CLUB_GOVERNANCE_PERSON</name>
-        <type>String</type>
+        <name>Club_City</name>
+        <type>None</type>
         <format/>
-        <title>CLUB_GOVERNANCE_PERSON</title>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Province</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Country</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Email</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Webpage</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Ballpark_Id</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_President</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Secretary</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Treasurer</name>
+        <type>None</type>
+        <format/>
+        <title/>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Club_Governance_Person</name>
+        <type>None</type>
+        <format/>
+        <title/>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -4878,8 +5430,408 @@ select dpl.last_name  player_last_name
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>208</yloc>
+      <xloc>496</xloc>
+      <yloc>286</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Player_Last_Name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_First_Name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Full_Name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Position</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Bats</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Throws</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Yob</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Uniform_Number</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_License_Number</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_License_Type</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Sport_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Gender_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Category_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Season_Year</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Player_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Team_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_At_Bats</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Hits</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Doubles</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Triples</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Home_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Rbi</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Total_Bases</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Base_On_Balls</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Hit_By_Pitchs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Strike_Outs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Ground_Into_Doubleplays</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Sacrfice_Flies</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Bunts</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Stolen_Bases</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_Caught_Stealing</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_League_Obp</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fbs_League_Slg</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Wins</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Losses</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Games</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Games_Started</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Saves</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Complete_Games</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Shutouts</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Innings_Pitched_Label</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Innings_Pitched_Dec</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Era_Innings_Calc</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Inning_Outs_Pitched</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Hits</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Earned_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Walks</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Strike_Outs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Doubles</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Triples</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Home_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_At_Bats</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Wild_Pitches</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Hit_By_Pitchs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Balks</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Sacrifice_Flies_Against</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Bunts_Against</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Ground_Outs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Fly_Outs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Earned_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Innings_Pitched</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Home_Runs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Walks</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Hit_By_Pitchs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_League_Strike_Outs</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Fps_Fip_Constant</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Games_Played_At_Position</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Total_Chances</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Total_Successful_Chances</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Putouts</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Assists</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Errors</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Doubleplays</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Stolen_Bases_Against</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Players_Caught_Steeling</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Passed_Balls</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ffs_Catcher_Interferences</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Address</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Postal_Code</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_City</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Province</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Country</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Email</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Webpage</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Ballpark_Id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_President</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Secretary</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Treasurer</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Club_Governance_Person</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>199</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

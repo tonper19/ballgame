@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.822</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/01/26 17:47:50.543</modified_date>
+    <modified_date>2024/02/01 07:13:21.935</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -601,7 +601,7 @@
         <name>SPORT_ID</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>4</length>
@@ -612,7 +612,7 @@
         <name>GENDER</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>1</length>
@@ -623,7 +623,7 @@
         <name>ID</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>8</length>
@@ -631,10 +631,21 @@
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>ERA_INNINGS</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>NAME</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>28</length>
@@ -1028,6 +1039,10 @@
       <field>
         <column_name>ID</column_name>
         <stream_name>ID</stream_name>
+      </field>
+      <field>
+        <column_name>ERA_INNINGS</column_name>
+        <stream_name>ERA_INNINGS</stream_name>
       </field>
       <field>
         <column_name>NAME</column_name>
