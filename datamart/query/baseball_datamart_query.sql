@@ -1,3 +1,11 @@
+/*
+copyright (c) 2024, antonio alberto pérez pérez
+all rights reserved.
+
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree. 
+*/
+
 -- Belgian Baseball & Softball Datamart Query
 -- 31/01/2024  Tony Pérez
 
@@ -8,6 +16,7 @@ with sport_category as
         ,dsp.name  sport_name
         ,dsp.wiki  sport_wiki
         ,dca.id  category_id
+        ,dca.era_innings
         ,dca.name  category_name
     from c##baseball.dim_sport  dsp
    inner join c##baseball.dim_category  dca
@@ -17,7 +26,7 @@ with sport_category as
 ,batting_stat as
 (
   select fbs.*
-         -- stats+ calculations
+         -- SABR metric calculations
          -- League/Season OBS (used to calculate OPS+ in a MicroStrategy metric)
         ,( sum(fbs.hits) over (partition by 
                                fbs.sport_id
@@ -100,11 +109,44 @@ with sport_category as
 ,pitching_stat as
 (
   select fps.*
-        ,case
-           when fps.sport_id = 'BB'  then 9
-           when fps.sport_id in ('SBFP', 'SBSP')  then 7
-           else null  -- I don't know how many innings to calculate ERA on BB5
-         end  era_innings  
+         -- SABR metrics
+        ,sum(fps.earned_runs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_earned_runs
+        ,sum(fps.innings_pitched_dec) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_innings_pitched
+        ,sum(fps.home_runs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_home_runs
+        ,sum(fps.walks) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_walks
+        ,sum(fps.hit_by_pitchs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_hit_by_pitchs
+        ,sum(fps.strike_outs) 
+                         over (partition by 
+                               fps.sport_id
+                              ,fps.gender_id
+                              ,fps.category_id
+                              ,fps.season_year)  league_strike_outs
+        ,sc.era_innings  
         ,dcl.name  pit_club_name
         ,dcl.address  pit_club_address
         ,dcl.postal_code  pit_club_postal_code
@@ -175,7 +217,7 @@ with sport_category as
         ,fbs.bunts  fbs_bunts
         ,fbs.stolen_bases  fbs_stolen_bases
         ,fbs.caught_stealing  fbs_caught_stealing
-         -- stats+
+         -- SABR metrics
         ,round((fbs.league_obp_dividend / fbs.league_obp_divisor), 3) fbs_league_obp
         ,round((fbs.league_slg_dividend / fbs.league_slg_divisor), 3) fbs_league_slg 
          --
@@ -206,6 +248,20 @@ with sport_category as
         ,fps.bunts_against  fps_bunts_against
         ,fps.ground_outs  fps_ground_outs
         ,fps.fly_outs  fps_fly_outs
+         -- SABR metrics
+        ,fps.league_earned_runs  fps_league_earned_runs 
+        ,fps.league_innings_pitched  fps_league_innings_pitched
+        ,fps.league_home_runs  fps_league_home_runs
+        ,fps.league_walks  fps_league_walks
+        ,fps.league_hit_by_pitchs  fps_league_hit_by_pitchs
+        ,fps.league_strike_outs  fps_league_strike_outs
+        ,(fps.era_innings * (fps.league_earned_runs / fps.league_innings_pitched))
+         -
+         (((13 * fps.league_home_runs)
+          +(3 * (fps.league_walks + fps.league_hit_by_pitchs))
+          -(2 *  fps.league_strike_outs)
+          ) / fps.league_innings_pitched)  fps_fip_constant
+         --
         ,coalesce(bat_club_name,pit_club_name)  club_name
         ,coalesce(bat_club_address,pit_club_address)  club_address
         ,coalesce(bat_club_postal_code,pit_club_postal_code)  club_postal_code
@@ -254,7 +310,7 @@ with sport_category as
         ,fbs_bunts
         ,fbs_stolen_bases
         ,fbs_caught_stealing
-         -- stats+
+         -- SABR metrics
         ,fbs_league_obp
         ,fbs_league_slg
          -- 
@@ -285,6 +341,15 @@ with sport_category as
         ,fps_bunts_against
         ,fps_ground_outs
         ,fps_fly_outs
+         -- SABR metrics
+        ,fps_league_earned_runs 
+        ,fps_league_innings_pitched
+        ,fps_league_home_runs
+        ,fps_league_walks
+        ,fps_league_hit_by_pitchs
+        ,fps_league_strike_outs
+        ,fps_fip_constant
+         --
         ,ffs.games_played_at_position  ffs_games_played_at_position
         ,ffs.total_chances  ffs_total_chances
         ,ffs.total_successful_chances  ffs_total_successful_chances
