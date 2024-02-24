@@ -1,57 +1,58 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table DIM_CLUB
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."DIM_CLUB" 
-   (	"ID" VARCHAR2(8 BYTE), 
-	"NAME" VARCHAR2(255 BYTE), 
-	"ADDRESS" VARCHAR2(255 BYTE), 
-	"POSTAL_CODE" VARCHAR2(16 BYTE), 
-	"CITY" VARCHAR2(50 BYTE), 
-	"PROVINCE" VARCHAR2(50 BYTE), 
-	"COUNTRY" VARCHAR2(50 BYTE), 
-	"EMAIL" VARCHAR2(255 BYTE), 
-	"WEBPAGE" VARCHAR2(255 BYTE), 
-	"BALLPARK_ID" VARCHAR2(8 BYTE), 
-	"PRESIDENT" VARCHAR2(50 BYTE), 
-	"SECRETARY" VARCHAR2(50 BYTE), 
-	"TREASURER" VARCHAR2(50 BYTE), 
-	"GOVERNANCE_PERSON" VARCHAR2(50 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index CLUB_PK
+--  ddl for table dim_club
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."CLUB_PK" ON "C##BASEBALL"."DIM_CLUB" ("ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.dim_club
+   (	id varchar2(8 byte),
+  country_id varchar2(2 byte),  -- 20240224
+	name varchar2(255 byte),
+	address varchar2(255 byte),
+	postal_code varchar2(16 byte),
+	city varchar2(50 byte),
+	province varchar2(50 byte),
+	country varchar2(50 byte),
+	email varchar2(255 byte),
+	webpage varchar2(255 byte),
+	ballpark_id varchar2(8 byte),
+	president varchar2(50 byte),
+	secretary varchar2(50 byte),
+	treasurer varchar2(50 byte),
+	governance_person varchar2(50 byte)
+   ) segment creation immediate
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
 --------------------------------------------------------
---  Constraints for Table DIM_CLUB
+--  ddl for index club_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."DIM_CLUB" ADD CONSTRAINT "CLUB_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  create unique index c##baseball.club_pk on c##baseball.dim_club (id, country_id)
+  pctfree 10 initrans 2 maxtrans 255 compute statistics
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
+--------------------------------------------------------
+--  constraints for table dim_club
+--------------------------------------------------------
+
+  alter table c##baseball.dim_club add constraint club_pk primary key (id, country_id)
+  using index pctfree 10 initrans 2 maxtrans 255 compute statistics
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users  enable;

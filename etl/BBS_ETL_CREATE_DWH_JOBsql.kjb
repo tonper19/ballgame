@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.601</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2023/12/29 19:16:49.599</modified_date>
+  <modified_date>2024/02/24 17:40:57.351</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -473,7 +473,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>960</xloc>
+      <xloc>864</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -491,7 +491,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>960</xloc>
+      <xloc>864</xloc>
       <yloc>240</yloc>
       <attributes_kjc/>
     </entry>
@@ -506,7 +506,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1344</xloc>
+      <xloc>1040</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -524,7 +524,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>240</yloc>
       <attributes_kjc/>
     </entry>
@@ -557,7 +557,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>320</yloc>
       <attributes_kjc/>
     </entry>
@@ -590,7 +590,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
@@ -623,7 +623,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
@@ -656,7 +656,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
@@ -689,7 +689,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>672</yloc>
       <attributes_kjc/>
     </entry>
@@ -722,7 +722,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1168</xloc>
+      <xloc>1040</xloc>
       <yloc>784</yloc>
       <attributes_kjc/>
     </entry>
@@ -734,7 +734,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>288</xloc>
       <yloc>880</yloc>
       <attributes_kjc/>
     </entry>
@@ -762,7 +762,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>960</xloc>
+      <xloc>864</xloc>
       <yloc>880</yloc>
       <attributes_kjc/>
     </entry>
@@ -780,7 +780,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>960</xloc>
+      <xloc>864</xloc>
       <yloc>784</yloc>
       <attributes_kjc/>
     </entry>
@@ -815,6 +815,39 @@
       <nr>2</nr>
       <xloc>710</xloc>
       <yloc>784</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>dim_country exists?</name>
+      <description/>
+      <type>TABLE_EXISTS</type>
+      <attributes/>
+      <tablename>DIM_COUNTRY</tablename>
+      <schemaname>C##BASEBALL</schemaname>
+      <connection>Oracle Docker Ballgame</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>2</nr>
+      <xloc>1344</xloc>
+      <yloc>112</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>create dim_country</name>
+      <description/>
+      <type>SQL</type>
+      <attributes/>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BALLGAME_DDL_DIRECTORY}dim_country.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>Oracle Docker Ballgame</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>1</nr>
+      <xloc>1152</xloc>
+      <yloc>240</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -939,24 +972,6 @@
     <hop>
       <from>create stg_fielding_stat</from>
       <to>stg_batting_stat exists?</to>
-      <from_nr>2</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>rslt_player exists?</from>
-      <to>dim_sport exists?</to>
-      <from_nr>2</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>create rslt_player</from>
-      <to>dim_sport exists?</to>
       <from_nr>2</from_nr>
       <to_nr>1</to_nr>
       <enabled>Y</enabled>
@@ -1291,6 +1306,60 @@
       <from>create fact_fielding_stat</from>
       <to>Abort job</to>
       <from_nr>2</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>rslt_player exists?</from>
+      <to>dim_country exists?</to>
+      <from_nr>2</from_nr>
+      <to_nr>2</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create rslt_player</from>
+      <to>dim_country exists?</to>
+      <from_nr>2</from_nr>
+      <to_nr>2</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>dim_country exists?</from>
+      <to>dim_sport exists?</to>
+      <from_nr>2</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>dim_country exists?</from>
+      <to>create dim_country</to>
+      <from_nr>2</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create dim_country</from>
+      <to>dim_sport exists?</to>
+      <from_nr>1</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create dim_country</from>
+      <to>Abort job</to>
+      <from_nr>1</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>

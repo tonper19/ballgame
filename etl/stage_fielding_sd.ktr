@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:11.019</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2023/12/31 17:40:18.715</modified_date>
+    <modified_date>2024/02/24 19:49:18.639</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -721,6 +721,57 @@
     </GUI>
   </step>
   <step>
+    <name>Add constants: Softball + Men</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>sport_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>SBFP</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>gender_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>M</nullif>
+        <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>512</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Last / First Name Split</name>
     <type>FieldSplitter</type>
     <description/>
@@ -776,6 +827,66 @@
     </remotesteps>
     <GUI>
       <xloc>384</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Last / First Name Split 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <splitfield>Player</splitfield>
+    <delimiter>$[0A]</delimiter>
+    <enclosure/>
+    <fields>
+      <field>
+        <name>last_name</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>
+      <field>
+        <name>first_name</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
       <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
@@ -957,6 +1068,18 @@
         <group/>
         <nullif>D1</nullif>
         <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BE</nullif>
+        <length>2</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
@@ -1389,6 +1512,18 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BE</nullif>
+        <length>2</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1623,6 +1758,18 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BE</nullif>
+        <length>2</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1834,237 +1981,6 @@
     </GUI>
   </step>
   <step>
-    <name>STG Fielding SD Table Out</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>Oracle Docker Ballgame</connection>
-    <schema>c##baseball</schema>
-    <table>stg_fielding_stat</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>last_name</column_name>
-        <stream_name>last_name</stream_name>
-      </field>
-      <field>
-        <column_name>first_name</column_name>
-        <stream_name>first_name</stream_name>
-      </field>
-      <field>
-        <column_name>Team</column_name>
-        <stream_name>Team</stream_name>
-      </field>
-      <field>
-        <column_name>G</column_name>
-        <stream_name>G</stream_name>
-      </field>
-      <field>
-        <column_name>C</column_name>
-        <stream_name>C</stream_name>
-      </field>
-      <field>
-        <column_name>PO</column_name>
-        <stream_name>PO</stream_name>
-      </field>
-      <field>
-        <column_name>A</column_name>
-        <stream_name>A</stream_name>
-      </field>
-      <field>
-        <column_name>E</column_name>
-        <stream_name>E</stream_name>
-      </field>
-      <field>
-        <column_name>FLDP</column_name>
-        <stream_name>FLDP</stream_name>
-      </field>
-      <field>
-        <column_name>DP</column_name>
-        <stream_name>DP</stream_name>
-      </field>
-      <field>
-        <column_name>SBA</column_name>
-        <stream_name>SBA</stream_name>
-      </field>
-      <field>
-        <column_name>CSB</column_name>
-        <stream_name>CSB</stream_name>
-      </field>
-      <field>
-        <column_name>SBAP</column_name>
-        <stream_name>SBAP</stream_name>
-      </field>
-      <field>
-        <column_name>PB</column_name>
-        <stream_name>PB</stream_name>
-      </field>
-      <field>
-        <column_name>CI</column_name>
-        <stream_name>CI</stream_name>
-      </field>
-      <field>
-        <column_name>Division</column_name>
-        <stream_name>Division</stream_name>
-      </field>
-      <field>
-        <column_name>season_year</column_name>
-        <stream_name>season_year</stream_name>
-      </field>
-      <field>
-        <column_name>sport_id</column_name>
-        <stream_name>sport_id</stream_name>
-      </field>
-      <field>
-        <column_name>gender_id</column_name>
-        <stream_name>gender_id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>384</xloc>
-      <yloc>608</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Add constants: Softball + Men</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>sport_id</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>SBFP</nullif>
-        <length>8</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>gender_id</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>M</nullif>
-        <length>8</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>928</xloc>
-      <yloc>512</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Last / First Name Split 2</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <splitfield>Player</splitfield>
-    <delimiter>$[0A]</delimiter>
-    <enclosure/>
-    <fields>
-      <field>
-        <name>last_name</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>
-      <field>
-        <name>first_name</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>928</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>SM 2022 D1</name>
     <type>Constant</type>
     <description/>
@@ -2202,6 +2118,18 @@
         <group/>
         <nullif>D1</nullif>
         <length>8</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BE</nullif>
+        <length>2</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
@@ -2634,6 +2562,18 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BE</nullif>
+        <length>2</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -2845,6 +2785,130 @@
     </GUI>
   </step>
   <step>
+    <name>STG Fielding SD Table Out</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Oracle Docker Ballgame</connection>
+    <schema>c##baseball</schema>
+    <table>stg_fielding_stat</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>last_name</column_name>
+        <stream_name>last_name</stream_name>
+      </field>
+      <field>
+        <column_name>first_name</column_name>
+        <stream_name>first_name</stream_name>
+      </field>
+      <field>
+        <column_name>Team</column_name>
+        <stream_name>Team</stream_name>
+      </field>
+      <field>
+        <column_name>G</column_name>
+        <stream_name>G</stream_name>
+      </field>
+      <field>
+        <column_name>C</column_name>
+        <stream_name>C</stream_name>
+      </field>
+      <field>
+        <column_name>PO</column_name>
+        <stream_name>PO</stream_name>
+      </field>
+      <field>
+        <column_name>A</column_name>
+        <stream_name>A</stream_name>
+      </field>
+      <field>
+        <column_name>E</column_name>
+        <stream_name>E</stream_name>
+      </field>
+      <field>
+        <column_name>FLDP</column_name>
+        <stream_name>FLDP</stream_name>
+      </field>
+      <field>
+        <column_name>DP</column_name>
+        <stream_name>DP</stream_name>
+      </field>
+      <field>
+        <column_name>SBA</column_name>
+        <stream_name>SBA</stream_name>
+      </field>
+      <field>
+        <column_name>CSB</column_name>
+        <stream_name>CSB</stream_name>
+      </field>
+      <field>
+        <column_name>SBAP</column_name>
+        <stream_name>SBAP</stream_name>
+      </field>
+      <field>
+        <column_name>PB</column_name>
+        <stream_name>PB</stream_name>
+      </field>
+      <field>
+        <column_name>CI</column_name>
+        <stream_name>CI</stream_name>
+      </field>
+      <field>
+        <column_name>season_year</column_name>
+        <stream_name>season_year</stream_name>
+      </field>
+      <field>
+        <column_name>Division</column_name>
+        <stream_name>Division</stream_name>
+      </field>
+      <field>
+        <column_name>country_id</column_name>
+        <stream_name>country_id</stream_name>
+      </field>
+      <field>
+        <column_name>sport_id</column_name>
+        <stream_name>sport_id</stream_name>
+      </field>
+      <field>
+        <column_name>gender_id</column_name>
+        <stream_name>gender_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>STG Fielding SM Table Out</name>
     <type>TableOutput</type>
     <description/>
@@ -2934,12 +2998,16 @@
         <stream_name>CI</stream_name>
       </field>
       <field>
+        <column_name>season_year</column_name>
+        <stream_name>season_year</stream_name>
+      </field>
+      <field>
         <column_name>Division</column_name>
         <stream_name>Division</stream_name>
       </field>
       <field>
-        <column_name>season_year</column_name>
-        <stream_name>season_year</stream_name>
+        <column_name>country_id</column_name>
+        <stream_name>country_id</stream_name>
       </field>
       <field>
         <column_name>sport_id</column_name>

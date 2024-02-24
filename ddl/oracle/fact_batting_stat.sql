@@ -1,86 +1,88 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table FACT_BATTING_STAT
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."FACT_BATTING_STAT" 
-   (	"SPORT_ID" VARCHAR2(8 BYTE), 
-	"GENDER_ID" VARCHAR2(8 BYTE), 
-	"CATEGORY_ID" VARCHAR2(8 BYTE), 
-	"CLUB_ID" VARCHAR2(8 BYTE), 
-	"SEASON_YEAR" NUMBER(*,0), 
-	"PLAYER_ID" VARCHAR2(16 BYTE), 
-	"TEAM_ID" NUMBER(*,0), 
-	"AT_BATS" NUMBER(*,0), 
-	"RUNS" NUMBER(*,0), 
-	"HITS" NUMBER(*,0), 
-	"DOUBLES" NUMBER(*,0), 
-	"TRIPLES" NUMBER(*,0), 
-	"HOME_RUNS" NUMBER(*,0), 
-	"RBI" NUMBER(*,0), 
-	"TOTAL_BASES" NUMBER(*,0), 
-	"BASE_ON_BALLS" NUMBER(*,0), 
-	"HIT_BY_PITCHS" NUMBER(*,0), 
-	"STRIKE_OUTS" NUMBER(*,0), 
-	"GROUND_INTO_DOUBLEPLAYS" NUMBER(*,0), 
-	"SACRFICE_FLIES" NUMBER(*,0), 
-	"BUNTS" NUMBER(*,0), 
-	"STOLEN_BASES" NUMBER(*,0), 
-	"CAUGHT_STEALING" NUMBER(*,0)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index FACT_BATTING_STAT_PK
+--  ddl for table fact_batting_stat
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."FACT_BATTING_STAT_PK" ON "C##BASEBALL"."FACT_BATTING_STAT" ("SPORT_ID", "GENDER_ID", "CATEGORY_ID", "CLUB_ID", "SEASON_YEAR", "PLAYER_ID", "TEAM_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.fact_batting_stat
+   (	sport_id varchar2(8 byte),
+	gender_id varchar2(8 byte),
+	category_id varchar2(20 byte),
+	club_id varchar2(8 byte),
+  country_id varchar2(2 byte),  -- 20240224
+	season_year number(*,0),
+	player_id varchar2(16 byte),
+	team_id number(*,0),
+	at_bats number(*,0),
+	runs number(*,0),
+	hits number(*,0),
+	doubles number(*,0),
+	triples number(*,0),
+	home_runs number(*,0),
+	rbi number(*,0),
+	total_bases number(*,0),
+	base_on_balls number(*,0),
+	hit_by_pitchs number(*,0),
+	strike_outs number(*,0),
+	ground_into_doubleplays number(*,0),
+	sacrfice_flies number(*,0),
+	bunts number(*,0),
+	stolen_bases number(*,0),
+	caught_stealing number(*,0)
+   ) segment creation immediate
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
 --------------------------------------------------------
---  Constraints for Table FACT_BATTING_STAT
+--  ddl for index fact_batting_stat_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("SPORT_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("GENDER_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("CATEGORY_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("CLUB_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("SEASON_YEAR" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" MODIFY ("PLAYER_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "FACT_BATTING_STAT_PK" PRIMARY KEY ("SPORT_ID", "GENDER_ID", "CATEGORY_ID", "CLUB_ID", "SEASON_YEAR", "PLAYER_ID", "TEAM_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  create unique index c##baseball.fact_batting_stat_pk on c##baseball.fact_batting_stat (sport_id, gender_id, category_id, club_id, country_id, season_year, player_id, team_id)
+  pctfree 10 initrans 2 maxtrans 255
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
 --------------------------------------------------------
---  Ref Constraints for Table FACT_BATTING_STAT
+--  constraints for table fact_batting_stat
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "BATTING_STAT_SPORT_FK" FOREIGN KEY ("SPORT_ID", "GENDER_ID")
-	  REFERENCES "C##BASEBALL"."DIM_SPORT" ("ID", "GENDER") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "BATTING_STAT_CATEGORY_FK" FOREIGN KEY ("SPORT_ID", "GENDER_ID", "CATEGORY_ID")
-	  REFERENCES "C##BASEBALL"."DIM_CATEGORY" ("SPORT_ID", "GENDER", "ID") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "BATTING_STAT_CLUB_FK" FOREIGN KEY ("CLUB_ID")
-	  REFERENCES "C##BASEBALL"."DIM_CLUB" ("ID") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "BATTING_STAT_SEASON_FK" FOREIGN KEY ("SEASON_YEAR")
-	  REFERENCES "C##BASEBALL"."DIM_SEASON" ("SEASON_YEAR") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_BATTING_STAT" ADD CONSTRAINT "BATTING_STAT_PLAYER_FK" FOREIGN KEY ("PLAYER_ID")
-	  REFERENCES "C##BASEBALL"."DIM_PLAYER" ("ID") ENABLE;
+  alter table c##baseball.fact_batting_stat modify (sport_id not null enable);
+  alter table c##baseball.fact_batting_stat modify (gender_id not null enable);
+  alter table c##baseball.fact_batting_stat modify (category_id not null enable);
+  alter table c##baseball.fact_batting_stat modify (club_id not null enable);
+  alter table c##baseball.fact_batting_stat modify (country_id not null enable);
+  alter table c##baseball.fact_batting_stat modify (season_year not null enable);
+  alter table c##baseball.fact_batting_stat modify (player_id not null enable);
+  alter table c##baseball.fact_batting_stat add constraint fact_batting_stat_pk primary key (sport_id, gender_id, category_id, club_id, country_id, season_year, player_id, team_id)
+  using index pctfree 10 initrans 2 maxtrans 255
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users  enable;
+--------------------------------------------------------
+--  ref constraints for table fact_batting_stat
+--------------------------------------------------------
+
+  alter table c##baseball.fact_batting_stat add constraint batting_stat_sport_fk foreign key (sport_id, gender_id)
+	  references c##baseball.dim_sport (id, gender) enable;
+  alter table c##baseball.fact_batting_stat add constraint batting_stat_category_fk foreign key (sport_id, gender_id, category_id)
+	  references c##baseball.dim_category (sport_id, gender, id) enable;
+  alter table c##baseball.fact_batting_stat add constraint batting_stat_club_fk foreign key (club_id, country_id)
+	  references c##baseball.dim_club (id, country_id) enable;
+  alter table c##baseball.fact_batting_stat add constraint batting_stat_season_fk foreign key (season_year)
+	  references c##baseball.dim_season (season_year) enable;
+  alter table c##baseball.fact_batting_stat add constraint batting_stat_player_fk foreign key (player_id)
+	  references c##baseball.dim_player (id) enable;

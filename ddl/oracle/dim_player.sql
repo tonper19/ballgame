@@ -1,54 +1,54 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table DIM_PLAYER
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."DIM_PLAYER" 
-   (	"ID" VARCHAR2(16 BYTE), 
-	"LAST_NAME" VARCHAR2(255 BYTE), 
-	"FIRST_NAME" VARCHAR2(255 BYTE), 
-	"POSITION" VARCHAR2(16 BYTE), 
-	"BATS" VARCHAR2(10 BYTE), 
-	"THROWS" VARCHAR2(10 BYTE), 
-	"YOB" NUMBER, 
-	"UNIFORM_NUMBER" VARCHAR2(3 BYTE), 
-	"LICENSE_NUMBER" VARCHAR2(16 BYTE) DEFAULT null, 
-	"LICENSE_TYPE" VARCHAR2(8 BYTE) DEFAULT null
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index PLAYER_PK
+--  ddl for table dim_player
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."PLAYER_PK" ON "C##BASEBALL"."DIM_PLAYER" ("ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.dim_player
+   (	id varchar2(16 byte),
+	last_name varchar2(255 byte),
+	first_name varchar2(255 byte),
+	position varchar2(16 byte),
+	bats varchar2(10 byte),
+	throws varchar2(10 byte),
+	yob number,
+	uniform_number varchar2(3 byte),
+	license_number varchar2(16 byte) default null,
+	license_type varchar2(8 byte) default null
+   ) segment creation immediate
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
 --------------------------------------------------------
---  Constraints for Table DIM_PLAYER
+--  ddl for index player_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."DIM_PLAYER" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."DIM_PLAYER" ADD CONSTRAINT "PLAYER_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  create unique index c##baseball.player_pk on c##baseball.dim_player (id)
+  pctfree 10 initrans 2 maxtrans 255
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
+--------------------------------------------------------
+--  constraints for table dim_player
+--------------------------------------------------------
+
+  alter table c##baseball.dim_player modify (id not null enable);
+  alter table c##baseball.dim_player add constraint player_pk primary key (id)
+  using index pctfree 10 initrans 2 maxtrans 255
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users  enable;

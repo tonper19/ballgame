@@ -1,44 +1,44 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table DIM_SEASON
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."DIM_SEASON" 
-   (	"SEASON_YEAR" NUMBER
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index SEASON_PK
+--  ddl for table dim_season
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."SEASON_PK" ON "C##BASEBALL"."DIM_SEASON" ("SEASON_YEAR") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.dim_season
+   (	season_year number
+   ) segment creation immediate
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
 --------------------------------------------------------
---  Constraints for Table DIM_SEASON
+--  ddl for index season_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."DIM_SEASON" ADD CONSTRAINT "SEASON_PK" PRIMARY KEY ("SEASON_YEAR")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  create unique index c##baseball.season_pk on c##baseball.dim_season (season_year)
+  pctfree 10 initrans 2 maxtrans 255 compute statistics
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
+--------------------------------------------------------
+--  constraints for table dim_season
+--------------------------------------------------------
+
+  alter table c##baseball.dim_season add constraint season_pk primary key (season_year)
+  using index pctfree 10 initrans 2 maxtrans 255 compute statistics
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users  enable;

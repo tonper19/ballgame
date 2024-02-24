@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.863</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/01/28 11:34:39.070</modified_date>
+    <modified_date>2024/02/24 20:45:15.185</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -639,6 +639,9 @@
         <name>CLUB_ID</name>
       </field>
       <field>
+        <name>COUNTRY_ID</name>
+      </field>
+      <field>
         <name>SEASON_YEAR</name>
       </field>
       <field>
@@ -705,6 +708,10 @@
       <field>
         <column_name>CLUB_ID</column_name>
         <stream_name>CLUB_ID</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY_ID</column_name>
+        <stream_name>COUNTRY_ID</stream_name>
       </field>
       <field>
         <column_name>SEASON_YEAR</column_name>
@@ -811,69 +818,95 @@
     <fields>
       <field>
         <name>SPORT_ID</name>
+        <rename/>
       </field>
       <field>
         <name>GENDER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CATEGORY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CLUB_ID</name>
+        <rename/>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>SEASON_YEAR</name>
+        <rename/>
       </field>
       <field>
         <name>PLAYER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>AT_BATS</name>
+        <rename/>
       </field>
       <field>
         <name>RUNS</name>
+        <rename/>
       </field>
       <field>
         <name>HITS</name>
+        <rename/>
       </field>
       <field>
         <name>DOUBLES</name>
+        <rename/>
       </field>
       <field>
         <name>TRIPLES</name>
+        <rename/>
       </field>
       <field>
         <name>HOME_RUNS</name>
+        <rename/>
       </field>
       <field>
         <name>RBI</name>
+        <rename/>
       </field>
       <field>
         <name>TOTAL_BASES</name>
+        <rename/>
       </field>
       <field>
         <name>BASE_ON_BALLS</name>
+        <rename/>
       </field>
       <field>
         <name>HIT_BY_PITCHS</name>
+        <rename/>
       </field>
       <field>
         <name>STRIKE_OUTS</name>
+        <rename/>
       </field>
       <field>
         <name>GROUND_INTO_DOUBLEPLAYS</name>
+        <rename/>
       </field>
       <field>
         <name>SACRFICE_FLIES</name>
+        <rename/>
       </field>
       <field>
         <name>BUNTS</name>
+        <rename/>
       </field>
       <field>
         <name>STOLEN_BASES</name>
+        <rename/>
       </field>
       <field>
         <name>CAUGHT_STEALING</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -922,6 +955,9 @@
       </field>
       <field>
         <name>CLUB_ID</name>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
       </field>
       <field>
         <name>SEASON_YEAR</name>
@@ -990,6 +1026,10 @@
       <field>
         <column_name>CLUB_ID</column_name>
         <stream_name>CLUB_ID</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY_ID</column_name>
+        <stream_name>COUNTRY_ID</stream_name>
       </field>
       <field>
         <column_name>SEASON_YEAR</column_name>
@@ -1076,54 +1116,75 @@
     <fields>
       <field>
         <name>SPORT_ID</name>
+        <rename/>
       </field>
       <field>
         <name>GENDER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CATEGORY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CLUB_ID</name>
+        <rename/>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>SEASON_YEAR</name>
+        <rename/>
       </field>
       <field>
         <name>PLAYER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>GAMES_PLAYED_AT_POSITION</name>
+        <rename/>
       </field>
       <field>
         <name>TOTAL_CHANCES</name>
+        <rename/>
       </field>
       <field>
         <name>TOTAL_SUCCESSFUL_CHANCES</name>
+        <rename/>
       </field>
       <field>
         <name>PUTOUTS</name>
+        <rename/>
       </field>
       <field>
         <name>ASSISTS</name>
+        <rename/>
       </field>
       <field>
         <name>ERRORS</name>
+        <rename/>
       </field>
       <field>
         <name>DOUBLEPLAYS</name>
+        <rename/>
       </field>
       <field>
         <name>STOLEN_BASES_AGAINST</name>
+        <rename/>
       </field>
       <field>
         <name>PLAYERS_CAUGHT_STEELING</name>
+        <rename/>
       </field>
       <field>
         <name>PASSED_BALLS</name>
+        <rename/>
       </field>
       <field>
         <name>CATCHER_INTERFERENCES</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1172,6 +1233,9 @@
       </field>
       <field>
         <name>CLUB_ID</name>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
       </field>
       <field>
         <name>SEASON_YEAR</name>
@@ -1240,6 +1304,10 @@
       <field>
         <column_name>CLUB_ID</column_name>
         <stream_name>CLUB_ID</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY_ID</column_name>
+        <stream_name>COUNTRY_ID</stream_name>
       </field>
       <field>
         <column_name>SEASON_YEAR</column_name>
@@ -1386,99 +1454,135 @@
     <fields>
       <field>
         <name>SPORT_ID</name>
+        <rename/>
       </field>
       <field>
         <name>GENDER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CATEGORY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>CLUB_ID</name>
+        <rename/>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
+        <rename/>
       </field>
       <field>
         <name>SEASON_YEAR</name>
+        <rename/>
       </field>
       <field>
         <name>PLAYER_ID</name>
+        <rename/>
       </field>
       <field>
         <name>WINS</name>
+        <rename/>
       </field>
       <field>
         <name>LOSSES</name>
+        <rename/>
       </field>
       <field>
         <name>GAMES</name>
+        <rename/>
       </field>
       <field>
         <name>GAMES_STARTED</name>
+        <rename/>
       </field>
       <field>
         <name>SAVES</name>
+        <rename/>
       </field>
       <field>
         <name>COMPLETE_GAMES</name>
+        <rename/>
       </field>
       <field>
         <name>SHUTOUTS</name>
+        <rename/>
       </field>
       <field>
         <name>INNINGS_PITCHED_LABEL</name>
+        <rename/>
       </field>
       <field>
         <name>INNINGS_PITCHED_DEC</name>
+        <rename/>
       </field>
       <field>
         <name>INNING_OUTS_PITCHED</name>
+        <rename/>
       </field>
       <field>
         <name>HITS</name>
+        <rename/>
       </field>
       <field>
         <name>RUNS</name>
+        <rename/>
       </field>
       <field>
         <name>EARNED_RUNS</name>
+        <rename/>
       </field>
       <field>
         <name>WALKS</name>
+        <rename/>
       </field>
       <field>
         <name>STRIKE_OUTS</name>
+        <rename/>
       </field>
       <field>
         <name>DOUBLES</name>
+        <rename/>
       </field>
       <field>
         <name>TRIPLES</name>
+        <rename/>
       </field>
       <field>
         <name>HOME_RUNS</name>
+        <rename/>
       </field>
       <field>
         <name>AT_BATS</name>
+        <rename/>
       </field>
       <field>
         <name>WILD_PITCHES</name>
+        <rename/>
       </field>
       <field>
         <name>HIT_BY_PITCHS</name>
+        <rename/>
       </field>
       <field>
         <name>BALKS</name>
+        <rename/>
       </field>
       <field>
         <name>SACRIFICE_FLIES_AGAINST</name>
+        <rename/>
       </field>
       <field>
         <name>BUNTS_AGAINST</name>
+        <rename/>
       </field>
       <field>
         <name>GROUND_OUTS</name>
+        <rename/>
       </field>
       <field>
         <name>FLY_OUTS</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1645,6 +1749,7 @@
       ,gender_id
       ,division  category_id
       ,team  club_id
+      ,country_id
       ,season_year
       ,?  player_id
       ,ab  at_bats
@@ -1708,6 +1813,7 @@
       ,gender_id
       ,division  category_id
       ,team  club_id
+      ,country_id
       ,season_year
       ,?  player_id
       ,g  games_played_at_position
@@ -1766,6 +1872,7 @@
       ,gender_id
       ,division  category_id
       ,team  club_id
+      ,country_id
       ,season_year
       ,?  player_id
       ,w  wins
@@ -1876,6 +1983,14 @@
         <presorted>N</presorted>
       </field>
       <field>
+        <name>COUNTRY_ID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
         <name>SEASON_YEAR</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
@@ -1958,6 +2073,14 @@
         <presorted>N</presorted>
       </field>
       <field>
+        <name>COUNTRY_ID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
         <name>SEASON_YEAR</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
@@ -2033,6 +2156,14 @@
       </field>
       <field>
         <name>CLUB_ID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>COUNTRY_ID</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>

@@ -3,87 +3,108 @@ copyright (c) 2024, antonio alberto pérez pérez
 all rights reserved.
 
 this source code is licensed under the bsd-style license found in the
-license file in the root directory of this source tree. 
+license file in the root directory of this source tree.
 */
 
 -- Belgian Baseball & Softball Datamart Query
 -- 31/01/2024  Tony Pérez
+-- 24/02/2024  Tony Pérez  Introduced European Leagues
 
 with sport_category as
 (
   select dsp.id  sport_id
-        ,dsp.gender  gender_id 
+        ,dsp.gender  gender_id
         ,dsp.name  sport_name
         ,dsp.wiki  sport_wiki
         ,dca.id  category_id
+        ,dca.country_id  country_id
         ,dca.era_innings
         ,dca.name  category_name
+        ,dco.country_name  federation_country_name
+        ,dco.federation_id  federation_id
+        ,dco.address  federation_address
+        ,dco.postal_code  federation_postal_code
+        ,dco.city  federation_city
+        ,dco.province  federation_province_region
+        ,dco.email  federation_email
+        ,dco.webpage  federation_webpage
     from c##baseball.dim_sport  dsp
    inner join c##baseball.dim_category  dca
       on dsp.id  = dca.sport_id
      and dsp.gender = dca.gender
+   inner join c##baseball.dim_country dco
+      on dca.country_id = dco.country_id
 )
 ,batting_stat as
 (
   select fbs.*
          -- SABR metric calculations
          -- League/Season OBS (used to calculate OPS+ in a MicroStrategy metric)
-        ,( sum(fbs.hits) over (partition by 
+        ,( sum(fbs.hits) over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.season_year)  
-         + sum(fbs.base_on_balls) 
-                         over (partition by 
+                              ,fbs.country_id
+                              ,fbs.season_year)
+         + sum(fbs.base_on_balls)
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.season_year)                      
-         + sum(fbs.hit_by_pitchs) 
-                         over (partition by 
+                              ,fbs.country_id
+                              ,fbs.season_year)
+         + sum(fbs.hit_by_pitchs)
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)
          )  league_obp_dividend
-        ,( sum(fbs.at_bats) 
-                         over (partition by 
+        ,( sum(fbs.at_bats)
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)
-         + sum(fbs.base_on_balls) 
-                         over (partition by 
+         + sum(fbs.base_on_balls)
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.season_year)                      
-         + sum(fbs.hit_by_pitchs) 
-                         over (partition by 
-                               fbs.sport_id
-                              ,fbs.gender_id
-                              ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)
-         + sum(fbs.sacrfice_flies) 
-                         over (partition by 
+         + sum(fbs.hit_by_pitchs)
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
+                              ,fbs.country_id
+                              ,fbs.season_year)
+         + sum(fbs.sacrfice_flies)
+                         over (partition by
+                               fbs.sport_id
+                              ,fbs.gender_id
+                              ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)
 
          )  league_obp_divisor
          -- League/Season SLG (used to calculate OPS+ in a MicroStrategy metric)
         ,sum(fbs.total_bases)
-                         over (partition by 
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)  league_slg_dividend
         ,sum(fbs.at_bats)
-                         over (partition by 
+                         over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
+                              ,fbs.country_id
                               ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
@@ -98,55 +119,71 @@ with sport_category as
         ,dcl.secretary  bat_club_secretary
         ,dcl.treasurer  bat_club_treasurer
         ,dcl.governance_person  bat_governance_person
+        ,sc.federation_country_name  bat_federation_country_name
+        ,sc.federation_id  bat_federation_id
+        ,sc.federation_address  bat_federation_address
+        ,sc.federation_postal_code  bat_federation_postal_code
+        ,sc.federation_city  bat_federation_city
+        ,sc.federation_province_region  bat_federation_province_region
+        ,sc.federation_email  bat_federation_email
+        ,sc.federation_webpage  bat_federation_webpage
     from c##baseball.fact_batting_stat  fbs
    inner join sport_category  sc
       on fbs.sport_id = sc.sport_id
      and fbs.gender_id = sc.gender_id
      and fbs.category_id = sc.category_id
+     and fbs.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on fbs.club_id = dcl.id
+     and fbs.country_id = dcl.country_id
 )
 ,pitching_stat as
 (
   select fps.*
          -- SABR metrics
-        ,sum(fps.earned_runs) 
-                         over (partition by 
+        ,sum(fps.earned_runs)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_earned_runs
-        ,sum(fps.innings_pitched_dec) 
-                         over (partition by 
+        ,sum(fps.innings_pitched_dec)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_innings_pitched
-        ,sum(fps.home_runs) 
-                         over (partition by 
+        ,sum(fps.home_runs)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_home_runs
-        ,sum(fps.walks) 
-                         over (partition by 
+        ,sum(fps.walks)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_walks
-        ,sum(fps.hit_by_pitchs) 
-                         over (partition by 
+        ,sum(fps.hit_by_pitchs)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_hit_by_pitchs
-        ,sum(fps.strike_outs) 
-                         over (partition by 
+        ,sum(fps.strike_outs)
+                         over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
+                              ,fps.country_id
                               ,fps.season_year)  league_strike_outs
-        ,sc.era_innings  
+        ,sc.era_innings
         ,dcl.name  pit_club_name
         ,dcl.address  pit_club_address
         ,dcl.postal_code  pit_club_postal_code
@@ -160,13 +197,23 @@ with sport_category as
         ,dcl.secretary  pit_club_secretary
         ,dcl.treasurer  pit_club_treasurer
         ,dcl.governance_person  pit_governance_person
+        ,sc.federation_country_name  pit_federation_country_name
+        ,sc.federation_id  pit_federation_id
+        ,sc.federation_address  pit_federation_address
+        ,sc.federation_postal_code  pit_federation_postal_code
+        ,sc.federation_city  pit_federation_city
+        ,sc.federation_province_region  pit_federation_province_region
+        ,sc.federation_email  pit_federation_email
+        ,sc.federation_webpage  pit_federation_webpage
     from c##baseball.fact_pitching_stat  fps
    inner join sport_category  sc
       on fps.sport_id = sc.sport_id
      and fps.gender_id = sc.gender_id
      and fps.category_id = sc.category_id
+     and fps.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on fps.club_id = dcl.id
+     and fps.country_id = dcl.country_id
 )
 ,fielding_stat as
 (
@@ -184,13 +231,23 @@ with sport_category as
         ,dcl.secretary  fld_club_secretary
         ,dcl.treasurer  fld_club_treasurer
         ,dcl.governance_person  fld_governance_person
+        ,sc.federation_country_name  fld_federation_country_name
+        ,sc.federation_id  fld_federation_id
+        ,sc.federation_address  fld_federation_address
+        ,sc.federation_postal_code  fld_federation_postal_code
+        ,sc.federation_city  fld_federation_city
+        ,sc.federation_province_region  fld_federation_province_region
+        ,sc.federation_email  fld_federation_email
+        ,sc.federation_webpage  fld_federation_webpage
     from c##baseball.fact_fielding_stat  ffs
    inner join sport_category  sc
       on ffs.sport_id = sc.sport_id
      and ffs.gender_id = sc.gender_id
      and ffs.category_id = sc.category_id
+     and ffs.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on ffs.club_id = dcl.id
+     and ffs.country_id = dcl.country_id
 )
 ,stats_bp as
 (
@@ -198,6 +255,7 @@ with sport_category as
         ,coalesce(fbs.gender_id,fps.gender_id)  gender_id
         ,coalesce(fbs.category_id,fps.category_id)  category_id
         ,coalesce(fbs.club_id,fps.club_id)  club_id
+        ,coalesce(fbs.country_id,fps.country_id)  country_id
         ,coalesce(fbs.season_year,fps.season_year)  season_year
         ,coalesce(fbs.player_id,fps.player_id)  player_id
         ,coalesce(fbs.team_id,fps.team_id)  team_id
@@ -219,7 +277,7 @@ with sport_category as
         ,fbs.caught_stealing  fbs_caught_stealing
          -- SABR metrics
         ,round((fbs.league_obp_dividend / fbs.league_obp_divisor), 3) fbs_league_obp
-        ,round((fbs.league_slg_dividend / fbs.league_slg_divisor), 3) fbs_league_slg 
+        ,round((fbs.league_slg_dividend / fbs.league_slg_divisor), 3) fbs_league_slg
          --
         ,fps.wins  fps_wins
         ,fps.losses  fps_losses
@@ -249,7 +307,7 @@ with sport_category as
         ,fps.ground_outs  fps_ground_outs
         ,fps.fly_outs  fps_fly_outs
          -- SABR metrics
-        ,fps.league_earned_runs  fps_league_earned_runs 
+        ,fps.league_earned_runs  fps_league_earned_runs
         ,fps.league_innings_pitched  fps_league_innings_pitched
         ,fps.league_home_runs  fps_league_home_runs
         ,fps.league_walks  fps_league_walks
@@ -275,12 +333,21 @@ with sport_category as
         ,coalesce(bat_club_secretary,pit_club_secretary)  club_secretary
         ,coalesce(bat_club_treasurer,pit_club_treasurer)  club_treasurer
         ,coalesce(bat_governance_person,pit_governance_person)  club_governance_person
-     from batting_stat  fbs 
+        ,coalesce(bat_federation_country_name, pit_federation_country_name) federation_country_name
+        ,coalesce(bat_federation_id, pit_federation_id)  federation_id
+        ,coalesce(bat_federation_address, pit_federation_address) federation_address
+        ,coalesce(bat_federation_postal_code, pit_federation_postal_code)  federation_postal_code
+        ,coalesce(bat_federation_city, pit_federation_city) federation_city
+        ,coalesce(bat_federation_province_region, pit_federation_province_region)  federation_province_region
+        ,coalesce(bat_federation_email, pit_federation_email)  federation_email
+        ,coalesce(bat_federation_webpage, pit_federation_webpage)  federation_webpage
+     from batting_stat  fbs
      full outer join pitching_stat  fps
        on fbs.sport_id = fps.sport_id
       and fbs.gender_id = fps.gender_id
       and fbs.category_id = fps.category_id
       and fbs.club_id = fps.club_id
+      and fbs.country_id = fps.country_id
       and fbs.season_year = fps.season_year
       and fbs.player_id = fps.player_id
       and fbs.team_id = fps.team_id
@@ -291,6 +358,7 @@ with sport_category as
         ,coalesce(sbp.gender_id,ffs.gender_id)  gender_id
         ,coalesce(sbp.category_id,ffs.category_id)  category_id
         ,coalesce(sbp.club_id,ffs.club_id)  club_id
+        ,coalesce(sbp.country_id,ffs.country_id)  country_id
         ,coalesce(sbp.season_year,ffs.season_year)  season_year
         ,coalesce(sbp.player_id,ffs.player_id)  player_id
         ,coalesce(sbp.team_id,ffs.team_id)  team_id
@@ -313,7 +381,7 @@ with sport_category as
          -- SABR metrics
         ,fbs_league_obp
         ,fbs_league_slg
-         -- 
+         --
         ,fps_wins
         ,fps_losses
         ,fps_games
@@ -342,7 +410,7 @@ with sport_category as
         ,fps_ground_outs
         ,fps_fly_outs
          -- SABR metrics
-        ,fps_league_earned_runs 
+        ,fps_league_earned_runs
         ,fps_league_innings_pitched
         ,fps_league_home_runs
         ,fps_league_walks
@@ -374,19 +442,28 @@ with sport_category as
         ,coalesce(club_secretary,fld_club_secretary)  club_secretary
         ,coalesce(club_treasurer,fld_club_treasurer)  club_treasurer
         ,coalesce(club_governance_person,fld_governance_person)  club_governance_person
-     from stats_bp  sbp 
+        ,coalesce(federation_country_name, fld_federation_country_name) federation_country_name
+        ,coalesce(federation_id, fld_federation_id)  federation_id
+        ,coalesce(federation_address, fld_federation_address) federation_address
+        ,coalesce(federation_postal_code, fld_federation_postal_code)  federation_postal_code
+        ,coalesce(federation_city, fld_federation_city) federation_city
+        ,coalesce(federation_province_region, fld_federation_province_region)  federation_province_region
+        ,coalesce(federation_email, fld_federation_email)  federation_email
+        ,coalesce(federation_webpage, fld_federation_webpage)  federation_webpage
+     from stats_bp  sbp
      full outer join fielding_stat  ffs
        on sbp.sport_id = ffs.sport_id
       and sbp.gender_id = ffs.gender_id
       and sbp.category_id = ffs.category_id
       and sbp.club_id = ffs.club_id
+      and sbp.country_id = ffs.country_id
       and sbp.season_year = ffs.season_year
       and sbp.player_id = ffs.player_id
       and sbp.team_id = ffs.team_id
 )
 select dpl.last_name  player_last_name
       ,dpl.first_name  player_first_name
-      ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name)  player_full_name 
+      ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name)  player_full_name
       ,dpl.position  player_position
       ,dpl.bats  player_bats
       ,dpl.throws  player_throws
@@ -398,5 +475,5 @@ select dpl.last_name  player_last_name
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
- order by 1   
+ order by 1
 ;

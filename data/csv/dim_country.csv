@@ -1,0 +1,5 @@
+country_id,country_name,federation_id,address,postal_code,city,province,email,webpage
+BE,Belgium,KBBSF/FRBBS,Meistraat 21 b63,2000,Antwerpen,,info@kbbsf-frbbs.be,https://www.kbbsf-frbbs.be/
+NL,The Netherlands,KNBSB,Kelvinbaan 48 1e etage,3439 MT,Nieuwegein,,info@knbsb.nl,https://www.knbsb.nl/
+ES,Spain,RFEBS,C/ Coslada 10 4º izq.,28028,Madrid,Comunidad de Madrid,rfebs@rfebs.es,https://www.rfebs.es/es
+IT,Italy,FIBS,Viale Tiziano 74,00196,Roma,RM,segreteria@fibs.it,https://www.fibs.it/en

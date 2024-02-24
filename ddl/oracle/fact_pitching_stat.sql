@@ -1,86 +1,88 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Tuesday-December-26-2023   
+--  file created - tuesday-december-26-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table FACT_PITCHING_STAT
---------------------------------------------------------
-
-  CREATE TABLE "C##BASEBALL"."FACT_PITCHING_STAT" 
-   (	"SPORT_ID" VARCHAR2(8 BYTE), 
-	"GENDER_ID" VARCHAR2(8 BYTE), 
-	"CATEGORY_ID" VARCHAR2(8 BYTE), 
-	"CLUB_ID" VARCHAR2(8 BYTE), 
-	"SEASON_YEAR" NUMBER(*,0), 
-	"PLAYER_ID" VARCHAR2(16 BYTE), 
-	"TEAM_ID" NUMBER(*,0), 
-	"WINS" NUMBER(*,0), 
-	"LOSSES" NUMBER(*,0), 
-	"GAMES" NUMBER(*,0), 
-	"GAMES_STARTED" NUMBER(*,0), 
-	"SAVES" NUMBER(*,0), 
-	"COMPLETE_GAMES" NUMBER(*,0), 
-	"SHUTOUTS" NUMBER(*,0), 
-	"INNINGS_PITCHED_LABEL" NUMBER(*,1), 
-	"INNINGS_PITCHED_DEC" NUMBER, 
-	"INNING_OUTS_PITCHED" NUMBER(*,0), 
-	"HITS" NUMBER(*,0), 
-	"RUNS" NUMBER(*,0), 
-	"EARNED_RUNS" NUMBER(*,0), 
-	"WALKS" NUMBER(*,0), 
-	"STRIKE_OUTS" NUMBER(*,0), 
-	"DOUBLES" NUMBER(*,0), 
-	"TRIPLES" NUMBER(*,0), 
-	"HOME_RUNS" NUMBER(*,0), 
-	"AT_BATS" NUMBER(*,0), 
-	"WILD_PITCHES" NUMBER(*,0), 
-	"HIT_BY_PITCHS" NUMBER(*,0), 
-	"BALKS" NUMBER(*,0), 
-	"SACRIFICE_FLIES_AGAINST" NUMBER(*,0), 
-	"BUNTS_AGAINST" NUMBER(*,0), 
-	"GROUND_OUTS" NUMBER(*,0), 
-	"FLY_OUTS" NUMBER(*,0)
-   ) SEGMENT CREATION DEFERRED 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index FACT_PITCHING_STAT_PK
+--  ddl for table fact_pitching_stat
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##BASEBALL"."FACT_PITCHING_STAT_PK" ON "C##BASEBALL"."FACT_PITCHING_STAT" ("SPORT_ID", "GENDER_ID", "CATEGORY_ID", "CLUB_ID", "SEASON_YEAR", "PLAYER_ID", "TEAM_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  TABLESPACE "USERS" ;
+  create table c##baseball.fact_pitching_stat
+   (	sport_id varchar2(8 byte),
+	gender_id varchar2(8 byte),
+	category_id varchar2(20 byte),
+	club_id varchar2(8 byte),
+  country_id varchar2(2 byte),  -- 20240224
+	season_year number(*,0),
+	player_id varchar2(16 byte),
+	team_id number(*,0),
+	wins number(*,0),
+	losses number(*,0),
+	games number(*,0),
+	games_started number(*,0),
+	saves number(*,0),
+	complete_games number(*,0),
+	shutouts number(*,0),
+	innings_pitched_label number(*,1),
+	innings_pitched_dec number,
+	inning_outs_pitched number(*,0),
+	hits number(*,0),
+	runs number(*,0),
+	earned_runs number(*,0),
+	walks number(*,0),
+	strike_outs number(*,0),
+	doubles number(*,0),
+	triples number(*,0),
+	home_runs number(*,0),
+	at_bats number(*,0),
+	wild_pitches number(*,0),
+	hit_by_pitchs number(*,0),
+	balks number(*,0),
+	sacrifice_flies_against number(*,0),
+	bunts_against number(*,0),
+	ground_outs number(*,0),
+	fly_outs number(*,0)
+   ) segment creation deferred
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  tablespace users ;
 --------------------------------------------------------
---  Constraints for Table FACT_PITCHING_STAT
+--  ddl for index fact_pitching_stat_pk
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("SPORT_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("GENDER_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("CATEGORY_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("CLUB_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("SEASON_YEAR" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" MODIFY ("PLAYER_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "FACT_PITCHING_STAT_PK" PRIMARY KEY ("SPORT_ID", "GENDER_ID", "CATEGORY_ID", "CLUB_ID", "SEASON_YEAR", "PLAYER_ID", "TEAM_ID")
-  USING INDEX "C##BASEBALL"."FACT_PITCHING_STAT_PK"  ENABLE;
+  create unique index c##baseball.fact_pitching_stat_pk on c##baseball.fact_pitching_stat (sport_id, gender_id, category_id, club_id, country_id, season_year, player_id, team_id)
+  pctfree 10 initrans 2 maxtrans 255 compute statistics
+  tablespace users ;
 --------------------------------------------------------
---  Ref Constraints for Table FACT_PITCHING_STAT
+--  constraints for table fact_pitching_stat
 --------------------------------------------------------
 
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "PITCHING_STAT_SPORT_FK" FOREIGN KEY ("SPORT_ID", "GENDER_ID")
-	  REFERENCES "C##BASEBALL"."DIM_SPORT" ("ID", "GENDER") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "PITCHING_STAT_CATEGORY_FK" FOREIGN KEY ("SPORT_ID", "GENDER_ID", "CATEGORY_ID")
-	  REFERENCES "C##BASEBALL"."DIM_CATEGORY" ("SPORT_ID", "GENDER", "ID") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "PITCHING_STAT_CLUB_FK" FOREIGN KEY ("CLUB_ID")
-	  REFERENCES "C##BASEBALL"."DIM_CLUB" ("ID") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "PITCHING_STAT_SEASON_FK" FOREIGN KEY ("SEASON_YEAR")
-	  REFERENCES "C##BASEBALL"."DIM_SEASON" ("SEASON_YEAR") ENABLE;
-  ALTER TABLE "C##BASEBALL"."FACT_PITCHING_STAT" ADD CONSTRAINT "PITCHING_STAT_PLAYER_FK" FOREIGN KEY ("PLAYER_ID")
-	  REFERENCES "C##BASEBALL"."DIM_PLAYER" ("ID") ENABLE;
+  alter table c##baseball.fact_pitching_stat modify (sport_id not null enable);
+  alter table c##baseball.fact_pitching_stat modify (gender_id not null enable);
+  alter table c##baseball.fact_pitching_stat modify (category_id not null enable);
+  alter table c##baseball.fact_pitching_stat modify (club_id not null enable);
+  alter table c##baseball.fact_pitching_stat modify (country_id not null enable);
+  alter table c##baseball.fact_pitching_stat modify (season_year not null enable);
+  alter table c##baseball.fact_pitching_stat modify (player_id not null enable);
+  alter table c##baseball.fact_pitching_stat add constraint fact_pitching_stat_pk primary key (sport_id, gender_id, category_id, club_id, country_id, season_year, player_id, team_id)
+  using index c##baseball.fact_pitching_stat_pk  enable;
+--------------------------------------------------------
+--  ref constraints for table fact_pitching_stat
+--------------------------------------------------------
+
+  alter table c##baseball.fact_pitching_stat add constraint pitching_stat_sport_fk foreign key (sport_id, gender_id)
+	  references c##baseball.dim_sport (id, gender) enable;
+  alter table c##baseball.fact_pitching_stat add constraint pitching_stat_category_fk foreign key (sport_id, gender_id, category_id)
+	  references c##baseball.dim_category (sport_id, gender, id) enable;
+  alter table c##baseball.fact_pitching_stat add constraint pitching_stat_club_fk foreign key (club_id, country_id)
+	  references c##baseball.dim_club (id, country_id) enable;
+  alter table c##baseball.fact_pitching_stat add constraint pitching_stat_season_fk foreign key (season_year)
+	  references c##baseball.dim_season (season_year) enable;
+  alter table c##baseball.fact_pitching_stat add constraint pitching_stat_player_fk foreign key (player_id)
+	  references c##baseball.dim_player (id) enable;

@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.822</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/02/01 07:13:21.935</modified_date>
+    <modified_date>2024/02/24 20:45:07.345</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -570,6 +570,11 @@
       <to>Player DIM Out</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>CSV Country input</from>
+      <to>Country DIM Out</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>CSV Category input</name>
@@ -642,6 +647,17 @@
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>COUNTRY_ID</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>NAME</name>
         <type>String</type>
         <format/>
@@ -697,7 +713,7 @@
         <name>ID</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>3</length>
@@ -705,13 +721,24 @@
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>COUNTRY_ID</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>NAME</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>255</length>
+        <length>36</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -719,10 +746,10 @@
         <name>ADDRESS</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>255</length>
+        <length>57</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -730,10 +757,10 @@
         <name>POSTAL_CODE</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>16</length>
+        <length>7</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -741,10 +768,10 @@
         <name>CITY</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>21</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -752,10 +779,10 @@
         <name>PROVINCE</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>21</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -763,10 +790,10 @@
         <name>COUNTRY</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>11</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -774,10 +801,10 @@
         <name>EMAIL</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>255</length>
+        <length>39</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -785,10 +812,10 @@
         <name>WEBPAGE</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>255</length>
+        <length>60</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -796,10 +823,10 @@
         <name>BALLPARK_ID</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>8</length>
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -807,10 +834,10 @@
         <name>PRESIDENT</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>21</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -818,10 +845,10 @@
         <name>SECRETARY</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>33</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -829,10 +856,10 @@
         <name>TREASURER</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>29</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -840,10 +867,10 @@
         <name>GOVERNANCE_PERSON</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
+        <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>50</length>
+        <length>29</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -859,6 +886,146 @@
     <GUI>
       <xloc>224</xloc>
       <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CSV Country input</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${BALLGAME_CSV_DIRECTORY}dim_country.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>country_id</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>country_name</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>federation_id</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>11</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>address</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>22</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>postal_code</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>7</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>city</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>10</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>province</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>19</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>email</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>19</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>webpage</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>27</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1045,6 +1212,10 @@
         <stream_name>ERA_INNINGS</stream_name>
       </field>
       <field>
+        <column_name>COUNTRY_ID</column_name>
+        <stream_name>COUNTRY_ID</stream_name>
+      </field>
+      <field>
         <column_name>NAME</column_name>
         <stream_name>NAME</stream_name>
       </field>
@@ -1095,6 +1266,10 @@
       <field>
         <column_name>ID</column_name>
         <stream_name>ID</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY_ID</column_name>
+        <stream_name>COUNTRY_ID</stream_name>
       </field>
       <field>
         <column_name>NAME</column_name>
@@ -1164,6 +1339,86 @@
     </GUI>
   </step>
   <step>
+    <name>Country DIM Out</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Oracle Docker Ballgame</connection>
+    <schema>C##BASEBALL</schema>
+    <table>DIM_COUNTRY</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>country_id</column_name>
+        <stream_name>country_id</stream_name>
+      </field>
+      <field>
+        <column_name>country_name</column_name>
+        <stream_name>country_name</stream_name>
+      </field>
+      <field>
+        <column_name>federation_id</column_name>
+        <stream_name>federation_id</stream_name>
+      </field>
+      <field>
+        <column_name>address</column_name>
+        <stream_name>address</stream_name>
+      </field>
+      <field>
+        <column_name>postal_code</column_name>
+        <stream_name>postal_code</stream_name>
+      </field>
+      <field>
+        <column_name>city</column_name>
+        <stream_name>city</stream_name>
+      </field>
+      <field>
+        <column_name>province</column_name>
+        <stream_name>province</stream_name>
+      </field>
+      <field>
+        <column_name>email</column_name>
+        <stream_name>email</stream_name>
+      </field>
+      <field>
+        <column_name>webpage</column_name>
+        <stream_name>webpage</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Database join</name>
     <type>DBJoin</type>
     <description/>
@@ -1175,7 +1430,7 @@
       <schema_name/>
     </partitioning>
     <connection>Oracle Docker Baseball</connection>
-    <rowlimit>0</rowlimit>
+    <rowlimit>1</rowlimit>
     <sql>select position
       ,bats
       ,throws
@@ -1201,7 +1456,7 @@
     </remotesteps>
     <GUI>
       <xloc>576</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1277,7 +1532,7 @@
     </remotesteps>
     <GUI>
       <xloc>928</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1380,7 +1635,7 @@
     </remotesteps>
     <GUI>
       <xloc>752</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1420,7 +1675,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1612,7 +1867,7 @@
     </remotesteps>
     <GUI>
       <xloc>224</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/01/26 17:55:18.056</modified_date>
+  <modified_date>2024/02/24 21:52:37.980</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -418,7 +418,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>285</xloc>
+      <xloc>464</xloc>
       <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
@@ -483,8 +483,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>727</xloc>
-      <yloc>96</yloc>
+      <xloc>1392</xloc>
+      <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -523,8 +523,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1169</xloc>
-      <yloc>96</yloc>
+      <xloc>1392</xloc>
+      <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -563,7 +563,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1390</xloc>
+      <xloc>720</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -643,8 +643,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1392</xloc>
-      <yloc>264</yloc>
+      <xloc>896</xloc>
+      <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -683,7 +683,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>948</xloc>
+      <xloc>528</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -728,6 +728,10 @@
           <schemaname>c##baseball</schemaname>
         </field>
         <field>
+          <name>DIM_COUNTRY</name>
+          <schemaname/>
+        </field>
+        <field>
           <name>RSLT_PLAYER</name>
           <schemaname>c##baseball</schemaname>
         </field>
@@ -745,7 +749,7 @@
         </field>
         <field>
           <name>STG_PLAYER</name>
-          <schemaname/>
+          <schemaname>c##baseball</schemaname>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -806,7 +810,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>506</xloc>
+      <xloc>352</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -846,7 +850,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>506</xloc>
+      <xloc>736</xloc>
       <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
@@ -886,8 +890,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>948</xloc>
-      <yloc>96</yloc>
+      <xloc>1392</xloc>
+      <yloc>240</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -926,8 +930,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1390</xloc>
-      <yloc>96</yloc>
+      <xloc>1056</xloc>
+      <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -966,8 +970,48 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
+      <xloc>208</xloc>
       <yloc>432</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>stage_player_ESNL</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>${Internal.Entry.Current.Directory}stage_player_ESNL</transname>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>1</nr>
+      <xloc>272</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1006,15 +1050,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>stage_player</from>
-      <to>stage_batting_stats_bb</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -1228,6 +1263,33 @@
       <from>Datamart</from>
       <to>Abort</to>
       <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>stage_player</from>
+      <to>stage_player_ESNL</to>
+      <from_nr>0</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>stage_player_ESNL</from>
+      <to>stage_batting_stats_bb</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>stage_player_ESNL</from>
+      <to>Abort</to>
+      <from_nr>1</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>

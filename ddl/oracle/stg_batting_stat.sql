@@ -1,50 +1,51 @@
 /*
-Copyright (c) 2023, Antonio Alberto Pérez Pérez
-All rights reserved.
+copyright (c) 2023, antonio alberto pérez pérez
+all rights reserved.
 
-This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree.
+this source code is licensed under the bsd-style license found in the
+license file in the root directory of this source tree.
 */
 
 --------------------------------------------------------
---  File created - Monday-December-25-2023   
+--  file created - monday-december-25-2023
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table STG_BATTING_STAT
+--  ddl for table stg_batting_stat
 --------------------------------------------------------
 
-  CREATE TABLE "C##BASEBALL"."STG_BATTING_STAT" 
-   (	"SPORT_ID" VARCHAR2(8 BYTE), 
-	"DIVISION" VARCHAR2(8 BYTE), 
-	"GENDER_ID" VARCHAR2(8 BYTE), 
-	"SEASON_YEAR" NUMBER(*,0), 
-	"LAST_NAME" VARCHAR2(255 BYTE), 
-	"FIRST_NAME" VARCHAR2(255 BYTE), 
-	"TEAM" VARCHAR2(3 BYTE), 
-	"AB" NUMBER(*,0), 
-	"R" NUMBER(*,0), 
-	"H" NUMBER(*,0), 
-	"H2" NUMBER(*,0), 
-	"H3" NUMBER(*,0), 
-	"HR" NUMBER(*,0), 
-	"RBI" NUMBER(*,0), 
-	"TB" NUMBER(*,0), 
-	"AVG" NUMBER(5,3), 
-	"SLG" NUMBER(5,3), 
-	"OBP" NUMBER(5,3), 
-	"OPS" NUMBER(5,3), 
-	"BB" NUMBER(*,0), 
-	"HBP" NUMBER(*,0), 
-	"SO" NUMBER(*,0), 
-	"GDP" NUMBER(*,0), 
-	"SF" NUMBER(*,0), 
-	"SH" NUMBER(*,0), 
-	"SB" NUMBER(*,0), 
-	"CS" NUMBER
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  create table c##baseball.stg_batting_stat
+   (	sport_id varchar2(8 byte),
+	division varchar2(20 byte),
+	gender_id varchar2(8 byte),
+	season_year number(*,0),
+	last_name varchar2(255 byte),
+	first_name varchar2(255 byte),
+	team varchar2(3 byte),
+  country_id varchar2(2 byte),  -- 20240224
+	ab number(*,0),
+	r number(*,0),
+	h number(*,0),
+	h2 number(*,0),
+	h3 number(*,0),
+	hr number(*,0),
+	rbi number(*,0),
+	tb number(*,0),
+	avg number(5,3),
+	slg number(5,3),
+	obp number(5,3),
+	ops number(5,3),
+	bb number(*,0),
+	hbp number(*,0),
+	so number(*,0),
+	gdp number(*,0),
+	sf number(*,0),
+	sh number(*,0),
+	sb number(*,0),
+	cs number
+   ) segment creation immediate
+  pctfree 10 pctused 40 initrans 1 maxtrans 255
+ nocompress logging
+  storage(initial 65536 next 1048576 minextents 1 maxextents 2147483645
+  pctincrease 0 freelists 1 freelist groups 1
+  buffer_pool default flash_cache default cell_flash_cache default)
+  tablespace users ;
