@@ -1,0 +1,337 @@
+uniform_number,player_name,position,bats,throws,ht,wt,yob
+0,BAZÁN Ahiezer,UTL,R,R,0,0,2004
+13,BORGES Joel,C,R,R,180,101,1998
+0,CAPELLÁN FERMÍN Delvin Joel,UTL,R,R,185,80,1998
+0,CASTRO Armando,UTL,R,R,0,0,2004
+57,Colasante Vicente,P,R,R,178,85,1994
+1,COSTALES Pablo,UTL,R,R,176,74,2005
+0,DÍAZ Candelario,UTL,R,R,0,0,1969
+40,Diaz Jose,P,R,R,0,0,1993
+12,ENCARNACIÓN Wander,UTL,R,R,0,0,2000
+0,FERNANDES Nicolas,UTL,R,R,0,0,2005
+0,FINOL Gerardo,UTL,R,R,180,85,2004
+29,FRANCO Yancarlo,UTL,R,R,175,89,1988
+14,GALVÁN Lesther,CF,R,R,178,99,1990
+0,GALVÁN Aickent,UTL,R,R,0,0,1998
+0,GALVÁN Deion,UTL,R,R,0,0,1992
+0,GARCÍA Yeudy,UTL,R,R,188,99,1992
+0,GARCÍA Oliver,UTL,R,R,185,136,1984
+0,GARI Ernesto,UTL,R,R,0,0,1970
+10,GÓMEZ Luis,P,R,R,189,74,2004
+0,GONZÁLEZ Maisel,UTL,L,R,175,82,1981
+0,GONZÁLEZ Francisco,UTL,R,R,0,0,1977
+0,LEÓN Aarón,UTL,R,R,176,71,1993
+0,MADRIGAL Oric,UTL,R,R,165,62,2005
+11,MENDOZA Ricardo,IF,R,R,192,102,2003
+0,MONTAÑO Jesús,UTL,R,R,180,82,2004
+22,Montiel Richard,1B,R,R,184,94,1979
+0,NACAR Leslie,P,R,R,0,0,1982
+17,PERES Ian,UTL,R,R,0,0,1997
+0,PIVA Ángel,UTL,R,R,0,0,1992
+0,RODRÍGUEZ Kevin,UTL,R,R,0,0,2005
+19,RODRÍGUEZ Luís,UTL,R,R,185,92,1994
+33,TORREALBA Julio,P,R,R,191,112,1990
+0,TORRES Ángel,UTL,R,L,169,65,2002
+0,Ustariz Jesus,1B,R,R,186,90,1993
+5,VALERIO Edison,UTL,R,R,182,76,1994
+0,WALO Marco,UTL,R,R,182,125,1988
+0,Alvarez Daniel,UTL,R,R,191,100,1996
+13,Borges Joel,C,R,R,180,101,1998
+1,Costales Pablo,UTL,L,L,173,70,2005
+0,Cruz Leonardo,UTL,R,R,0,0,1979
+0,Díaz Candelario,UTL,R,R,0,0,1969
+30,Díaz Victor,UTL,L,R,185,90,1993
+0,Díaz Eugenio,UTL,R,R,0,0,1994
+0,Domínguez Eduardo,UTL,L,L,189,84,2001
+12,Encarnación Wander,IF,R,R,0,0,2000
+0,Finol Gerardo,UTL,R,R,180,85,2004
+29,Franco Yancarlo,SS,R,R,175,89,1988
+0,Galván Aarón,UTL,R,R,0,0,1998
+0,Galván Deion,UTL,R,R,0,0,1992
+14,Galván Lesther,OF,R,R,178,99,1990
+0,García Yeudy,UTL,R,R,0,0,1992
+0,García Oliver,UTL,R,R,185,136,1984
+0,Gari Ernesto,UTL,R,R,0,0,1970
+0,González Maisel,UTL,L,R,175,82,1981
+0,González Francisco,UTL,R,R,0,0,1977
+0,Jimenez Ramos Marlon Chayanne,UTL,R,R,0,0,1992
+0,León Aarón,UTL,R,R,176,71,1993
+0,Madrigal Oric,UTL,R,R,165,62,2005
+38,Medrano Ronald,UTL,R,R,183,77,1995
+11,Mendoza Ricardo,IF,R,R,192,102,2003
+7,Montaño Jesús,OF,R,R,180,80,2004
+22,Montiel Richard,1B,R,R,184,94,1979
+43,Moredo Eduardo,IF,R,R,173,80,1997
+17,Peres Ian,UTL,R,R,0,0,1997
+0,Piva Ángel,UTL,R,R,0,0,1992
+0,Rodríguez Kevin,UTL,R,R,0,0,2005
+19,Rodríguez Luís,OF,R,R,185,92,1994
+18,SIERRA Carlos,P,R,R,193,88,1994
+33,Torrealba Julio,P,L,L,191,112,1990
+5,Torres Ángel,OF,R,L,169,65,2002
+0,Van Grieken Ricardo,UTL,L,R,183,80,2001
+66,Walo Marco,IF,R,R,182,125,1988
+0,Aineto Cristian,UTL,R,R,0,0,1995
+0,Alfonso Alex,UTL,R,R,0,0,1999
+0,Bello Samuel,UTL,R,R,0,0,1985
+0,Conceicao Jesús,UTL,R,R,0,0,1998
+0,Contell Arturo,UTL,R,R,0,0,2005
+0,De Freitas David,UTL,R,R,0,0,1995
+0,De La Osa Rosbany,UTL,R,R,0,0,2004
+0,Dolz José Manuel,UTL,R,R,183,73,2004
+0,Espejo Eloi,UTL,R,R,0,0,2002
+0,Gonzalez Daniel,UTL,R,R,0,0,1981
+0,Infante Juan,UTL,R,R,0,0,1996
+0,López Juan Manuel,UTL,R,R,0,0,2003
+0,Lugo Eudi,UTL,R,R,0,0,1994
+0,Machado José,UTL,R,R,0,0,2004
+0,Martínez Ismael,UTL,R,R,0,0,2003
+0,Martinez Prats Pau,UTL,R,R,,,2006
+0,Matos Josué,UTL,R,R,0,0,2000
+0,Montero Javier,UTL,R,R,0,0,1996
+0,Peña Víctor,UTL,R,R,0,0,2005
+0,Peña Andrés,UTL,R,R,188,69,2007
+0,Ramos Luís Miguel,UTL,R,R,0,0,1984
+0,Ros Roberto,UTL,R,R,0,0,2000
+0,Sánchez Javier,UTL,R,R,0,0,1996
+0,Torres Daniel,UTL,R,R,0,0,2002
+0,Vargas Miguel,UTL,R,R,0,0,1987
+0,VILCHEZ RODRIGUEZ Angel Francisco,UTL,R,R,0,0,1990
+0,Álvarez Engelbert,UTL,R,R,0,0,1989
+0,Balboa Jorge,UTL,R,R,186,82,1986
+0,Caraballo Juan,UTL,R,R,175,75,1999
+0,Cayones Blanco Exicardo,UTL,R,R,,,1991
+0,Contreras Juan,UTL,R,R,0,0,2007
+0,Decena Roibert,UTL,R,R,185,85,1997
+0,Donnels Tanner Michael,UTL,R,R,183,79,1993
+0,Dopazo Juan José,UTL,L,R,186,82,1997
+0,Febles Emmanuel,UTL,R,R,178,70,1987
+0,FRANCO Jorge,UTL,R,R,180,0,2002
+0,Galicia Luis,UTL,R,R,185,85,1992
+0,García Luis,UTL,R,R,194,90,2002
+0,Guzmán Concepcion Delson,UTL,R,R,190,82,2002
+0,Hernández Ricardo,UTL,R,R,0,0,1988
+0,Marrero José,UTL,R,R,0,0,1996
+0,Martín Alejandro,UTL,R,R,0,0,2000
+0,Mazzocchi Rene Rafael,UTL,L,L,0,0,1988
+0,Medina Luís,UTL,R,R,0,0,1977
+0,Ochoa Blake,UTL,R,R,180,76,1985
+0,Ojeda Victor,UTL,R,R,185,80,2000
+0,Rodríguez Edgar,UTL,R,R,0,0,2000
+0,Rodríguez Michel,UTL,R,R,185,78,1977
+0,Rondón Edgar,UTL,R,R,0,0,1995
+0,Sandrone Nicoló,UTL,R,R,0,0,1999
+0,Torres Yosbany,UTL,R,R,192,86,1980
+0,Vanheneguen José,UTL,R,R,182,70,1998
+0,Yanez José,UTL,R,R,184,84,2004
+0,Angustia Joan,CF,R,R,0,0,2005
+0,Bádenas Lluis,UTL,R,R,176,71,2004
+0,Baena Manel,P,R,R,0,0,1999
+0,Bermúdez Samuel,UTL,R,R,167,68,2004
+0,Domero William,UTL,R,R,0,0,1980
+0,Freer Zachary,P,R,R,0,0,2005
+0,Gainza Jeyson,3B,R,R,0,0,1991
+0,García Carlos,2B,R,R,0,0,1994
+0,Hernández Óscar,P,R,R,0,0,2000
+0,Iriarte Ortega Lucas,CF,R,R,0,0,2005
+0,López Elvinyer,UTL,R,R,0,0,2005
+0,Luciano Bladimir,UTL,R,R,0,0,2001
+0,Merán Ángel,UTL,R,R,0,0,1995
+0,Moreno Jordi,P,R,R,0,0,2006
+0,Nakaigawa Yu,P,R,R,0,0,2002
+0,Núñez Cristopher,RF,R,R,0,0,1985
+0,Oberthaler Andrew,CF,R,R,0,0,1986
+0,Ramos Anthony,UTL,R,R,0,0,2001
+0,Rivas Ángel,C,R,R,0,0,1994
+0,Romance Hernandez Jonathan,LF,R,R,0,0,2005
+0,Salcedo Alfonso,CF,R,R,0,0,1999
+0,Torres Reiner,1B,L,L,0,0,1990
+0,Uribe Wilker,P,R,R,175,60,2005
+0,Vilaro Josep,P,R,R,0,0,2003
+63,Acha Sergio,P,L,L,0,0,1975
+52,Alvarado Carlos,C,R,R,0,0,2000
+61,Auciello Kreisber,UTL,R,R,0,0,1995
+0,Bilbao González Iker,UTL,R,R,0,0,1998
+0,Caballero López Lander,UTL,R,R,0,0,1996
+50,Caballero Yoel,OF,R,R,0,0,1996
+55,Correa Leopoldo,3B/SS,L,L,0,0,1991
+0,Crespo Bastidas Manuel Enrique,UTL,R,R,0,0,2007
+0,Díaz Custodio Elvin Evanders,UTL,R,R,0,0,2002
+0,Dominguez Diaz Ernan Jesus,UTL,R,R,0,0,2007
+0,Gonzalez Alquegui Jonatan,UTL,R,R,0,0,1996
+67,Gonzalez Cesar,P,R,R,0,0,1991
+64,González Daniel,UTL,R,R,0,0,1996
+68,Grance Moisés,OF,R,R,0,0,1991
+60,Hernández Royd,P,R,R,0,0,1991
+48,López Frederman,1B,L,L,0,0,1990
+0,Lopez Llanos Aitor,UTL,R,R,0,0,1993
+0,Lopez Serrano Johanser,UTL,R,R,,,2005
+0,Madrigal Arce Mikel,UTL,R,R,,,2005
+0,Mendizabal Pocero Markel,UTL,R,R,0,0,1991
+0,Mendoza Cabrera Leonel David,P,R,R,,,1999
+58,Moreno Daniel,UTL,R,R,0,0,1997
+51,Mota Leonardo,P,R,R,0,0,1994
+0,Mugica Perez Jon,UTL,R,R,0,0,1996
+0,Mujica Suárez Ronaldo Antonio,UTL,R,R,0,0,2004
+0,Palencia Acevedo Carlos Daniel,UTL,R,R,0,0,2006
+62,Ramírez Giovanni,P,R,R,0,0,1997
+53,Rivas Eduardo,IF,L,L,0,0,1983
+0,RUBIO HERNANDEZ Aitor,UTL,R,R,,,1984
+0,Ruiz Del Amo Endika,UTL,R,R,0,0,2007
+0,San Andres Lopez Joseba,UTL,R,R,0,0,1985
+0,San Andres Lopez Andoni,UTL,R,R,0,0,1985
+57,Silva Elio,P,L,L,0,0,1995
+49,Torres Fidel,UTL,R,R,0,0,1970
+0,Villatoro Hernández Fernando José,UTL,R,R,0,0,1985
+21,Abete Nicolás,P/1B/OF,R,R,0,0,2003
+70,Andueza David,UTL,R,R,0,0,2004
+24,Aristu Martín,UTL,R,R,0,0,2004
+27,Armendáriz Marcos,UTL,R,R,0,0,2003
+45,Arrese Pablo,UTL,R,R,0,0,2000
+0,Arza Joaquín,UTL,R,R,0,0,1965
+99,Calvo Lucas,IF,R,R,0,0,2004
+13,Echeverría David,UTL,R,R,185,74,2004
+0,Erroz Miguel,UTL,R,R,0,0,1974
+15,Escolano Héctor,OF,R,R,0,0,2001
+0,Escolano Adrián,UTL,L,L,0,0,1998
+51,Macías Yelco,UTL,R,R,0,0,2005
+0,Martínez Fran,UTL,R,R,0,0,2004
+8,Onieva Iker,UTL,R,R,0,0,2005
+7,San Miguel Diego,UTL,R,R,184,77,2005
+39,Sánchez Izan,UTL,R,R,0,0,2006
+14,Santesteban Mikel,IF,R,R,0,0,2003
+22,Sanz Jesús,IF,R,R,0,0,2003
+5,Seco Damian,UTL,R,R,0,0,2004
+25,Villamayor Pablo,C,R,R,0,0,2003
+0,Alconchel Marcos,UTL,R,R,192,88,2004
+0,Bedoya Alain,UTL,R,R,0,0,1984
+0,Brouwer Rubén,UTL,R,R,0,0,2005
+0,Castán Jonathan,UTL,R,R,0,0,1982
+0,Centeno Luis,UTL,R,R,0,0,2002
+0,Domínguez Álvaro,UTL,R,R,0,0,1998
+0,Escobar Yender,UTL,R,R,0,0,2001
+0,Galipoli Marin Pedro Alejandro,UTL,R,R,0,0,2001
+0,Hernández Lionel,UTL,R,R,0,0,1986
+0,Jirón Miguel Ángel,UTL,R,R,0,0,1996
+0,López Marco,UTL,R,R,0,0,2005
+0,López Luís,UTL,R,R,0,0,2004
+0,Mairal Jorge,P,R,R,182,70,2003
+0,Martín Jorge,IF,R,R,0,0,2005
+0,Mendoza Jefferson,UTL,R,R,0,0,2004
+0,Perozo Héctor,UTL,R,R,0,0,1983
+0,Pinilla Pablo,UTL,R,R,0,0,2005
+0,Pueyo Pablo,C/UTL,R,R,0,0,2001
+0,Quintana Leirán,UTL,R,R,0,0,1990
+0,Solenzal Sadiel,UTL,R,L,0,0,2003
+0,Tabares Christian,UTL,R,R,0,0,2006
+0,Vásquez Larry,UTL,R,R,0,0,2002
+8,Albes Ander,UTL,R,R,182,65,2001
+0,Arévalo Digney,UTL,R,R,0,0,1998
+11,Arza Marcos,SS,R,R,0,0,1996
+12,Bermúdez Josef,UTL,R,R,0,0,2000
+0,Caballero Iban,UTL,R,R,0,0,2006
+0,Caño Unai,UTL,R,R,0,0,2007
+1,Carmona Christopher,UTL,R,R,0,0,2003
+0,Casado Pedro,UTL,R,R,0,0,1991
+0,Celaya Daniel,UTL,R,R,0,0,1988
+0,Cuenca Xavier,UTL,R,R,0,0,2004
+0,Fernández Rubén,UTL,R,R,178,74,2001
+41,Fresa Teudis,UTL,R,R,0,0,1995
+9,García Jhon,UTL,L,R,0,0,1999
+0,García Aritz,UTL,R,R,0,0,1989
+10,Gonzalez Dayron,UTL,R,R,0,0,1993
+17,Hernández Jorge,P,R,R,0,0,1986
+24,Lertxundi Pablo,UTL,R,R,0,0,1998
+4,Magaña Jon,OF,R,R,0,0,2001
+0,Muñoz Ibai,UTL,R,R,0,0,2006
+15,Nazar Ricardo,OF,R,R,0,0,1994
+0,Otazu Erik,UTL,R,R,0,0,2007
+0,Reyes Víctor,OF/UTL,R,R,0,0,2000
+0,Reyes René,UTL,R,R,0,0,1975
+13,Rodríguez Reinaldo,P,L,L,0,0,1989
+16,San Martín Jon,UTL,R,R,0,0,1998
+3,Sánchez Joel,P,L,L,0,0,2002
+0,Sousa Carlos,UTL,R,R,0,0,1994
+0,Varela Adrián,UTL,R,R,0,0,2002
+0,Villanueva Ibai,UTL,R,R,0,0,2007
+0,Zambrano Jonathan,P/UTL,L,L,0,0,1994
+21,Alcalá Diego,UTL,S,L,167,51,2007
+3,Amador Jaime,OF/UTL,R,R,0,0,2000
+6,Blanco Miguel,3B/UTL,R,R,0,0,2005
+27,Bordanoba Joan,P,R,R,0,0,2000
+45,Burguillos Wendell,OF,R,R,0,0,2003
+15,Burguillos José Antonio,UTL,R,R,0,0,1980
+5,Castaño Joaquín,P,R,R,0,0,1995
+0,Fente Rubén,UTL,R,R,0,0,1989
+0,Figueredo Melián Rodolfo José,UTL,R,R,185,84,2005
+37,Flores Albert,UTL,R,R,0,0,2000
+39,Flores Rivas Jeifer Alexander,OF,R,R,0,0,1992
+13,García Dany,IF,R,R,0,0,2000
+1,Gómez Joel,2B,L,R,0,0,2005
+55,Grullón Julio,UTL,R,R,0,0,1991
+17,Izquierdo Eric,P,R,R,0,0,1997
+0,Lardin Miguel,UTL,R,R,0,0,2006
+80,León Hugo,P,R,R,0,0,2003
+21,López Víctor,1B/IF,R,R,0,0,1986
+52,LOPEZ Juan,P,R,R,174,78,2002
+9,López Rafael,OF,R,R,0,0,2005
+10,Maled Guillem,C,R,R,0,0,2000
+0,Martínez Daniel,UTL,R,R,0,0,1987
+0,Matías Daniel,UTL,R,R,0,0,1992
+0,Monzón Javier,UTL,R,R,0,0,1993
+33,Niño Denny,C,R,R,0,0,1983
+50,Palma Sergi,P,R,R,182,86,2004
+23,Rodríguez Ángelo,P,R,R,181,79,2005
+29,Salas Eusebio,IF,R,R,179,80,2004
+0,Sisneros Yeison,P,R,R,0,0,1995
+0,Zambrano Rubio Anderson David,UTL,R,R,180,80,2004
+13,Alfonso Esquiroz Iñaki,UTL,R,R,0,0,1980
+1,Castillo Jesús,UTL,R,R,0,0,1983
+25,Céspedes Yorking,UTL,R,R,0,0,1992
+29,Chambers Allen,UTL,R,R,0,0,1998
+21,Colón Pedro,UTL,R,R,0,0,1990
+18,Comprés Luís,UTL,R,R,0,0,1991
+10,Español Alberto,UTL,R,R,0,0,1986
+45,Gómez Elvis,UTL,R,R,0,0,1998
+28,Kingsley Francisco,UTL,R,R,0,0,1997
+16,Latienda Juan,UTL,R,R,0,0,1980
+17,Linares Josué,UTL,R,R,0,0,1988
+5,Londoño Miguel,UTL,R,R,0,0,1996
+52,López Juan,UTL,R,R,0,0,1979
+31,Martínez Juan,UTL,R,R,0,0,1985
+19,Martínez Víctor,UTL,R,R,0,0,1968
+40,Modrego López Iñaki,UTL,R,R,0,0,1998
+24,Montero Okaury,UTL,R,R,0,0,1990
+42,Oostindie Christophe,UTL,R,R,0,0,2002
+47,Paulino Robin,UTL,R,R,0,0,1993
+3,Pérez Hachel,UTL,R,R,0,0,1992
+2,Pérez Diego,UTL,R,R,0,0,1987
+8,Rodríguez Iverson,UTL,R,R,0,0,2001
+26,Ruíz Michael,UTL,R,R,0,0,1990
+14,Sánchez Josías,UTL,R,R,0,0,1987
+7,Ureña Yeilyn,UTL,R,R,0,0,1998
+12,Villegas Nelson,UTL,R,R,0,0,1993
+0,Alcaide Peiro Adriá,UTL,R,R,0,0,1996
+80,Cadenas Ferrán,P/UTL,R,R,0,0,1993
+70,Castaño Daniel,UTL,R,R,0,0,2004
+96,Castell Mario,UTL,R,R,174,68,2004
+7,Catalán Miguel,UTL,R,R,0,0,1988
+4,Cereceda Xavier,OF,R,R,0,0,2005
+0,Cuevas Sterlin,UTL,R,R,0,0,1990
+0,García Francis,UTL,R,R,0,0,1991
+30,Giménez Eric,UTL,R,R,178,84,2003
+28,González Iker,UTL,R,R,0,0,2002
+3,Marcelino Anthony,UTL,R,R,0,0,1993
+97,Meehan David,UTL,R,R,0,0,1996
+0,Mendoza Castillo Willian Gabriel,UTL,R,R,0,0,1997
+0,Mendoza Castillo DIEGO ANDRES,UTL,R,R,,,2001
+71,Miranda Javier,UTL,R,R,0,0,2005
+12,Moya Aleix,UTL,R,R,0,0,2003
+0,Nuñez Juan,UTL,R,R,0,0,2001
+69,Páez Eric,UTL,R,R,0,0,1995
+1,Pérez Maddiel,UTL,R,R,0,0,1992
+11,PEREZ RIVERA ADRIAN,UTL,R,R,173,70,2000
+5,Sánchez Francisco,UTL,R,R,178,82,2001
+0,Sierra Flavio,UTL,R,R,0,0,1995
+29,Trinidad Kerson,UTL,R,R,0,0,1986
+65,Valentín Roberto,UTL,R,R,0,0,2001

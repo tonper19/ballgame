@@ -1,0 +1,571 @@
+uniform_number,player_name,position,bats,throws,ht,wt,yob
+26,Accorsi Luca,SS,R,R,0,0,1993
+39,Baccelli Marco,C/1B,R,R,0,0,1986
+7,Carolingi Alessandro,P/OF,R,R,0,0,2007
+40,Carolingi Riccardo,P/OF,R,R,0,0,2005
+42,Casanova Edoardo,P/OF,R,R,0,0,2003
+50,Cavallari Francesco,OF,R,R,0,0,1993
+72,Cocchi Alex,P/2B/OF,S,R,0,0,2001
+13,Contri Alex,C,R,R,0,0,2007
+66,Corradin Michael,P/C,R,R,0,0,1991
+23,Del Priore Fabio,2B,R,R,0,0,1992
+1,Errico Mirko,P/C/3B,R,R,0,0,2001
+11,Giorgi Francesco,P,R,R,0,0,1992
+57,Misell Martinez Carlos Enrique,P,R,R,0,0,1992
+22,Monda Manuel,C/1B,L,R,0,0,2004
+12,Monda Mirco,1B/OF,R,R,0,0,1991
+32,Montanari Lorenzo,2B/SS,R,R,0,0,2004
+5,Montanari Alessandro,OF,R,R,0,0,1997
+28,Montieth Herrera Frank Andry,P,R,R,0,0,1985
+48,Nepoti Riccardo,P,R,R,0,0,2004
+34,Righini Luca,UTL,L,L,0,0,2008
+10,Venturi Michele,1B/OF,R,R,0,0,1993
+29,Vignali Marco,OF,R,R,0,0,1996
+15,Zappone Lino Johel,IF/OF,R,R,0,0,1988
+15,Anzovino Thomas,OF,R,R,0,0,2005
+30,Bacci Lorenzo,OF,L,R,0,0,2004
+6,Borghi Gilberto,1B/OF,L,R,0,0,1998
+5,Campanella Lorenzo,P,R,R,0,0,2000
+21,Cantelli Alessandro,P,R,R,0,0,2002
+43,Ferri Jacopo,IF,R,R,0,0,2001
+10,Franceschini Rafael,OF,R,R,0,0,1997
+1,Giacomini Tommaso,C/IF,R,R,175,68,2003
+55,Lambertini Lorenzo,C/1B/OF,R,R,0,0,2004
+19,Marchi Davide,UTL,R,R,0,0,2000
+45,Marchi Federico,IF/UTL,L,R,0,0,2004
+9,Mezzetti Axel,C/IF,R,R,0,0,2005
+77,Moronta Rodriguez Francisco Julian,2B/OF,R,R,0,0,2003
+48,Nanetti Andrea,P,R,R,0,0,1997
+2,Pancellini Mattia,C/1B,L,R,182,85,2001
+4,Pani Lorenzo,IF/UTL,R,R,0,0,2005
+58,Persici Gabriele,P,R,R,0,0,2003
+11,Rizzoli Niccolo,P,R,R,0,0,2003
+47,Rondelli Lorenzo,CF,R,R,0,0,1998
+27,Silva Mena Ricardo Antonio,P,L,L,0,0,2000
+3,Tamburini Jacopo,IF,S,R,0,0,2004
+16,Bartolini Marco,UTL,R,R,1.70,68,2006
+25,Calcagni Elia,P/UTL,R,R,175,70,2006
+31,Calcagni Mattia,P/SS,R,R,175,72,2006
+12,Carrera Lopez Jesus Daniel,1B/RF,L,L,180,80,1993
+97,CORREA ROMERO MANAURYS,P,R,R,195,90,1989
+23,Di Battista Romero Gianmarco Jesus,2B/DH/UTL,R,R,170,75,1993
+83,Exposito Gotera Ernesto David,C/DH,R,R,175,75,1998
+54,GARCIA SEBASTIAN ALEJANDRO,CF,L,L,175,75,1987
+7,garcia pereira jose elias,C/1B,S,R,180,80,2001
+29,Lopez Nunez Javier Alberto,SS,R,R,190,87,1994
+37,Luciani Gionni,LF/UTL,R,R,175,70,1996
+72,Marinelli Tommaso,C,R,R,170,72,2004
+99,Mazzocchi Rene Rafael,P,L,L,175,75,1988
+32,MEJIA FLORES Dilmer Ramon,P,L,L,180,81,1997
+61,Mercuri Daniele,SS/UTL,R,R,186,85,2001
+5,Morresi Alessandro,2B/DH,R,R,175,73,2000
+10,Morresi Lorenzo,C/3B,S,R,175,75,2001
+21,Palumbo Cardozo Angelo Michelle Paolo,P,R,R,193,90,1995
+74,Perdomo Mora Gabriel Eduardo,SS/DH,R,R,170,70,2008
+13,Pereira Jablonskis Anthony Jose,3B,R,R,180,80,1996
+39,Pérez Padilla Andrés Eduardo,P,R,R,186,85,1991
+43,Pioli Leonardo,UTL,L,L,1.72,65,2007
+88,Quattrini Gabriele,P,R,R,195,115,1996
+45,Ripani Filippo,C/UTL,R,R,175,73,2007
+20,Splendiani Leonardo,RF/UTL,R,R,178,75,1995
+73,TORRES RAMIREZ JUAN MANUEL,P,L,L,175,68,2004
+0,Ariani Jordan,C/UTL,R,R,148,43,2007
+46,Ariani Jonathan,1B/UTL,R,R,0,0,1997
+11,Becchi Lorenzo,P/UTL,R,R,0,0,2003
+0,Belnabe Torres Maicol Desmin,P/UTL,R,R,0,0,1995
+98,Cerruti Michele,UTL,R,R,175,85,1998
+0,Ciantelli Morgan,UTL,R,R,0,0,2005
+23,De Aza Perez Bryan Alejandro,UTL,R,R,0,0,2001
+81,Faggi Matteo,CF/UTL,R,R,0,0,1999
+6,Faticanti Valdemaro,C/UTL,R,R,0,0,1999
+31,Guasti Fabio,RF/UTL,R,R,0,0,1980
+8,Labardi Marco,UTL,R,R,0,0,1977
+0,Lucarini Leandro,UTL,R,R,0,0,2003
+22,Mani Jacopo,1B/UTL,R,R,0,0,1993
+97,Martinez Holguin Euridis,P,R,R,0,0,1997
+1,Mateo Medina Neify,2B/UTL,R,R,0,0,2001
+72,Matricardi Zeno,UTL,R,R,0,0,2003
+52,Molina Leonardo,P,R,R,0,0,1990
+18,Panerai Gianluca,UTL,R,R,0,0,1994
+70,Parise Michele,LF,R,R,0,0,1996
+0,Peluso Mattia,P/UTL,R,R,0,0,2005
+14,Pena Nunez Kelvin Jose,C/UTL,R,R,0,0,2002
+30,Perez Silfa Junior,P,R,R,0,0,1987
+28,Ramirez Villanueva Samy Junior,3B/UTL,R,R,0,0,1993
+12,Reggioli Samuele,SS/UTL,R,R,0,0,1995
+45,Valsecchi Marco,UTL,R,R,0,0,1996
+2,Vassallo Lorenzo,P,R,R,0,0,1997
+33,Almora Escudero Julio Jesus,P,R,R,0,0,1998
+16,Baez Joel Ernesto,P,R,R,0,0,1993
+28,Baldi Michael,OF,R,R,0,0,2000
+8,Capellano Luca,P,R,R,0,0,2002
+25,Castillo Castillo Jonathan,P/IF/OF,R,R,,,2000
+26,Censi Stefano,P/1B/OF,R,R,0,0,1999
+19,Cepparulo Nicola,UTL,R,R,0,0,2007
+42,Cerini Andrea Luca,IF/OF,R,R,0,0,2005
+5,Corrieri Massimiliano,UTL,R,R,,,1973
+40,Di Turi De Frenza Giovanni,C/1B/3B/OF,R,R,0,0,2001
+27,Ferrari Alessandro Francesco,C/OF,R,R,0,0,1995
+0,Friggeri Matteo,UTL,R,R,0,0,1997
+51,Gastaldi Marco,C/IF,R,R,0,0,2001
+22,Giovanardi Alex,P/IF,R,R,0,0,2006
+66,La Rocca Stefano,P,R,R,0,0,1983
+2,Lettieri Leonardo,2B/SS,R,R,0,0,2005
+80,Lugli Davide,P/C/IF,R,R,0,0,2006
+91,MEDINA GARCIA Frank Luis,P,R,R,185,87,1987
+24,Minari Alexandro,2B/3B/SS/OF,R,R,0,0,2000
+6,Nardi Alessandro,UTL,R,R,0,0,2000
+31,Sassi Lorenzo,P,R,R,0,0,1999
+75,Tamburrini Giorgio,OF/UTL,L,R,0,0,1992
+15,Trevisan Nicolas,P,R,R,0,0,2000
+57,Zanichelli Davide,1B,R,R,0,0,1982
+4,Angulo Gamez Oscar David,UTL,R,R,180,76,1984
+50,Baez Aybar Fernando,UTL,R,R,0,0,1992
+24,Batista De Jesus Nathanael Manoly,2B/LF/UTL,R,R,180,80,1995
+31,Castillo Rojas Jesus Ronaldo,P/UTL,R,R,0,0,1995
+25,Celli Federico,CF/UTL,R,R,188,100,1995
+22,Da Silva Tiago Felipe,P/UTL,R,R,0,0,1985
+54,Di Fabio Lorenzo,3B/UTL,R,R,0,0,1992
+16,Di Raffaele Lorenzo,2B/UTL,R,R,0,0,1994
+35,Di Raffaele Luca,P/UTL,R,R,183,0,1994
+13,Epifano Duran Erick Alessandro,SS/UTL,R,R,188,88,1990
+27,Ferrini Colmenarez Jose Leonardo,3B/UTL,R,R,180,0,1989
+53,Garbella Nicola Luciano Sathya,P/RF/UTL,R,R,185,89,1992
+77,Giulianelli Ettore,P/UTL,R,R,0,0,2003
+64,HERNANDEZ SILVA Nelson Eduardo,P/UTL,R,R,188,77,1997
+2,KOURTIS Dimitrios,P/UTL,R,R,190,104,1992
+5,Leonora Ericson Neptali,LF/UTL,R,R,0,0,1992
+21,LEONORA Dudley Lauriano Michael Junior,1B/UTL,R,R,187,94,1991
+14,Lino Correa Gabriel Eloy,C/UTL,R,R,190,90,1993
+71,Peluso Rodriguez Eduardo Andres,P/UTL,R,R,180,80,1998
+6,Pieternella Vargas Ortwin Hose,C/UTL,R,R,0,0,1999
+7,Pulzetti Luca,3B/SS/UTL,R,R,0,0,1994
+70,Quevedo Viso Carlos Eduardo,P/UTL,R,R,0,0,1989
+33,Rosales Motta Giovanny Andres,C/UTL,R,R,0,0,1999
+20,Tognacci Gianluca,P/UTL,R,R,0,0,2000
+1,Abate Brian,UTL,R,R,180,75,2002
+20,Abreu Florimon Alcis Manuel,P/UTL,R,R,182,80,2002
+55,Anzanel Nicola,C/UTL,R,R,175,82,2004
+45,Baruffaldi Federico,P/UTL,L,L,184,90,2000
+40,Bertoldi Davide,P/UTL,R,R,180,87,1994
+4,Boscarol Giacomo,UTL,R,R,187,87,1997
+30,Cirucci Jose Gabriel,C/UTL,R,R,179,86,2000
+7,Collado Jordano,UTL,S,R,180,114,1981
+3,D'oriano Gioele,UTL,R,R,182,74,2001
+27,Dalla Silvestra Matteo,P/UTL,L,L,185,88,2005
+58,Di Michele Fanose,P/CF/UTL,R,R,170,60,2003
+39,Diaz Denzel,P/UTL,R,R,173,66,2003
+23,Garcia Almonte Anthony Gregory,OF/UTL,L,R,181,72,1993
+50,Jimenez Gomez Elias,P/UTL,R,R,183,80,1993
+25,Menotti Nicolò,LF/UTL,R,R,188,90,1997
+62,Perez Ramon Leonardo,P/UTL,R,R,185,85,1998
+14,SALCEDO GOMEZ ROGER,C/UTL,R,R,172,78,2003
+35,Sassi Emanuele,C/UTL,R,R,182,85,2005
+8,Serra Riccardo,RF/UTL,R,R,172,74,1998
+60,TAVAREZ RICKY DE JESUS,C/UTL,R,R,170,73,2003
+24,Tomasin Alberto,OF/UTL,R,R,181,85,1997
+12,Vidili Andrea,DH/UTL,R,R,174,80,1999
+24,Acerbi Edoardo,P,R,R,0,0,1998
+5,Alfieri Leonardo,SS/IF,R,R,0,0,2002
+29,Andreini Samuele,2B/SS/UTL,R,R,0,0,2007
+88,Bellini Emanuele,C,R,R,0,0,2003
+4,Benetti Davide,2B/3B,R,R,0,0,1994
+25,Bertolini Romano,P,R,R,0,0,1995
+13,Boschi Alessandro,2B/SS/UTL,R,R,0,0,2005
+58,Boselli Davide,P/1B,L,L,0,0,2006
+96,Codeluppi Elia,P,R,R,0,0,2006
+98,Coffrini Luca,1B/3B/UTL,R,R,0,0,1998
+8,Daddi Filippo,DH/OF,L,L,0,0,1999
+30,Dallaturca Lorenzo,P,R,R,0,0,1988
+50,Delmonte Tommaso,OF,R,R,0,0,1999
+29,Ferrari Filippo,IF,R,R,0,0,2005
+14,Gandolfi Andrea,UTL,R,R,0,0,1986
+37,Grassani Davide,C,R,R,0,0,2006
+56,Lori Maicol,1B,R,R,0,0,1991
+2,Mantovani Pietro,OF,R,R,0,0,1995
+62,Melegari Nicola,UTL,R,R,0,0,1998
+10,Mordacci Lorenzo,RF,R,R,0,0,2005
+77,Santana Payano Luis Manuel,P,R,R,0,0,1996
+12,Schiaretti Andrea,UTL,R,R,0,0,2004
+31,Sorrentino Fabio,C,R,R,0,0,2002
+27,Trolli Davide,OF,R,R,0,0,1998
+19,Aldegheri Mattia,P,R,R,0,0,1998
+16,Astorri Cesare,IF,R,R,185,89,1998
+12,Battioni Tommaso,IF,R,R,192,80,2000
+46,Bocchi Matteo,P,R,R,193,100,1996
+23,CONTRERAS ABREU Carlos Manuel,P,R,R,0,0,1991
+2,De Leon Ramirez Anderson Alberto,P,R,R,,,1996
+48,Desimoni Stefano,OF,L,L,0,0,1988
+34,Fabiani Diego,P,R,R,0,0,1997
+6,Flisi Riccardo,OF,R,R,183,85,1999
+39,Gonzalez Sanamè Noel,UTL,L,R,0,0,1996
+7,González Taveras Luís Manuel Junior,UTL,R,R,185,89,1994
+72,GUILLEN DIAZ Pablo Luis,P,R,R,,,1998
+13,Joseph Timo Manuel Marcelo,UTL,R,R,0,0,1994
+11,Liddi Alex,UTL,R,R,193,102,1988
+60,Lugo Lareschi Luis Eduardo,P,R,R,198,117,1994
+36,Mineo Alberto,C,L,R,180,90,1994
+15,Monello Giulio,C,R,R,180,85,1998
+28,Orta Pedro Francisco,UTL,R,R,0,0,1982
+51,Pasotto Andrea,OF,R,R,0,0,2001
+26,Poma Sebastiano,OF,L,L,190,85,1993
+35,Pomponi Francesco,P,R,R,0,0,2002
+37,Rondon Sequera Danny Javier,P,R,R,183,74,1987
+83,Sambucci Alex,1B,R,R,0,0,1989
+41,Segreto Francesco,IF,R,R,0,0,2003
+74,Wong Williams,2B,R,R,177,80,2005
+10,Acosta Macuma Edgar Eduardo,UTL,R,R,0,0,2001
+42,Alfinito Montecchi Simone,UTL,R,R,0,0,1997
+14,Angelotti Torres Saul Giovanni,UTL,R,R,0,0,1989
+29,Baraldi Scantamburlo Marco,UTL,R,R,0,0,1976
+4,Bertolini Filippo,UTL,R,R,0,0,1989
+25,Borghi Gabriele,UTL,R,R,0,0,1986
+32,Carrasco Freionil,UTL,R,R,0,0,2007
+7,Casali Matteo,UTL,R,R,0,0,2007
+11,Ceriali Lorenzo Zeo,UTL,R,R,0,0,2000
+16,Chirinos Guillen Felix Jesus,UTL,R,R,0,0,1992
+5,Da Silva Romero Jesús Juvenal,UTL,R,R,178,80,2003
+26,Espinosa Feliz Ruben Dario,UTL,R,R,0,0,1989
+88,Faini Federico,UTL,R,R,0,0,1996
+22,Foderaro Fabio,UTL,R,R,0,0,1983
+56,Ganassi Davide,UTL,R,R,0,0,2006
+85,MADAN MONTEJO Frank Edelmiro,UTL,R,R,178,95,1991
+23,Nahr Cliyano Charles Elviro,UTL,R,R,,,2001
+35,Perez Lo Giudice Luis Eduardo,UTL,R,R,0,0,2000
+80,Puente Lacomba Luis Abraham,UTL,R,R,0,0,2001
+34,Riccò Panciroli Fabio,UTL,R,R,0,0,1995
+17,Riccò Panciroli Luca,UTL,R,R,0,0,1992
+8,Sáenz Albornoz Alejandro Isaac,UTL,R,R,0,0,1999
+15,Tejada Fernández Kevin Alberto,UTL,R,R,184,70,2002
+84,Torelli Daniele,UTL,R,R,0,0,2007
+47,Urena Sepulveda Victor Francisco,UTL,R,R,0,0,2003
+48,Zanchi Enrico,UTL,R,R,0,0,1999
+55,Bazzarini Simone,UTL,R,R,185,93,1994
+23,Berini Stefano,UTL,R,R,178,80,1997
+34,Bertoldi Nicholas,UTL,R,R,0,0,2004
+16,Boscarol Thomas,UTL,R,R,0,0,2003
+6,Cechet Ivan,UTL,R,R,183,97,1982
+9,Da Re Giulio,UTL,R,R,180,80,2001
+27,Furlan Daniele,UTL,R,R,180,80,1994
+3,Furlani Luca,UTL,R,R,185,70,2000
+5,Furlani Marco,UTL,R,R,181,64,2002
+24,Gergolet Diego,UTL,R,R,180,75,2006
+33,Gheno Pietro,UTL,R,R,170,60,1993
+70,Ghergolet Marco,UTL,R,R,170,82,1998
+12,Gonzales Hernandez Christofer,UTL,R,R,189,83,2003
+7,Lubrano Andrea,UTL,R,R,0,0,2004
+25,Miceu Mario,UTL,R,R,185,110,1990
+2,Midena Mattia,UTL,R,R,0,0,2005
+32,Nardi Francesco,UTL,R,R,179,82,1985
+19,Pilutti Massimo,UTL,R,R,187,95,2001
+33,Pilutti Paolo,UTL,R,R,0,0,2005
+11,Pizzolini Marco,UTL,R,R,180,74,2000
+22,RODRIGUEZ SEGOVIA Hector Tulio,UTL,R,R,189,85,1997
+14,RUIZ TORRES Jean Carlos,UTL,R,R,185,84,1996
+63,Santin Daniele,UTL,R,R,185,73,1991
+31,Serra Alessandro,UTL,R,R,162,63,2002
+47,Stabile Pietro,UTL,R,R,185,75,2000
+80,Agostinello Filippo,UTL,R,R,0,0,2000
+40,ASCANIO MENDEZ Manuel Josè,UTL,R,R,,,2000
+18,Bernardi Andrea,UTL,R,R,0,0,2003
+38,Bottazzi Tommaso,UTL,R,R,0,0,2006
+1,Bravo Riquene Humberto,UTL,R,R,0,0,1992
+15,Brusaferro Nicolò,UTL,R,R,0,0,2003
+17,Buin Enrico,UTL,R,R,185,0,2003
+36,Crepaldi Enrico,UTL,L,L,0,0,1987
+22,Ferrari Mirko,UTL,R,R,0,0,1986
+24,Frigato Giorgio,UTL,R,R,0,0,2005
+33,Frigato Alessandro,UTL,L,L,0,0,2000
+45,Gonzalez Alberto,UTL,R,R,0,0,2001
+4,Greggio Manuel,UTL,R,R,0,0,2003
+90,Javier Diaz Daury,UTL,R,R,0,0,2001
+77,Lavezzo Tommaso,UTL,R,R,0,0,2000
+16,Nosti Nicholas Gidon,UTL,R,R,0,0,1985
+52,Pietrogrande Pablo,UTL,R,R,0,0,1996
+2,Pillon Riccardo,UTL,R,R,0,0,2006
+8,Rizzati Giovanni,UTL,R,R,0,0,2005
+9,Russo Vincenzo,UTL,R,R,0,0,2006
+31,Salvatore Enrico,UTL,R,R,0,0,1996
+20,Sandalo Marco,UTL,R,R,0,0,1987
+32,Stocco Marco,UTL,R,R,0,0,2003
+10,Taschin Lorenzo,UTL,R,R,0,0,2003
+12,Taschin Giacomo,UTL,L,L,180,79,2006
+25,Agretti Filippo,UTL,S,R,0,0,1995
+26,Albert Shakir Achmed Girigorie,UTL,R,R,185,90,1996
+77,Andretta Maurizio,UTL,R,R,0,0,1998
+80,Bassani Alex,UTL,R,R,173,85,1990
+14,Bertossi Riccardo,UTL,R,R,170,78,2000
+42,Civit San Martin Marc,UTL,R,R,183,68,2002
+19,Crepaldi Filippo,UTL,R,R,181,87,1992
+31,Cuomo Joseph Anthony,UTL,R,R,,,1998
+9,Deotto Alessandro,UTL,R,R,0,0,1995
+39,Dobboletta Lorenzo,UTL,R,R,0,0,1994
+1,Dreni Julian,UTL,R,R,0,0,2000
+22,Fuzzi Francesco,UTL,R,R,0,0,1985
+70,Gamberini Samuele,UTL,R,R,180,100,2003
+4,Garcia Rodriguez Robel Estiwal,UTL,R,R,0,0,1993
+18,Helder Eugene Alexander Junior,UTL,R,R,178,90,1996
+10,Josephina Kevin Carl Michael,UTL,R,R,185,80,1996
+30,Liberatore Ernesto Paolo,UTL,R,R,0,0,1996
+24,Liverziani Claudio,UTL,R,R,0,0,1975
+16,LOPEZ NUÑEZ Porfirio Antonio,UTL,R,R,179,90,1990
+55,Molina Brito Cristopher Junior,UTL,R,R,,,1997
+6,Paolini Ricardo Segundo,UTL,R,R,0,0,1999
+75,Rivero Pereda Raul Jose,UTL,R,R,0,0,1986
+15,Robles Martin Federico Nicolas,UTL,R,R,175,70,1993
+17,Scotti Claudio,UTL,R,R,0,0,1998
+0,Seferina Darren Ferdinand,UTL,R,R,,,1994
+35,Suarez Petrillo Pablo José,UTL,R,R,0,0,1988
+25,Alberi Luca,OF,R,R,0,0,1990
+18,Bacciocchi Andrea,1B,R,R,0,0,1998
+24,Boccardi Matthew,UTL,R,R,0,0,1993
+52,Boriotti Andrea,OF,R,R,0,0,2002
+23,Caimmi Mattia,UTL,R,R,0,0,2000
+5,Corio Giuseppe,UTL,R,R,0,0,1993
+22,Gabbari Francesco,P,R,R,0,0,2003
+3,Giancone Mirko,UTL,R,R,0,0,2008
+38,Gintili Talon Luigi,UTL,R,R,0,0,2004
+6,Locatelli Lorenzo,OF,R,R,0,0,2000
+2,Marchini Mariano,UTL,R,R,,,1972
+53,Nani Tommaso,UTL,R,R,0,0,2003
+31,PAREDES SANCHEZ EDWARD VALENTINO ESTEFANO,P,R,R,,,1999
+7,Penaloza Crisafi Carmelo Jose,UTL,R,R,0,0,1987
+42,Raimondi Riccardo,OF,R,R,0,0,2003
+19,Rasoira Matteo,UTL,R,R,0,0,1993
+12,Riello Quiroga Kevin Leonardo,P,R,R,0,0,1997
+28,Severino Familia Brian Antonio,UTL,R,R,0,0,2002
+21,Speziali Luca,UTL,R,R,0,0,1999
+29,Speziali Marco,UTL,R,R,0,0,1996
+10,Uttini Edoardo,P,R,L,0,0,2003
+50,Bruno Samuele,OF,R,R,183,80,2003
+17,Bucchi Mattia,2B,R,R,185,103,1987
+31,Canellini Davide,P,L,L,180,90,1994
+16,Casadio Antonio,C/OF,R,R,0,0,2005
+8,Casadio Matteo,3B,R,R,0,0,2006
+39,Focchi Riccardo,P,R,R,185,78,2001
+12,Freddi Luca,P,R,R,178,85,1993
+6,Fuzzi Daniele,1B,R,R,178,83,1980
+53,Galeotti Matteo,P,R,R,185,90,1981
+22,Galli Samuele,UTL,R,R,184,92,2001
+9,Geminiani Raffaele,C,R,R,0,0,2008
+15,Laghi Cristian,OF,R,R,178,77,2005
+26,Meriggi Giacomo,OF,R,R,187,92,1991
+2,Minghelli Radolovich Nicolò,OF,R,R,171,84,1995
+23,Monari Eugenio,UTL,R,R,180,85,1984
+44,Orselli Manuel,2B/UTL,R,R,0,0,2004
+19,Piumatti Gabriele,P/UTL,R,R,185,85,1995
+56,Rodriguez Acosta Dariel,C/1B,R,R,175,100,1996
+57,Rodriguez Salas José Alexander,P,R,R,0,0,1995
+5,Sabbadini Alex,P,R,R,180,90,2001
+41,Sabbatani Marco,C,R,R,179,85,1989
+21,Servidei Luca,SS,R,R,175,75,1994
+29,Servidei Marco,3B,R,R,180,88,2000
+18,Tanesini Paolo,OF,L,R,170,72,1981
+58,Allegri Alessandro,P/1B/OF/UTL,R,L,0,0,2005
+2,Bettati Jacopo,1B/OF/UTL,R,R,0,0,1990
+95,Cannata Gianmarco,2B/UTL,R,R,0,0,1998
+6,Carima Emanuele,IF/UTL,R,R,0,0,2005
+19,Carnevale Simone,P/UTL,R,R,184,87,2004
+22,Catellani Sebastiano,P/OF/UTL,R,L,0,0,2004
+54,Garbi Alberto,C/UTL,R,R,0,0,2006
+1,Gremi Marcello,P/UTL,R,R,0,0,1992
+16,Guglielmi Edoardo,2B/UTL,R,R,0,0,2004
+43,Lori Emanuele,3B/IF,R,R,0,0,1990
+77,Manghi Giacomo,OF/UTL,R,R,0,0,2003
+15,Perez Santana Yan Luis,OF/UTL,R,R,0,0,2004
+88,Pomponi Michele,P/3B/OF/UTL,R,R,0,0,1998
+9,Rodríguez López Marc,C/UTL,R,R,191,95,2004
+84,Spagnolo Nicola,P/1B/UTL,R,R,0,0,2005
+50,Squarcia Riccardo,IF/UTL,R,R,0,0,2006
+0,Tonelli Luca,UTL,R,R,0,0,1998
+4,TORRES ZAMBRANO GABRIEL JOSE,P,L,L,,,2001
+8,Vasquez Marrero Andres Eloy,P/UTL,R,R,,,2001
+17,Zaccarini Elia,P,R,R,0,0,2006
+37,Arcila Anthony,P,R,R,0,0,1991
+48,Benetton Federico,P,R,R,0,0,2004
+10,Benetton Riccardo,C,R,R,0,0,2004
+9,Brunati Michele,C/DH,R,R,0,0,1994
+88,Canache Soler Roberto Arturo,OF,R,R,0,0,1990
+15,Giacomazzi Pierangelo,OF,R,R,0,0,1988
+19,Lotti Alessandro,2B/3B/SS,R,R,0,0,2004
+26,Maggiolo Leonardo,1B,R,R,0,0,2004
+34,Magro Marco,1B,R,R,0,0,2000
+82,Martignoni Andrea,P/OF,L,L,0,0,1997
+70,Martinez Torrez Anderson Rafael,P,R,R,,,1993
+32,Moccia Gianluca,2B/3B/SS,R,R,0,0,1977
+25,Novello Davide,P/OF,L,L,0,0,1999
+5,Pacini Filippo,UTL,R,R,0,0,1988
+35,Salvagnin Tommaso,OF,R,R,0,0,2004
+3,Sambugaro Matteo,OF,R,R,0,0,2004
+24,Smaniotto Davide,P,L,L,0,0,2005
+43,Talevi Exequiel Agustin,SS,R,R,0,0,1994
+47,Tombel Riccardo,3B,R,R,0,0,1995
+40,Tuzzi Riccardo,1B,R,R,0,0,2001
+73,Urbinati Matteo,2B,R,R,0,0,1999
+21,Anselmi Davide,P,R,R,0,0,1995
+2,Bonamini Andrea,C/UTL,R,R,0,0,2003
+5,Bottaro Giovanni,1B/DH,R,R,0,0,1978
+15,Damon William John,UTL,R,R,,,1996
+44,Dando Niccolò Christopher,P,R,R,0,0,2003
+8,De Boni Filippo,C,R,R,0,0,1990
+6,ELORZA Juan,P,R,R,171,65,2000
+20,Falzi Nicola,OF,R,R,0,0,1994
+18,Giarraputo Stefano,P/UTL,R,R,175,65,1997
+14,Guarda Dario,P,R,R,0,0,1996
+7,Guzman Castro Oscar Antonio,P,R,R,,,2003
+45,Meliori Davide,SS/UTL,R,R,185,74,1998
+12,Mondo Marco,LF/CF/RF,R,R,0,0,1984
+25,Montalbetti Lucas Paolo,UTL,R,R,0,0,1983
+55,Mosconi Leonardo,LF/CF/RF,R,R,0,0,1995
+30,Nifosì Matteo,3B,R,R,0,0,2000
+10,Orrasch Andrea,C/UTL,R,R,0,0,2001
+27,Piccoli Davide,SS/UTL,R,R,0,0,2001
+13,Rampo Elia,1B/CF,R,R,0,0,1991
+33,Rubenstein Brody James,CF,R,R,,,1997
+33,BARCELAN RODRIGUEZ JORGE LUIS,3B/UTL,R,R,170,80,1990
+35,Biscontri Niccolò Maria,C/1B/UTL,R,R,173,75,1991
+30,Carletti Matteo,P/UTL,R,R,175,70,1997
+50,Chelli Gabriele,CF,R,R,173,65,2000
+10,Cipriani Federico,UTL,R,R,175,80,1965
+16,Cozzolino Federico,P/UTL,R,R,180,75,1994
+14,Franceschelli Tommaso,UTL,R,R,175,65,2003
+42,Gonzalez Valera Luis Gabriel,P,L,L,180,85,1993
+22,Herrera Torrez Jose Francisco,3B/SS,R,R,175,80,1993
+27,Hidalgo Reyes Stalin Stiven,P/UTL,R,R,185,70,2001
+41,Martini Parilli Renzo Guillermo,1B/UTL,R,R,180,80,1992
+43,Noguera Freddy Miguel,UTL,R,R,175,80,1991
+70,Noguera Rodriguez Antonio,P,L,L,190,95,1988
+38,Oberto Orlando Junior,P/UTL,L,L,185,88,1980
+4,Pizzoli Gomez Franco Javier,C/1B/UTL,R,R,170,85,1994
+17,Sarrocco Yuri,C/UTL,R,R,165,70,1999
+15,TOMSJANSEN Rushenten Laybert Apostel,CF/UTL,R,R,180,69,2001
+28,Vaglio Francesco,2B/UTL,R,R,175,70,2000
+99,Adorni Tommaso,UTL,R,R,173,70,2004
+9,Amoretti Arturo,UTL,R,R,0,0,2002
+60,Astorri Simone,UTL,R,R,,,1996
+6,Barba Matteo,UTL,R,R,0,0,2004
+20,Bassi Marco,P,R,R,0,0,2000
+70,Bigliardi Riccardo,UTL,L,L,0,0,2002
+50,Borella Jacopo,P,R,R,0,0,2004
+15,Covati Matteo,UTL,R,R,0,0,2001
+11,Dallatana Federico,P,R,R,0,0,2000
+77,Dentoni Federico,UTL,R,R,0,0,1998
+29,Fasan Filippo,UTL,R,R,0,0,2004
+18,Fava Jacopo,UTL,R,R,0,0,2001
+33,Gerali Guido,UTL,R,R,0,0,1996
+42,Gerali Matteo,UTL,R,R,0,0,2005
+25,Gradali Lorenzo,UTL,R,R,0,0,1995
+65,Guerra Ceballos Pedro Rafael,P,R,R,0,0,1990
+14,Marchesi Francesco,UTL,R,R,0,0,1999
+16,Marchesi Daniele,UTL,R,R,0,0,2003
+91,Mazza Ivan,UTL,R,R,0,0,2004
+7,Montanari Davide,UTL,R,R,0,0,2004
+35,Piazza Manuel,UTL,R,R,0,0,1996
+10,Rizzi Francesco,UTL,R,R,0,0,2005
+8,Scialpi Matteo,UTL,R,R,0,0,2000
+71,Silvestri Lorenzo,UTL,R,R,0,0,2006
+26,Viloria Serda Nolberto Alexander,UTL,R,R,0,0,2000
+69,Zoni Lorenzo,UTL,R,R,0,0,2005
+59,Artitzu Marco,UTL,R,R,177,80,2002
+69,Bäckström Leonard,UTL,R,R,191,90,1999
+5,Benelli Omar,P/UTL,R,R,0,0,2005
+55,Cappuccini Francesco,UTL,R,R,180,75,2003
+8,Cinelli Niccolò,UTL,R,R,178,78,2002
+19,Colasante Moises Vicente,UTL,R,R,178,85,1994
+36,Diaz Diaz Marcos Antonio,UTL,R,R,175,75,1996
+1,Doba Ion,UTL,R,R,178,75,2002
+27,Faria Acosta Joaquin Euclides,UTL,R,R,0,0,2003
+0,Forti Michele,UTL,R,R,0,0,2004
+37,Funzione Niccolò,UTL,R,R,0,0,2004
+90,Garcia Del Toro Eddy Abel,UTL,R,R,179,66,1992
+25,Luciani Diego,UTL,R,R,0,0,2004
+4,Marquez Coronado Angel Alexander,UTL,R,R,180,85,1986
+88,Mega Nicola,UTL,R,R,175,70,1988
+44,Milli Filippo,UTL,R,R,175,75,2002
+0,Orlandini Lorenzo,UTL,R,R,0,0,2008
+7,Pancellini Mirko,UTL,R,R,0,0,1997
+18,Pasquini Sweed Maor Luca,UTL,R,R,0,0,2003
+0,Piccinelli Tommaso,UTL,R,R,0,0,2005
+50,Piccini Filippo,UTL,L,R,190,80,2002
+0,Porto Edoardo,UTL,R,R,0,0,2008
+15,Rodriguez Reyes Leomartires,UTL,R,R,0,0,1991
+10,Scull Zayas Yordany,UTL,R,R,176,76,1979
+12,Sireus Mattia,UTL,R,R,189,85,2002
+13,Tiberi Francesco,UTL,R,R,172,70,2001
+27,Annunziata Nino Andres Antonio,C/1B/UTL,R,R,182,90,2005
+12,Barbona Lorenzo,2B/SS,L,R,173,68,2006
+69,Barbona Alessandro,LF/UTL,L,L,173,60,2004
+18,Bellucci Attilio,P,R,R,181,80,2005
+34,Ciarla Alessandro,P,R,R,187,76,1997
+24,Dini Davide,P,R,R,185,85,1995
+6,Giordani Federico,LF/CF/RF,R,R,179,84,1997
+19,Grimaudo Alessandro,LF/RF/UTL,L,R,185,78,1993
+13,Guiotto Adriano,C,R,R,175,83,2007
+22,Liguori Lars Vincent,P/UTL,L,L,188,85,1990
+21,MARTINES Denverick Ezequiel,P,L,L,180,77,2001
+50,Mazzanti Riccardo,LF/OF/UTL,R,R,160,50,2007
+2,Mercuri Mattia,SS/UTL,R,R,184,94,1994
+31,Paula José-Andres Gregorio,UTL,R,R,,,1999
+28,Pecci Federico,P/UTL,R,R,180,84,1997
+71,Pizziconi Andrea,P,R,R,188,105,1991
+33,ROSA PANIAGUA Garabez,OF/UTL,R,R,188,95,1989
+23,Scerrato Lorenzo,2B/DH,R,R,172,72,1999
+3,Sellaroli Andrea,2B/CF/UTL,R,R,170,72,1997
+41,Simone Valerio,P/UTL,L,L,182,90,1991
+32,SOLLECITO MATTEO PIETRO,P/UTL,R,R,1.85,85,2000
+52,Taschini Paolo,P/UTL,R,R,190,92,1994
+4,Trinci Mario,C/1B/UTL,R,R,178,88,1994
+9,Venditti Filippo,1B,R,R,185,85,2004
+35,Zazza Manuel,3B/UTL,R,R,185,86,2005
+46,Brignone Fabrizio,UTL,R,R,0,0,1993
+3,Bulfone Leonardo,UTL,R,R,170,75,1998
+0,Caranzetti Edoardo,UTL,R,R,,,1986
+13,Cianfriglia Piero,UTL,R,R,,,1998
+20,Colalucci Matteo,UTL,R,R,180,75,2004
+58,Conti Daniele,UTL,R,R,0,0,1991
+10,D'alessio Davide,UTL,R,R,0,0,1995
+48,De Angelis Leonardo,UTL,R,R,0,0,2003
+9,De Angelis Manuel,UTL,R,R,0,0,2000
+1,Di Persia Daniele,UTL,R,R,163,58,2007
+14,Faccendini Francesco,UTL,R,R,0,0,1998
+36,Guardia Villa Kermin,UTL,R,R,,,1996
+8,Lo Rillo Francesco,UTL,R,R,0,0,2003
+4,Ludovisi Francesco,UTL,R,R,173,78,2000
+16,Ludovisi Fabio,UTL,L,L,170,78,2002
+11,Mautone Matteo,UTL,R,R,0,0,2006
+5,Mazzanti Valerio,UTL,R,R,0,0,2002
+21,Mercuri Danilo,UTL,R,R,0,0,1989
+6,Messina Jordan,UTL,R,R,180,77,1998
+99,Orefice Gabriele,UTL,R,R,0,0,1997
+32,Piras Christian,UTL,R,R,0,0,2001
+12,Porcari Federico,UTL,R,R,0,0,2005
+43,Pouye Meissa,UTL,R,R,0,0,2005
+37,Sabatini Filippo,UTL,R,R,0,0,2007
+18,Visalli Francesco,UTL,R,R,0,0,1996
+15,Visalli Riccardo,UTL,R,R,0,0,2003
+88,Barbarini Daniele,UTL,R,R,0,0,1987
+28,Corsini Andrea,UTL,R,R,0,0,1990
+11,Cotti Tommaso,UTL,R,R,0,0,2003
+6,Cupri Matteo,UTL,R,R,,,1995
+10,Daraio Rocco,UTL,L,L,0,0,1994
+4,De Martino Emanuele,UTL,R,R,0,0,1995
+5,Delfrate Leonardo,UTL,R,R,0,0,2007
+22,Dilauro Joel,UTL,R,R,0,0,2007
+17,Fava Rodrigo Marcello,P/UTL,R,R,0,0,1992
+69,Fontana Leonardo,UTL,R,R,0,0,2000
+0,Fornari Giulio,UTL,R,R,0,0,2007
+42,Frati Manuele,P/UTL,R,R,0,0,2002
+55,Giulianotti Filippo,UTL,R,R,0,0,2002
+86,Graiani Edoardo,UTL,R,R,0,0,1997
+7,Lanfranchi Matteo,UTL,R,R,0,0,1996
+37,Páez Foguet Eric,UTL,R,R,185,92,1995
+9,Pavarani Aldo,UTL,R,R,148,40,2007
+27,Romanini Edoardo,UTL,R,R,0,0,1997
+32,Ronchini Filippo,UTL,R,R,0,0,2007
+49,Salati Andrea,UTL,R,R,0,0,1984
+98,Sassi Francesco,P/UTL,R,R,0,0,2003
+23,Spotti Nicola,UTL,R,R,0,0,2006
+12,Tarassi Gioele,UTL,R,R,0,0,2005
+14,Wewala Gamage Sadas Pansilu,UTL,R,R,0,0,2007
+19,Zambelli Alessandro,P/UTL,R,R,0,0,1997
+77,Zani Davide,UTL,R,R,0,0,2008
