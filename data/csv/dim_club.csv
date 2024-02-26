@@ -1,4 +1,5 @@
 ID,COUNTRY_ID,NAME,ADDRESS,POSTAL_CODE,CITY,PROVINCE,COUNTRY,EMAIL,WEBPAGE,BALLPARK_ID,PRESIDENT,SECRETARY,TREASURER,GOVERNANCE_PERSON
+ACA,IT,Academy of Nettuno BC ASD,VIA LOMBARDIA 93/B,00048,Nettuno,Lazio,Italy,academynettunobc@legalmail.it,http://www.baseballacademynettuno.it/,,Roberto De Franceschi,Alvaro Seccafieno,Jordan Messina,Cristian Mandolini
 AMS,NL,Amsterdam Pirates,Herman Bonpad 5,1067 SN,Amsterdam,,Netherlands,,http://www.amsterdampirates.nl/,,,,,
 AND,BE,Andenne Black Bears,Rue sous Meuse de la Déportation,5300,Namêche,Namur,Belgium,david.delvenne@skynet.be,https://www.andenne-baseball.be/,,,,,
 ANT,BE,Antwerp Eagles,Eglantierlaan 66,2610,Wilrijk,Antwerpen,Belgium,secretariaat@antwerpeagles.com,http://www.antwerpeagles.com/,,Peter Van Ackeren,Nick Van Den Bosch,Gert Van Den Berg,
@@ -55,9 +56,9 @@ MOR,BE,Mortsel Stars,Gasthuishoeve 1,2640,Morstel,Antwerpen,Belgium,info@mortsel
 MSG,BE,Mont-Saint-Guibert Phoenix,Avenue du Cerisier,1435,Mont-Saint-Guibert,Walloon Brabant,Belgium,info@msgphoenix.be,https://www.msgphoenix.be/,,,,,
 NAM,BE,Namur Angels,"Rue de la 1ère Armée Américaine, 135",5100,Wépion,Namur,Belgium,info@namur-angels.be,http://www.namur-angels.be/,,,,,
 NAV,ES,C.D. Arga Navarra,Plaza Benitorena 1 - 3 A,31600,Burlada,Navarra,Spain,info@cdarga.com,https://www.cdarga.com/,,Ricardo Cordoba,Meritxell Muñio,,Txemi Lacalle
-NEP,NL,Curaçao Neptunus,Abraham van Stolkweg 31,3041 JA,Rotterdam,,Netherlands,,http://www.neptunussport.com/,,,,,
-NE5,IT,Nettuno BC 1945 ASD,VIA A. LAURI 1,48,Nettuno,Lazio,Italy,nettunobc1945@pec.it,,,Fabio Bonifazi,Marco Bianchi,Ilaria Coppola,Leonardo Mazzanti
 NE2,IT,Nettuno 2 Baseball Club ASD,VIA V. VENETO 135,48,Nettuno,Lazio,Italy,BaseballN2Elite@legalmail.it,,,Domenico Della Millia,Laureano Palmisano,Ivano Pietrangeli,Pasqualino Cerchio
+NE5,IT,Nettuno BC 1945 ASD,VIA A. LAURI 1,48,Nettuno,Lazio,Italy,nettunobc1945@pec.it,,,Fabio Bonifazi,Marco Bianchi,Ilaria Coppola,Leonardo Mazzanti
+NEP,NL,Curaçao Neptunus,Abraham van Stolkweg 31,3041 JA,Rotterdam,,Netherlands,,http://www.neptunussport.com/,,,,,
 OLT,IT,Oltretorrente Baseball Club ASD,VIA VOLTURNO 95/A,43125,Parma,Emilia Romagna,Italy,info@oltretorrentebaseball.it,,,Andrea Paini,Paolo Bettati,Stefano Panizzi,Luca Cantadori
 OOS,BE,Oostende Piranhas,Sportparklaan 6,8400,Oostende,Oost-Vlaanderen,Belgium,info@piranhas.be,http://www.piranhas.be/,,Dirk Gunst,Marc Leniere,Sylvia Derycker,
 OUD,BE,Oudernaarde Frogs,Rodelos 4,9700,Oudenaarde,Oost-Vlaanderen,Belgium,info@thefrogs.be,https://thefrogs.be/,,Jonas Hoebeke,Lisa Biasino,Céline De Roeck,
@@ -96,3 +97,6 @@ WBA,BE,WBA Foxes,Modernadreef,9100,Sint-Niklaas,Oost-Vlaanderen,Belgium,info@wba
 WIE,BE,Wielsbeke Pitbulls,Loverstraat 108,8710,Wielsbeke,West-Vlaanderen,Belgium,eric.secember@gmail.com,http://www.pitbulls.be/,,Tijs Van Canneyt,Eric Secember,,
 ZON,BE,Zonhoven Tigers,Kleebergweg 27,3520,Zonhoven,Limburg,Belgium,info@sunville-tigers.be,http://sunville-tigers.be/,,Patrick Kuenen,Dirk Hendriks,Koen Stalmans,
 ZOT,BE,Zottegem Bebops,Zwembadstraat,9620,Zottegem,Oost-Vlaanderen,Belgium,bestuur@bebops.be,http://www.bebops.be/,,Johan De Zutter,Filip Callebaut,Frederik Plasschaert,
+LAN,IT,Lancers BC ASD,"via Livornese ,s.n.c. C.P. n2",50055,Lastra A Signa,Toscana,Italy,lancersbc@pec.it,https://lancersbaseballclub.com/,,Paolo Moretti,Gabriele Nerbini,Stefania Lucherini,Alessio Beconcini
+MON,IT,Montefiascone 67 ASD,VIA G. CONTADINI - LOC.FONTANELLE,1027,Montefiascone,Lazio,Italy,montefiasconebc@libero.it,http://www.montefiasconebaseball.it/Home.html,,Cristiano Tabarrini,Manuela Negro,Roberto Ballarotto,Mauro Coppola
+RES,IT,Paternò Red Sox Baseball ASD,VIA DON MILANI 39,95047,Paternò,Sicilia,Italy,asdpaternobaseball@tiscali.it,,,Giuseppina Loredana Orfanò,Simona Emanuela Orfanò,Giulia Marici,Deborah Stabile

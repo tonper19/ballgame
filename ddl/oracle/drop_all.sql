@@ -21,4 +21,5 @@ drop table c##baseball.dim_category;
 drop table c##baseball.dim_season;
 drop table c##baseball.dim_player;
 drop table c##baseball.dim_sport;
+drop table c##baseball.dim_country;
 
