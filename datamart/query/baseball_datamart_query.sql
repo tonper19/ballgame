@@ -9,6 +9,8 @@ license file in the root directory of this source tree.
 -- Belgian Baseball & Softball Datamart Query
 -- 31/01/2024  Tony Pérez
 -- 24/02/2024  Tony Pérez  Introduced European Leagues
+-- 02/03/2024  Tony Pérez  season data to calculate stat leaders
+--
 
 with sport_category as
 (
@@ -472,8 +474,17 @@ select dpl.last_name  player_last_name
       ,dpl.license_number  player_license_number
       ,dpl.license_type  player_license_type
       ,stat.*
+      ,dsg.number_of_games  season_number_of_games
+      ,dsg.pa_coefficient  season_pa_coefficient
+      ,dsg.innings_pitched_percent  season_innings_pitched_percent
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
+  left outer join c##baseball.dim_season_games  dsg
+    on stat.sport_id = dsg.sport_id
+   and stat.gender_id = dsg.gender_id
+   and stat.category_id = dsg.category_id
+   and stat.country_id = dsg.country_id
+   and stat.season_year = dsg.season_year
  order by 1
 ;

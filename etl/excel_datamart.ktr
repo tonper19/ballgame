@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2024/01/21 20:30:51.633</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/02/24 21:52:32.024</modified_date>
+    <modified_date>2024/03/02 15:34:30.367</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -529,6 +529,8 @@ license file in the root directory of this source tree.
 -- Belgian Baseball &amp; Softball Datamart Query
 -- 31/01/2024  Tony Pérez
 -- 24/02/2024  Tony Pérez  Introduced European Leagues
+-- 02/03/2024  Tony Pérez  season data to calculate stat leaders
+--
 
 with sport_category as
 (
@@ -992,11 +994,19 @@ select dpl.last_name  player_last_name
       ,dpl.license_number  player_license_number
       ,dpl.license_type  player_license_type
       ,stat.*
+      ,dsg.number_of_games  season_number_of_games
+      ,dsg.pa_coefficient  season_pa_coefficient
+      ,dsg.innings_pitched_percent  season_innings_pitched_percent
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
+  left outer join c##baseball.dim_season_games  dsg
+    on stat.sport_id = dsg.sport_id
+   and stat.gender_id = dsg.gender_id
+   and stat.category_id = dsg.category_id
+   and stat.country_id = dsg.country_id
+   and stat.season_year = dsg.season_year
  order by 1
-
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -3351,6 +3361,75 @@ select dpl.last_name  player_last_name
         <date_format_timezone>Europe/Brussels</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>SEASON_NUMBER_OF_GAMES</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>SEASON_NUMBER_OF_GAMES</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>SEASON_PA_COEFFICIENT</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>SEASON_PA_COEFFICIENT</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>SEASON_INNINGS_PITCHED_PERCENT</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -4632,6 +4711,42 @@ select dpl.last_name  player_last_name
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>SEASON_NUMBER_OF_GAMES</name>
+        <type>BigNumber</type>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>SEASON_PA_COEFFICIENT</name>
+        <type>BigNumber</type>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
+        <type>BigNumber</type>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -4916,7 +5031,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_AT_BATS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_AT_BATS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4928,7 +5043,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_RUNS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_RUNS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4940,7 +5055,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_HITS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_HITS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4952,7 +5067,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_DOUBLES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_DOUBLES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4964,7 +5079,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_TRIPLES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_TRIPLES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4976,7 +5091,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_HOME_RUNS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_HOME_RUNS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -4988,7 +5103,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_RBI</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_RBI</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5000,7 +5115,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_TOTAL_BASES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_TOTAL_BASES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5012,7 +5127,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_BASE_ON_BALLS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_BASE_ON_BALLS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5024,7 +5139,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_HIT_BY_PITCHS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_HIT_BY_PITCHS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5036,7 +5151,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_STRIKE_OUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_STRIKE_OUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5048,7 +5163,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_GROUND_INTO_DOUBLEPLAYS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5060,7 +5175,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_SACRFICE_FLIES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_SACRFICE_FLIES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5072,7 +5187,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_BUNTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_BUNTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5084,7 +5199,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_STOLEN_BASES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_STOLEN_BASES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5096,7 +5211,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FBS_CAUGHT_STEALING</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FBS_CAUGHT_STEALING</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5132,7 +5247,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_WINS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_WINS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5144,7 +5259,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_LOSSES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_LOSSES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5156,7 +5271,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_GAMES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_GAMES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5168,7 +5283,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_GAMES_STARTED</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_GAMES_STARTED</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5180,7 +5295,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_SAVES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_SAVES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5192,7 +5307,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_COMPLETE_GAMES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_COMPLETE_GAMES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5204,7 +5319,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_SHUTOUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_SHUTOUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5252,7 +5367,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_INNING_OUTS_PITCHED</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_INNING_OUTS_PITCHED</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5264,7 +5379,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_HITS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_HITS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5276,7 +5391,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_RUNS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_RUNS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5288,7 +5403,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_EARNED_RUNS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_EARNED_RUNS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5300,7 +5415,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_WALKS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_WALKS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5312,7 +5427,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_STRIKE_OUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_STRIKE_OUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5324,7 +5439,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_DOUBLES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_DOUBLES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5336,7 +5451,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_TRIPLES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_TRIPLES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5348,7 +5463,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_HOME_RUNS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_HOME_RUNS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5360,7 +5475,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_AT_BATS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_AT_BATS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5372,7 +5487,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_WILD_PITCHES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_WILD_PITCHES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5384,7 +5499,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_HIT_BY_PITCHS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_HIT_BY_PITCHS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5396,7 +5511,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_BALKS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_BALKS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5408,7 +5523,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_SACRIFICE_FLIES_AGAINST</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_SACRIFICE_FLIES_AGAINST</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5420,7 +5535,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_BUNTS_AGAINST</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_BUNTS_AGAINST</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5432,7 +5547,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_GROUND_OUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_GROUND_OUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5444,7 +5559,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FPS_FLY_OUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FPS_FLY_OUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5540,7 +5655,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_GAMES_PLAYED_AT_POSITION</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_GAMES_PLAYED_AT_POSITION</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5552,7 +5667,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_TOTAL_CHANCES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_TOTAL_CHANCES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5564,7 +5679,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_TOTAL_SUCCESSFUL_CHANCES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5576,7 +5691,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_PUTOUTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_PUTOUTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5588,7 +5703,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_ASSISTS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_ASSISTS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5600,7 +5715,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_ERRORS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_ERRORS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5612,7 +5727,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_DOUBLEPLAYS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_DOUBLEPLAYS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5624,7 +5739,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_STOLEN_BASES_AGAINST</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_STOLEN_BASES_AGAINST</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5636,7 +5751,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_PLAYERS_CAUGHT_STEELING</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_PLAYERS_CAUGHT_STEELING</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5648,7 +5763,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_PASSED_BALLS</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_PASSED_BALLS</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5660,7 +5775,7 @@ select dpl.last_name  player_last_name
       <field>
         <name>FFS_CATCHER_INTERFERENCES</name>
         <type>Integer</type>
-        <format/>
+        <format>0</format>
         <title>FFS_CATCHER_INTERFERENCES</title>
         <titleStyleCell/>
         <styleCell/>
@@ -5914,6 +6029,42 @@ select dpl.last_name  player_last_name
         <type>String</type>
         <format/>
         <title>FEDERATION_WEBPAGE</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>SEASON_NUMBER_OF_GAMES</name>
+        <type>BigNumber</type>
+        <format/>
+        <title>SEASON_NUMBER_OF_GAMES</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>SEASON_PA_COEFFICIENT</name>
+        <type>BigNumber</type>
+        <format/>
+        <title>SEASON_PA_COEFFICIENT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
+        <type>BigNumber</type>
+        <format/>
+        <title>SEASON_INNINGS_PITCHED_PERCENT</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -6354,6 +6505,18 @@ select dpl.last_name  player_last_name
       </field>
       <field>
         <name>FEDERATION_WEBPAGE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SEASON_NUMBER_OF_GAMES</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SEASON_PA_COEFFICIENT</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
