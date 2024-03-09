@@ -161,3 +161,8 @@ cython_debug/
 
 .~lock.*#
 temp.*
+
+*Test.mstr
+*test.mstr
+*test.csv
+
