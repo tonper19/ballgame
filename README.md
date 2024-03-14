@@ -1,2 +1,2 @@
 # ballgame
-Belgian Baseball and Softball Statistics Data warehouse and BI application
+European Baseball and Softball Statistics Data warehouse and BI application
