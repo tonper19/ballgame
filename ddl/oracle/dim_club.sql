@@ -28,7 +28,11 @@ license file in the root directory of this source tree.
 	president varchar2(50 byte),
 	secretary varchar2(50 byte),
 	treasurer varchar2(50 byte),
-	governance_person varchar2(50 byte)
+	governance_person varchar2(50 byte),
+  club_latitude  number,
+  club_longitude  number,
+  stadium_latitude  number,
+  stadium_longitude  number
    ) segment creation immediate
   pctfree 10 pctused 40 initrans 1 maxtrans 255
  nocompress logging
