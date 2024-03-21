@@ -2,4 +2,16 @@ country_id,country_name,federation_id,address,postal_code,city,province,email,we
 BE,Belgium,KBBSF/FRBBS,Meistraat 21 b63,2000,Antwerpen,,info@kbbsf-frbbs.be,https://www.kbbsf-frbbs.be/
 NL,The Netherlands,KNBSB,Kelvinbaan 48 1e etage,3439 MT,Nieuwegein,,info@knbsb.nl,https://www.knbsb.nl/
 ES,Spain,RFEBS,C/ Coslada 10 4º izq.,28028,Madrid,Comunidad de Madrid,rfebs@rfebs.es,https://www.rfebs.es/es
-IT,Italy,FIBS,Viale Tiziano 74,00196,Roma,RM,segreteria@fibs.it,https://www.fibs.it/en
+IT,Italy,FIBS,Viale Tiziano 74,196,Roma,RM,segreteria@fibs.it,https://www.fibs.it/en
+AT,Austria,ABF,Sportzentrum Spenadlwiese,1020,Wien,,office@baseballaustria.com,https://www.baseballsoftball.at/
+DE,Germany,DBV,Otto-Fleck-Schneise 12,60528,Frankfurt am Main,,office@baseball-softball.de,https://www.baseball-softball.de/
+FR,France,FFBS,"41, rue de Fécamp",75012,Paris,,contact@ffbs.fr,https://ffbs.fr/
+GB,United Kingdom,BBF,"Farnham Park National Baseball & Softball Complex, Beaconsfield Road",SL2 3BP,Farnham Royal,Buckinghamshire,info@britishbaseball.org.uk,https://www.britishbaseball.org.uk/
+IL,Israel,IAB,P.O.B. 48159,61481,Tel Aviv,,frankie@baseball.org.il,http://www.baseball.org.il/
+SE,Sweden,SBSLF,Box 11016,10061,Stockholm,,info@baseboll-softboll.se,https://www.baseboll-softboll.se/
+DK,Denmark,DBaF,"Rosensgade 64B, 1.tv; pr. May 1 = Møllevej 4",8300,Odder,,rm@baseball.dk,https://www.baseball.dk/
+CZ,Czechia,CBA,Zátopkova,16017,Prague,,baseball@baseball.cz,https://www.baseball.cz/
+UA,Ukraine,UBSF,"Frolivska Street 1/6, office 32",4070,Kiev,,info@fbsu.com.ua,http://fbsu.com.ua/
+PL,Poland,PBSF,27 Pope John Paul II Street,00-867,Warsaw,,pzball@wp.pl,https://www.baseballsoftball.pl/
+HR,Croatia,HBS,Trg Krešimira Cosica 11,10000,Zagreb,,hrvatski.baseball.savez@gmail.com,http://www.baseball-cro.hr/
+CH,Switzerland,SBSF,"c/o Monique Schmitt, Birsmattstrasse 21",4106,Therwil,,monique.schmitt@swiss-baseball.ch,https://www.swiss-baseball.ch/

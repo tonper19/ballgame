@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/03/02 15:38:19.703</modified_date>
+  <modified_date>2024/03/21 19:21:59.973</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -379,7 +379,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>351</yloc>
+      <yloc>344</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -418,8 +418,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>96</yloc>
+      <xloc>728</xloc>
+      <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -563,7 +563,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>720</xloc>
+      <xloc>820</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -604,7 +604,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>96</yloc>
+      <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -643,7 +643,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>1009</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -683,7 +683,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>631</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -760,7 +760,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>181</yloc>
+      <yloc>168</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -797,7 +797,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>266</yloc>
+      <yloc>256</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -814,7 +814,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>442</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -854,8 +854,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>736</xloc>
-      <yloc>96</yloc>
+      <xloc>1060</xloc>
+      <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -895,7 +895,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1392</xloc>
-      <yloc>240</yloc>
+      <yloc>256</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -934,7 +934,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1056</xloc>
+      <xloc>1198</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -974,7 +974,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
+      <xloc>253</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -1013,8 +1013,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>272</xloc>
-      <yloc>96</yloc>
+      <xloc>396</xloc>
+      <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1300,6 +1300,27 @@
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>European Baseball and Softball Stats</note>
+      <xloc>16</xloc>
+      <yloc>16</yloc>
+      <width>233</width>
+      <heigth>26</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

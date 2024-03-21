@@ -10,7 +10,7 @@ license file in the root directory of this source tree.
 -- 31/01/2024  Tony Pérez
 -- 24/02/2024  Tony Pérez  Introduced European Leagues
 -- 02/03/2024  Tony Pérez  season data to calculate stat leaders
---
+-- 21/03/2024  Tony Pérez  Club/Stadium geo location (latitude/longitude)
 
 with sport_category as
 (
@@ -121,6 +121,10 @@ with sport_category as
         ,dcl.secretary  bat_club_secretary
         ,dcl.treasurer  bat_club_treasurer
         ,dcl.governance_person  bat_governance_person
+        ,dcl.club_latitude  bat_club_latitude
+        ,dcl.club_longitude  bat_club_longitude
+        ,dcl.stadium_latitude  bat_stadium_latitude
+        ,dcl.stadium_longitude  bat_stadium_longitude
         ,sc.federation_country_name  bat_federation_country_name
         ,sc.federation_id  bat_federation_id
         ,sc.federation_address  bat_federation_address
@@ -199,6 +203,10 @@ with sport_category as
         ,dcl.secretary  pit_club_secretary
         ,dcl.treasurer  pit_club_treasurer
         ,dcl.governance_person  pit_governance_person
+        ,dcl.club_latitude  pit_club_latitude
+        ,dcl.club_longitude  pit_club_longitude
+        ,dcl.stadium_latitude  pit_stadium_latitude
+        ,dcl.stadium_longitude  pit_stadium_longitude
         ,sc.federation_country_name  pit_federation_country_name
         ,sc.federation_id  pit_federation_id
         ,sc.federation_address  pit_federation_address
@@ -233,6 +241,10 @@ with sport_category as
         ,dcl.secretary  fld_club_secretary
         ,dcl.treasurer  fld_club_treasurer
         ,dcl.governance_person  fld_governance_person
+        ,dcl.club_latitude  fld_club_latitude
+        ,dcl.club_longitude  fld_club_longitude
+        ,dcl.stadium_latitude  fld_stadium_latitude
+        ,dcl.stadium_longitude  fld_stadium_longitude
         ,sc.federation_country_name  fld_federation_country_name
         ,sc.federation_id  fld_federation_id
         ,sc.federation_address  fld_federation_address
@@ -335,6 +347,10 @@ with sport_category as
         ,coalesce(bat_club_secretary,pit_club_secretary)  club_secretary
         ,coalesce(bat_club_treasurer,pit_club_treasurer)  club_treasurer
         ,coalesce(bat_governance_person,pit_governance_person)  club_governance_person
+        ,coalesce(bat_club_latitude,pit_club_latitude)  club_latitude
+        ,coalesce(bat_club_longitude,pit_club_longitude)  club_longitude
+        ,coalesce(bat_stadium_latitude,pit_stadium_latitude)  stadium_latitude
+        ,coalesce(bat_stadium_longitude,pit_stadium_longitude)  stadium_longitude
         ,coalesce(bat_federation_country_name, pit_federation_country_name) federation_country_name
         ,coalesce(bat_federation_id, pit_federation_id)  federation_id
         ,coalesce(bat_federation_address, pit_federation_address) federation_address
@@ -444,6 +460,10 @@ with sport_category as
         ,coalesce(club_secretary,fld_club_secretary)  club_secretary
         ,coalesce(club_treasurer,fld_club_treasurer)  club_treasurer
         ,coalesce(club_governance_person,fld_governance_person)  club_governance_person
+        ,coalesce(club_latitude,fld_club_latitude)  club_latitude
+        ,coalesce(club_longitude,fld_club_longitude)  club_longitude
+        ,coalesce(stadium_latitude,fld_stadium_latitude)  stadium_latitude
+        ,coalesce(stadium_longitude,fld_stadium_longitude)  stadium_longitude
         ,coalesce(federation_country_name, fld_federation_country_name) federation_country_name
         ,coalesce(federation_id, fld_federation_id)  federation_id
         ,coalesce(federation_address, fld_federation_address) federation_address

@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.822</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/03/02 14:55:09.084</modified_date>
+    <modified_date>2024/03/21 19:26:08.241</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -842,7 +842,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>21</length>
+        <length>26</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -877,6 +877,50 @@
         <group>,</group>
         <length>29</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CLUB_LATITUDE</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>16</length>
+        <precision>13</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CLUB_LONGITUDE</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>16</length>
+        <precision>14</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>STADIUM_LATITUDE</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>16</length>
+        <precision>13</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>STADIUM_LONGITUDE</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>16</length>
+        <precision>14</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
@@ -960,7 +1004,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>22</length>
+        <length>68</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -982,7 +1026,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>10</length>
+        <length>17</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1004,7 +1048,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>19</length>
+        <length>33</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1015,7 +1059,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>27</length>
+        <length>35</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1456,6 +1500,22 @@
       <field>
         <column_name>GOVERNANCE_PERSON</column_name>
         <stream_name>GOVERNANCE_PERSON</stream_name>
+      </field>
+      <field>
+        <column_name>CLUB_LATITUDE</column_name>
+        <stream_name>CLUB_LATITUDE</stream_name>
+      </field>
+      <field>
+        <column_name>CLUB_LONGITUDE</column_name>
+        <stream_name>CLUB_LONGITUDE</stream_name>
+      </field>
+      <field>
+        <column_name>STADIUM_LATITUDE</column_name>
+        <stream_name>STADIUM_LATITUDE</stream_name>
+      </field>
+      <field>
+        <column_name>STADIUM_LONGITUDE</column_name>
+        <stream_name>STADIUM_LONGITUDE</stream_name>
       </field>
     </fields>
     <attributes/>
