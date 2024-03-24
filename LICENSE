@@ -1,6 +1,8 @@
 BSD 3-Clause License
 
-Copyright (c) 2023, Antonio Alberto Pérez Pérez 
+Copyright (c) 2023, Antonio Alberto Pérez Pérez eu.sabr.ballgame@gmail.com
+
+
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -15,6 +17,14 @@ modification, are permitted provided that the following conditions are met:
 3. Neither the name of the copyright holder nor the names of its
    contributors may be used to endorse or promote products derived from
    this software without specific prior written permission.
+
+4. The data visualization dossier uses MicroStrategy Workstation
+   for viewing purposes. MicroStrategy Workstation is a
+   propietary software and you must agree to their license terms
+   if you want to view the data visualization dossier.
+   You must download MicroStrategy Workstation from
+   https://www.microstrategy.com in order to
+   view the dossier.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
