@@ -1,0 +1,21 @@
+<!--
+  MicroStrategy
+  Load dossier directly to Presentation Mode
+  https://www.omarvidaure.com/post/load-dossier-directly-to-presentation-mode-microstrategy
+
+  Open the dossier.
+  Pause data retrieval.
+  Add an HTML container.
+  Add the code below into the HTML Text tab.
+  Done, the dossier will open ALWAYS in Presentation Mode.
+  If need to edit the dossier, open it without data.
+
+  03/04/2024
+-->
+<script>
+  $(document).ready(function() {
+  if (mstrApp.isAppStatePresentation() == false) {
+                  document.getElementsByClassName("item presentationMode")[0].click()
+                  };
+  });
+</script>
