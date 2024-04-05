@@ -3,6 +3,7 @@
 :: 03/04/2024
 
 (C: && cd c:\ballgame\ballgameBI\ && git.exe pull)
+pause
 
 :: to run this from a scheduled task with output
 :: appended to a text file enter this in the task
