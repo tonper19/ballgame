@@ -1,0 +1,10 @@
+Create a new Python Virtual Environment:
+   create new directory for your project if it does not exists:
+      mkdir ./Development/Python/my_python_project
+   move to the new directory and create a new virtual environment:
+      python -m venv ./venv
+   activate the virtual environament:
+      source ./venv/bin/activate
+   install packages as needed and work on the project.
+   to deactivate the virtual environment:
+      deactivate

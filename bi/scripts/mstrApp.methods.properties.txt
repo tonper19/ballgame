@@ -1,0 +1,60 @@
+_super
+disposables
+env
+  isWSLiveMode
+  getDossierServerURL
+  isDesktop
+  getFeatures
+  getServerVersion
+  getCustomizationNames
+  getCustomThresholds
+  getAEVersionProps
+  isWin32
+  getCurrentEnvironment
+  getCurrentProject
+placeholder
+Privs
+name
+localeId
+helpLocaleId
+displayLocaleId
+jsRoot
+jsMojoRoot
+serverProxy
+isWSLiveMode
+dossierServerBaseUrl
+apiPath
+projectId
+projectName
+useQuickSearch
+searchAutoComplete
+searchAutoCompleteDelay
+getMsgID
+helpUrl
+upgradeHelpUrl
+userHelpPage
+enableEmbeddedImages
+isWorkstation
+isWSStyling
+supportAdvFilter
+DSFeature
+serverVersions
+aeVersion
+newReactPanel
+features
+setFeatureFlags
+customization
+toggleViewBarModelData
+tbModelData
+id
+start
+deployFeatures
+browseAllObjects
+loadedDossier
+WSProxy
+hiddenSecState
+docModelData
+modelFactory
+rootCtrl
+sessionManager
+isPartialUpdate
