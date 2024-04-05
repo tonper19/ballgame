@@ -1,4 +1,16 @@
 season_year,sport_id,gender,category_id,country_id,number_of_games,pa_coefficient,innings_pitched_percent
+2024,BB,M,D1,BE,2,2.7,0.8
+2024,BB,M,D2,BE,1,2.7,0.8
+2024,BB,M,D3,BE,1,2.7,0.8
+2024,BB,M,D4,BE,1,2.7,0.8
+2024,SBFP,F,D1,BE,2,2.7,0.8
+2024,SBFP,F,D2,BE,1,2.7,0.8
+2024,SBFP,F,D3,BE,1,2.7,0.8
+2024,SBFP,M,D1,BE,1,2.7,0.8
+2024,SBFP,M,RESERVES,BE,1,2.7,0.8
+2024,BB,M,HK,NL,3,2.7,0.8
+2024,BB,M,A,IT,2,2.7,0.8
+2024,BB,M,ABDL,AT,2,2.7,0.8
 2024,BB,M,SBL,ES,6,2.7,0.8
 2023,BB,M,D1,BE,40,2.7,0.8
 2023,BB,M,D2,BE,14,2.7,0.8
