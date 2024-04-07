@@ -6,11 +6,12 @@ this source code is licensed under the bsd-style license found in the
 license file in the root directory of this source tree.
 */
 
--- Belgian Baseball & Softball Datamart Query
+-- European Baseball & Softball Datamart Query
 -- 31/01/2024  Tony Pérez
 -- 24/02/2024  Tony Pérez  Introduced European Leagues
 -- 02/03/2024  Tony Pérez  season data to calculate stat leaders
 -- 21/03/2024  Tony Pérez  Club/Stadium geo location (latitude/longitude)
+-- 07/04/2024  Tony Pérez  Season/League Rankings
 
 with sport_category as
 (
@@ -486,6 +487,7 @@ with sport_category as
 select dpl.last_name  player_last_name
       ,dpl.first_name  player_first_name
       ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name)  player_full_name
+
       ,dpl.position  player_position
       ,dpl.bats  player_bats
       ,dpl.throws  player_throws
@@ -494,6 +496,251 @@ select dpl.last_name  player_last_name
       ,dpl.license_number  player_license_number
       ,dpl.license_type  player_license_type
       ,stat.*
+       -- Batting Ranks
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_at_bats desc nulls last)  fbs_rank_at_bats
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_runs desc nulls last)  fbs_rank_runs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_hits desc nulls last)  fbs_rank_hits
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_doubles desc nulls last)  fbs_rank_doubles
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_triples desc nulls last)  fbs_rank_triples
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_home_runs desc nulls last)  fbs_rank_home_runs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_rbi desc nulls last)  fbs_rank_rbi
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_total_bases desc nulls last)  fbs_rank_total_bases
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_base_on_balls desc nulls last)  fbs_rank_base_on_balls
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_hit_by_pitchs desc nulls last)  fbs_rank_hit_by_pitchs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_strike_outs desc nulls last)  fbs_rank_strike_outs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_ground_into_doubleplays desc nulls last)  fbs_rank_ground_into_doubleplays
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_sacrfice_flies desc nulls last)  fbs_rank_sacrfice_flies
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_bunts desc nulls last)  fbs_rank_bunts
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_stolen_bases desc nulls last)  fbs_rank_stolen_bases
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fbs_caught_stealing desc nulls last)  fbs_rank_caught_stealing
+
+       -- Pitching Ranks
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_wins desc nulls last)  fps_rank_wins
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_losses desc nulls last)  fps_rank_losses
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_games desc nulls last)  fps_rank_games
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_games_started desc nulls last)  fps_rank_games_started
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_saves desc nulls last)  fps_rank_saves
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_complete_games desc nulls last)  fps_rank_complete_games
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_shutouts desc nulls last)  fps_rank_shutouts
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_innings_pitched_dec desc nulls last)  fps_rank_innings_pitched_dec
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_hits desc nulls last)  fps_rank_hits
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_runs desc nulls last)  fps_rank_runs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_earned_runs desc nulls last)  fps_rank_earned_runs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_walks desc nulls last)  fps_rank_walks
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_strike_outs desc nulls last)  fps_rank_strike_outs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_doubles desc nulls last)  fps_rank_doubles
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_triples desc nulls last)  fps_rank_triples
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_home_runs desc nulls last)  fps_rank_home_runs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_at_bats desc nulls last)  fps_rank_at_bats
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_wild_pitches desc nulls last)  fps_rank_wild_pitches
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_hit_by_pitchs desc nulls last)  fps_rank_hit_by_pitchs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_balks desc nulls last)  fps_rank_balks
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_sacrifice_flies_against desc nulls last)  fps_rank_sacrifice_flies_against
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_bunts_against desc nulls last)  fps_rank_bunts_against
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_ground_outs desc nulls last)  fps_rank_ground_outs
+      ,rank() over (partition by stat.sport_id
+                                ,stat.gender_id
+                                ,stat.category_id
+                                ,stat.country_id
+                                ,stat.season_year
+                    order by stat.fps_fly_outs desc nulls last)  fps_rank_fly_outs
+
+
       ,dsg.number_of_games  season_number_of_games
       ,dsg.pa_coefficient  season_pa_coefficient
       ,dsg.innings_pitched_percent  season_innings_pitched_percent
@@ -506,5 +753,5 @@ select dpl.last_name  player_last_name
    and stat.category_id = dsg.category_id
    and stat.country_id = dsg.country_id
    and stat.season_year = dsg.season_year
- order by 1
+ order by stat.sport_id, stat.gender_id, stat.category_id, stat.country_id, stat.season_year, 1
 ;

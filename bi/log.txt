@@ -1,0 +1,20 @@
+European Baseball and Softball Statistics
+eu-sabr-ballgame@gmail.com
+
+Version log
+-----------
+
+
+v0.01 (07/APR/2024)
+
+- Removed opacity on grids. Certain Windows OS computers do not display
+the data correctly.
+- Team Lineup Advice: Changed the calculation/filter to select the lineup
+slots based on Tom M. Tango Book "The Book", table 60 page 145.
+- Fantasy Lineup Advice: same changes as above.
+- Added HTML containers in each chapter with JavaScript code to force
+Presentation Mode, most user won't need to edit the dossier.
+If you really need to edit a dossier, open it without data from the MicroStrategy Workstation.
+- Individual chapter. One player most important statistics.
+- Individual batting and pitcher rankings in non formula stats (count only)
+ for a season/league.
