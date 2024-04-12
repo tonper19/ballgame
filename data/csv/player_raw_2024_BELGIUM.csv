@@ -1587,7 +1587,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,Vinck Matthieu,UTL,R,R,0,0,1985
 14,Vischschoonmaker Connor,IF,R,R,0,0,1994
 73,Volkaert Filip,IF,R,R,0,0,1973
-0,Ballardini Lino,UTL,S/R,0,0,1996
+0,Ballardini Lino,UTL,S,R,0,0,1996
 0,Beyens Brian,UTL,R,R,0,0,2008
 25,Buerms Lieven,UTL,L,R,0,0,1990
 0,De Brauwer Zion,UTL,R,R,0,0,2001
@@ -2720,3 +2720,480 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 33,Van Daele Emiel,UTL,R,R,0,0,2000
 78,Van Damme Dieter,UTL,R,R,0,0,2006
 99,Van Molle Lars,UTL,R,R,0,0,2005
+22,Boermans Jens,C/IF,R,R,179,67,2006
+13,Boermans Sam,UTL,R,R,0,0,1993
+37,Cappaert Zeb,P,R,R,0,0,2003
+7,Casie Natan,P/UTL,R,R,0,0,2008
+28,De Baets Matthias,P/UTL,R,R,0,0,2002
+58,De Cloedt Jelle,UTL,R,R,0,0,2003
+31,De Saedeleer Sander,2B,R,R,0,0,2001
+11,Fatihi Ayoub,OF,R,R,0,0,2004
+17,Gontier Yannick,UTL,R,R,0,0,1989
+23,Group Matthias,P/1B/OF,R,R,0,0,1992
+45,Helsen Lowie,P,R,R,0,0,2005
+9,Imbert Nils,C/IF/UTL,R,R,0,0,2007
+40,Langezaal Harold,2B/OF,R,R,0,0,2000
+19,Mareels Glenn,P,R,R,0,0,1992
+36,Morgan John Paul,P,R,R,0,0,1993
+0,Nammoku Yoshitaka,P,L,L,,,1997
+76,Otto Bryan,UTL,R,R,0,0,2005
+0,Pacheco Alvarez Giënco,UTL,R,R,0,0,2007
+27,Sirgedas Matas,UTL,R,R,0,0,1998
+21,Solis Pinargote Nestor Aaron,LF/DH,R,R,0,0,1990
+34,Van Den Brande Yann,P/SS,R,R,0,0,1999
+24,Van Geel Timen,RF,S,L,0,0,1990
+10,Vandesompele Cedric,3B/DH,R,R,0,0,1991
+35,Vanthillo Nick,P/OF/UTL,R,R,0,0,1991
+55,Veraghtert Tim,UTL,R,R,0,0,1994
+12,Beeckmans Tom,UTL,R,R,0,0,2005
+0,Beeckmans Kris,UTL,R,R,0,0,1975
+0,Belmans Jonas,UTL,L,L,,,2006
+47,Cooper Hunter,UTL,L,L,0,0,1999
+51,De Boey Robbe,UTL,R,R,0,0,2004
+3,De Lannoy Steven,UTL,L,L,0,0,1983
+28,De Nijs Bik Floris,UTL,R,R,0,0,1995
+22,Delgado Kelvin,UTL,R,R,0,0,1980
+0,Dockx Sebastiaan,UTL,R,R,,,2004
+10,Driessens Artuur,UTL,R,R,0,0,1996
+14,Joossens Matthew,UTL,L,L,0,0,1998
+25,LONGHOFER Jackson,UTL,R,R,,,1997
+27,Martinez Miranda Raxon,UTL,R,R,0,0,1996
+0,Mulders Matthias,UTL,R,R,,,2005
+34,Peeters Christoff,UTL,R,R,0,0,2000
+15,Peeters Jamie,UTL,R,R,0,0,2004
+21,Poesmans Yves,UTL,R,R,0,0,1996
+17,Roevens Robin,UTL,R,R,0,0,1995
+0,Ruelle Daan,UTL,R,R,0,0,2008
+23,Soebert Tibo,UTL,L,L,0,0,2000
+90,Van Velthoven Jasper,UTL,R,R,0,0,2003
+1,Verheyleweghen Jamie,UTL,L,L,0,0,1991
+97,Arguinzones Ocanto Johiner Alfonso,UTL,R,R,0,0,2002
+55,Bustamante Daniel,UTL,R,R,0,0,1991
+23,Chaibub Coronel Tony Alberto,UTL,R,R,0,0,1981
+31,De Saedeleer Roche Junior,UTL,R,R,0,0,2004
+38,Desmedt Cédric,UTL,R,R,0,0,1991
+64,Fundora Basnueva Elio,UTL,R,R,0,0,1986
+29,Gerdel Nieto Anderson Denny,UTL,R,R,0,0,1993
+81,Hernandez Sarao Eder,UTL,R,R,0,0,1983
+99,Lambert Joey,UTL,R,R,0,0,2001
+85,Larrinaga Ocampo Jose Luis,UTL,R,R,0,0,1977
+21,Marquez Alexis,UTL,R,R,0,0,1988
+52,Medina Casado Rikermy Daniwill,UTL,R,R,0,0,1989
+0,Morales Luis Efrem,UTL,R,R,0,0,1993
+9,Mostaert Nando,UTL,R,R,0,0,2006
+67,Nieto Castillo Edgardo Jose,UTL,R,R,0,0,1997
+44,Polanco Machado Elvis Joel,UTL,R,R,0,0,1978
+46,Prieto Burgos Frank Alejandro,UTL,R,R,0,0,1987
+33,Reina Viant Leonel Santiago,UTL,R,R,0,0,1988
+27,Rosario Angel Williams,UTL,R,R,0,0,1973
+51,Roymans Steff,UTL,R,R,0,0,2001
+13,Ruijter Sam,UTL,R,R,0,0,2000
+92,Valdez Lazil Brian Jordani,UTL,R,R,0,0,1997
+78,Van Mook Mauro,UTL,R,R,0,0,2002
+4,Vandervelden Viktor,UTL,R,R,0,0,2004
+22,Vincente Lopez Adalberto Antonio,UTL,R,R,0,0,1984
+29,Ballardini Lino,UTL,S,R,0,0,1996
+0,Beyens Brian,UTL,R,R,0,0,2008
+0,Claes Matthias,UTL,R,R,0,0,2008
+7,De Brauwer Zion,SS,R,R,0,0,2001
+20,De Quint Dennis,1B/3B,R,R,0,0,1985
+23,Desmedt Kevin,P,R,R,0,0,1995
+2,Goffaux Benjamin,C,R,R,0,0,1998
+76,Janssens Wesley,2B,R,R,0,0,1993
+99,Lewis Rob,1B/DH,L,R,0,0,1998
+55,Lorrentop Lucas,P,R,R,0,0,2007
+0,Rizzi Lucas,P/OF,R,R,0,0,1999
+53,Roef Axl,OF,R,R,0,0,2006
+51,Sellicaerts Yorrid,OF,L,L,0,0,2000
+0,Sewerin Tim,UTL,R,R,0,0,2008
+24,Spurgeon Mizunoya Ken,C,R,R,0,0,2004
+5,Tiliakos Vegas,OF,R,R,0,0,2005
+80,Unda Luis,OF,L,L,0,0,1990
+61,Van Landuyt Ruben,P,R,R,0,0,2004
+19,Van Nuffel Ben,P,R,R,0,0,1993
+28,Van Nuffel Sam,P,R,L,0,0,1999
+39,Verspreet Xander,OF,R,R,0,0,1998
+18,Verspreet Brendan,P,R,R,0,0,1998
+13,Almonte Berroa Oliver,UTL,R,R,0,0,1999
+4,Biesemans Leko,UTL,R,R,0,0,2005
+2,Blake Isaac,UTL,R,R,,,1999
+48,Dom Glenn,UTL,R,R,,,1992
+57,Dom Kenny,UTL,R,R,,,1995
+99,Gilpin Zane Thomas,UTL,R,R,,,2001
+38,Meert Aaron,UTL,R,R,0,0,1999
+0,Pacheco Espildora Danilo,UTL,R,R,,,1990
+48,Peeters Jort,UTL,R,R,,,2007
+9,Reyns Robin,UTL,R,R,0,0,1994
+85,Robberechts Jill,UTL,R,R,0,0,2005
+23,Saerens Bart,UTL,R,R,0,0,1984
+92,Van Agtmael Noah,UTL,R,R,0,0,2005
+1,Van De Voorde Nick,UTL,R,R,0,0,1998
+29,Van Droogenbroeck Owen,UTL,R,R,0,0,2008
+72,Vanderborght Tom,UTL,R,R,,,1999
+28,Vanderstappen Bertus,UTL,R,R,,,1998
+91,Vanlauwe Cyriel,UTL,R,R,0,0,2006
+47,Verbeken Nils,UTL,R,R,0,0,2007
+87,Vincent Xavier,UTL,R,R,,,1998
+24,Vizee Robin,UTL,R,R,0,0,2005
+8,Vrijders Ewout,UTL,R,R,0,0,2006
+19,Clesse Tashi-Phuntsok,UTL,R,R,0,0,2005
+4,Clinckart Emeric,UTL,R,R,0,0,2006
+16,Collazos Munoz Nathéo,UTL,R,R,0,0,2004
+45,Colle Florian,UTL,L,L,0,0,1999
+37,Cromwell Andrew,UTL,R,R,,,2000
+14,D'hallewin Alexandre,UTL,R,R,0,0,1989
+1,Dassy Noah,UTL,R,R,0,0,2006
+12,De Jongh Robbe,UTL,R,R,0,0,1990
+66,Denachtergael Ryan,UTL,R,R,,,2005
+63,Grootaert Paco,UTL,R,R,,,2006
+27,Haesaert Geoffrey,UTL,R,R,0,0,1991
+72,Kolb Owen,UTL,R,R,0,0,1999
+22,Kuenen Daan,UTL,R,R,0,0,1996
+79,Lekeu Florian,UTL,R,R,0,0,1988
+88,Mauën Olivier,UTL,R,R,0,0,1992
+57,Muyldermans Julien,UTL,R,R,0,0,2004
+0,Noblet Clément,UTL,R,R,0,0,2001
+35,Nunez Alonzo David Amador,UTL,R,R,0,0,1981
+65,Pierreux Xavier,UTL,R,R,0,0,1987
+13,Rittweger Jean-François,UTL,R,R,0,0,1982
+10,Smetz Tristan,UTL,R,R,0,0,2006
+34,Ybarra Andres,UTL,R,R,0,0,1996
+6,Yonchev Martin,UTL,R,R,0,0,2004
+0,Adank Martin,UTL,R,R,0,0,1988
+0,Cosse Florian,UTL,R,R,0,0,2007
+0,Daspremont Stéphane,UTL,R,R,0,0,1995
+0,Delory Arthur,UTL,R,R,0,0,2007
+0,Geuquet Ludovic,UTL,R,R,0,0,1980
+0,Heymans Lucas,UTL,R,R,0,0,1998
+0,Heymans Arthur,UTL,R,R,0,0,2001
+0,Huvelle Damien,UTL,R,R,,,1987
+0,Jordens Steve,UTL,R,R,0,0,1993
+0,Jude Samuel,UTL,R,R,,,1998
+0,Lamotte Yanni,UTL,R,R,,,1998
+0,Lamotte Adrien,UTL,R,R,,,1995
+0,Legrand Michel,UTL,R,R,,,1974
+0,Locquet Loris,UTL,R,R,0,0,1998
+0,Mathot Alexandre,UTL,R,R,,,2000
+0,Nicolay Martin,UTL,R,R,0,0,1999
+0,Smith Jacob,UTL,R,R,0,0,1999
+0,STEAD Jack,UTL,R,R,,,1999
+0,Szoke Raphaël,UTL,R,R,0,0,1996
+0,Tribolet Bruno,UTL,R,R,0,0,2003
+0,Vanheer Edouard,UTL,R,R,0,0,1993
+0,Verbeke Benjamin,UTL,R,R,0,0,2008
+0,Almagro Gomez Jose Raul,UTL,R,R,,,1981
+0,Cedeño Daudinot Alain,UTL,R,R,0,0,1974
+0,Cortes Rojas Carlos Alberto,UTL,R,R,0,0,1996
+0,Fernandez Cuba Adalberto,UTL,R,R,,,1978
+0,Freitez Jhoanderson,UTL,R,R,0,0,1988
+0,Garcia Pupo Oreste,UTL,R,R,0,0,1990
+0,Ghys Frédéric,UTL,R,R,,,1978
+0,Lambeau Jean-Marc,UTL,R,R,,,1986
+0,Limonta Padilla Alejandro,UTL,R,R,,,1987
+0,Mumenthaler Frédéric,UTL,R,R,,,1977
+0,Peña Gonzalez Francisco,UTL,R,R,0,0,1986
+0,Perez Cabarallo Arturo,UTL,R,R,,,1988
+0,Sakai Yosuke,UTL,R,R,0,0,1976
+0,Tran David,UTL,R,R,,,2003
+0,Urbaez Feliz Joni Antonio,UTL,R,R,0,0,1992
+0,Urquiaga Rodriguez Carlos Enrique,UTL,R,R,0,0,1964
+0,Veras Luciano Luis Manuel,UTL,R,R,0,0,1986
+0,Baudé Florian,UTL,R,R,0,0,1992
+0,Berintan Robin-Jan,UTL,R,R,0,0,2005
+0,Callewaert Erik,UTL,R,R,0,0,1968
+0,Cardinael Giel,UTL,R,R,0,0,1994
+0,d'Haenens Walter,UTL,R,R,0,0,2008
+0,Daoudi Loïc,UTL,R,R,0,0,1999
+0,De Clercq Maurits,UTL,R,R,0,0,1998
+0,De Meyer Sam,UTL,R,R,0,0,1997
+0,Debakker Noah,UTL,R,R,0,0,2008
+0,Decraene Miel,UTL,R,R,0,0,2006
+0,Ducatelle Carrillo Emmanuel,UTL,R,R,0,0,2008
+0,Hoflack Tim,UTL,R,R,0,0,2004
+0,Hoflack Bram,UTL,R,R,0,0,1998
+0,Lebacks Sharlon,UTL,R,R,0,0,1983
+0,Meuris Robin,UTL,R,R,0,0,1989
+0,Paulo Juendjelo,UTL,R,R,,,1981
+0,Paulo Juendjelo Matthew Gabriël,UTL,R,R,,,2007
+0,Peña Peña Hector,UTL,R,R,0,0,2008
+0,Pletinckx Luka,UTL,R,R,0,0,2008
+0,Tartan Anthony,UTL,R,R,0,0,1984
+0,Theus Carlos Miguel,UTL,R,R,0,0,1980
+0,Van Deynse Mathis,UTL,R,R,0,0,2007
+0,Vandervelden Cazimir,UTL,R,R,0,0,2008
+0,Wollaert Björn,UTL,R,R,0,0,1976
+0,Ballardini Lino,UTL,R,R,0,0,1996
+25,Beyens Jayden,UTL,R,R,0,0,2009
+1,Beyens Brian,UTL,R,R,0,0,2008
+57,Claes Matthias,UTL,R,R,0,0,2008
+0,De Brauwer Zion,UTL,R,R,0,0,2001
+83,De Smet Joppe,UTL,R,R,0,0,2008
+0,Goffaux Benjamin,UTL,R,R,0,0,1998
+66,Janssen Andy,UTL,R,R,0,0,2001
+0,Janssens Wesley,UTL,R,R,0,0,1993
+0,Lewis Rob,UTL,R,R,0,0,1998
+31,Lorrentop Tom,UTL,R,R,0,0,1979
+31,Lorrentop Jasper,UTL,R,R,0,0,2009
+23,Lorrentop Lucas,UTL,R,R,0,0,2007
+0,Moscoso LIanos Javier,UTL,R,R,0,0,1996
+0,Rizzi Lucas,UTL,R,R,0,0,1999
+22,Roef Axl,UTL,R,R,0,0,2006
+51,Roef Axl,UTL,R,R,0,0,2004
+6,Roef Yasper,UTL,R,R,0,0,2002
+17,Sadzo Tomas,UTL,R,R,0,0,2003
+33,Sellicaerts Yorrid,UTL,L,L,0,0,2000
+0,Sewerin Tim,UTL,R,R,0,0,2008
+0,Spurgeon Mizunoya Ken,UTL,R,R,0,0,2004
+38,Tiliakos Vegas,UTL,R,R,0,0,2005
+0,Unda Luis,UTL,R,R,0,0,1990
+21,Van Landuyt Ruben,UTL,R,R,0,0,2004
+0,Van Nuffel Ben,UTL,R,R,0,0,1993
+0,Verspreet Xander,UTL,R,R,0,0,1998
+0,Verspreet Brendan,UTL,R,R,0,0,1998
+44,Zogning Feujio Allesandro Manuel,UTL,R,R,0,0,2006
+4,Biesemans Leko,UTL,R,R,0,0,2005
+2,Blake Isaac,UTL,R,R,,,1999
+0,Conickx Pieter,UTL,R,R,,,2002
+27,De pauw Tibe,UTL,R,R,0,0,2007
+46,De Smedt Daan,UTL,R,R,,,2008
+49,Dom Glenn,UTL,R,R,,,1992
+57,Dom Kenny,UTL,R,R,,,1995
+96,Frijns Niels,UTL,R,R,0,0,2009
+99,Gilpin Zane Thomas,UTL,R,R,,,2001
+50,Jacobs Senne,UTL,R,R,,,2006
+77,Martinez Ishihara Kentaro,UTL,R,R,0,0,2009
+38,Meert Aaron,UTL,R,R,0,0,1999
+75,Meskens Cas,UTL,R,R,,,2008
+0,Pacheco Espildora Danilo,UTL,R,R,,,1990
+48,Peeters Jort,UTL,R,R,,,2007
+85,Robberechts Jill,UTL,R,R,0,0,2005
+23,Saerens Bart,UTL,R,R,0,0,1984
+92,Van Agtmael Noah,UTL,R,R,0,0,2005
+29,Van Droogenbroeck Owen,UTL,R,R,0,0,2008
+72,Vanderborght Tom,UTL,R,R,,,1999
+28,Vanderstappen Bertus,UTL,R,R,,,1998
+91,Vanlauwe Cyriel,UTL,R,R,0,0,2006
+47,Verbeken Nils,UTL,R,R,0,0,2007
+89,Verbeken Lars,UTL,R,R,0,0,2009
+87,Vincent Xavier,UTL,R,R,,,1998
+24,Vizee Robin,UTL,R,R,0,0,2005
+8,Vrijders Ewout,UTL,R,R,0,0,2006
+22,Vylders Kehssy,UTL,R,R,,,2008
+99,Borchardt Seppe,UTL,R,R,0,0,2002
+4,Borchardt Quinten,UTL,R,R,0,0,2004
+10,Borchardt Wannes,UTL,R,R,0,0,2003
+30,Cooremans Cedric,UTL,R,R,0,0,2000
+5,Coppens Vitas,UTL,R,R,0,0,2003
+66,De Locht Zjef,UTL,R,R,0,0,2006
+28,De Meester Daan,UTL,R,R,0,0,2004
+27,De Meester Maarten,UTL,R,R,0,0,2002
+42,Hameleers Illy,UTL,R,R,0,0,2002
+7,Joos Jorben,UTL,R,R,0,0,2005
+40,Overmeire Ewaud,UTL,R,R,0,0,2006
+41,Overmeire Merijn,UTL,R,R,0,0,2008
+0,Plasmans Warre,UTL,R,R,0,0,2008
+24,Polfliet Xian,UTL,R,R,,,2005
+0,Reyns Christof,UTL,R,R,0,0,1996
+0,Rotthier Yens,UTL,R,R,0,0,2005
+14,Schats Wouter,UTL,R,R,0,0,1981
+11,Schats Lennert,UTL,R,R,0,0,2008
+0,Van Ballaert Kobe,UTL,R,R,0,0,2008
+0,Van Ballaert Milan,UTL,R,R,,,2005
+52,Van De Voorde Bodhi,UTL,R,R,0,0,2000
+15,Van Hove Dieter,UTL,R,R,0,0,2002
+3,Van Onckelen Yarl,UTL,R,R,0,0,2000
+19,Van Onckelen Yönus,UTL,R,R,0,0,1997
+0,Van Royen Arne,UTL,R,R,0,0,1996
+0,Vanrykel Senne,UTL,R,R,0,0,2008
+18,Beke Tristan,UTL,R,R,0,0,2005
+25,Bogaert Thomas,UTL,R,R,0,0,2006
+2,Braeckevelt Pieter,UTL,R,R,0,0,1988
+55,Coorevits Arnout,UTL,R,R,0,0,1997
+24,Decuypere Bo,UTL,R,R,0,0,2006
+11,Decuypere Yentl,UTL,R,R,0,0,2001
+48,Dufour Rens,UTL,R,R,0,0,2008
+31,Durieux Bert,UTL,R,R,0,0,1995
+29,Durieux Fré,UTL,R,R,0,0,1991
+7,Impens Kai,UTL,R,R,0,0,2000
+22,Lampaert Thomas,UTL,R,R,0,0,1996
+28,Lannoo Dries,UTL,R,R,0,0,1988
+42,Loobuyck Victor,UTL,R,R,0,0,2000
+26,Mullebrouck Faustin,UTL,R,R,0,0,2001
+99,Naessens Mathis,UTL,R,R,,,2001
+0,Nuyttens Nino,UTL,R,R,0,0,2009
+17,Secember Tom,UTL,R,R,0,0,1997
+71,Secember Eric,UTL,R,R,0,0,1968
+23,Van Canneyt Tijs,UTL,R,R,0,0,1992
+21,Van Damme Jeffrey,UTL,R,R,0,0,1992
+79,Van Maele Jasper,UTL,R,R,,,2000
+77,Vanhaecke Edouard,UTL,R,R,0,0,1998
+85,Vanhoutte Christof,UTL,R,R,0,0,1994
+78,Vanhulle Matisse,UTL,R,R,0,0,2007
+33,Vanlerberghe Jan,UTL,R,R,0,0,1996
+27,Vreugd Guy-Robert,UTL,R,R,,,1990
+32,Waeye Mathias,UTL,R,R,0,0,1996
+0,Bontinck Jasper,UTL,R,R,0,0,2006
+0,Claes Jef,UTL,R,R,0,0,2000
+0,Coppens Manu,UTL,R,R,0,0,2001
+0,Coppens Thibault,UTL,R,R,0,0,1998
+0,De Zutter Michiel,UTL,R,R,0,0,1998
+0,De Zutter Ruben,UTL,R,R,0,0,2000
+0,Decraene Robin,UTL,R,R,0,0,2004
+0,Gerardi Jochen,UTL,R,R,0,0,1971
+0,Hutse Ruben,UTL,R,R,0,0,1990
+0,Kielemoes Bavo,UTL,R,R,0,0,2000
+0,Lissens Jurre,UTL,R,R,0,0,2008
+0,Lissens Ferre,UTL,R,R,0,0,2005
+0,Meulenyzer Hannes,UTL,R,R,0,0,1996
+0,Moerman Thomas,UTL,R,R,0,0,2005
+0,Ockerman Jente,UTL,R,R,0,0,2007
+0,Pina Michael,UTL,R,R,0,0,1993
+0,Plasschaert Briek,UTL,R,R,0,0,2001
+0,Plasschaert Tuur,UTL,R,R,0,0,2007
+0,Rasschaert Maarten,UTL,R,R,0,0,2001
+0,Roeland Matthias,UTL,R,R,0,0,2003
+0,Stragier Pieter,UTL,R,R,0,0,1980
+0,Tsiobbel Sam,UTL,R,R,0,0,2003
+0,Van Acker Daan,UTL,R,R,0,0,2004
+0,Van Acker Tuur,UTL,R,R,0,0,2007
+0,Van Daele Emiel,UTL,R,R,0,0,2000
+0,Van Gansberghe Berne,UTL,R,R,0,0,2003
+0,Van Gansberghe Flor,UTL,R,R,0,0,2002
+0,Van Molle Lars,UTL,R,R,0,0,2005
+0,Van Wijmeersch Bjarne,UTL,R,R,0,0,2002
+0,Adams Finn,UTL,R,R,0,0,2006
+0,Andries Thibo,UTL,R,R,0,0,2005
+0,Armirotto Kaj,UTL,R,R,0,0,2009
+0,Berardocco Matteo,UTL,R,R,,,2003
+0,Brand Wim,UTL,R,R,0,0,1990
+0,Casie Natan,UTL,R,R,0,0,2008
+0,De Baets Matthias,UTL,R,R,0,0,2002
+0,De Cloedt Jelle,UTL,R,R,0,0,2003
+0,Dielen Lennert,UTL,L,L,0,0,2008
+0,Fatihi Ayoub,UTL,R,R,0,0,2004
+17,Gontier Yannick,UTL,R,R,0,0,1989
+0,Helsen Lowie,P,R,R,0,0,2005
+0,Imbert Nils,UTL,R,R,0,0,2007
+0,Mareels Glenn,UTL,R,R,0,0,1992
+0,Niazi Hsibullah,UTL,R,R,0,0,2003
+0,Omloop Jelle,UTL,R,R,0,0,1983
+0,Pacheco Alvarez Giënco,UTL,R,R,0,0,2007
+0,Satens Matthew,UTL,R,R,0,0,1998
+0,Sirgedas Matas,UTL,R,R,0,0,1998
+0,Van Aarsen Kristof,UTL,R,R,0,0,1992
+0,Van Baden Daryl,UTL,R,R,,,1996
+0,Vandeweyer Joachim Frederic,UTL,R,R,,,2000
+0,Vansteensel Lennart,UTL,R,R,0,0,2006
+0,Verbinnen Chayton,UTL,R,R,0,0,2005
+0,Verhoeven Jaimie,UTL,R,R,0,0,1985
+0,Vermeulen Danté,UTL,R,R,0,0,2008
+12,Beeckmans Tom,UTL,R,R,0,0,2005
+3,Belmans Jonas,UTL,L,L,,,2006
+2,De Beule Lars,UTL,R,R,,,2008
+51,De Boey Robbe,UTL,R,R,0,0,2004
+66,De Braekeleer Rune,UTL,R,R,,,2007
+28,De Nijs Bik Floris,UTL,R,R,0,0,1995
+35,Dockx Sebastiaan,UTL,R,R,,,2004
+14,Joossens Matthew,UTL,R,R,0,0,1998
+75,Knaepkens Thimo,UTL,R,R,,,2009
+57,MARIEN Vital,UTL,R,R,,,2005
+12,Meir Lou,UTL,R,R,0,0,2009
+42,Mulders Matthias,UTL,R,R,,,2005
+15,Peeters Jamie,UTL,R,R,0,0,2004
+9,Ruelle Daan,UTL,R,R,0,0,2008
+13,Ruelle Andy,UTL,R,R,0,0,1983
+41,Van De Merlen Mateo,UTL,R,R,,,2007
+49,Van De Putte Brent,UTL,R,R,,,2006
+0,VAN DE VYVER Lorenzo,UTL,R,R,,,1997
+40,Van Strijdonck Kyen,UTL,L,L,0,0,2007
+0,Verhaert Tonny,UTL,R,R,0,0,1976
+44,Verhaert Josse,UTL,R,R,,,2007
+48,Voets Yarno,UTL,R,R,0,0,2003
+16,Voorts Seppe,UTL,R,R,0,0,2002
+10,Weyn Axl,UTL,R,R,0,0,2007
+0,Bariaux Ludovic,UTL,R,R,,,2005
+0,Bombart Bastien,UTL,R,R,,,2006
+0,Cadeddu Matteo,UTL,R,R,,,2006
+0,Clerbois Theo,UTL,R,R,,,2007
+0,Cludts Quentin,UTL,R,R,,,1986
+0,De Groof Frédérick,UTL,R,R,,,1984
+0,Deletombe Maxime,UTL,R,R,,,1988
+0,Durieux Laurent,UTL,R,R,,,1981
+0,Fahandezh Saadi Mohsen,UTL,R,R,,,1987
+0,Genao Rigoberto,UTL,R,R,,,1980
+0,Goudelouf Sébastien,UTL,R,R,,,2006
+0,Guerra Guerrero César,UTL,R,R,,,1972
+0,Guy Romain,UTL,R,R,,,2005
+0,HAMMOUTEN Farid,UTL,R,R,,,1985
+0,Laurent David,UTL,R,R,,,1980
+0,Malpoix Pascal,UTL,R,R,,,1972
+0,Nyst Alexandre,UTL,R,R,,,2007
+0,Oesau Guillaume,UTL,R,R,,,1996
+0,Piret Christophe,UTL,R,R,,,1976
+0,Raymond Xavier,UTL,R,R,,,1983
+0,Rivera Hegel Luis Diego,UTL,R,R,,,1983
+0,Roberts Joshua,UTL,R,R,,,1983
+0,Schmitz Donatien,UTL,R,R,,,1995
+0,Vandendriessche Nicolas,UTL,R,R,,,1998
+0,Zidoune Karim,UTL,R,R,,,1976
+48,Azevedo Miguel,UTL,R,R,0,0,1985
+7,Bador Gabriel,UTL,R,R,,,1994
+79,Balzani Lorenzo,UTL,R,R,0,0,2009
+0,Bennett Patrick,UTL,R,R,0,0,2006
+1,Chang Shu,UTL,R,R,,,1995
+86,Ciprietti Kenzo,UTL,R,R,,,2009
+20,De Buggenoms Finn,UTL,R,R,,,2009
+23,Galindo Jimenez Jaide David,UTL,R,R,,,2000
+22,Hallay Thomas,UTL,R,R,0,0,1994
+17,Henrotte Guillaume,UTL,R,R,,,2006
+66,Louvet Florian,UTL,R,R,,,1992
+97,Mizuguchi Kohsei,UTL,R,R,,,2009
+20,Nielsen David,UTL,R,R,0,0,1988
+18,Ogikubo Toshinori,UTL,R,R,0,0,1985
+56,Okabe Mitsuki,UTL,R,R,,,2007
+46,Pisvin Nicolas,UTL,R,R,0,0,1992
+28,Sluys Aaron,UTL,R,R,0,0,2009
+6,Spurgeon Mizunoya Joe,UTL,R,R,0,0,2008
+49,Voet Cédric,UTL,R,R,0,0,1995
+88,Weyers Lucas,UTL,R,R,,,2008
+3,Yamada Naoya,UTL,R,R,,,1983
+30,Baltus Terry,UTL,R,R,,,1994
+24,Bar Maxime,UTL,R,R,,,1997
+5,Chasseur Quentin,UTL,L,L,,,1991
+13,Christiaens Lison,UTL,R,R,,,2001
+55,Cleyet Florian,UTL,R,R,,,1992
+21,Craig Matthias,UTL,R,R,,,1983
+32,Dardenne Hugo,UTL,R,R,0,0,1986
+23,De La Rosa Andres,UTL,R,R,0,0,1995
+44,De Roo Maxime,UTL,R,R,,,1989
+34,Ederich Arthur,UTL,R,R,,,1996
+8,Gihoul Nicolas,UTL,R,R,,,1988
+33,Leys Kevin,UTL,R,R,,,1988
+96,Meelbergs François,UTL,L,R,,,1982
+14,Nottebaert Kilian,UTL,R,R,,,2003
+56,Parent Quentin,UTL,R,R,,,1991
+27,Piancatelli Benoit,UTL,L,R,,,1990
+17,Radoux Christophe,UTL,R,R,,,1972
+95,Spitali Antonio,UTL,R,R,,,1998
+22,Wauters Alexis,UTL,R,R,,,2002
+20,Wauters Thomas,UTL,R,R,,,1999
+21,Chatel Alexandre,UTL,R,R,0,0,2006
+19,Clesse Tashi-Phuntsok,UTL,R,R,0,0,2005
+4,Clinckart Emeric,UTL,R,R,0,0,2006
+16,Collazos Munoz Nathéo,UTL,R,R,0,0,2004
+45,Colle Florian,UTL,R,R,0,0,1999
+37,Cromwell Andrew,UTL,R,R,,,2000
+1,Dassy Noah,UTL,R,R,0,0,2006
+66,Denachtergael Ryan,UTL,R,R,,,2005
+63,Grootaert Paco,UTL,R,R,,,2006
+31,Hofs Arnaud,UTL,R,R,,,1989
+64,Horry Ammour Nael,UTL,R,R,0,0,2007
+17,Kolb Lior,UTL,R,R,,,2002
+88,Mauën Olivier,UTL,R,R,0,0,1992
+65,Pierreux Xavier,UTL,R,R,0,0,1987
+65,Schoenaers Brieuc,UTL,R,R,0,0,2007
+20,Seynaeve Vroman Oscar,UTL,R,R,0,0,2007
+10,Smetz Tristan,UTL,R,R,0,0,2006
+8,Valard Henry,UTL,R,R,0,0,2007
+89,Van Der Linden Simon,UTL,R,R,0,0,2007
+6,Yonchev Martin,UTL,R,R,0,0,2004
