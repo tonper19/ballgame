@@ -4,14 +4,14 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,CAPELLÁN FERMÍN Delvin Joel,UTL,R,R,185,80,1998
 0,CASTRO Armando,UTL,R,R,0,0,2004
 57,Colasante Vicente,P,R,R,178,85,1994
-1,COSTALES Pablo,UTL,R,R,176,74,2005
+1,COSTALES BERMÚDEZ Pablo Antonio,UTL,R,R,176,74,2005
 0,DÍAZ Candelario,UTL,R,R,0,0,1969
 40,Diaz Jose,P,R,R,0,0,1993
 12,ENCARNACIÓN Wander,UTL,R,R,0,0,2000
 0,FERNANDES Nicolas,UTL,R,R,0,0,2005
 0,FINOL Gerardo,UTL,R,R,180,85,2004
 29,FRANCO Yancarlo,UTL,R,R,175,89,1988
-14,GALVÁN Lesther,CF,R,R,178,99,1990
+14,GALVÁN ARÉVALO Lesther Aarón,CF,R,R,178,99,1990
 0,GALVÁN Aickent,UTL,R,R,0,0,1998
 0,GALVÁN Deion,UTL,R,R,0,0,1992
 0,GARCÍA Yeudy,UTL,R,R,188,99,1992
@@ -37,7 +37,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,WALO Marco,UTL,R,R,182,125,1988
 0,Alvarez Daniel,UTL,R,R,191,100,1996
 13,Borges Joel,C,R,R,180,101,1998
-1,Costales Pablo,UTL,L,L,173,70,2005
+1,COSTALES BERMÚDEZ Pablo Antonio,UTL,L,L,173,70,2005
 0,Cruz Leonardo,UTL,R,R,0,0,1979
 0,Díaz Candelario,UTL,R,R,0,0,1969
 30,Díaz Victor,UTL,L,R,185,90,1993
@@ -48,7 +48,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 29,Franco Yancarlo,SS,R,R,175,89,1988
 0,Galván Aarón,UTL,R,R,0,0,1998
 0,Galván Deion,UTL,R,R,0,0,1992
-14,Galván Lesther,OF,R,R,178,99,1990
+14,GALVÁN ARÉVALO Lesther Aarón,OF,R,R,178,99,1990
 0,García Yeudy,UTL,R,R,0,0,1992
 0,García Oliver,UTL,R,R,185,136,1984
 0,Gari Ernesto,UTL,R,R,0,0,1970
