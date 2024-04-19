@@ -3,6 +3,16 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.03 (19/04/2024)
+- Latest 2024 stats: Spain, Belgium, Netherlands, Austria.
+- Club GPS (latitude/longitude) data.
+- Added British NBL Clubs data.
+- Players:Batting Caught Stealing (CS): color coding, do not
+user red/orage/yellow (bad) when CS = 0.
+- Added season grid with country flag colors in the
+Team Lineup Advice and Fantasy Lineup Advice.
+- Improved screen help on League and Individual chapters.
+- Improved Club map location.
 
 v0.02 (12/04/2024)
 - Latest 2024 stats: Spain, Belgium, Netherlands, Austria.
