@@ -98,7 +98,6 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 38,Meert Aaron,UTL,R,R,0,0,1999
 0,Pacheco Espildora Danilo,UTL,R,R,,,1990
 48,Peeters Jort,UTL,R,R,,,2007
-6,Perez Perez Miguel,UTL,R,R,0,0,2004
 9,Reyns Robin,UTL,R,R,0,0,1994
 85,Robberechts Jill,UTL,R,R,0,0,2005
 23,Saerens Bart,UTL,R,R,0,0,1984
@@ -2227,7 +2226,6 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 99,Junius Sam,UTL,R,R,,,1991
 0,Moons Maarten,UTL,R,R,0,0,1989
 48,Peeters Jort,UTL,R,R,,,2007
-6,Perez Perez Miguel,UTL,L,L,0,0,2004
 85,Robberechts Jill,UTL,R,R,0,0,2005
 80,Rombauts Tom,UTL,R,R,0,0,2005
 23,Saerens Bart,UTL,R,R,0,0,1984
@@ -2254,7 +2252,6 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 99,Junius Sam,UTL,R,R,,,1991
 5,Moons Maarten,UTL,R,R,0,0,1989
 48,Peeters Jort,UTL,R,R,,,2007
-6,Perez Perez Miguel,UTL,L,L,0,0,2004
 85,Robberechts Jill,UTL,R,R,0,0,2005
 23,Saerens Bart,UTL,R,R,0,0,1984
 94,Trinkunas Domantas,UTL,R,R,0,0,1998
@@ -2285,7 +2282,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 99,Junius Sam,UTL,R,R,,,1991
 3,Meganck Kyran,UTL,R,R,0,0,2003
 48,Peeters Jort,UTL,R,R,,,2007
-6,Perez Perez Miguel,UTL,L,L,0,0,2004
+6,Pérez Miguel,UTL,L,L,0,0,2004
 23,Saerens Bart,UTL,R,R,0,0,1984
 0,Trinkunas Domantas,UTL,R,R,0,0,1998
 29,Van Droogenbroeck Owen,UTL,R,R,0,0,2008

@@ -1,0 +1,70 @@
+uniform_number,player_name,position,bats,throws,ht,wt,yob,sport,gender,club,category,team,year
+2,Bolsens Vik,UTL,R/R,0,0,2008,BB,M,WBA,D3,3,2024
+9,Carrillo Tovar Luis Eduardo,UTL,R/R,0,0,1986,BB,M,WBA,D3,3,2024
+14,Fransoo Ivo,UTL,R/R,0,0,1979,BB,M,WBA,D3,3,2024
+95,Plasmans Warre,UTL,R/R,0,0,2008,BB,M,WBA,D3,3,2024
+10,Reyns Christof,UTL,R/R,0,0,1996,BB,M,WBA,D3,3,2024
+47,Rotthier Yens,UTL,R/R,0,0,2005,BB,M,WBA,D3,3,2024
+45,Van Ballaert Milan,UTL,R/R,,,2005,BB,M,WBA,D3,3,2024
+15,Van Ballaert Kobe,UTL,R/R,0,0,2008,BB,M,WBA,D3,3,2024
+37,Van Der Elst Iben,UTL,R/R,0,0,2007,BB,M,WBA,D3,3,2024
+34,Van Der Herten Thomas,UTL,R/R,0,0,1998,BB,M,WBA,D3,3,2024
+0,van Dijk Steve,UTL,R/R,0,0,1996,BB,M,WBA,D3,3,2024
+53,Van Puymbroeck Nick,UTL,R/R,0,0,2007,BB,M,WBA,D3,3,2024
+18,Van Royen Arne,UTL,R/R,0,0,1996,BB,M,WBA,D3,3,2024
+21,Vandenweyer Niels,UTL,R/R,0,0,2008,BB,M,WBA,D3,3,2024
+16,Vanrykel Senne,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+77,Bettington Sam,UTL,R/R,0,0,2005,BB,M,WBA,D3,2,2024
+10,Borchardt Wannes,UTL,R/R,0,0,2003,BB,M,WBA,D3,2,2024
+4,Borchardt Quinten,UTL,R/R,0,0,2004,BB,M,WBA,D3,2,2024
+99,Borchardt Seppe,UTL,R/R,0,0,2002,BB,M,WBA,D3,2,2024
+37,Chovau Thomas,UTL,R/R,0,0,2002,BB,M,WBA,D3,2,2024
+30,Cooremans Cedric,UTL,R/R,0,0,2000,BB,M,WBA,D3,2,2024
+5,Coppens Vitas,UTL,R/R,0,0,2003,BB,M,WBA,D3,2,2024
+90,De Coster Finn,UTL,R/R,0,0,2006,BB,M,WBA,D3,2,2024
+36,De Graeve Jesse,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+66,De Locht Zjef,UTL,R/R,0,0,2006,BB,M,WBA,D3,2,2024
+27,De Meester Maarten,UTL,R/R,0,0,2002,BB,M,WBA,D3,2,2024
+28,De Meester Daan,UTL,R/R,0,0,2004,BB,M,WBA,D3,2,2024
+98,Guedon Mathis,UTL,R/R,0,0,2006,BB,M,WBA,D3,2,2024
+42,Hameleers Illy,UTL,R/R,0,0,2002,BB,M,WBA,D3,2,2024
+7,Joos Jorben,UTL,R/R,0,0,2005,BB,M,WBA,D3,2,2024
+61,Kraakman Reyes Richard,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+31,Matthijs Jasper,UTL,R/R,0,0,2006,BB,M,WBA,D3,2,2024
+40,Overmeire Ewaud,UTL,R/R,0,0,2006,BB,M,WBA,D3,2,2024
+41,Overmeire Merijn,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+24,Polfliet Xian,UTL,R/R,,,2005,BB,M,WBA,D3,2,2024
+13,Reede Bas,UTL,R/R,0,0,1976,BB,M,WBA,D3,2,2024
+11,Schats Lennert,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+50,STAS Karel,UTL,R/R,,,2000,BB,M,WBA,D3,2,2024
+3,STAS Kasper,UTL,R/R,,,2003,BB,M,WBA,D3,2,2024
+12,Tantoh Dante Tambuh,UTL,R/R,0,0,2008,BB,M,WBA,D3,2,2024
+52,Van De Voorde Bodhi,UTL,R/R,0,0,2000,BB,M,WBA,D3,2,2024
+76,Van Havere Bart,UTL,R/R,0,0,1976,BB,M,WBA,D3,2,2024
+15,Van Hove Dieter,UTL,R/R,0,0,2002,BB,M,WBA,D3,2,2024
+19,Van Onckelen Yönus,UTL,R/R,0,0,1997,BB,M,WBA,D3,2,2024
+3,Van Onckelen Yarl,UTL,R/R,0,0,2000,BB,M,WBA,D3,2,2024
+16,Bodart Nathan,UTL,L/L,,,2007,BB,M,AND,D3,2,2024
+12,Bodart Mathéo,UTL,R/R,,,2007,BB,M,AND,D3,2,2024
+31,Chavee Loris,UTL,R/R,,,1998,BB,M,AND,D3,2,2024
+87,D'andrea Joé,UTL,R/R,,,1990,BB,M,AND,D3,2,2024
+41,Delcourt Tim,UTL,R/R,,,2007,BB,M,AND,D3,2,2024
+17,Delvenne Fabrice,UTL,R/R,,,1981,BB,M,AND,D3,2,2024
+99,Delvenne Matthew,UTL,L/L,,,2006,BB,M,AND,D3,2,2024
+13,Delvenne David,UTL,R/R,180,74,1985,BB,M,AND,D3,2,2024
+98,Dupont Aubin,UTL,R/R,0,0,2000,BB,M,AND,D3,2,2024
+86,Ferriello Fabrizio,UTL,R/R,,,1986,BB,M,AND,D3,2,2024
+7,Fievet Antoine,UTL,R/R,,,1996,BB,M,AND,D3,2,2024
+93,Fourneaux Mallory,UTL,R/R,,,2002,BB,M,AND,D3,2,2024
+13,Ghys Ilian,UTL,R/R,,,2004,BB,M,AND,D3,2,2024
+80,GOFFINET Valentin,UTL,R/R,,,1992,BB,M,AND,D3,2,2024
+0,Hespel Atlant,UTL,R/R,,,2010,BB,M,AND,D3,2,2024
+58,Hespel Nicolas,UTL,R/R,,,1985,BB,M,AND,D3,2,2024
+77,Hubert Thomas,UTL,R/R,0,0,1990,BB,M,AND,D3,2,2024
+28,Marchal Simon,UTL,R/R,,,2008,BB,M,AND,D3,2,2024
+61,Mastronardi Aurélien,UTL,R/R,,,2000,BB,M,AND,D3,2,2024
+29,Nunes Marques Hugo,UTL,L/L,,,2002,BB,M,AND,D3,2,2024
+20,Pouillon Maxence,UTL,R/R,0,0,2007,BB,M,AND,D3,2,2024
+55,Stokart Adrien,UTL,R/R,0,0,1988,BB,M,AND,D3,2,2024
+0,Szabados Maxime,UTL,R/R,0,0,2010,BB,M,AND,D3,2,2024
+15,Tasiaux Benjamin,UTL,R/R,0,0,1995,BB,M,AND,D3,2,2024

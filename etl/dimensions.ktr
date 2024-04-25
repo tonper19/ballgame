@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:10.822</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/03/21 19:26:08.241</modified_date>
+    <modified_date>2024/04/20 14:41:31.927</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -1923,15 +1923,19 @@
     <fields>
       <field>
         <name>LAST_FIRST</name>
+        <rename/>
       </field>
       <field>
         <name>ID</name>
+        <rename/>
       </field>
       <field>
         <name>LAST_NAME</name>
+        <rename/>
       </field>
       <field>
         <name>FIRST_NAME</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
