@@ -23,9 +23,11 @@
             "id": "75c7610db254634e",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.12"
+                "file": "How to Compute Standings in Baseball.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
