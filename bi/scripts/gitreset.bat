@@ -1,12 +1,12 @@
 :: Windows batch file
-:: Git pull latest changes from Github repository
+:: Git reset all local changes and then pull
+:: the latest from Github repository
 ::
 :: when       who         what
 :: ---------- ----------- --------------------------------------------------------
-:: 03/04/2024
-:: 27/04/2024 Tony Pérez  git stash: discard changes (and store a record of them)
+:: 27/04/2024 Tony Pérez  initial
 
-(C: && cd c:\ballgame\ballgameBI\ && git stash && git.exe pull)
+(C: && cd c:\ballgame\ballgameBI\ && git reset --hard && git.exe pull)
 pause
 
 :: to run this from a scheduled task with output
