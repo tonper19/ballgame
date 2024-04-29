@@ -1,0 +1,200 @@
+{
+  "results" : [
+    {
+      "columns" : [
+        {
+          "name" : "COUNTRY_ID",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "COUNTRY_NAME",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "FEDERATION_ID",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "CATEGORY_ID",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "SPORT_ID",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "GENDER",
+          "type" : "VARCHAR2"
+        },
+        {
+          "name" : "NAME",
+          "type" : "VARCHAR2"
+        }
+      ],
+      "items" : [
+        {
+          "country_id" : "AT",
+          "country_name" : "Austria",
+          "federation_id" : "ABF",
+          "category_id" : "ABDL",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Austria Baseball Bundesliga"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D3",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Baseball 3rd Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D4",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Baseball 4th Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D1",
+          "sport_id" : "SBFP",
+          "gender" : "F",
+          "name" : "Softball Ladies 1st Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D2",
+          "sport_id" : "SBFP",
+          "gender" : "F",
+          "name" : "Softball Ladies 2nd Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D3",
+          "sport_id" : "SBFP",
+          "gender" : "F",
+          "name" : "Softball Ladies 3rd Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D1",
+          "sport_id" : "SBFP",
+          "gender" : "M",
+          "name" : "Softball Men 1st Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "RESERVES",
+          "sport_id" : "SBFP",
+          "gender" : "M",
+          "name" : "Softball Men Reserves"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "COED",
+          "sport_id" : "SBSP",
+          "gender" : "C",
+          "name" : "Softball Coed Slowpitch"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D1",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Baseball 1st Division"
+        },
+        {
+          "country_id" : "BE",
+          "country_name" : "Belgium",
+          "federation_id" : "KBBSF/FRBBS",
+          "category_id" : "D2",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Baseball 2nd Division"
+        },
+        {
+          "country_id" : "ES",
+          "country_name" : "Spain",
+          "federation_id" : "RFEBS",
+          "category_id" : "1DIV",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Liga Nacional de 1a División"
+        },
+        {
+          "country_id" : "ES",
+          "country_name" : "Spain",
+          "federation_id" : "RFEBS",
+          "category_id" : "SBL",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Spanish Baseball League"
+        },
+        {
+          "country_id" : "GB",
+          "country_name" : "United Kingdom",
+          "federation_id" : "BBF",
+          "category_id" : "NBL",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "British National Baseball League"
+        },
+        {
+          "country_id" : "IT",
+          "country_name" : "Italy",
+          "federation_id" : "FIBS",
+          "category_id" : "A",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Serie A Baseball"
+        },
+        {
+          "country_id" : "IT",
+          "country_name" : "Italy",
+          "federation_id" : "FIBS",
+          "category_id" : "B",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Serie B Baseball"
+        },
+        {
+          "country_id" : "NL",
+          "country_name" : "The Netherlands",
+          "federation_id" : "KNBSB",
+          "category_id" : "HK",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Honkbal Hoofdklasse"
+        },
+        {
+          "country_id" : "NL",
+          "country_name" : "The Netherlands",
+          "federation_id" : "KNBSB",
+          "category_id" : "OK",
+          "sport_id" : "BB",
+          "gender" : "M",
+          "name" : "Honkbal Overgangsklasse"
+        }
+      ]
+    }
+  ]
+}
