@@ -1,22 +1,54 @@
-const PlayerInterpreter = require('./PlayerInterpreter');
+import { formatLeadingZero } from '../utils.js';
+import { PlayerInterpreter } from './PlayerInterpreter.js';
 
-/*
+export class FieldingPlayerInterpreter extends PlayerInterpreter {
 
-Fielding (fíjate en el field SBAP, si hay un - originalmente, se cambia a ,,)
+	getG() {
+		return this._getProperty('.field_g');
+	}
 
-Player,Team,G,C,PO,A,E,FLDP,DP,SBA,CSB,SBAP,PB,CI
-AICHER
-Kai,DOI,2,1,1,0,0,1.000,0,3,0,100.0,0,0
-ALZINGER
-Richard,VM,34,79,74,4,1,0.987,2,0,0,,0,0
+	getC() {
+		return this._getProperty('.field_c');
+	}
 
- */
+	getPO() {
+		return this._getProperty('.field_po');
+	}
 
-class FieldingPlayerInterpreter extends PlayerInterpreter {
+	getA() {
+		return this._getProperty('.field_a');
+	}
 
+	getE() {
+		return this._getProperty('.field_e');
+	}
 
-}
+	getFLDP() {
+		return formatLeadingZero(this._getProperty('.fldp'));
+	}
 
-module.exports = {
-	FieldingPlayerInterpreter
+	getDP() {
+		return this._getProperty('.field_dp');
+	}
+
+	getSBA() {
+		return this._getProperty('.field_sba');
+	}
+
+	getCSB() {
+		return this._getProperty('.field_csb');
+	}
+
+	getSBAP() {
+		const sbap = this._getProperty('.sbap');
+		return sbap==='-' ? '':sbap;
+	}
+
+	getPB() {
+		return this._getProperty('.field_pb');
+	}
+
+	getCI() {
+		return this._getProperty('.field_ci');
+	}
 }

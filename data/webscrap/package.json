@@ -7,6 +7,8 @@
   "scripts": {
     "webBattingScrapper": "node src/scrapper/urlBattingScrapper.js",
     "fileBattingScrapper": "node src/scrapper/fileBattingScrapper.js",
+    "webFieldingScrapper": "node src/scrapper/urlFieldingScrapper.js",
+    "fileFieldingScrapper": "node src/scrapper/fileFieldingScrapper.js",    
     "webPitchingScrapper": "node src/scrapper/urlPitchingScrapper.js",
     "filePitchingScrapper": "node src/scrapper/filePitchingScrapper.js"
   },

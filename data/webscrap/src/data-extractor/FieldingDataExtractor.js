@@ -1,49 +1,30 @@
-import PitchingPlayerInterpreter from '../interpreter/PitchingPlayerInterpreter';
+import { FieldingPlayerInterpreter } from '../interpreter/FieldingPlayerInterpreter.js';
 
-/**
- * Fielding player interpreter
- *
- * Player,Team,G,C,PO,A,E,FLDP,DP,SBA,CSB,SBAP,PB,CI
- * AICHER
- * Kai,DOI,2,1,1,0,0,1.000,0,3,0,100.0,0,0
- * ALZINGER
- * Richard,VM,34,79,74,4,1,0.987,2,0,0,,0,0
- */
-
-function extractPitchingPlayerData(container) {
-	const playerInterpreter = new PitchingPlayerInterpreter(container);
+function extractFieldingPlayerData(container) {
+	const playerInterpreter = new FieldingPlayerInterpreter(container);
 	const playerData = [
-		playerInterpreter.getPlayerName(),
+		playerInterpreter.getPlayerSurName(),
+		playerInterpreter.getPlayerFirstName(),
 		playerInterpreter.getTeam(),
-		playerInterpreter.getG,
-		playerInterpreter.getR(),
-		playerInterpreter.getH(),
-		playerInterpreter.getH2(),
-		playerInterpreter.getH3(),
-		playerInterpreter.getHR(),
-		playerInterpreter.getRBI(),
-		playerInterpreter.getTB(),
-		playerInterpreter.getAVG(),
-		playerInterpreter.getSLG(),
-		playerInterpreter.getOBP(),
-		playerInterpreter.getOPS(),
-		playerInterpreter.getBB(),
-		playerInterpreter.getHBP(),
-		playerInterpreter.getSO(),
-		playerInterpreter.getGDP(),
-		playerInterpreter.getSF(),
-		playerInterpreter.getSH(),
-		playerInterpreter.getSB(),
-		playerInterpreter.getCS()
+		playerInterpreter.getG(),
+		playerInterpreter.getC(),
+		playerInterpreter.getPO(),
+		playerInterpreter.getA(),
+		playerInterpreter.getE(),
+		playerInterpreter.getFLDP(),
+		playerInterpreter.getDP(),
+		playerInterpreter.getSBA(),
+		playerInterpreter.getCSB(),
+		playerInterpreter.getSBAP(),
+		playerInterpreter.getPB(),
+		playerInterpreter.getCI()
 	]
 	return playerData.join(',');
 }
 
-function extractPitchingData(dom) {
+export function extractFieldingData(dom) {
 	const elementNodeListOf = dom.window.document.querySelectorAll('.stats-content tbody tr');
-	return [...elementNodeListOf].map(extractPitchingPlayerData);
-}
-
-module.exports = {
-	extractPitchingData,
+	return [
+		'Surname,First Name,Team,G,C,PO,A,E,FLDP,DP,SBA,CSB,SBAP,PB,CI',
+		...[...elementNodeListOf].map(extractFieldingPlayerData)];
 }
