@@ -5,7 +5,8 @@ import { BattingPlayerInterpreter } from '../interpreter/BattingPlayerInterprete
 function extractBattingPlayerData(container) {
 	const playerInterpreter = new BattingPlayerInterpreter(container);
 	return [
-		playerInterpreter.getPlayerName(),
+		playerInterpreter.getPlayerSurName(),
+		playerInterpreter.getPlayerFirstName(),
 		playerInterpreter.getTeam(),
 		playerInterpreter.getAB(),
 		playerInterpreter.getR(),
@@ -33,6 +34,6 @@ function extractBattingPlayerData(container) {
 export function extractBattingData(dom) {
 	const elementNodeListOf = dom.window.document.querySelectorAll('.stats-content tbody tr');
 	return [
-		'Player,Team,AB,R,H,H2,H3,HR,RBI,TB,AVG,SLG,OBP,OPS,BB,HBP,SO,GDP,SF,SH,SB,CS',
+		'Surname,First Name,Team,AB,R,H,H2,H3,HR,RBI,TB,AVG,SLG,OBP,OPS,BB,HBP,SO,GDP,SF,SH,SB,CS',
 		...[...elementNodeListOf].map(extractBattingPlayerData)];
 }

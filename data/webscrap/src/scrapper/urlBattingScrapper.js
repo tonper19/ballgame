@@ -16,7 +16,7 @@ const fileName = process.argv[3] || 'batting.csv';
 
 urlBattingDataProcessor(url).then((data) => {	
 	const csv = data.join('\n');
-	console.log('Writing data.csv');
+	console.log(`Writing ${fileName}`);
 	fs.writeFileSync(fileName, csv);
 	console.log('Data written');
 })
