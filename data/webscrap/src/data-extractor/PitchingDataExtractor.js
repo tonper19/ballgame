@@ -4,7 +4,7 @@ function extractPitchingPlayerData(container) {
 	const playerInterpreter = new PitchingPlayerInterpreter(container);
 	const playerData = [
 		playerInterpreter.getPlayerSurName(),
-		playerInterpreter.getPlayerFirstName(),	
+		playerInterpreter.getPlayerFirstName(),
 		playerInterpreter.getTeam(),
 		playerInterpreter.getW(),
 		playerInterpreter.getL(),
@@ -19,6 +19,7 @@ function extractPitchingPlayerData(container) {
 		playerInterpreter.getR(),
 		playerInterpreter.getER(),
 		playerInterpreter.getBB(),
+		playerInterpreter.getSO(),
 		playerInterpreter.get2B(),
 		playerInterpreter.get3B(),
 		playerInterpreter.getHR(),
@@ -28,6 +29,7 @@ function extractPitchingPlayerData(container) {
 		playerInterpreter.getHB(),
 		playerInterpreter.getBK(),
 		playerInterpreter.getSFA(),
+		playerInterpreter.getSHA(),
 		playerInterpreter.getGO(),
 		playerInterpreter.getFO()
 	]
