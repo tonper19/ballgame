@@ -5,7 +5,10 @@ Version log
 -----------
 
 v0.05 ()
-- Included player information window from the Team Lineup Advice
+- Webscraping
+- Included hitter information window from the Team Lineup Advice
+chapter in the Players chapter.
+- Included pitcher information window from the Gameday chapter
 in the Players chapter.
 
 
