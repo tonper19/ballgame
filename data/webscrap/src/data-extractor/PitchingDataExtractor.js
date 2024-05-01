@@ -2,9 +2,16 @@ import { PitchingPlayerInterpreter } from '../interpreter/PitchingPlayerInterpre
 
 function extractPitchingPlayerData(container) {
 	const playerInterpreter = new PitchingPlayerInterpreter(container);
+	const playerSurName = playerInterpreter.getPlayerSurName();
+	const playerFirstName = playerInterpreter.getPlayerFirstName();
+
+	if (playerSurName==='-' || playerFirstName==='-') {
+		return;
+	}
+	
 	const playerData = [
-		playerInterpreter.getPlayerSurName(),
-		playerInterpreter.getPlayerFirstName(),
+		playerSurName,
+		playerFirstName,
 		playerInterpreter.getTeam(),
 		playerInterpreter.getW(),
 		playerInterpreter.getL(),
@@ -40,5 +47,5 @@ export function extractPitchingData(dom) {
 	const elementNodeListOf = dom.window.document.querySelectorAll('.stats-content tbody tr');
 	return [
 		'Surname,First Name,Team,W,L,ERA,APP,GS,SV,CG,SHO,IP,H,R,ER,BB,SO,H2,H3,HR,AB,BAVG,WP,HBP,BK,SFA,SHA,GO,FO',
-		...[...elementNodeListOf].map(extractPitchingPlayerData)];
+		...[...elementNodeListOf].map(extractPitchingPlayerData)].filter(line => !!line);
 }

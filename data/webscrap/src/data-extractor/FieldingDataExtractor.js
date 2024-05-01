@@ -2,9 +2,16 @@ import { FieldingPlayerInterpreter } from '../interpreter/FieldingPlayerInterpre
 
 function extractFieldingPlayerData(container) {
 	const playerInterpreter = new FieldingPlayerInterpreter(container);
+	const playerSurName = playerInterpreter.getPlayerSurName();
+	const playerFirstName = playerInterpreter.getPlayerFirstName();
+
+	if (playerSurName==='-' || playerFirstName==='-') {
+		return;
+	}
+	
 	const playerData = [
-		playerInterpreter.getPlayerSurName(),
-		playerInterpreter.getPlayerFirstName(),
+		playerSurName,
+		playerFirstName,
 		playerInterpreter.getTeam(),
 		playerInterpreter.getG(),
 		playerInterpreter.getC(),
@@ -26,5 +33,5 @@ export function extractFieldingData(dom) {
 	const elementNodeListOf = dom.window.document.querySelectorAll('.stats-content tbody tr');
 	return [
 		'Surname,First Name,Team,G,C,PO,A,E,FLDP,DP,SBA,CSB,SBAP,PB,CI',
-		...[...elementNodeListOf].map(extractFieldingPlayerData)];
+		...[...elementNodeListOf].map(extractFieldingPlayerData)].filter(line => !!line);
 }

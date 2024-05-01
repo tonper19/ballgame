@@ -4,9 +4,16 @@ import { BattingPlayerInterpreter } from '../interpreter/BattingPlayerInterprete
 
 function extractBattingPlayerData(container) {
 	const playerInterpreter = new BattingPlayerInterpreter(container);
+	const playerSurName = playerInterpreter.getPlayerSurName();
+	const playerFirstName = playerInterpreter.getPlayerFirstName();
+
+	if (playerSurName==='-' || playerFirstName==='-') {
+		return;
+	}
+
 	return [
-		playerInterpreter.getPlayerSurName(),
-		playerInterpreter.getPlayerFirstName(),
+		playerSurName,
+		playerFirstName,
 		playerInterpreter.getTeam(),
 		playerInterpreter.getAB(),
 		playerInterpreter.getR(),
@@ -35,5 +42,5 @@ export function extractBattingData(dom) {
 	const elementNodeListOf = dom.window.document.querySelectorAll('.stats-content tbody tr');
 	return [
 		'Surname,First Name,Team,AB,R,H,H2,H3,HR,RBI,TB,AVG,SLG,OBP,OPS,BB,HBP,SO,GDP,SF,SH,SB,CS',
-		...[...elementNodeListOf].map(extractBattingPlayerData)];
+		...[...elementNodeListOf].map(extractBattingPlayerData)].filter(line => !!line);
 }
