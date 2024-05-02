@@ -8,7 +8,7 @@
     "webBattingScrapper": "node src/scrapper/urlBattingScrapper.js",
     "fileBattingScrapper": "node src/scrapper/fileBattingScrapper.js",
     "webFieldingScrapper": "node src/scrapper/urlFieldingScrapper.js",
-    "fileFieldingScrapper": "node src/scrapper/fileFieldingScrapper.js",    
+    "fileFieldingScrapper": "node src/scrapper/fileFieldingScrapper.js",
     "webPitchingScrapper": "node src/scrapper/urlPitchingScrapper.js",
     "filePitchingScrapper": "node src/scrapper/filePitchingScrapper.js"
   },
@@ -18,5 +18,9 @@
   "dependencies": {
     "axios": "^1.6.8",
     "jsdom": "^24.0.0"
+  },
+  "devDependencies": {
+    "@stryker-mutator/vitest-runner": "^8.2.6",
+    "vitest": "^1.5.3"
   }
 }
