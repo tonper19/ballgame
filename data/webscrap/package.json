@@ -10,7 +10,9 @@
     "webFieldingScrapper": "node src/scrapper/urlFieldingScrapper.js",
     "fileFieldingScrapper": "node src/scrapper/fileFieldingScrapper.js",
     "webPitchingScrapper": "node src/scrapper/urlPitchingScrapper.js",
-    "filePitchingScrapper": "node src/scrapper/filePitchingScrapper.js"
+    "filePitchingScrapper": "node src/scrapper/filePitchingScrapper.js",
+    "test": "vitest",
+    "stryker": "stryker run"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +22,9 @@
     "jsdom": "^24.0.0"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
+    "stryker-cli": "^1.0.2",
     "vitest": "^1.5.3"
   }
 }
