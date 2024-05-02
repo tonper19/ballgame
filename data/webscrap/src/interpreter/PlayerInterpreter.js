@@ -13,15 +13,21 @@ export class PlayerInterpreter {
 	_getPropertyAsHTML(prop) {
 		return this.container.querySelector(prop)?.innerHTML;
 	}
+	
+	_playerNameCleanup(playerName){
+		return playerName?.replaceAll(',', ' ').replaceAll('  ',' ');
+	}
 
 	getPlayerSurName() {
-		const playerName = this._getPropertyAsHTML('.player');
-		return playerName.match(this._surNameMatcher)?.[1] || '-';
+		const playerNameContainer = this._getPropertyAsHTML('.player');
+		const playerName = playerNameContainer?.match(this._surNameMatcher)?.[1];
+		return this._playerNameCleanup(playerName) || '-';
 	}
 
 	getPlayerFirstName() {
-		let playerName = this._getPropertyAsHTML('.player');
-		return playerName.match(this._surNameMatcher)?.[2] || '-';
+		let playerNameContainer = this._getPropertyAsHTML('.player');
+		const playerName = playerNameContainer?.match(this._surNameMatcher)?.[2];
+		return this._playerNameCleanup(playerName) || '-';
 	}
 
 	getTeam() {
