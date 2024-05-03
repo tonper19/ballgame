@@ -6,7 +6,7 @@
 :: 03/04/2024
 :: 27/04/2024 Tony Pérez  git stash: discard changes (and store a record of them)
 
-(C: && cd c:\ballgame\ballgameBI\ && git stash && git.exe pull)
+(C: && cd c:\baseball\ballgameBI\ && git stash && git.exe pull)
 pause
 
 :: to run this from a scheduled task with output
