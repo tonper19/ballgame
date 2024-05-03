@@ -1,45 +1,45 @@
-uniform_number,player_name,position,bats,throws,ht,wt,yob,sport,gender,club,category,team,year
-0,Bariaux Ludovic,UTL,R/R,,,2005,BB,M,BRI,D2,2,2024
-0,Bombart Bastien,UTL,R/R,,,2006,BB,M,BRI,D2,2,2024
-0,Cadeddu Matteo,UTL,R/R,,,2006,BB,M,BRI,D2,2,2024
-0,Clerbois Theo,UTL,R/R,,,2007,BB,M,BRI,D2,2,2024
-0,Cludts Quentin,UTL,R/R,,,1986,BB,M,BRI,D2,2,2024
-0,De Groof Frédérick,UTL,R/R,,,1984,BB,M,BRI,D2,2,2024
-0,Deletombe Maxime,UTL,R/R,,,1988,BB,M,BRI,D2,2,2024
-0,Durieux Laurent,UTL,R/R,,,1981,BB,M,BRI,D2,2,2024
-0,Fahandezh Saadi Mohsen,UTL,R/R,,,1987,BB,M,BRI,D2,2,2024
-0,Genao Rigoberto,UTL,R/R,,,1980,BB,M,BRI,D2,2,2024
-0,Goudelouf Sébastien,UTL,R/R,,,2006,BB,M,BRI,D2,2,2024
-0,Guerra Elizondo César Emilio,UTL,R/R,,,2005,BB,M,BRI,D2,2,2024
-0,Guerra Guerrero César,UTL,R/R,,,1972,BB,M,BRI,D2,2,2024
-0,Guy Romain,UTL,R/R,,,2005,BB,M,BRI,D2,2,2024
-0,HAMMOUTEN Farid,UTL,R/R,,,1985,BB,M,BRI,D2,2,2024
-0,Laurent David,UTL,R/R,,,1980,BB,M,BRI,D2,2,2024
-0,Malpoix Pascal,UTL,R/R,,,1972,BB,M,BRI,D2,2,2024
-0,Nyst Alexandre,UTL,R/R,,,2007,BB,M,BRI,D2,2,2024
-0,Oesau Guillaume,UTL,R/R,,,1996,BB,M,BRI,D2,2,2024
-0,Pérez Miguel,UTL,L/L,0,0,2004,BB,M,BRI,D2,2,2024
-0,Piret Christophe,UTL,R/R,,,1976,BB,M,BRI,D2,2,2024
-0,Raymond Xavier,UTL,R/R,,,1983,BB,M,BRI,D2,2,2024
-0,Rivera Hegel Luis Diego,UTL,R/R,,,1983,BB,M,BRI,D2,2,2024
-0,Roberts Joshua,UTL,R/R,,,1983,BB,M,BRI,D2,2,2024
-0,Schmitz Donatien,UTL,R/R,,,1995,BB,M,BRI,D2,2,2024
-0,Vandendriessche Nicolas,UTL,R/R,,,1998,BB,M,BRI,D2,2,2024
-0,Zidoune Karim,UTL,R/R,,,1976,BB,M,BRI,D2,2,2024
-0,Almagro Gomez Jose Raul,UTL,R/R,,,1981,BB,M,BRI,D2,1,2024
-0,Cedeño Daudinot Alain,UTL,R/R,0,0,1974,BB,M,BRI,D2,1,2024
-0,Cortes Rojas Carlos Alberto,UTL,R/R,0,0,1996,BB,M,BRI,D2,1,2024
-0,Fernandez Cuba Adalberto,UTL,R/R,,,1978,BB,M,BRI,D2,1,2024
-0,Freitez Jhoanderson,UTL,R/R,0,0,1988,BB,M,BRI,D2,1,2024
-0,Garcia Pupo Oreste,UTL,R/R,0,0,1990,BB,M,BRI,D2,1,2024
-0,Ghys Frédéric,UTL,R/R,,,1978,BB,M,BRI,D2,1,2024
-0,Lambeau Jean-Marc,UTL,R/R,,,1986,BB,M,BRI,D2,1,2024
-0,Limonta Padilla Alejandro,UTL,R/R,,,1987,BB,M,BRI,D2,1,2024
-0,Mumenthaler Frédéric,UTL,R/R,,,1977,BB,M,BRI,D2,1,2024
-0,Peña Gonzalez Francisco,UTL,R/R,0,0,1986,BB,M,BRI,D2,1,2024
-0,Perez Cabarallo Arturo,UTL,R/R,,,1988,BB,M,BRI,D2,1,2024
-0,Sakai Yosuke,UTL,R/R,0,0,1976,BB,M,BRI,D2,1,2024
-0,Tran David,UTL,R/R,,,2003,BB,M,BRI,D2,1,2024
-0,Urbaez Feliz Joni Antonio,UTL,R/R,0,0,1992,BB,M,BRI,D2,1,2024
-0,Urquiaga Rodriguez Carlos Enrique,UTL,R/R,0,0,1964,BB,M,BRI,D2,1,2024
-0,Veras Luciano Luis Manuel,UTL,R/R,0,0,1986,BB,M,BRI,D2,1,2024
+player_name,sport,gender,club,category,team,year,country_id
+Bariaux Ludovic,BB,M,BRI,D2,2,2024,BE
+Bombart Bastien,BB,M,BRI,D2,2,2024,BE
+Cadeddu Matteo,BB,M,BRI,D2,2,2024,BE
+Clerbois Theo,BB,M,BRI,D2,2,2024,BE
+Cludts Quentin,BB,M,BRI,D2,2,2024,BE
+De Groof Frédérick,BB,M,BRI,D2,2,2024,BE
+Deletombe Maxime,BB,M,BRI,D2,2,2024,BE
+Durieux Laurent,BB,M,BRI,D2,2,2024,BE
+Fahandezh Saadi Mohsen,BB,M,BRI,D2,2,2024,BE
+Genao Rigoberto,BB,M,BRI,D2,2,2024,BE
+Goudelouf Sébastien,BB,M,BRI,D2,2,2024,BE
+Guerra Elizondo César Emilio,BB,M,BRI,D2,2,2024,BE
+Guerra Guerrero César,BB,M,BRI,D2,2,2024,BE
+Guy Romain,BB,M,BRI,D2,2,2024,BE
+HAMMOUTEN Farid,BB,M,BRI,D2,2,2024,BE
+Laurent David,BB,M,BRI,D2,2,2024,BE
+Malpoix Pascal,BB,M,BRI,D2,2,2024,BE
+Nyst Alexandre,BB,M,BRI,D2,2,2024,BE
+Oesau Guillaume,BB,M,BRI,D2,2,2024,BE
+Pérez Miguel,BB,M,BRI,D2,2,2024,BE
+Piret Christophe,BB,M,BRI,D2,2,2024,BE
+Raymond Xavier,BB,M,BRI,D2,2,2024,BE
+Rivera Hegel Luis Diego,BB,M,BRI,D2,2,2024,BE
+Roberts Joshua,BB,M,BRI,D2,2,2024,BE
+Schmitz Donatien,BB,M,BRI,D2,2,2024,BE
+Vandendriessche Nicolas,BB,M,BRI,D2,2,2024,BE
+Zidoune Karim,BB,M,BRI,D2,2,2024,BE
+Almagro Gomez Jose Raul,BB,M,BRI,D2,1,2024,BE
+Cedeño Daudinot Alain,BB,M,BRI,D2,1,2024,BE
+Cortes Rojas Carlos Alberto,BB,M,BRI,D2,1,2024,BE
+Fernandez Cuba Adalberto,BB,M,BRI,D2,1,2024,BE
+Freitez Jhoanderson,BB,M,BRI,D2,1,2024,BE
+Garcia Pupo Oreste,BB,M,BRI,D2,1,2024,BE
+Ghys Frédéric,BB,M,BRI,D2,1,2024,BE
+Lambeau Jean-Marc,BB,M,BRI,D2,1,2024,BE
+Limonta Padilla Alejandro,BB,M,BRI,D2,1,2024,BE
+Mumenthaler Frédéric,BB,M,BRI,D2,1,2024,BE
+Peña Gonzalez Francisco,BB,M,BRI,D2,1,2024,BE
+Perez Cabarallo Arturo,BB,M,BRI,D2,1,2024,BE
+Sakai Yosuke,BB,M,BRI,D2,1,2024,BE
+Tran David,BB,M,BRI,D2,1,2024,BE
+Urbaez Feliz Joni Antonio,BB,M,BRI,D2,1,2024,BE
+Urquiaga Rodriguez Carlos Enrique,BB,M,BRI,D2,1,2024,BE
+Veras Luciano Luis Manuel,BB,M,BRI,D2,1,2024,BE

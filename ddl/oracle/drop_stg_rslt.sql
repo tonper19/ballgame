@@ -15,3 +15,4 @@ drop table c##baseball.stg_pitching_stat;
 drop table c##baseball.stg_fielding_stat;
 drop table c##baseball.stg_batting_stat;
 drop table c##baseball.rslt_player;
+drop table c##baseball.lu_team_split;

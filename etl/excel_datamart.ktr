@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2024/01/21 20:30:51.633</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/04/30 19:36:21.449</modified_date>
+    <modified_date>2024/05/03 17:42:27.973</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -497,13 +497,13 @@
     </hop>
     <hop>
       <from>Select values</from>
-      <to>Datamart CSV</to>
-      <enabled>Y</enabled>
+      <to>Datamart XLSX</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Select values</from>
-      <to>Datamart XLSX</to>
-      <enabled>N</enabled>
+      <to>Datamart CSV</to>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <step>
@@ -4720,8 +4720,8 @@ select dpl.last_name  player_last_name
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
-      <yloc>199</yloc>
+      <xloc>176</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -6566,7 +6566,7 @@ select dpl.last_name  player_last_name
     </remotesteps>
     <GUI>
       <xloc>496</xloc>
-      <yloc>112</yloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -8436,451 +8436,600 @@ select dpl.last_name  player_last_name
     </partitioning>
     <fields>
       <field>
-        <name>PLAYER_LAST_NAME</name>
+        <name>Player_Last_Name</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_FIRST_NAME</name>
+        <name>Player_First_Name</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_FULL_NAME</name>
+        <name>Player_Full_Name</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_POSITION</name>
+        <name>Player_Position</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_BATS</name>
+        <name>Player_Bats</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_THROWS</name>
+        <name>Player_Throws</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_YOB</name>
+        <name>Player_Yob</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_UNIFORM_NUMBER</name>
+        <name>Player_Uniform_Number</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_LICENSE_NUMBER</name>
+        <name>Player_License_Number</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_LICENSE_TYPE</name>
+        <name>Player_License_Type</name>
+        <rename/>
       </field>
       <field>
-        <name>SPORT_ID</name>
+        <name>Sport_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>GENDER_ID</name>
+        <name>Gender_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>CATEGORY_ID</name>
+        <name>Category_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_ID</name>
+        <name>Club_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>COUNTRY_ID</name>
+        <name>Country_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>SEASON_YEAR</name>
+        <name>Season_Year</name>
+        <rename/>
       </field>
       <field>
-        <name>PLAYER_ID</name>
+        <name>Player_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>TEAM_ID</name>
+        <name>Team_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_AT_BATS</name>
+        <name>Fbs_At_Bats</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RUNS</name>
+        <name>Fbs_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_HITS</name>
+        <name>Fbs_Hits</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_DOUBLES</name>
+        <name>Fbs_Doubles</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_TRIPLES</name>
+        <name>Fbs_Triples</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_HOME_RUNS</name>
+        <name>Fbs_Home_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RBI</name>
+        <name>Fbs_Rbi</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_TOTAL_BASES</name>
+        <name>Fbs_Total_Bases</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_BASE_ON_BALLS</name>
+        <name>Fbs_Base_On_Balls</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_HIT_BY_PITCHS</name>
+        <name>Fbs_Hit_By_Pitchs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_STRIKE_OUTS</name>
+        <name>Fbs_Strike_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
+        <name>Fbs_Ground_Into_Doubleplays</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_SACRFICE_FLIES</name>
+        <name>Fbs_Sacrfice_Flies</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_BUNTS</name>
+        <name>Fbs_Bunts</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_STOLEN_BASES</name>
+        <name>Fbs_Stolen_Bases</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_CAUGHT_STEALING</name>
+        <name>Fbs_Caught_Stealing</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_LEAGUE_OBP</name>
+        <name>Fbs_League_Obp</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_LEAGUE_SLG</name>
+        <name>Fbs_League_Slg</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_WINS</name>
+        <name>Fps_Wins</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LOSSES</name>
+        <name>Fps_Losses</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_GAMES</name>
+        <name>Fps_Games</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_GAMES_STARTED</name>
+        <name>Fps_Games_Started</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_SAVES</name>
+        <name>Fps_Saves</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_COMPLETE_GAMES</name>
+        <name>Fps_Complete_Games</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_SHUTOUTS</name>
+        <name>Fps_Shutouts</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_INNINGS_PITCHED_LABEL</name>
+        <name>Fps_Innings_Pitched_Label</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_INNINGS_PITCHED_DEC</name>
+        <name>Fps_Innings_Pitched_Dec</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_ERA_INNINGS_CALC</name>
+        <name>Fps_Era_Innings_Calc</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_INNING_OUTS_PITCHED</name>
+        <name>Fps_Inning_Outs_Pitched</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_HITS</name>
+        <name>Fps_Hits</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RUNS</name>
+        <name>Fps_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_EARNED_RUNS</name>
+        <name>Fps_Earned_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_WALKS</name>
+        <name>Fps_Walks</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_STRIKE_OUTS</name>
+        <name>Fps_Strike_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_DOUBLES</name>
+        <name>Fps_Doubles</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_TRIPLES</name>
+        <name>Fps_Triples</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_HOME_RUNS</name>
+        <name>Fps_Home_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_AT_BATS</name>
+        <name>Fps_At_Bats</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_WILD_PITCHES</name>
+        <name>Fps_Wild_Pitches</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_HIT_BY_PITCHS</name>
+        <name>Fps_Hit_By_Pitchs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_BALKS</name>
+        <name>Fps_Balks</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_SACRIFICE_FLIES_AGAINST</name>
+        <name>Fps_Sacrifice_Flies_Against</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_BUNTS_AGAINST</name>
+        <name>Fps_Bunts_Against</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_GROUND_OUTS</name>
+        <name>Fps_Ground_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_FLY_OUTS</name>
+        <name>Fps_Fly_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_EARNED_RUNS</name>
+        <name>Fps_League_Earned_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_INNINGS_PITCHED</name>
+        <name>Fps_League_Innings_Pitched</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_HOME_RUNS</name>
+        <name>Fps_League_Home_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_WALKS</name>
+        <name>Fps_League_Walks</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_HIT_BY_PITCHS</name>
+        <name>Fps_League_Hit_By_Pitchs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_LEAGUE_STRIKE_OUTS</name>
+        <name>Fps_League_Strike_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_FIP_CONSTANT</name>
+        <name>Fps_Fip_Constant</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_GAMES_PLAYED_AT_POSITION</name>
+        <name>Ffs_Games_Played_At_Position</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_TOTAL_CHANCES</name>
+        <name>Ffs_Total_Chances</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
+        <name>Ffs_Total_Successful_Chances</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_PUTOUTS</name>
+        <name>Ffs_Putouts</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_ASSISTS</name>
+        <name>Ffs_Assists</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_ERRORS</name>
+        <name>Ffs_Errors</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_DOUBLEPLAYS</name>
+        <name>Ffs_Doubleplays</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_STOLEN_BASES_AGAINST</name>
+        <name>Ffs_Stolen_Bases_Against</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_PLAYERS_CAUGHT_STEELING</name>
+        <name>Ffs_Players_Caught_Steeling</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_PASSED_BALLS</name>
+        <name>Ffs_Passed_Balls</name>
+        <rename/>
       </field>
       <field>
-        <name>FFS_CATCHER_INTERFERENCES</name>
+        <name>Ffs_Catcher_Interferences</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_NAME</name>
+        <name>Club_Name</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_ADDRESS</name>
+        <name>Club_Address</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_POSTAL_CODE</name>
+        <name>Club_Postal_Code</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_CITY</name>
+        <name>Club_City</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_PROVINCE</name>
+        <name>Club_Province</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_COUNTRY</name>
+        <name>Club_Country</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_EMAIL</name>
+        <name>Club_Email</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_WEBPAGE</name>
+        <name>Club_Webpage</name>
+        <rename/>
       </field>
       <field>
-        <name>BALLPARK_ID</name>
+        <name>Ballpark_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_PRESIDENT</name>
+        <name>Club_President</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_SECRETARY</name>
+        <name>Club_Secretary</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_TREASURER</name>
+        <name>Club_Treasurer</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_GOVERNANCE_PERSON</name>
+        <name>Club_Governance_Person</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_LATITUDE</name>
+        <name>Club_Latitude</name>
+        <rename/>
       </field>
       <field>
-        <name>CLUB_LONGITUDE</name>
+        <name>Club_Longitude</name>
+        <rename/>
       </field>
       <field>
-        <name>STADIUM_LATITUDE</name>
+        <name>Stadium_Latitude</name>
+        <rename/>
       </field>
       <field>
-        <name>STADIUM_LONGITUDE</name>
+        <name>Stadium_Longitude</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_COUNTRY_NAME</name>
+        <name>Federation_Country_Name</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_ID</name>
+        <name>Federation_Id</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_ADDRESS</name>
+        <name>Federation_Address</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_POSTAL_CODE</name>
+        <name>Federation_Postal_Code</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_CITY</name>
+        <name>Federation_City</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_PROVINCE_REGION</name>
+        <name>Federation_Province_Region</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_EMAIL</name>
+        <name>Federation_Email</name>
+        <rename/>
       </field>
       <field>
-        <name>FEDERATION_WEBPAGE</name>
+        <name>Federation_Webpage</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_AT_BATS</name>
+        <name>Fbs_Rank_At_Bats</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_RUNS</name>
+        <name>Fbs_Rank_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_HITS</name>
+        <name>Fbs_Rank_Hits</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_DOUBLES</name>
+        <name>Fbs_Rank_Doubles</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_TRIPLES</name>
+        <name>Fbs_Rank_Triples</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_HOME_RUNS</name>
+        <name>Fbs_Rank_Home_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_RBI</name>
+        <name>Fbs_Rank_Rbi</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_TOTAL_BASES</name>
+        <name>Fbs_Rank_Total_Bases</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_BASE_ON_BALLS</name>
+        <name>Fbs_Rank_Base_On_Balls</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_HIT_BY_PITCHS</name>
+        <name>Fbs_Rank_Hit_By_Pitchs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_STRIKE_OUTS</name>
+        <name>Fbs_Rank_Strike_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_GROUND_INTO_DOUBLEPLAYS</name>
+        <name>Fbs_Rank_Ground_Into_Doubleplays</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_SACRFICE_FLIES</name>
+        <name>Fbs_Rank_Sacrfice_Flies</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_BUNTS</name>
+        <name>Fbs_Rank_Bunts</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_STOLEN_BASES</name>
+        <name>Fbs_Rank_Stolen_Bases</name>
+        <rename/>
       </field>
       <field>
-        <name>FBS_RANK_CAUGHT_STEALING</name>
+        <name>Fbs_Rank_Caught_Stealing</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_WINS</name>
+        <name>Fps_Rank_Wins</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_LOSSES</name>
+        <name>Fps_Rank_Losses</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_GAMES</name>
+        <name>Fps_Rank_Games</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_GAMES_STARTED</name>
+        <name>Fps_Rank_Games_Started</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_SAVES</name>
+        <name>Fps_Rank_Saves</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_COMPLETE_GAMES</name>
+        <name>Fps_Rank_Complete_Games</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_SHUTOUTS</name>
+        <name>Fps_Rank_Shutouts</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_INNINGS_PITCHED_DEC</name>
+        <name>Fps_Rank_Innings_Pitched_Dec</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_HITS</name>
+        <name>Fps_Rank_Hits</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_RUNS</name>
+        <name>Fps_Rank_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_EARNED_RUNS</name>
+        <name>Fps_Rank_Earned_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_WALKS</name>
+        <name>Fps_Rank_Walks</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_STRIKE_OUTS</name>
+        <name>Fps_Rank_Strike_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_DOUBLES</name>
+        <name>Fps_Rank_Doubles</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_TRIPLES</name>
+        <name>Fps_Rank_Triples</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_HOME_RUNS</name>
+        <name>Fps_Rank_Home_Runs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_AT_BATS</name>
+        <name>Fps_Rank_At_Bats</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_WILD_PITCHES</name>
+        <name>Fps_Rank_Wild_Pitches</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_HIT_BY_PITCHS</name>
+        <name>Fps_Rank_Hit_By_Pitchs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_BALKS</name>
+        <name>Fps_Rank_Balks</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_SACRIFICE_FLIES_AGAINST</name>
+        <name>Fps_Rank_Sacrifice_Flies_Against</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_BUNTS_AGAINST</name>
+        <name>Fps_Rank_Bunts_Against</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_GROUND_OUTS</name>
+        <name>Fps_Rank_Ground_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>FPS_RANK_FLY_OUTS</name>
+        <name>Fps_Rank_Fly_Outs</name>
+        <rename/>
       </field>
       <field>
-        <name>SEASON_NUMBER_OF_GAMES</name>
+        <name>Season_Number_Of_Games</name>
+        <rename/>
       </field>
       <field>
-        <name>SEASON_PA_COEFFICIENT</name>
+        <name>Season_Pa_Coefficient</name>
+        <rename/>
       </field>
       <field>
-        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
+        <name>Season_Innings_Pitched_Percent</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -8894,7 +9043,7 @@ select dpl.last_name  player_last_name
     </remotesteps>
     <GUI>
       <xloc>304</xloc>
-      <yloc>199</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
