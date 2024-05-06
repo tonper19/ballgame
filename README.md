@@ -1,2 +1,2 @@
 # ballgame
-European Baseball and Softball Statistics Data warehouse and BI application
+WBSC Europe Baseball and Softball Statistics Data warehouse and BI application
