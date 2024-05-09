@@ -9,6 +9,7 @@ season_year,sport_id,gender,category_id,country_id,number_of_games,pa_coefficien
 2024,SBFP,M,D1,BE,3,2.7,0.8
 2024,SBFP,M,RESERVES,BE,3,2.7,0.8
 2024,BB,M,HK,NL,12,2.7,0.8
+2024,SBFP,F,SHK,NL,7,2.7,0.8
 2024,BB,M,A,IT,6,2.7,0.8
 2024,BB,M,ABDL,AT,8,2.7,0.8
 2024,BB,M,SBL,ES,16,2.7,0.8
@@ -56,3 +57,6 @@ season_year,sport_id,gender,category_id,country_id,number_of_games,pa_coefficien
 2021,BB,M,ABDL,AT,30,2.7,0.8
 2023,SBFP,F,SSL,ES,35,2.7,0.8
 2022,SBFP,F,SSL,ES,35,2.7,0.8
+2023,SBFP,F,SHK,NL,47,2.7,0.8
+2022,SBFP,F,SHK,NL,41,2.7,0.8
+2021,SBFP,F,SHK,NL,45,2.7,0.8
