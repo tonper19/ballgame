@@ -365,7 +365,40 @@ npm run webBattingScrapper https://www.rfebs.es/es/events/2022-spanish-softball-
 npm run webPitchingScrapper https://www.rfebs.es/es/events/2022-spanish-softball-league/stats/general/all/pitching ../csv/stats_pitching_raw_ssl_2022.csv
 npm run webFieldingScrapper https://www.rfebs.es/es/events/2022-spanish-softball-league/stats/general/all/fielding ../csv/stats_fielding_raw_ssl_2022.csv
 
+printf "#########################\n"
+printf "# Netherlands Softball  #\n"
+printf "#########################\n"
 
+printf "\n"
+printf "#############################\n"
+printf "## Softbal Hoofdklasse     ##\n"
+printf "#############################\n"
+
+printf "\n"
+printf "#### NL SHK 2024\n"
+npm run webBattingScrapper https://stats.knbsbstats.nl/en/events/2024-hoofdklasse-softbal/stats/general/all/batting ../csv/stats_batting_raw_shk_2024.csv
+npm run webPitchingScrapper https://stats.knbsbstats.nl/en/events/2024-hoofdklasse-softbal/stats/general/all/pitching ../csv/stats_pitching_raw_shk_2024.csv
+npm run webFieldingScrapper https://stats.knbsbstats.nl/en/events/2024-hoofdklasse-softbal/stats/general/all/fielding ../csv/stats_fielding_raw_shk_2024.csv
+
+
+printf "\n"
+printf "#### NL SHK 2023\n"
+npm run webBattingScrapper https://stats.knbsbstats.nl/en/events/2023-hoofdklasse-softbal/stats/general/all/batting ../csv/stats_batting_raw_shk_2023.csv
+npm run webPitchingScrapper https://stats.knbsbstats.nl/en/events/2023-hoofdklasse-softbal/stats/general/all/pitching ../csv/stats_pitching_raw_shk_2023.csv
+npm run webFieldingScrapper https://stats.knbsbstats.nl/en/events/2023-hoofdklasse-softbal/stats/general/all/fielding ../csv/stats_fielding_raw_shk_2023.csv
+
+
+printf "\n"
+printf "#### NL SHK 2022\n"
+npm run webBattingScrapper https://stats.knbsbstats.nl/en/events/2022-hoofdklasse-softbal/stats/general/all/batting ../csv/stats_batting_raw_shk_2022.csv
+npm run webPitchingScrapper https://stats.knbsbstats.nl/en/events/2022-hoofdklasse-softbal/stats/general/all/pitching ../csv/stats_pitching_raw_shk_2022.csv
+npm run webFieldingScrapper https://stats.knbsbstats.nl/en/events/2022-hoofdklasse-softbal/stats/general/all/fielding ../csv/stats_fielding_raw_shk_2022.csv
+
+printf "\n"
+printf "#### NL SHK 2021\n"
+npm run webBattingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklasse-softbal/stats/general/all/batting ../csv/stats_batting_raw_shk_2021.csv
+npm run webPitchingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklasse-softbal/stats/general/all/pitching ../csv/stats_pitching_raw_shk_2021.csv
+npm run webFieldingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklasse-softbal/stats/general/all/fielding ../csv/stats_fielding_raw_shk_2021.csv
 
 
 printf "\n\n"
