@@ -17,7 +17,7 @@ license file in the root directory of this source tree.
    (	id varchar2(16 byte),
 	last_name varchar2(255 byte),
 	first_name varchar2(255 byte),
-	position varchar2(16 byte),
+	position varchar2(32 byte),
 	bats varchar2(10 byte),
 	throws varchar2(10 byte),
 	yob number,
