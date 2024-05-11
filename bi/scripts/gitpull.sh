@@ -9,7 +9,11 @@
 # 11/05/2024  Tony Pérez            initial
 
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
+echo " "
+echo "==================================================================================="
 echo "Date/Time: $current_datetime"
+echo "==================================================================================="
+echo " "
 cd ~/baseball/ballgameBI/
 git reset --hard
 git pull
