@@ -3,6 +3,12 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.07 (11/05/2024)
+-- Plate appearances bug correction: Base on balls are now counted.
+-- Players chapter allow for sport/gender multi selection filter
+(tick boxes instead of radio buttons).
+-- Latest statistics
+
 v0.06 (09/05/2024)
 - Added SHK Softbal Hoofdklasse (NL)
 - Stats as of 09/05/2024
