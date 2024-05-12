@@ -9,6 +9,11 @@
 # ----------  --------------------  ---------------------------------
 # 12/05/2024  Tony Pérez            initial
 
+function pause(){
+ read -s -n 1 -p "Press any key to continue . . ."
+ echo ""
+}
+
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
 echo " "
 echo "==================================================================================="
@@ -20,3 +25,5 @@ echo " "
 cd ~/baseball/ballgameBI/
 git reset --hard
 git pull
+
+pause
