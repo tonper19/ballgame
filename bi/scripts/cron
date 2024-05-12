@@ -15,6 +15,7 @@
 # use pmset to wakeup the Mac before the cron job triggers:
 # sudo pmset repeat wakeorpoweron MTWRFSU 03:55:00
 # the command above must be executed by root, wakes/power up the Mac everyday at 03:55
+# pmset repeat cancel (to cancel all scheduled wake, sleep...)
 # Baseball/Softball Sabermetrics App Refresh scheduling
 # Refresh at 04:00 everyday:
 0 4 * * * ~/baseball/ballgameBI/bi/scripts/gitpull.sh >> ~/baseball/ballgameBI/bi/scripts/cron.log
