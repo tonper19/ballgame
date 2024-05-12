@@ -1,4 +1,4 @@
-# crontab (macOS/linux) scheduler example
+# cron (macOS/linux) scheduler example
 # courtesy of Corey Schafer YouTube channel: https://www.youtube.com/watch?v=QZJ1drMQz1A
 
 # ┌───────────── minute (0 - 59)
@@ -11,6 +11,10 @@
 # │ │ │ │ │
 # * * * * *  command_to_execute
 
+# cron won't execute if the Mac is in sleep mode or powere off
+# use pmset to wakeup the Mac before the cron job triggers:
+# sudo pmset repeat wakeorpoweron MTWRFSU 03:55:00
+# the command above must be executed by root, wakes/power up the Mac everyday at 03:55
 # Baseball/Softball Sabermetrics App Refresh scheduling
 # Refresh at 04:00 everyday:
 0 4 * * * ~/baseball/ballgameBI/bi/scripts/gitpull.sh >> ~/baseball/ballgameBI/bi/scripts/cron.log
