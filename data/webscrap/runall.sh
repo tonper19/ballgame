@@ -1,5 +1,21 @@
 #!/bin/bash
 clear
+current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
+echo " "
+echo "==================================================================================="
+echo "WBSC Europe Baseball and Softball Sabermetrics Statistics App"
+echo "Web scraping"
+echo "Date/Time: $current_datetime"
+echo "==================================================================================="
+echo " "
+
+printf "#########################\n"
+printf "#########################\n"
+printf "##      RUN ALL        ##\n"
+printf "#########################\n"
+printf "#########################\n"
+
+
 printf "#########################\n"
 printf "# Belgium Baseball      #\n"
 printf "#########################\n"

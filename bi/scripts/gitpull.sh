@@ -11,6 +11,8 @@
 current_datetime=$(date +"%Y-%m-%d %H:%M:%S")
 echo " "
 echo "==================================================================================="
+echo "WBSC Europe Baseball and Softball Sabermetrics Statistics App"
+echo "Github Refresh"
 echo "Date/Time: $current_datetime"
 echo "==================================================================================="
 echo " "

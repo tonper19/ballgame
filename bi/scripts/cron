@@ -1,4 +1,4 @@
-# crontab (macOS/linux) scheduler example 
+# crontab (macOS/linux) scheduler example
 # courtesy of Corey Schafer YouTube channel: https://www.youtube.com/watch?v=QZJ1drMQz1A
 
 # ┌───────────── minute (0 - 59)
@@ -13,5 +13,5 @@
 
 # Baseball/Softball Sabermetrics App Refresh scheduling
 # Refresh at 04:00 everyday:
-0 4 * * * ~/baseball/ballgameBI/bi/scripts/gitpull.sh
+0 4 * * * ~/baseball/ballgameBI/bi/scripts/gitpull.sh >> ~/baseball/ballgameBI/bi/scripts/cron.log
 
