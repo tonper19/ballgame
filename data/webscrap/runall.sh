@@ -416,6 +416,39 @@ npm run webBattingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklass
 npm run webPitchingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklasse-softbal/stats/general/all/pitching ../csv/stats_pitching_raw_shk_2021.csv
 npm run webFieldingScrapper https://stats.knbsbstats.nl/en/events/2021-hoofdklasse-softbal/stats/general/all/fielding ../csv/stats_fielding_raw_shk_2021.csv
 
+printf "###########################\n"
+printf "# United Kingdom Baseball #\n"
+printf "###########################\n"
+
+printf "\n"
+printf "##############################\n"
+printf "## National Baseball League ##\n"
+printf "##############################\n"
+
+printf "\n"
+printf "#### GB NBL 2024\n"
+npm run webBattingScrapper https://stats.britishbaseball.org.uk/en/events/2024-nbl/stats/general/all/batting ../csv/stats_batting_raw_nbl_2024.csv
+npm run webPitchingScrapper https://stats.britishbaseball.org.uk/en/events/2024-nbl/stats/general/all/pitching ../csv/stats_pitching_raw_nbl_2024.csv
+npm run webFieldingScrapper https://stats.britishbaseball.org.uk/en/events/2024-nbl/stats/general/all/fielding ../csv/stats_fielding_raw_nbl_2024.csv
+
+printf "\n"
+printf "#### GB NBL 2023\n"
+npm run webBattingScrapper https://stats.britishbaseball.org.uk/en/events/2023-nbl/stats/general/all/batting ../csv/stats_batting_raw_nbl_2023.csv
+npm run webPitchingScrapper https://stats.britishbaseball.org.uk/en/events/2023-nbl/stats/general/all/pitching ../csv/stats_pitching_raw_nbl_2023.csv
+npm run webFieldingScrapper https://stats.britishbaseball.org.uk/en/events/2023-nbl/stats/general/all/fielding ../csv/stats_fielding_raw_nbl_2023.csv
+
+printf "\n"
+printf "#### GB NBL 2022\n"
+npm run webBattingScrapper https://stats.britishbaseball.org.uk/en/events/2022-nbl/stats/general/all/batting ../csv/stats_batting_raw_nbl_2022.csv
+npm run webPitchingScrapper https://stats.britishbaseball.org.uk/en/events/2022-nbl/stats/general/all/pitching ../csv/stats_pitching_raw_nbl_2022.csv
+npm run webFieldingScrapper https://stats.britishbaseball.org.uk/en/events/2022-nbl/stats/general/all/fielding ../csv/stats_fielding_raw_nbl_2022.csv
+
+printf "\n"
+printf "#### GB NBL 2021\n"
+npm run webBattingScrapper https://stats.britishbaseball.org.uk/en/events/2021-nbl/stats/general/all/batting ../csv/stats_batting_raw_nbl_2021.csv
+npm run webPitchingScrapper https://stats.britishbaseball.org.uk/en/events/2021-nbl/stats/general/all/pitching ../csv/stats_pitching_raw_nbl_2021.csv
+npm run webFieldingScrapper https://stats.britishbaseball.org.uk/en/events/2022-nbl/stats/general/all/fielding ../csv/stats_fielding_raw_nbl_2021.csv
+
 
 printf "\n\n"
 printf "\n\n"

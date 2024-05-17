@@ -1,0 +1,476 @@
+uniform_number,player_name,position,bats,throws,ht,wt,yob
+63,Baez Manuel,OF,R,R,0,0,1982
+26,Bobadilla Jose,IF/OF,S,R,0,0,1981
+77,Bourgeois Owen Charles,UTL,R,L,0,0,2007
+19,Cedeno Roger,P/C/SS,R,R,0,0,1996
+32,Cross Mitch,P,R,R,180,95,1990
+35,Dluhos Vladimir,UTL,R,R,0,0,1989
+42,Guevara Jonny,C/3B,R,R,0,0,1988
+11,Gustafson Erik Javier,P,L,L,0,0,2007
+17,Lopez Jose,P/C/1B,R,R,0,0,1985
+89,Haywood Junior,1B/3B,R,R,0,0,1975
+7,Hurtado Ambiorix,UTL,R,R,0,0,1982
+3,Hyde Ben,2B/SS/OF,R,R,0,95,1995
+4,Lawler Dylan,UTL,R,R,0,0,2007
+13,Myrmell Daniel,P/OF,R,R,0,0,1997
+56,Ortega Juan Miguel,C/1B,L,R,0,0,1987
+14,Pestana Jesus,OF,R,R,0,0,1997
+41,Pestana Marco,C/1B/3B,R,R,0,0,1993
+57,Silva Braucci Joseph Andres,P,L,L,0,0,1991
+24,Ugas Rafael,OF,R,R,186,98,1982
+10,Van Heerden Jahn,UTL,R,R,0,0,1976
+25,Vega Williams,2B/SS,R,R,0,0,1990
+75,Velazco Carus Carlos,P/3B,R,R,178,90,1975
+8,Almonte Edwin,C/1B,R,R,0,0,1995
+14,Apostol Jesus,IF,R,R,0,0,1988
+7,Chesterton Richard,P/1B,L,L,0,0,1987
+2,Chira Angel,C/OF,R,R,184,96,2002
+13,Diaz Juan,IF,S,R,0,0,1996
+53,Escalona Giovanni,OF,R,R,0,0,1984
+71,Farrach Juan,P/1B/DH,R,L,0,0,1985
+31,Gálvez Rodríguez Adonis jose,IF,R,R,0,0,1994
+6,Valdez Yeferson,P/IF,R,R,0,0,2003
+27,Lorenzo Arley,UTL,R,R,0,0,1980
+1,Marte Batista Kendry,IF,S,R,0,0,2000
+4,Martinez Franklin,C/1B/DH,R,R,0,0,1979
+22,Mora Yanuel,C,R,R,0,0,1997
+15,Novas Yonathan,IF/OF,S,R,0,0,1998
+5,Obando German,P/OF,R,R,0,0,1989
+21,Pappalardo Giovanni,P,S,L,0,0,1994
+19,Perez Mauro,P/OF,R,R,0,0,1999
+3,Perez Angel,OF,R,R,0,0,1995
+24,Pimentel Jose,P/1B/DH,R,R,178,85,1985
+99,Perez Aneudy,OF,S,L,0,0,1993
+17,Wilhelm Jorge,1B/DH,L,L,0,0,1989
+27,Albertelli Federico,OF,R,R,0,0,1988
+6,Anderson Bobby,P,L,L,0,0,1992
+15,Bedard David,P/IF,R,R,0,0,1991
+17,Cedeño Leo,C/DH,S,R,0,0,1983
+19,Deering Ian,P/1B,L,R,0,0,1990
+24,Figuereo Almonte Julio Cesar,IF,S,R,0,0,1986
+22,Hashiguchi Masa,P,R,R,0,0,1991
+0,Ishihara Tasuku,UTL,R,R,171,76,2006
+0,Kido Kenta,P/IF,R,R,0,0,2001
+0,Mambru Felipe Jeurys Lewin,OF,L,L,0,0,1994
+0,Marriott Josh,P/1B/OF,L,L,0,0,2001
+0,Murata Kenichiro,UTL,R,R,0,0,1996
+16,Randall Kyle,UTL,R,R,0,0,1991
+0,Ryan Cole,UTL,R,R,0,0,1986
+6,Sheppard Gordon,IF,R,R,0,0,1991
+77,TAJIRI HIRONORI,C,R,R,0,0,1988
+0,Tezuka Kazuki,P/C,R,R,0,0,1997
+48,Villanueva Johan,P/OF,R,R,0,0,1988
+2,Wampler Louis,OF,R,R,0,0,1987
+4,Wiedmann Pete,IF,R,R,0,0,1983
+26,Wilson Rhys,UTL,R,R,0,0,1985
+33,Banagale Michael,P/OF,L,L,172,75,1990
+0,BARRETT Michael,P/IF,R,R,180,75,2007
+27,Barrett Joshua,P/UTL,L,R,0,0,2005
+37,Bhanji Rose,UTL,R,R,0,0,2001
+0,Brown Tim,P,R,R,0,0,1987
+37,Cook Derrick,C,R,R,0,0,1977
+69,Dean Louis,UTL,R,R,170,55,2006
+64,Delzoppo Grant,1B,R,R,182,100,1972
+30,Dix Jamie,UTL,R,R,0,0,1996
+10,EDMONDS Jordan,P/OF,R,R,185,85,1995
+18,Fiorentino Michael,IF,R,R,178,85,1988
+0,FLAHERTY Thomas,P,R,R,190,90,2004
+0,Gondobintoro Sean,C,R,R,178,75,2004
+0,Green James,P/OF,R,R,0,0,1998
+36,Horwood Kaden,P/IF,R,R,190,80,2006
+74,Kuszewski Maxymus,OF,L,L,0,0,2008
+28,Lawson Tosh,P,R,R,178,70,2000
+74,McLaughlin Ryan,P,R,R,190,95,1999
+6,Messer Chris,P,R,R,190,80,1998
+14,Minford Rich,P/1B,R,R,195,100,1988
+0,MOSIER Fred,P,R,R,178,85,1999
+22,POWER Brendan,IF,R,R,0,0,1987
+0,SOLLECITO Pietro,P,R,R,182,90,1970
+0,STROMAN Zach,1B/OF,L,L,190,105,1995
+75,Tejeda Angel,IF,S,R,0,0,1992
+0,Theberge Marc,IF,L,R,0,0,1998
+0,VALENCIA DOMINGUEZ Geremias Jesus,P/1B/OF,R,R,190,91,2001
+9,VINALL Callum,C,R,R,165,85,1996
+35,vom Scheidt Mitchell,P,R,R,187,95,2001
+30,Andrei Apostoaei,P/IF,R,R,0,0,1984
+19,Avila Elbis,P,R,R,0,0,1990
+11,Batho Charlie,1B,R,R,0,0,1994
+74,Deacon Alex,P/1B,R,R,179,110,2003
+95,French Tim,OF,R,R,0,0,1995
+6,Frometa Luis,P/1B/2B,R,R,0,0,1992
+22,Grocott Jordan,OF,R,R,0,0,1996
+37,Lawn Spencer,OF,R,R,0,0,1994
+7,Martin Luke,1B/OF,R,R,0,0,1994
+15,Moran Daniel,P/1B/3B,R,R,180,98,2005
+50,Moran Matt,2B/3B,R,R,180,90,1999
+9,Ratcliff Jamie,P/C/OF,R,R,0,0,1993
+44,Read Sam,OF,R,R,0,0,1999
+99,Rodriguez Jonathan,P/C/IF,R,R,0,0,1986
+49,Sass Ray,P/SS,R,R,0,0,2001
+1,Silvestre Manuel,C/IF,R,R,0,0,1989
+52,Stoltz Keanu,P,R,R,0,0,1999
+10,Taylor Josh,P/OF,R,R,0,0,1992
+78,Webb Bruce,P,R,R,0,0,1991
+17,Wright Kelly,2B,R,R,0,0,1992
+49,Baez Aybar Nguyen,3B/IF,R,R,0,0,1990
+28,Calzado Aneury,OF,R,R,0,0,1990
+25,Charles Carlson,1B/2B/3B/OF,R,R,0,0,1986
+44,González Jorge Luis,P/IF,S,L,0,0,1995
+19,Jakutis Evaldas,3B,R,R,0,0,1988
+13,Janulevicius Giedrius,P/C/IF/OF,R,R,0,0,1985
+16,Jimenez Gian,P/IF/OF,R,R,0,0,1990
+28,Jimenez Jes,C,R,R,0,0,1996
+5,Katinas Vilmantas,LF/CF/RF/OF,R,R,0,0,1983
+21,Mencia de la Cruz Elvin,C/IF,R,R,0,0,1983
+7,Papini Mattia,P/SS/IF/OF,R,R,0,0,1992
+23,RATKEVICIUS Viktoras,P/C/2B/3B/SS/OF,R,R,0,0,1997
+12,Sánchez peralta Miguel Alfonso,P/C/IF/OF,R,R,0,0,1987
+77,Santana Aleudy,C/1B/UTL,R,R,0,0,1999
+0,Sarakojis Tadas,1B/2B/3B,R,R,0,0,1987
+18,Sirgedas Matas,P/IF/OF,R,R,0,0,1998
+1,Tamosiunas Darius,P/1B,R,R,0,0,1979
+70,Tamosiunas Nerius,P/2B,R,R,0,0,1982
+99,Trinkunas Deivydas,P/3B,R,R,0,0,1982
+50,Žičkus Eimantas,P/IF/OF,R,L,0,0,1984
+46,Aguilar Collado Jeffrey,UTL,R,R,0,0,1990
+11,Fortunato Arias,C/1B,R,R,0,0,1987
+4,Aybar Emanuel,P/RF,R,R,0,0,2004
+2,Baez Aybar Nguyen,3B/UTL,R,R,0,0,1990
+13,Calzado Aneury,CF/UTL,R,R,0,0,1990
+35,Cuevas joaquin Joseph Alexander,2B/UTL,R,R,0,0,1987
+19,Damaso Victor,LF/RF,R,R,0,0,2000
+20,Danielius Rokas,SS/UTL,R,R,0,0,1991
+32,disla garcia Bryan de Jesús,UTL,R,R,0,0,2000
+7,Feliz Saul,SS/UTL,R,R,0,0,2002
+12,Fernandez Daniel,,R,R,0,0,1971
+27,González Jorge Luis,P/LF/RF,S,L,0,0,1995
+43,Katinas Vilmantas,LF/RF,R,R,0,0,1983
+37,Ledesma Martínez José Gabriel,P/UTL,R,R,0,0,2003
+6,Mambru Felipe Jeurys Lewin,UTL,L,L,0,0,1994
+8,Martínez Ramon,,R,R,0,0,1985
+21,Mencia de la Cruz Elvin,UTL,R,R,0,0,1983
+72,RATKEVICIUS Viktoras,P/2B/3B/SS,R,R,0,0,1997
+50,Sánchez peralta Miguel Alfonso,P/UTL,R,R,0,0,1987
+23,Santana Aleudy,P/C/UTL,R,R,0,0,1999
+76,Sarakojis Tadas,1B/2B/UTL,R,R,0,0,1987
+31,Tiburcio lara Ramon,,R,R,0,0,1973
+8,Almonte Edwin,C/1B,R,R,0,0,1995
+14,Apostol Jesus,DH/IF,R,R,0,0,1988
+2,Chira Angel,C,R,R,184,96,2002
+13,Diaz Juan,IF,S,R,0,0,1996
+53,Escalona Giovanni,OF,R,R,0,0,1984
+71,Farrach Juan,P/1B,R,R,0,0,1985
+31,Gálvez Rodríguez Adonis jose,P/IF,R,R,0,0,1994
+27,Lorenzo Arley,P/IF/OF,R,R,0,0,1980
+1,Marte Batista Kendry,IF,S,R,0,0,2000
+4,Martinez Franklin,C/DH/OF,S,R,0,0,1979
+22,Mora Yanuel,C/DH/OF/UTL,S,R,0,0,1997
+15,Novas Yonathan,P/IF,S,R,0,0,1998
+5,Obando German,P/OF,R,R,0,0,1989
+21,Pappalardo Giovanni,P,S,L,0,0,1994
+3,Perez Angel,P/OF,R,R,0,0,1995
+38,Rodrigues Eduardo,1B/DH,R,R,0,0,1988
+45,Rueda Mario,P/1B/DH,R,R,0,0,1985
+33,Secareanu SECA,P/IF,R,R,183,73,1995
+99,Perez Aneudy,OF,S,L,0,0,1993
+17,Wilhelm Jorge,IF/OF,L,L,0,0,1989
+0,Badia Osvaldo,UTL,R,R,185,96,1984
+0,BARRETT Michael,UTL,R,R,155,47,2007
+0,Bennett Sean,UTL,R,R,193,102,1980
+72,Clark Phil,UTL,L,R,0,0,1979
+21,Clayton Will,P,R,R,175,73,2001
+0,Cote Tyler,UTL,R,R,185,80,1989
+85,Cresswell Mike,1B/OF,L,L,0,0,1993
+5,Deacon Alex,P/IF,R,R,179,110,2003
+41,Torcato Rene,1B,R,R,183,83,1976
+75,Duggan Fraser,1B,R,R,0,0,1988
+22,Effingham Nick,IF,R,R,0,0,2005
+33,Gutowski Leon Maksymilian,OF,R,R,0,0,2007
+0,Hernandez Roberto,UTL,R,R,180,85,1995
+7,Hiche Cris,OF,R,L,180,84,1983
+99,Ishihara Tasuku,C/OF,R,R,171,76,2006
+0,LaFlamme Bob,UTL,L,R,172,102,1985
+42,Lawler Dylan,IF,R,R,0,0,2007
+26,Manoff Max,OF,R,R,178,71,2004
+43,McCarthy Jack,P/IF,R,R,176,70,2004
+15,Moran Daniel,P/IF,R,R,180,98,2005
+10,Moran Matt,IF,R,R,180,90,1999
+37,Morris Ben,OF,R,R,176,75,2002
+34,Moruzzi Ben,OF,R,R,188,102,2005
+39,Nakazawa Cole,C/IF,L,R,172,70,2004
+0,Nakazawa Leo,IF,L,R,165,60,2006
+16,Paterson Alexander,C/1B,R,R,177,85,2005
+35,Quixley Harry,OF,R,R,186,64,2004
+0,Rodriguez Miguel,IF,R,R,182,83,1998
+31,Shinkawa Tez,UTL,R,R,177,66,1972
+0,Simmons Nathan,P/IF,R,R,184,83,2003
+44,Sporleder Samuel,UTL,R,R,0,0,2007
+28,Sporleder Benjamin,OF,R,R,180,63,2005
+4,Tamura Tomohiro,P/IF,R,R,0,0,2008
+14,Warrington Jack,C/IF,R,R,188,83,2006
+0,Wong Chun Hung,UTL,R,R,0,0,1976
+27,Albertelli Federico,OF,R,R,0,0,1988
+6,Anderson Bobby,P/1B/OF,L,L,0,0,1992
+64,Atanasova Svetlana,OF,R,R,0,0,1990
+15,Bedard David,P/2B,R,R,0,0,1991
+17,Cedeño Leo,C/DH,S,R,0,0,1983
+19,Deering Ian,P/1B/3B,L,R,0,0,1990
+24,Figuereo Almonte Julio Cesar,2B/3B/DH,R,R,0,0,1986
+20,Flayol Maxime,P/IF,R,R,0,0,1988
+21,Garcia Ramirez Rafael Jose,DH,R,R,0,0,1991
+21,Harrison Xander,,R,R,0,0,1992
+22,Hashiguchi Masa,P/C/OF,R,R,0,0,1991
+39,Ibarra Eduardo,SS,R,R,0,0,1994
+13,Lee Cameron,CF,R,R,0,0,1997
+13,Maddox Grant,OF,R,R,0,0,1994
+13,Norchi Kevin,P,R,R,0,0,1990
+10,O'Connell Joe,C,R,R,0,0,1995
+25,Pollard Jack,UTL,L,L,0,0,2000
+16,Randall Kyle,P/2B/OF,R,R,0,0,1991
+66,Riley Owen Gabriel,P/OF,R,R,0,0,1998
+18,Ryan Cole,P/OF,R,R,0,0,1986
+99,Santiago Marvin,3B,R,R,0,0,1984
+5,Sheppard Gordon,1B/3B,R,R,0,0,1991
+23,Skopec Mark,1B/OF,R,R,0,0,1991
+1,Sobue Amane,2B,R,R,0,0,1996
+77,TAJIRI HIRONORI,C/2B,R,R,0,0,1988
+66,Tejeda Angel,IF,R,R,0,0,1992
+9,Villanueva Johan,P/OF,R,R,0,0,1988
+2,Wampler Louis,C/CF,R,R,0,0,1987
+4,Wiedmann Pete,2B/SS,R,R,0,0,1983
+26,Wilson Rhys,P/1B/OF,R,R,0,0,1985
+51,Wyman Cole,UTL,R,R,0,0,2000
+7,Zucker Will,2B/OF,R,R,0,0,1997
+33,Banagale Michael,P/OF,L,L,172,75,1990
+27,BARRETT Joshua Ralph,C/1B/OF,L,R,195,95,2005
+0,Bartell Chris,UTL,R,R,180,90,1981
+36,Baxter Dylan,OF,R,R,178,75,2003
+24,Chandler Rory,OF,R,R,180,90,1998
+37,Cook Derrick,C,R,R,185,100,1977
+69,Dean Louis,P/UTL,R,R,170,55,2006
+64,Delzoppo Grant,DH/OF,R,R,182,100,1972
+30,Dix Jamie,UTL,R,R,0,0,1996
+10,EDMONDS Jordan,P/OF,R,R,185,85,1995
+18,Fiorentino Michael,IF,R,R,178,85,1988
+0,Flaherty Michael,3B,R,R,190,95,2001
+0,FLAHERTY Thomas,P/UTL,R,R,190,90,2004
+20,Friss Lucas,P/OF,R,R,190,85,1994
+0,Garcia Jesus,C/UTL,R,R,178,80,2005
+0,Garcia Jeffry,IF,R,R,178,80,2005
+0,Gondobintoro Sean,C/UTL,R,R,178,75,2004
+99,Lawson Tosh,P/OF,R,R,178,70,2000
+74,McLaughlin Ryan,P/UTL,R,R,190,95,1999
+6,Messer Chris,P/OF,R,R,190,80,1998
+14,Minford Rich,P/1B,R,R,195,100,1988
+9,MOSIER Fred,P/UTL,R,R,178,85,1999
+48,Murphy Ethan,UTL,R,R,183,115,2002
+1,Parker Jarficur,P/SS,R,R,178,75,1999
+22,POWER Brendan,2B/SS,R,R,178,85,1987
+0,SOLLECITO Pietro,P,R,R,182,90,1970
+0,Sollecito Matteo,P/UTL,R,R,190,115,2000
+8,SPROULE Sam,P/UTL,R,R,182,80,1991
+7,STROMAN Zach,1B/OF,L,L,190,105,1995
+16,Tucker Martin,IF,R,R,180,100,1984
+0,Turtel Jake,UTL,R,R,0,0,1996
+9,VINALL Callum,C,R,R,165,85,1996
+35,vom Scheidt Mitchell,P,R,R,187,95,2001
+30,APOSTOAEI Andrei,P/IF,R,R,0,0,1984
+18,Armstrong Luke,P/C/UTL,R,R,0,0,1997
+19,Avila Elbis,P/OF,R,R,0,0,1990
+11,Batho Charlie,1B/2B,R,R,0,0,1994
+88,Dodds Brian,1B/LF,R,R,0,0,1983
+0,Evans Stephen,P,R,R,0,0,1989
+95,French Tim,2B/OF,R,R,0,0,1995
+6,Frometa Luis,P/2B,R,R,0,0,1992
+24,Gonzalez Diego,P,R,R,0,0,2000
+22,Grocott Jordan,C/3B/SS,R,R,0,0,1996
+3,Kim Minjun,UTL,R,R,0,0,2004
+16,Lau Dora,2B,R,R,0,0,1992
+37,Lawn Spencer,P/OF,R,R,0,0,1994
+3,Lujan Carlos,OF,R,R,0,0,1994
+7,Martin Luke,1B/2B/OF,R,R,0,0,1994
+15,Moran Daniel,P/OF,R,R,180,98,2005
+80,Parker Ace,P/OF,R,R,0,0,2005
+56,Pritchard Jono,OF,R,R,0,0,1995
+9,Ratcliff Jamie,P/C/UTL,R,R,0,0,1993
+44,Read Sam,OF,R,R,0,0,1999
+99,Rodriguez Jonathan,C,R,R,0,0,1986
+1,Silvestre Manuel,C/1B/3B/SS,R,R,0,0,1989
+10,Taylor Josh,P/C/CF,R,R,0,0,1992
+14,Wright Kirstie,P/OF,R,R,0,0,1992
+17,Wright Kelly,2B/OF,R,R,0,0,1992
+8,Almonte Edwin,C/IF,R,R,0,0,1995
+14,Apostol Jesus,IF,R,R,,,1988
+97,Barco Cesar,P,R,R,0,0,1996
+10,Bueno Dany,OF,R,R,0,0,1981
+24,Diaz Gustavo,IF/OF,R,R,0,0,1994
+13,Diaz Juan,IF,S,R,0,0,1996
+53,Escalona Giovanni,P/OF,R,R,0,0,1984
+30,Gonzalez Jorge Luis,P/OF,S,L,0,0,1995
+6,Hodgkins Laurence,OF,R,R,0,0,1996
+21,Hurtado Ambiorix,P/IF,R,R,0,0,2001
+27,Lorenzo Arley,P/IF/OF,R,R,0,0,1980
+1,Marte Batista Kendry,IF,S,R,0,0,2000
+4,Martinez Franklin,C/OF,S,R,0,0,1979
+22,Mora Yanuel,C,R,R,0,0,1997
+15,Novas Yonathan,P/IF,S,R,0,0,1998
+42,Pappalardo Giovanni,P,S,L,0,0,1994
+19,Perez Mauro,OF,R,R,0,0,1999
+3,Perez Patricio Angel Apolinar,P/OF,R,R,0,0,1995
+47,Porras Wilson,OF,L,L,0,0,1984
+38,Rodrigues Eduardo,1B,R,R,167,,1988
+12,Rueda Mario,P,R,R,0,0,1985
+33,Secareanu SECA,P,R,R,183,73,1995
+57,Silva Braucci Joseph Andres,P/OF,L,L,0,0,1990
+99,Perez Aneudy,OF,S,L,0,0,1989
+17,Wilhelm Jorge,IF/OF,L,L,0,0,1989
+2,Banerjee Al,C,R,R,185,72,2004
+13,Chira Angel,C,R,R,184,96,2002
+23,Clayton Will,P/OF,R,R,175,73,2001
+5,Deacon Alex,P/IF,R,R,178,105,2003
+33,Torcato Rene,1B,R,R,183,83,1976
+51,Gonzalez Daniel,P/1B/OF,L,L,185,91,2004
+21,Griffin James,P/C/UTL,R,R,152,64,2003
+11,Hiche Cris,P/1B/OF,R,L,180,84,1983
+99,Hill Alfie,IF,R,R,188,84,2003
+4,Ishihara Tasuku,UTL,R,R,171,76,2006
+1,McCarthy Jack,P/IF,R,R,176,70,2004
+15,Moran Daniel,1B,R,R,180,101,2005
+10,Moran Matt,IF,R,R,177.8,95,1999
+24,Morris Ben,CF,R,R,176,75,2002
+18,Nakazawa Cole,P/C/IF,L,R,172,70,2004
+9,Nakazawa Leo,P/IF,L,R,165,60,2006
+14,Painter Andrew,P/IF/OF,R,R,183,68,2004
+6,Quantrill Ren,OF,R,L,194,93,1999
+12,Rodrigues Gabriel,IF,R,R,172,66,2006
+7,Rodriguez Miguel,P/2B/SS,R,R,182,83,1998
+8,Simmons Nathan,P/3B/SS,R,R,184,83,2003
+3,Sullivan Tom,1B,L,L,173,85,2002
+27,Albertelli Federico,OF,R,R,0,0,1988
+6,Anderson Bobby,P,L,L,0,0,1992
+23,Attwood Ethan,UTL,R,R,0,0,1993
+15,Bedard David,P/2B/3B/SS,R,R,0,0,1991
+64,BHANJI ROSE,3B/OF,R,R,0,0,2001
+64,Cameron Lee,OF,R,R,0,0,1997
+17,Cedeño Leo,C,S,R,0,0,1983
+19,Deering Ian,P/1B/3B,L,R,0,0,1990
+24,Figuereo Almonte Julio Cesar,P/2B/3B,R,R,0,0,1986
+20,Flayol Maxime,P/2B/3B/SS,R,R,0,0,1988
+21,Garcia Ramirez Rafael Jose,3B,R,R,0,0,1991
+23,Gillette Aditya,P/OF,L,L,193,0,2003
+22,Hashiguchi Masa,P/C/OF,R,R,0,0,1991
+12,Karson Sam,P/OF,R,R,0,0,1991
+13,Maddox Grant,OF,R,R,0,0,1994
+33,Marcal Ben,UTL,R,R,0,0,1987
+10,O'Connell Joe,C,R,R,0,0,1995
+3,Perez Patricio Angel Apolinar,OF,R,R,0,0,1995
+16,Randall Kyle,P/2B/OF,R,R,0,0,1991
+18,Ryan Cole,OF,R,R,0,0,1986
+23,Sassoli Gabriella,OF,R,R,0,0,1996
+5,Sheppard Gordon,1B/3B,R,R,0,0,1991
+23,Skopec Mark Russell,1B/OF,R,R,0,0,1991
+25,Sobue Amane,IF,R,R,0,0,1996
+28,Stambaugh Dillon,C/2B,R,R,0,0,1995
+64,TAYLOR AMANDA,1B,L,L,0,0,1988
+9,Villanueva Johan,P/OF,R,R,0,0,1988
+2,Wampler Louis,CF,R,R,0,0,1987
+4,Wiedmann Pete,SS,R,R,0,0,1983
+26,Wilson Rhys,UTL,R,R,0,0,1985
+12,Zucker Will,SS,R,R,0,0,1997
+97,Anderson Zachary,P,R,R,0,0,1997
+33,Banagale Michael,OF,L,L,0,0,1990
+36,Baxter Dylan,OF,R,R,0,0,2003
+24,Chandler Rory,OF,R,R,0,0,1998
+37,Cook Derrick,C,R,R,0,0,1977
+0,Cosgrove Andy,P/C/SS,R,R,0,0,1996
+3,Cramman Jonathon,1B/OF,R,L,0,0,1991
+64,del Zoppo Grant,DH,R,R,0,0,1972
+30,Dix James,UTL,R,R,178,68,1996
+10,EDMONDS Jordan,P/OF,R,R,0,0,1995
+88,Erskine James,UTL,R,R,0,0,2006
+89,Flaherty Michael,IF,R,R,0,0,2001
+91,FLAHERTY Thomas,P/IF,R,R,0,0,2004
+90,Gitlin Max,P,L,L,0,0,2001
+99,Lawson Tosh,P,R,R,0,0,2000
+99,Magee Brenden,OF,R,R,0,0,1993
+98,Mauerer Jonathan,IF,R,R,0,0,1985
+6,Messer Christopher,P,R,R,0,0,1998
+14,Minford Rich,P/IF,R,R,0,0,1988
+9,MOSIER Fred,P/UTL,R,R,0,0,1999
+15,Pearce Aidan,C,R,R,0,0,2001
+22,POWER Brendan,IF,R,R,0,0,1987
+70,Ruby Bryan,IF,R,R,0,0,1995
+94,Sollecito Matteo,P/IF,R,R,0,0,2000
+0,SOLLECITO Pietro,P,R,R,0,0,1970
+8,SPROULE Sam,UTL,R,R,0,0,1991
+7,STROMAN Zach,1B/OF,L,L,0,0,1995
+16,Tucker Martin,IF,R,R,0,0,1984
+9,VINALL Callum,C,R,R,0,0,1996
+35,vom Scheidt Mitchell,P,R,R,0,0,2001
+1,Carter Jon,P/1B/OF,L,L,182,83,1972
+2,Dean Louis,IF,R,R,160,45,2006
+7,Effingham Nick,IF,R,R,0,0,2005
+26,Erickson Jeff,CF,R,R,0,0,2000
+24,Furst Matt,P/C/SS,R,R,178,66,2004
+27,Harris Troy,IF,R,R,0,0,2004
+21,Horwood Kaden,P/1B/OF,R,R,0,0,2006
+42,Jones Josh,1B,R,R,203,113,2004
+0,Keswani Si,P,R,R,0,0,2004
+3,Manoff Max,P/CF,R,R,178,71,2004
+8,Maruyama Tomoya,OF,R,R,179,66,2004
+5,Molina Sebastian,C/1B,R,R,180,104,1999
+25,Moruzzi Ben,IF,R,R,0,0,2005
+4,Neyhus George,IF,R,R,0,0,2003
+6,Ng Don,C,R,R,0,0,2005
+16,Paterson Alexander,C,R,R,175,85,2005
+23,Quixley Harry,P/OF,R,R,186,64,2004
+9,Rodriguez Jonathan,P,R,R,0,0,1986
+17,Shinkawa Tez,P,R,R,177,66,1972
+10,Sporleder Benjamin,IF,R,R,0,0,2005
+12,Warrington Jack,UTL,R,R,188,83,2006
+14,Wu Jun,P,R,R,0,0,1995
+30,APOSTOAEI Andrei,P/1B/3B,R,R,0,0,1984
+18,Armstrong Luke,P/OF,R,R,0,0,1997
+19,Avila Elbis,P,R,R,0,0,1990
+11,Batho Charlie,1B,R,R,0,0,1994
+54,Casal Carlos David,P/SS,R,R,0,0,1998
+88,Dodds Brian,1B,R,R,0,0,1983
+21,Evans Stephen,P,R,R,0,0,1989
+95,French Tim,LF,R,R,0,0,1995
+6,Frometa Luis,P/C/DH,R,R,0,0,1992
+24,Gonzalez Diego,P,R,R,0,0,2000
+22,Grocott Jordan,P/C/RF,R,R,0,0,1996
+32,Kelly Jonny,LF/RF,R,R,0,0,1989
+16,LAU Tsz Chin,2B/SS,R,R,0,0,1992
+37,Lawn Spencer,C/2B/LF,R,R,0,0,1994
+1,Llamas Jorge,P/3B/SS,R,R,0,0,1992
+7,Martin Luke,1B/OF,R,R,0,0,1994
+56,Pritchard Jono,P,R,R,0,0,1995
+9,Ratcliff Jamie,P/C,R,R,0,0,1993
+44,Read Sam,3B/SS/RF,R,R,0,0,1999
+10,Taylor Josh,P/C/CF,R,R,0,0,1992
+17,Wright Kelly,2B/LF,R,R,170,70,1992
+14,Wright Kirstie,2B/RF,R,R,0,0,1992
+20,Danielius Rokas,2B/SS/OF,R,R,0,0,1991
+86,Dragunas Tomas,2B/3B/SS/LF/RF,R,R,0,0,1986
+55,Hall Shannon,P/C/2B/3B/SS,R,R,0,0,1992
+19,Jakutis Evaldas,3B,R,R,0,0,1988
+13,Janulevicius Giedrius,P/C/OF,R,R,0,0,1985
+66,Jelloian Alexander,P/3B/SS/OF,R,R,0,0,1998
+5,Katinas Vilmantas,OF,R,R,0,0,1983
+50,Katinas Markas,RF,L,L,0,0,2003
+11,Manole Lucian,LF/RF,R,R,0,0,1988
+2,Milan Carlos,P/OF,R,R,0,0,1981
+44,Minac Marcelin,P/IF/OF,R,R,0,0,1994
+24,Moreta Domarkis,3B/SS,R,R,0,0,1995
+8,Puiu Sorin,P/1B,L,L,0,0,1992
+23,RATKEVICIUS Viktoras,P/IF/OF,R,R,0,0,1997
+0,Sarakojis Tadas,1B/2B,R,R,0,0,1987
+35,Sirgedas Matas,P/2B/3B/SS/OF,R,R,0,0,1998
+77,Steponenas Aurimas,P/SS/OF,R,R,0,0,1983
+70,Tamosiunas Nerius,P/2B,R,R,0,0,1982
+1,Tamosiunas Darius,P/1B,R,R,0,0,1979
+99,Trinkunas Deivydas,P/3B,R,R,0,0,1982
+26,Trinkunas Domantas,P/2B,R,R,0,0,1998
+50,Vilimas Kestas,C/IF/OF,R,R,0,0,1995
+28,Zickus Eimantas,P/IF/OF,R,L,0,0,1984

@@ -480,7 +480,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,GALVÁN ARÉVALO Lesther Aarón,UTL,R,R,178,99,1990
 0,GARCÍA GONZÁLEZ Oliver,UTL,R,R,185,136,1984
 0,GONZÁLEZ GARCÍA Maisel Tomás,UTL,R,R,175,82,1981
-0,GONZALEZ ROMERO Saul Moises,UTL,R,R,,,2024
+0,GONZALEZ ROMERO Saul Moises,UTL,R,R,,,2004
 0,GONZÁLEZ VARELA Francisco José,UTL,R,R,0,0,1977
 0,Hernandez Espinosa Ruben,UTL,R,R,190,90,1995
 0,MADRIGAL DORTA Oric Oscar,UTL,R,R,165,62,2024
@@ -682,6 +682,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 23,Ochoa Blake,UTL,R,R,180,76,1985
 0,PAREDES PADRON Nestor Jesus,UTL,R,R,170,56,2007
 0,QUINTANA NOBREGA SAMUEL SANTIAGO,UTL,R,R,0,0,2006
+0,Quintana Samuel,UTL,R,R,0,0,2006
 24,Rodríguez Edgar,UTL,R,R,0,0,2000
 10,Rodríguez Michel,UTL,R,R,185,78,1977
 49,Rondón Edgar,UTL,R,R,170,77,1995
@@ -789,12 +790,14 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,GARCÍA Oliver,UTL,R,R,185,136,1984
 0,GONZÁLEZ Maisel,UTL,L,R,175,82,1981
 0,GONZALEZ Saul,UTL,R,R,0,0,2004
+0,González Saúl,UTL,R,R,0,0,2004
 0,GONZÁLEZ Francisco,UTL,R,R,0,0,1977
 0,Hernandez Espinosa Ruben,UTL,R,R,190,90,1995
 0,MADRIGAL Oric,UTL,R,R,165,62,2005
 0,MENDOZA Ricardo,UTL,R,R,192,102,2003
 0,MONTIEL Richard,UTL,R,R,184,94,1979
 0,MONTILLA FLORIAN Jose Gregorio,UTL,R,R,,,1998
+0,Montilla Jose,UTL,R,R,,,1998
 0,MORUA Martin,UTL,R,R,0,0,2007
 0,Nácar Leslie,UTL,R,R,0,0,1982
 0,PERES Ian,UTL,R,R,0,0,1997
@@ -809,6 +812,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,Valerio Edison,UTL,R,R,182,76,1994
 0,WALO Marco,UTL,R,R,0,0,1988
 0,Bastidas Colmenares Andres Alfonzo,UTL,R,R,0,0,2000
+0,Bastidas Andres,UTL,R,R,0,0,2000
 61,Bitriain Ivan,C/OF,R,R,0,0,2007
 0,Brun Mauro,,L,L,186,84,2006
 0,BRUN Tristán,,R,R,187,85,2006
@@ -927,7 +931,9 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,Giménez Eric,UTL,R,R,178,84,2003
 0,González Iker,UTL,R,R,0,0,2002
 0,GONZALEZ MANUEL,UTL,R,R,0,0,2006
+0,González Manuel,UTL,R,R,0,0,2006
 0,GONZALEZ HENRY,UTL,R,R,0,0,2003
+0,González Henry,UTL,R,R,0,0,2003
 0,Jiménez Oriol,UTL,R,R,177,66,2008
 0,Marrero José,UTL,R,R,0,0,1996
 0,Mazón Lluc,UTL,R,R,173,66,2008
