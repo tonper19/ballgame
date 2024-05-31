@@ -41,3 +41,4 @@ FD11D1835F43A7038147938158CF315F6795F7BC793E0CE9FF12BCF47683708850623B559664F89A
   GRANT SELECT ON "SYS"."V_$SESSION" TO "C##BASEBALL";                                                                              
   GRANT EXECUTE ON "SYS"."DBMS_STATS" TO "C##BASEBALL";                                                                             
                                                                                                                                     
+alter user "C##BASEBALL" QUOTA UNLIMITED ON "USERS";
