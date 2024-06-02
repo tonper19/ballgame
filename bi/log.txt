@@ -3,6 +3,11 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.09.20240602 (02/06/2024)
+- Gameday chapter: replaced more meaningful statistics: wOBA, FIP,
+Batters Faced and Strikeouts.
+- Bug: Leaders chapter incorrect BABIP filter.
+
 v0.08 (17/05/2024)
 - Italy, Spain, Netherlads and Belgium additional player.
 details (YOB, Number, Bats/Throws).
