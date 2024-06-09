@@ -3,6 +3,11 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.11.20240609 (09/06/2024)
+- Graphs batting page: call Hitter Information Window from bottom
+two graphs.
+- Pitchers statistics in the Graph chapter.
+
 v0.10.20240603 (03/06/2024)
 - New Graph chapter, for the moment batting only.
 
