@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="0689F736-FCBA-745C-34B8-317C66AD7F03" mainViewID="2899136C-8158-80D5-9590-D6C333BF48AF">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:47:36 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

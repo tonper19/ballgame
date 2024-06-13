@@ -1,0 +1,504 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEDE9CF7-FD47-E361-5D9F-8D73EF8E48E6" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="FACT_BATTING_STAT">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>FACT_BATTING_STAT</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SPORT_ID" id="63F6B470-6D63-FA61-AD8A-35EAD0EA2FDB">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>SPORT_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A270C71B-A5F3-B46A-FD29-23A9A1BE823E" referredColumn="06614C2D-A1C1-D4D8-9C4B-B73721B920DE"/>
+<colAssociation fkAssociation="20A8323D-8609-3A61-8ED0-699BAD6B010C" referredColumn="B79C22D9-F871-A502-49B3-92B8AE6145FA"/>
+</associations>
+</Column>
+<Column name="GENDER_ID" id="6880ABBF-F77E-94D9-9A3A-70E8F0583648">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>GENDER_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A270C71B-A5F3-B46A-FD29-23A9A1BE823E" referredColumn="8A95CB9D-CCC8-276C-95C6-6F4E436B6322"/>
+<colAssociation fkAssociation="20A8323D-8609-3A61-8ED0-699BAD6B010C" referredColumn="8A240193-B368-0580-31C0-9C27E0213F23"/>
+</associations>
+</Column>
+<Column name="CATEGORY_ID" id="C32E0559-A4F7-1895-0FEB-C9B880B085F2">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>CATEGORY_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A270C71B-A5F3-B46A-FD29-23A9A1BE823E" referredColumn="F60600F3-ED7D-5E9A-78E5-CE1468672909"/>
+</associations>
+</Column>
+<Column name="CLUB_ID" id="C5C4C6D0-F487-215A-D22C-7BDDCC1B571A">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>CLUB_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0164457-0CF1-4F2C-4FEC-865619FC696B" referredColumn="679FA711-ED74-4BEB-87D7-0598E79EB7A5"/>
+</associations>
+</Column>
+<Column name="COUNTRY_ID" id="2329C1B9-8BCA-1A74-4E13-2ADEC82F8E17">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>COUNTRY_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0164457-0CF1-4F2C-4FEC-865619FC696B" referredColumn="6A211692-F454-EFCB-6F57-842099DCAF47"/>
+</associations>
+</Column>
+<Column name="SEASON_YEAR" id="21F64569-0A09-09C0-EBB8-DA39B7C88A1B">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>SEASON_YEAR</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5799EDB-4B11-E4E4-447F-90FF30DB17A8" referredColumn="B6860DAA-0E71-AEC9-7866-7B9D54ADB87F"/>
+</associations>
+</Column>
+<Column name="PLAYER_ID" id="F8CC8FC6-9B74-C08E-5E66-648F13AC70D8">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>PLAYER_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="73C67839-29F9-EEF0-0ECD-4F636E6FAD4D" referredColumn="4290CB85-DF62-0338-94E5-B75DC793FD8B"/>
+</associations>
+</Column>
+<Column name="TEAM_ID" id="55B76E62-8A4E-1EF8-0AC9-289B12F3F1A4">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>TEAM_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AT_BATS" id="CF9A2DC2-60FE-C0CB-0809-08C8E7F2DE6A">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>AT_BATS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RUNS" id="2EDD544C-1460-3811-E7BA-7DF182DB35CD">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>RUNS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HITS" id="C857FA2F-1394-F275-8F92-CA584BE929B4">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>HITS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DOUBLES" id="8EED36F3-AC6D-A885-98D0-FDD2347DC20A">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>DOUBLES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRIPLES" id="88735469-FEB1-8BFA-E435-CDBDC8B8EAAF">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>TRIPLES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HOME_RUNS" id="9E04DDB7-97E4-7907-062B-DF349EF6175E">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>HOME_RUNS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RBI" id="33D22518-27FC-FFF8-89FD-BDC4ED1D2400">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>RBI</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL_BASES" id="D8CA1BE6-A770-9EAD-A003-3EDDC906CF12">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>TOTAL_BASES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BASE_ON_BALLS" id="ACF505BA-096A-29BE-D1AB-2D6249A662F6">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>BASE_ON_BALLS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIT_BY_PITCHS" id="37DD7151-1503-9F8F-FC4A-D16C7193A773">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>HIT_BY_PITCHS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STRIKE_OUTS" id="69047655-9B5B-BD22-47B3-3EF3146C044F">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>STRIKE_OUTS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GROUND_INTO_DOUBLEPLAYS" id="2A47C7F2-5A6F-2234-ABB6-F1FA7039A880">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>GROUND_INTO_DOUBLEPLAYS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SACRFICE_FLIES" id="6E49D9C3-0AF3-6C07-E257-7CEC61592F12">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>SACRFICE_FLIES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUNTS" id="AFADAA48-6F0C-B2CE-9EA3-27BDB41387BD">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>BUNTS</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STOLEN_BASES" id="20EDFAEC-332D-7F0A-ADD1-FCE0CD1F74F2">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>STOLEN_BASES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CAUGHT_STEALING" id="8D8828A2-2CAA-C434-CB41-174045E17940">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>FACT_BATTING_STAT</sourceObjSchema>
+<sourceObjName>CAUGHT_STEALING</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9783FF37-1677-4DD1-E776-0E32439107B8" name="FACT_BATTING_STAT_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>FACT_BATTING_STAT_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63F6B470-6D63-FA61-AD8A-35EAD0EA2FDB"/>
+<colUsage columnID="6880ABBF-F77E-94D9-9A3A-70E8F0583648"/>
+<colUsage columnID="C32E0559-A4F7-1895-0FEB-C9B880B085F2"/>
+<colUsage columnID="C5C4C6D0-F487-215A-D22C-7BDDCC1B571A"/>
+<colUsage columnID="2329C1B9-8BCA-1A74-4E13-2ADEC82F8E17"/>
+<colUsage columnID="21F64569-0A09-09C0-EBB8-DA39B7C88A1B"/>
+<colUsage columnID="F8CC8FC6-9B74-C08E-5E66-648F13AC70D8"/>
+<colUsage columnID="55B76E62-8A4E-1EF8-0AC9-289B12F3F1A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D3471F0-4DCD-2272-B4E1-EDA6D92431F2" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="FACT_BATTING_STAT_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>FACT_BATTING_STAT_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63F6B470-6D63-FA61-AD8A-35EAD0EA2FDB"/>
+<colUsage columnID="6880ABBF-F77E-94D9-9A3A-70E8F0583648"/>
+<colUsage columnID="C32E0559-A4F7-1895-0FEB-C9B880B085F2"/>
+<colUsage columnID="C5C4C6D0-F487-215A-D22C-7BDDCC1B571A"/>
+<colUsage columnID="2329C1B9-8BCA-1A74-4E13-2ADEC82F8E17"/>
+<colUsage columnID="21F64569-0A09-09C0-EBB8-DA39B7C88A1B"/>
+<colUsage columnID="F8CC8FC6-9B74-C08E-5E66-648F13AC70D8"/>
+<colUsage columnID="55B76E62-8A4E-1EF8-0AC9-289B12F3F1A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E7881BE6-73A4-6FBB-79C7-DB45DB954797" name="BATTING_STAT_CATEGORY_FK">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63F6B470-6D63-FA61-AD8A-35EAD0EA2FDB"/>
+<colUsage columnID="6880ABBF-F77E-94D9-9A3A-70E8F0583648"/>
+<colUsage columnID="C32E0559-A4F7-1895-0FEB-C9B880B085F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CEC4C24-C4D0-4195-B8B3-348BE7A3EAB2" name="BATTING_STAT_CLUB_FK">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5C4C6D0-F487-215A-D22C-7BDDCC1B571A"/>
+<colUsage columnID="2329C1B9-8BCA-1A74-4E13-2ADEC82F8E17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF48E49B-CBEA-35A5-699A-D5D672F3CE4E" name="BATTING_STAT_PLAYER_FK">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8CC8FC6-9B74-C08E-5E66-648F13AC70D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D4317594-DD97-EF21-BA65-B7B9EB821CB5" name="BATTING_STAT_SEASON_FK">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21F64569-0A09-09C0-EBB8-DA39B7C88A1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5CB9E41F-4E37-2E13-FF8D-9081B156A453" name="BATTING_STAT_SPORT_FK">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63F6B470-6D63-FA61-AD8A-35EAD0EA2FDB"/>
+<colUsage columnID="6880ABBF-F77E-94D9-9A3A-70E8F0583648"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

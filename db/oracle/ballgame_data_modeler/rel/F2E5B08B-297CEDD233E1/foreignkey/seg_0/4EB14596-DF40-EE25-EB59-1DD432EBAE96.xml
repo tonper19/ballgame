@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4EB14596-DF40-EE25-EB59-1DD432EBAE96" containerWithKeyObject="02263E84-17C0-0135-606E-8BC6E125DD7A" localFKIndex="DD6BF2B3-3BBA-A84B-7CED-D087CDD8F49E" name="PITCHING_STAT_SEASON_FK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>PITCHING_STAT_SEASON_FK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<referredTableLongName>C##BASEBALL.DIM_SEASON</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>78D019A5-DABA-8367-10BA-EEB3141717DB</referredTableID>
+<keyObject>6954AF8F-6D43-765B-6988-BC68AB20C50E</keyObject>
+<referredKeyID>6954AF8F-6D43-765B-6988-BC68AB20C50E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SEASON_YEAR</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

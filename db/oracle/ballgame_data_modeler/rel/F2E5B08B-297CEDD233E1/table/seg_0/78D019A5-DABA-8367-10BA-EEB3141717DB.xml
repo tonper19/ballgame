@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="78D019A5-DABA-8367-10BA-EEB3141717DB" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="DIM_SEASON">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>DIM_SEASON</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEASON_YEAR" id="B6860DAA-0E71-AEC9-7866-7B9D54ADB87F">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON</sourceObjSchema>
+<sourceObjName>SEASON_YEAR</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6954AF8F-6D43-765B-6988-BC68AB20C50E" name="SEASON_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>SEASON_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6860DAA-0E71-AEC9-7866-7B9D54ADB87F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2E0E2EC-C7D0-0983-7B80-5E1EE216651D" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="SEASON_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>SEASON_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6860DAA-0E71-AEC9-7866-7B9D54ADB87F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

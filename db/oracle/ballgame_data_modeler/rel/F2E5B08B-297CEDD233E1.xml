@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="F2E5B08B-B102-93AE-7268-297CEDD233E1" mainViewID="AC8C64E9-C027-22CA-1D25-83F76CA9F4F5">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:47:38 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>01F6E6D1-21D0-CFBD-ABDD-3988D1813575</selectedRDBMSSite>
+<importConnectionStamps>
+<importConnectionStamp class="oracle.dbtools.crest.imports.DBConnectionStamp">
+<connName>c__baseball</connName>
+<connUser>c##baseball</connUser>
+<connType>1</connType>
+</importConnectionStamp>
+</importConnectionStamps>
+</relationalModel>
