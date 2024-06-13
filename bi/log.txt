@@ -3,6 +3,10 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.12.20240613 (13/06/2024)
+- Introduction of Belgium Baseball Under 15 Category as
+requested by Arnout Verbeken.
+
 v0.11.20240609 (09/06/2024)
 - Graphs batting page: call Hitter Information Window from bottom
 two graphs.

@@ -21,6 +21,25 @@ printf "# Belgium Baseball      #\n"
 printf "#########################\n"
 
 printf "\n"
+printf "#########\n"
+printf "## U15 ##\n"
+printf "#########\n"
+
+
+printf "\n"
+printf "#### BE U15 2024\n"
+/Users/tonper/.asdf/shims/npm run webBattingScrapper https://www.baseballsoftball.be/en/events/2024-baseball-u15/stats/general/all/batting ../csv/stats_batting_raw_u15_2024.csv
+/Users/tonper/.asdf/shims/npm run webPitchingScrapper https://www.baseballsoftball.be/en/events/2024-baseball-u15/stats/general/all/pitching ../csv/stats_pitching_raw_u15_2024.csv
+/Users/tonper/.asdf/shims/npm run webFieldingScrapper https://www.baseballsoftball.be/en/events/2024-baseball-u15/stats/general/all/fielding ../csv/stats_fielding_raw_u15_2024.csv
+
+printf "\n"
+printf "#### BE U15 2023\n"
+/Users/tonper/.asdf/shims/npm run webBattingScrapper https://www.baseballsoftball.be/en/events/2023-baseball-u15/stats/general/all/batting ../csv/stats_batting_raw_u15_2023.csv
+/Users/tonper/.asdf/shims/npm run webPitchingScrapper https://www.baseballsoftball.be/en/events/2023-baseball-u15/stats/general/all/pitching ../csv/stats_pitching_raw_u15_2023.csv
+/Users/tonper/.asdf/shims/npm run webFieldingScrapper https://www.baseballsoftball.be/en/events/2023-baseball-u15/stats/general/all/fielding ../csv/stats_fielding_raw_u15_2023.csv
+
+
+printf "\n"
 printf "########\n"
 printf "## D1 ##\n"
 printf "########\n"
