@@ -3,6 +3,10 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 -----------
+v0.13.20240614 (14/06/2024)
+- Introduced Pythagorean Winning Percentage stat from Bill James.
+W% has been placed in the Teams chapter only as it only affects teams.
+
 v0.12.20240613 (13/06/2024)
 - Introduction of Belgium Baseball Under 15 Category as
 requested by Arnout Verbeken.
