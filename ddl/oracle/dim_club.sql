@@ -15,7 +15,6 @@ license file in the root directory of this source tree.
 
   create table c##baseball.dim_club
    (	id varchar2(8 byte),
-  country_id varchar2(2 byte),  -- 20240224
 	name varchar2(255 byte),
 	address varchar2(255 byte),
 	postal_code varchar2(16 byte),

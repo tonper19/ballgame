@@ -41,27 +41,29 @@ with sport_category as
 ,batting_stat as
 (
   select fbs.*
+        ,br.country_id  br_country_id  -- international competitions included
+
          -- SABR metric calculations
          -- League/Season OBS (used to calculate OPS+ in a MicroStrategy metric)
         ,( sum(fbs.hits) over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
          + sum(fbs.base_on_balls)
                          over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
          + sum(fbs.hit_by_pitchs)
                          over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
          )  league_obp_dividend
         ,( sum(fbs.at_bats)
@@ -76,21 +78,21 @@ with sport_category as
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
          + sum(fbs.hit_by_pitchs)
                          over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
          + sum(fbs.sacrfice_flies)
                          over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)
 
          )  league_obp_divisor
@@ -100,14 +102,14 @@ with sport_category as
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)  league_slg_dividend
         ,sum(fbs.at_bats)
                          over (partition by
                                fbs.sport_id
                               ,fbs.gender_id
                               ,fbs.category_id
-                              ,fbs.country_id
+                              ,br.country_id
                               ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
         ,dcl.address  bat_club_address
@@ -139,56 +141,59 @@ with sport_category as
       on fbs.sport_id = sc.sport_id
      and fbs.gender_id = sc.gender_id
      and fbs.category_id = sc.category_id
-     and fbs.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on fbs.club_id = dcl.id
-     and fbs.country_id = dcl.country_id
+   inner join c##baseball.dim_club_country_bridge  br -- 20240615 International competitions: allow a club to belong to one country/region or more
+      on fbs.club_id = br.club_id
+     and sc.country_id = br.country_id
 )
 ,pitching_stat as
 (
   select fps.*
+        ,br.country_id  br_country_id  -- international competitions included
+
          -- SABR metrics
         ,sum(fps.earned_runs)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_earned_runs
         ,sum(fps.innings_pitched_dec)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_innings_pitched
         ,sum(fps.home_runs)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_home_runs
         ,sum(fps.walks)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_walks
         ,sum(fps.hit_by_pitchs)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_hit_by_pitchs
         ,sum(fps.strike_outs)
                          over (partition by
                                fps.sport_id
                               ,fps.gender_id
                               ,fps.category_id
-                              ,fps.country_id
+                              ,br.country_id
                               ,fps.season_year)  league_strike_outs
         ,sc.era_innings
         ,dcl.name  pit_club_name
@@ -221,14 +226,17 @@ with sport_category as
       on fps.sport_id = sc.sport_id
      and fps.gender_id = sc.gender_id
      and fps.category_id = sc.category_id
-     and fps.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on fps.club_id = dcl.id
-     and fps.country_id = dcl.country_id
+   inner join c##baseball.dim_club_country_bridge  br -- 20240615 International competitions: allow a club to belong to one country/region or more
+      on fps.club_id = br.club_id
+     and sc.country_id = br.country_id
 )
 ,fielding_stat as
 (
   select ffs.*
+        ,br.country_id  br_country_id  -- international competitions included
+
         ,dcl.name  fld_club_name
         ,dcl.address  fld_club_address
         ,dcl.postal_code  fld_club_postal_code
@@ -259,10 +267,11 @@ with sport_category as
       on ffs.sport_id = sc.sport_id
      and ffs.gender_id = sc.gender_id
      and ffs.category_id = sc.category_id
-     and ffs.country_id = sc.country_id
    inner join c##baseball.dim_club  dcl
       on ffs.club_id = dcl.id
-     and ffs.country_id = dcl.country_id
+   inner join c##baseball.dim_club_country_bridge  br -- 20240615 International competitions: allow a club to belong to one country/region or more
+      on ffs.club_id = br.club_id
+     and sc.country_id = br.country_id
 )
 ,stats_bp as
 (
@@ -270,7 +279,7 @@ with sport_category as
         ,coalesce(fbs.gender_id,fps.gender_id)  gender_id
         ,coalesce(fbs.category_id,fps.category_id)  category_id
         ,coalesce(fbs.club_id,fps.club_id)  club_id
-        ,coalesce(fbs.country_id,fps.country_id)  country_id
+        ,coalesce(fbs.br_country_id,fps.br_country_id)  br_country_id  -- coming from the bridge
         ,coalesce(fbs.season_year,fps.season_year)  season_year
         ,coalesce(fbs.player_id,fps.player_id)  player_id
         ,coalesce(fbs.team_id,fps.team_id)  team_id
@@ -366,7 +375,7 @@ with sport_category as
       and fbs.gender_id = fps.gender_id
       and fbs.category_id = fps.category_id
       and fbs.club_id = fps.club_id
-      and fbs.country_id = fps.country_id
+      and fbs.br_country_id = fps.br_country_id
       and fbs.season_year = fps.season_year
       and fbs.player_id = fps.player_id
       and fbs.team_id = fps.team_id
@@ -377,7 +386,7 @@ with sport_category as
         ,coalesce(sbp.gender_id,ffs.gender_id)  gender_id
         ,coalesce(sbp.category_id,ffs.category_id)  category_id
         ,coalesce(sbp.club_id,ffs.club_id)  club_id
-        ,coalesce(sbp.country_id,ffs.country_id)  country_id
+        ,coalesce(sbp.br_country_id,ffs.br_country_id)  country_id  -- coming from the bridge/alias left with same name to avoid MicroStrategy mismatches
         ,coalesce(sbp.season_year,ffs.season_year)  season_year
         ,coalesce(sbp.player_id,ffs.player_id)  player_id
         ,coalesce(sbp.team_id,ffs.team_id)  team_id
@@ -479,7 +488,7 @@ with sport_category as
       and sbp.gender_id = ffs.gender_id
       and sbp.category_id = ffs.category_id
       and sbp.club_id = ffs.club_id
-      and sbp.country_id = ffs.country_id
+      and sbp.br_country_id = ffs.br_country_id
       and sbp.season_year = ffs.season_year
       and sbp.player_id = ffs.player_id
       and sbp.team_id = ffs.team_id
