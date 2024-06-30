@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/05/03 17:11:29.410</modified_date>
+  <modified_date>2024/06/29 14:39:39.636</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -986,7 +986,6 @@
       <trans_object_id/>
       <filename/>
       <transname>${Internal.Entry.Current.Directory}team_split</transname>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
