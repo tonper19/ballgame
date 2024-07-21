@@ -16,7 +16,7 @@ license file in the root directory of this source tree.
 CREATE TABLE DIM_CLUB (
 	ID varchar(8) NOT NULL,
 	COUNTRY_ID varchar(2) NOT NULL,
-	"NAME" varchar(255),
+	club_NAME varchar(255),
 	ADDRESS varchar(255),
 	POSTAL_CODE varchar(16),
 	CITY varchar(50),

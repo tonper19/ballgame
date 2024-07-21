@@ -16,7 +16,7 @@ license file in the root directory of this source tree.
 CREATE TABLE DIM_SPORT (
 	ID varchar(8) NOT NULL,
 	GENDER varchar(8) NOT NULL,
-	"NAME" varchar(50),
+	sport_NAME varchar(50),
 	WIKI varchar(255),
 	PRIMARY KEY (ID,GENDER)
 );

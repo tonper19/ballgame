@@ -17,7 +17,7 @@ CREATE TABLE DIM_PLAYER (
 	ID varchar(16) NOT NULL,
 	LAST_NAME varchar(255),
 	FIRST_NAME varchar(255),
-	"POSITION" varchar(32),
+	player_POSITION varchar(32),
 	BATS varchar(10),
 	THROWS varchar(10),
 	YOB numeric,

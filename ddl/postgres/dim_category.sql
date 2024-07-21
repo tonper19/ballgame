@@ -18,6 +18,6 @@ CREATE TABLE DIM_CATEGORY (
 	ID varchar(20) NOT NULL,
 	COUNTRY_ID varchar(2),
 	ERA_INNINGS numeric,
-	"NAME" varchar(50),
+	category_NAME varchar(50),
 	PRIMARY KEY (SPORT_ID,GENDER,ID)
 );
