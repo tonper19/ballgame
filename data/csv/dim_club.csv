@@ -1,7 +1,7 @@
 ID,COUNTRY_ID,NAME,ADDRESS,POSTAL_CODE,CITY,PROVINCE,COUNTRY,EMAIL,WEBPAGE,BALLPARK_ID,PRESIDENT,SECRETARY,TREASURER,GOVERNANCE_PERSON,CLUB_LATITUDE,CLUB_LONGITUDE,STADIUM_LATITUDE,STADIUM_LONGITUDE
-DOG,IC,Dodgers,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
+DOD,IC,Dodgers,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
 ATL,IC,Atlanta,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
-TAB,IC,Tampa Bay,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
+TAM,IC,Tampa Bay,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
 ORI,IC,Orioles,Camino Burgado s/n,38400,Puerto de la Cruz,Canarias,Spain,,,,Néstor Pérez Suárez,Miguel Muñoz,,,28.4059532242403,-16.5691013387813,28.4061115044193,-16.5687738495669
 AA,AT,ASAK Athletics,Badgasse 27,4800,Attnang-Puchheim,,Austria,,https://athleticsbaseball.at/,,Sebastian Libiseller,Martin Libiseller,Alex Lughofer,Rainer L. Krankl,48.0180667122617,13.7306182085939,48.0182320266678,13.73063698264
 BB,AT,Schwechat Blue Bats,Franz Schuster Str. 5,2320,Schwechat,,Austria,info@bluebats.at,https://bluebats.at/,,Phil Weller,Peter Christof-Dirry,Astrid Mikeska,Karin Stephan,48.1265880262584,16.467635922806,48.1265503914734,16.4684935343726
