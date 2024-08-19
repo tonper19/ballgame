@@ -1,92 +1,191 @@
 WBSC Europe Baseball and Softball Sabermetrics
+
 eu-sabr-ballgame@gmail.com
 
+
+
 Version log
+
 -----------
+
+v0.14.20240819 (19/08/2024)
+
+- Tenerife Summer League, Canary Islands (IC) Spain
+
+
+
+
+
 v0.13.20240614 (14/06/2024)
+
 - Introduced Pythagorean Winning Percentage stat from Bill James.
-W% has been placed in the Teams chapter only as it only affects teams.
+
+W% has been placed in the Teams chapter as it only affects teams.
+
+
 
 v0.12.20240613 (13/06/2024)
+
 - Introduction of Belgium Baseball Under 15 Category as
+
 requested by Arnout Verbeken.
 
+
+
 v0.11.20240609 (09/06/2024)
+
 - Graphs batting page: call Hitter Information Window from bottom
+
 two graphs.
+
 - Pitchers statistics in the Graph chapter.
 
+
+
 v0.10.20240603 (03/06/2024)
+
 - New Graph chapter, for the moment batting only.
 
+
+
 v0.09.20240602 (02/06/2024)
+
 - Gameday chapter: replaced more meaningful statistics: wOBA, FIP,
+
 Batters Faced and Strikeouts.
+
 - Bug: Leaders chapter incorrect BABIP filter.
 
+
+
 v0.08 (17/05/2024)
+
 - Italy, Spain, Netherlads and Belgium additional player.
+
 details (YOB, Number, Bats/Throws).
+
 - Added Britain National Baseball League (NBL).
+
 - Category filter: display country.
+
 - Latest statistics.
 
+
+
 v0.07 (11/05/2024)
+
 - Plate appearances bug correction: Base on balls are now counted.
+
 - Players chapter allow for sport/gender multi selection filter
+
 (tick boxes instead of radio buttons).
+
 - Latest statistics
 
+
+
 v0.06 (09/05/2024)
+
 - Added SHK Softbal Hoofdklasse (NL)
+
 - Stats as of 09/05/2024
 
+
+
 v0.05 (06/05/2024)
+
 - Latest stats data collection.
+
 - Introduction to webscraping, thanks to Ernesto Navarro Gómez.
+
 - Included hitter information window from the Team Lineup Advice
+
 chapter in the Players chapter.
+
 - Included pitcher information window from the Gameday chapter
+
 in the Players chapter.
+
 - Bug: Individual Pitching Stats grid filter. Include pitchers
+
 with at least one batter faced instead of showing players that
+
 accomplished at least one out.
+
 - BE BB D2 Braine Black Rickers team split: D2 players can not
+
 be part of two teams for the same club in D2 (Belgium rule).
+
 - Added Team Id filter to Players, Team Lineup Advice, Fantasy Lineup Advice
+
 and Gameday chapters to be able to use the team splitting.
+
 - Added SSL Spanish Softball League (ES)
 
+
+
 v0.04 (26/04/2024)
+
 - Latest 2024 stats: Belgium only.
 
+
+
 v0.03 (19/04/2024)
+
 - Latest 2024 stats: Spain, Belgium, Netherlands, Austria.
+
 - Club GPS (latitude/longitude) data.
+
 - Added British NBL Clubs data.
+
 - Players:Batting Caught Stealing (CS): color coding, do not
+
 user red/orage/yellow (bad) when CS = 0.
+
 - Added season grid with country flag colors in the
+
 Team Lineup Advice and Fantasy Lineup Advice.
+
 - Improved screen help on League and Individual chapters.
+
 - Improved Club map location.
 
+
+
 v0.02 (12/04/2024)
+
 - Latest 2024 stats: Spain, Belgium, Netherlands, Austria.
+
 - Individual stats: trend line by league
+
 (Year, Sport, Gender, Division, Country).
+
 - Added this log.
 
+
+
 v0.01 (07/APR/2024)
+
 - Removed opacity on grids. Certain Windows OS computers do not display
+
 the data correctly.
+
 - Team Lineup Advice: Changed the calculation/filter to select the lineup
+
 slots based on Tom M. Tango Book "The Book", table 60 page 145.
+
 - Fantasy Lineup Advice: same changes as above.
+
 - Added HTML containers in each chapter with JavaScript code to force
+
 Presentation Mode, most user won't need to edit the dossier.
+
 If you really need to edit a dossier, open it without data from the MicroStrategy Workstation.
+
 - Individual chapter. One player most important statistics.
+
 - Individual batting and pitcher rankings in non formula stats (count only)
+
  for a season/league.
+
 
