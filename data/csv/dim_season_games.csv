@@ -1,5 +1,5 @@
 season_year,sport_id,gender,category_id,country_id,number_of_games,pa_coefficient,innings_pitched_percent
-2024,BB,M,TSL,IC,12,2.7,0.8
+2024,BB,M,TSL,IC,15,2.7,0.8
 2024,BB,M,U15,BE,9,2.7,0.8
 2024,BB,M,D1,BE,20,2.7,0.8
 2024,BB,M,D2,BE,9,2.7,0.8
