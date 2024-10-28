@@ -1,8 +1,11 @@
 SPORT_ID,GENDER,ID,ERA_INNINGS,COUNTRY_ID,NAME
+BB,M,CCU13,9,ES,U13 Clubs Championship
+BB,M,TSL,9,IC,Tenerife Summer League
 BB,M,D1,9,BE,Baseball 1st Division
 BB,M,D2,9,BE,Baseball 2nd Division
 BB,M,D3,9,BE,Baseball 3rd Division
 BB,M,D4,9,BE,Baseball 4th Division
+BB,M,U15,7,BE,Baseball Under 15 Years Old
 SBFP,F,D1,7,BE,Softball Ladies 1st Division
 SBFP,F,D2,7,BE,Softball Ladies 2nd Division
 SBFP,F,D3,7,BE,Softball Ladies 3rd Division
@@ -22,4 +25,3 @@ SBFP,F,SHK,7,NL,Softbal Hoofdklasse
 SBFP,F,A1,7,IT,Softball Serie A1
 BB,M,ELITSERIEN,9,SE,Elitserien Baseboll
 SBFP,F,SOFTBOLLSERIEN,7,SE,Softbollserien
-

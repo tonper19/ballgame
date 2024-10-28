@@ -1,0 +1,237 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="FACT_PITCHING_STAT" directorySegmentName="seg_0" id="02263E84-17C0-0135-606E-8BC6E125DD7A">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>69B1D6C4-B289-1F8C-EF53-955BEF94A13C</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="FLY_OUTS" id="04024E61-082C-7E6B-1D6F-BF6E07DDBB48">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CATEGORY_ID" id="06D6CEC8-3046-CBBB-5B7F-66E749C84963">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMPLETE_GAMES" id="1B3C21D3-78BC-420D-58DF-09AA5A1A4817">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SACRIFICE_FLIES_AGAINST" id="2256B137-1888-A44D-A185-410374163EC4">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SPORT_ID" id="22FBC440-F44A-E5E8-4283-5F570903F227">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RUNS" id="36E69FBD-CDBB-9B77-E326-CDC9F51B3C79">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GENDER_ID" id="3B1CC338-9046-7C39-6E8D-95B6B8D24D55">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STRIKE_OUTS" id="3B8D5435-BC45-1B4A-3E74-1A307695BD22">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GAMES_STARTED" id="418A6956-4B42-017B-D9F5-1E6FC765CD52">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="AT_BATS" id="42F442B2-35DF-AE27-5FC3-1A53D90EF430">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CLUB_ID" id="473CC932-2EAE-38BA-4C12-7672802A9447">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SHUTOUTS" id="56301189-CD54-5E03-331D-CC8816815782">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BUNTS_AGAINST" id="5898778B-B13E-4D8D-BB6B-5F1DE64DAC6B">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SAVES" id="605717AC-6878-615B-B85F-2A1C84D5D86A">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRIPLES" id="6FA69B16-4F7F-E48A-66EE-3C8438D51419">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INNINGS_PITCHED_DEC" id="7121C8D1-BF54-1F50-00D3-40C6298FEB55">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HOME_RUNS" id="79A7EBF8-8D26-A773-17BD-CA227064B694">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HITS" id="7DD20CA5-16E8-DE31-9A39-67E795171280">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EARNED_RUNS" id="87D8B92E-E8B0-664E-EBC5-3C1661931529">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIT_BY_PITCHS" id="8F104ADD-BD14-80C4-313A-4A9B743D7134">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GAMES" id="93F47333-2B9B-FE43-4FD6-80038D436FEC">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INNING_OUTS_PITCHED" id="95761437-EDD0-F8E2-DB1A-A0F1A2A6CC79">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM_ID" id="95D0ED7B-79AC-337C-B386-FDB22ED19C49">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOSSES" id="9AE07287-4E6D-4D5C-18F7-FF269A83A282">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INNINGS_PITCHED_LABEL" id="9B0A5A67-9139-45E5-10B9-A3EE2BAB998C">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SEASON_YEAR" id="BE6277E9-74F0-FEA2-3022-82F4297B4F1C">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DOUBLES" id="C3F70962-243D-B765-0A29-C20A9ABE0480">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY_ID" id="C681EB92-8776-B72A-3969-F728D4560FF0">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WILD_PITCHES" id="C9AB4EB5-2821-7DD4-9C88-EBD14E87AB17">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PLAYER_ID" id="CA1EE511-6EDB-688F-9BCA-EDE3A3716EC4">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GROUND_OUTS" id="D88544E0-5596-87FA-A53B-36B81779C73B">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WINS" id="EE36C23C-CDF7-0FB2-C581-DC2404E00958">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WALKS" id="F83A08AD-FD84-12E8-AE5E-27F624DA876E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BALKS" id="F93687B3-DC78-E14A-41AF-9C5112A90FFF">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="FACT_PITCHING_STAT_PK" id="F7190B24-B463-58A1-2354-151679D74C09">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PITCHING_STAT_CLUB_FK" id="30C5964B-E86F-012F-994B-3619228EEBF6">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PITCHING_STAT_CATEGORY_FK" id="61FBFF81-4624-CFE9-335B-3E1313479FE4">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PITCHING_STAT_SEASON_FK" id="DD6BF2B3-3BBA-A84B-7CED-D087CDD8F49E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PITCHING_STAT_SPORT_FK" id="EBDFE5F0-77C2-62B7-D942-B90C79CCF119">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PITCHING_STAT_PLAYER_FK" id="F0FBA525-9FA7-734D-1ACA-C33711716E82">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FACT_PITCHING_STAT_PK" id="BC091EDC-56BB-550C-2547-8683173B6546">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<existingIndex>F7190B24-B463-58A1-2354-151679D74C09</existingIndex>
+<indexSegment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E7A69014-81B3-ABC4-955E-D8AB33775405" containerWithKeyObject="5BF84B59-B034-73D5-B5A2-29076C24AF0D" localFKIndex="ACB0A0BC-75EF-25B2-1E88-3724E10765F9" name="FIELDING_STAT_CATEGORY_FK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>FIELDING_STAT_CATEGORY_FK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:44 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<referredTableLongName>C##BASEBALL.DIM_CATEGORY</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D3A98F2F-F899-3E1D-40F7-2A988DBDD6ED</referredTableID>
+<keyObject>3FF63898-A701-8C91-E548-50D72B004984</keyObject>
+<referredKeyID>3FF63898-A701-8C91-E548-50D72B004984</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SPORT_ID,GENDER,ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

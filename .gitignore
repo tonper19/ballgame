@@ -168,3 +168,7 @@ temp.*
 
 temp/
 .idea
+
+# do not track Postgres only ETL, for now
+etl2/
+etl3/

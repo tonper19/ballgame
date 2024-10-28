@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3F2EB62-7B8E-8D1B-0AE2-F4D882A4AC66" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="DIM_SPORT">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>DIM_SPORT</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="B79C22D9-F871-A502-49B3-92B8AE6145FA">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SPORT</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENDER" id="8A240193-B368-0580-31C0-9C27E0213F23">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SPORT</sourceObjSchema>
+<sourceObjName>GENDER</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="FD4A21E5-91F3-C1F5-B4CB-E6317B8DFF36">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SPORT</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WIKI" id="60AC06CD-34E2-0C52-2398-30FCA2D68A94">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SPORT</sourceObjSchema>
+<sourceObjName>WIKI</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="57B040D1-B47B-F998-8C30-F686C3AD2D45" name="SPORT_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>SPORT_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B79C22D9-F871-A502-49B3-92B8AE6145FA"/>
+<colUsage columnID="8A240193-B368-0580-31C0-9C27E0213F23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50A52971-75D8-F194-6413-26E60D7CD0AE" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="SPORT_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>SPORT_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B79C22D9-F871-A502-49B3-92B8AE6145FA"/>
+<colUsage columnID="8A240193-B368-0580-31C0-9C27E0213F23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

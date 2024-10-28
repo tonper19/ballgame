@@ -1,0 +1,24 @@
+  <connection>
+    <name>PostgreSQL Digital Ocean Test</name>
+    <server>postgresql-metabase-do-user-3949239-0.b.db.ondigitalocean.com</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>defaultdb</database>
+    <port>25060</port>
+    <username>doadmin</username>
+    <password>Encrypted 41564e535f4c3568f2fceb8519efa7a3912b9b538dcb97d1</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>25060</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="A6DDFCDA-ED84-15D5-6FEA-9C3F90C458D3">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:47:36 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

@@ -20,3 +20,5 @@
 # Refresh at 04:00 everyday:
 0 4 * * * ~/baseball/ballgameBI/bi/scripts/gitpull.sh >> ~/baseball/ballgameBI/bi/scripts/cron.log
 
+# THIS IS FAILING:
+0 6 * * * ~/Development/DWH/ballgame/data/webscrap/run2024.sh >> ~/Development/DWH/ballgame/data/webscrap/run2024.log 2>>~/Development/DWH/ballgame/data/webscrap/run2024.err

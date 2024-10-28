@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="DIM_CLUB" directorySegmentName="seg_0" id="318A537A-0AE1-0487-F1D5-3FC5EBE440E0">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>69B1D6C4-B289-1F8C-EF53-955BEF94A13C</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CLUB_LATITUDE" id="33FE8BC3-7916-2E96-0CBA-B07E7D21285E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="3D270E55-A7B1-9C02-AA56-917CAD065F4D">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS" id="582B67BE-1738-89DD-FE40-E726156CE445">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="679FA711-ED74-4BEB-87D7-0598E79EB7A5">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY_ID" id="6A211692-F454-EFCB-6F57-842099DCAF47">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WEBPAGE" id="6D0A19C9-2F1F-738B-4EBD-9585A4959BAD">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SECRETARY" id="6EA626D6-1EE1-09BB-929A-B2FA19581EE2">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STADIUM_LONGITUDE" id="7CF7F1F1-2713-45FF-D0DB-DEF95D907FA9">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRESIDENT" id="8DC9F264-982F-7945-5894-CA85AB1B7AF9">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSTAL_CODE" id="947FC39A-81C1-5FEB-DF00-6200FEA98170">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CLUB_LONGITUDE" id="94EB79FA-BBB6-1295-7542-3DC603D5EADD">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STADIUM_LATITUDE" id="A52939A2-2240-82DB-4DDB-FCB0FCD8190E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GOVERNANCE_PERSON" id="A6C2161A-F014-7235-B072-D55AFEC12AD9">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="B0BF6048-BC15-E9ED-8B42-3C270237C12A">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CITY" id="D37F45B0-C2FE-3368-8992-8E801137B95B">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROVINCE" id="D3E98E96-8BA1-0D12-5F3B-FF9F20694D39">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BALLPARK_ID" id="D80FB83F-CE19-27EA-F5F3-C5B6FBBD5D77">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TREASURER" id="E941249B-84D8-7677-06E6-3958A318E842">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY" id="FB13C61D-2DA6-F877-33A7-E37365D09FBB">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CLUB_PK" id="1D64FC8C-BB14-AC0F-DB03-719065AC1268">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CLUB_PK" id="4954E0F7-C804-6247-6F3A-DA4D4C371CA2">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<existingIndex>1D64FC8C-BB14-AC0F-DB03-719065AC1268</existingIndex>
+<indexSegment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ballgame_data_modeler" id="5F8AD580-3828-FA02-D9FB-68A969BEC33E" version="3.5">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:47:36 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5F8AD580-3828-FA02-D9FB-68A969BEC33E</designId>
+</OSDM_Design>

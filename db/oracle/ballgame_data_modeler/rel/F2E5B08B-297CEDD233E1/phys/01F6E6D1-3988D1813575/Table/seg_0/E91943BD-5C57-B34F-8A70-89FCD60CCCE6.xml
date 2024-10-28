@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="DIM_PLAYER" directorySegmentName="seg_0" id="E91943BD-5C57-B34F-8A70-89FCD60CCCE6">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>69B1D6C4-B289-1F8C-EF53-955BEF94A13C</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LICENSE_NUMBER" id="046BF449-06E7-6A99-25E0-9B5CC8CF6038">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<defaultValue>null</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="FIRST_NAME" id="21FC1A82-DBEA-6601-6043-4F9DF0433D6C">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_NAME" id="38D1ADF3-34B3-B0BF-16ED-622226C92A9C">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="4290CB85-DF62-0338-94E5-B75DC793FD8B">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UNIFORM_NUMBER" id="454704BD-E2FE-3E9A-4515-80597AFF6EE6">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LICENSE_TYPE" id="52016E3F-2170-1095-04FF-D19979662C3B">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<defaultValue>null</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="POSITION" id="AB818A10-D93D-C283-E653-750D9437E033">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="YOB" id="E7B2339E-74D6-4905-0612-53798E24005E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="THROWS" id="EA77AB5B-1AF3-C0AF-87DF-BB588B7E7097">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BATS" id="FAAE251E-31DE-F5EB-3277-734EAD2BBC78">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PLAYER_PK" id="69360A8A-AAD2-04FA-2C80-3B59EBAE9629">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PLAYER_PK" id="AADCA7CF-F99F-BE8C-7F1C-E48232BE93B8">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<existingIndex>69360A8A-AAD2-04FA-2C80-3B59EBAE9629</existingIndex>
+<indexSegment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

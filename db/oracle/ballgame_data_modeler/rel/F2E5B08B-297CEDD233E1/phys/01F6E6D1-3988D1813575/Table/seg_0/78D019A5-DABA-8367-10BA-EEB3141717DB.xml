@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="DIM_SEASON" directorySegmentName="seg_0" id="78D019A5-DABA-8367-10BA-EEB3141717DB">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>69B1D6C4-B289-1F8C-EF53-955BEF94A13C</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SEASON_YEAR" id="B6860DAA-0E71-AEC9-7866-7B9D54ADB87F">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="SEASON_PK" id="D2E0E2EC-C7D0-0983-7B80-5E1EE216651D">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<schemaObject>AB2E0BD4-ED9E-9E3C-D408-4790229735AC</schemaObject>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="SEASON_PK" id="6954AF8F-6D43-765B-6988-BC68AB20C50E">
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<segment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</segment>
+<tableSpace>67B5FD31-C720-643B-E5B9-F62986C61E70</tableSpace>
+<existingIndex>D2E0E2EC-C7D0-0983-7B80-5E1EE216651D</existingIndex>
+<indexSegment>5E195DB8-6F7B-86F7-1C03-57DE60F760CE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

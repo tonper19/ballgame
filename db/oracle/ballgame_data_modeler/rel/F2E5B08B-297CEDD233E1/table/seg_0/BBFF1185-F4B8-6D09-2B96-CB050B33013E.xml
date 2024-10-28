@@ -1,0 +1,164 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBFF1185-F4B8-6D09-2B96-CB050B33013E" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="DIM_SEASON_GAMES">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>DIM_SEASON_GAMES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SPORT_ID" id="B2E1EF48-972F-1E52-E017-525D5D4A8B97">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>SPORT_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENDER_ID" id="41FE498B-5A99-9360-D9B9-8656BB11C6B5">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>GENDER_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORY_ID" id="97FC2158-A9F1-2238-28B8-9A5F10ECCB5A">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>CATEGORY_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRY_ID" id="80B0128C-BC34-B213-58E5-302098D704F6">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>COUNTRY_ID</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEASON_YEAR" id="89D3049F-43A5-FC15-C61A-CB8C490903E4">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>SEASON_YEAR</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMBER_OF_GAMES" id="9F91AAC1-680A-431A-726E-D50937DB2D9D">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>NUMBER_OF_GAMES</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PA_COEFFICIENT" id="BAB59343-E5D4-BC6A-8EB7-994D8B2E0FA8">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>PA_COEFFICIENT</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INNINGS_PITCHED_PERCENT" id="1A344B3F-6FE8-9991-5F6A-E316270665A0">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>DIM_SEASON_GAMES</sourceObjSchema>
+<sourceObjName>INNINGS_PITCHED_PERCENT</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:40 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7B763782-2699-ABEA-6E78-F4D3A3A2B60C" name="DIM_SEASON_GAMES_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>DIM_SEASON_GAMES_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2E1EF48-972F-1E52-E017-525D5D4A8B97"/>
+<colUsage columnID="41FE498B-5A99-9360-D9B9-8656BB11C6B5"/>
+<colUsage columnID="97FC2158-A9F1-2238-28B8-9A5F10ECCB5A"/>
+<colUsage columnID="80B0128C-BC34-B213-58E5-302098D704F6"/>
+<colUsage columnID="89D3049F-43A5-FC15-C61A-CB8C490903E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB359DD6-19AC-761E-CFB8-3556FBD5D366" schemaObject="AB2E0BD4-ED9E-9E3C-D408-4790229735AC" name="DIM_SEASON_GAMES_PK">
+<sourceConnName>c__baseball</sourceConnName>
+<sourceObjSchema>C##BASEBALL</sourceObjSchema>
+<sourceObjName>DIM_SEASON_GAMES_PK</sourceObjName>
+<createdBy>tonper</createdBy>
+<createdTime>2024-06-13 14:55:43 UTC</createdTime>
+<ownerDesignName>ballgame_data_modeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2E1EF48-972F-1E52-E017-525D5D4A8B97"/>
+<colUsage columnID="41FE498B-5A99-9360-D9B9-8656BB11C6B5"/>
+<colUsage columnID="97FC2158-A9F1-2238-28B8-9A5F10ECCB5A"/>
+<colUsage columnID="80B0128C-BC34-B213-58E5-302098D704F6"/>
+<colUsage columnID="89D3049F-43A5-FC15-C61A-CB8C490903E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/05/03 17:11:29.410</modified_date>
+  <modified_date>2024/09/21 21:16:41.642</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -82,6 +82,57 @@
       <attribute>
         <code>PORT_NUMBER</code>
         <attribute>1521</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Postgres Ballgame Digital Ocean</name>
+    <server>postgresql-metabase-do-user-3949239-0.b.db.ondigitalocean.com</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>baseball</database>
+    <port>25060</port>
+    <username>doadmin</username>
+    <password>Encrypted 41564e535f4c3568f2fceb8519efa7a3912b9b538dcb97d1</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>25060</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
       </attribute>
     </attributes>
   </connection>
@@ -379,7 +430,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>344</yloc>
+      <yloc>288</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -418,8 +469,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>504</xloc>
-      <yloc>80</yloc>
+      <xloc>496</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -431,7 +482,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>432</yloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -443,8 +494,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>724</xloc>
-      <yloc>264</yloc>
+      <xloc>720</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -484,7 +535,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>944</xloc>
-      <yloc>80</yloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -523,8 +574,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1389</xloc>
-      <yloc>80</yloc>
+      <xloc>1376</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -563,8 +614,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>1164</xloc>
-      <yloc>432</yloc>
+      <xloc>1200</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -603,8 +654,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1389</xloc>
-      <yloc>432</yloc>
+      <xloc>1376</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -643,12 +694,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>944</xloc>
-      <yloc>432</yloc>
+      <xloc>1088</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Erase DWH</name>
+      <name>Erase Oracle DWH</name>
       <description/>
       <type>TRUNCATE_TABLES</type>
       <attributes/>
@@ -720,11 +771,11 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>80</yloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>CREATE DWH</name>
+      <name>CREATE Oracle DWH</name>
       <description/>
       <type>JOB</type>
       <attributes/>
@@ -757,7 +808,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>264</yloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -774,8 +825,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>504</xloc>
-      <yloc>432</yloc>
+      <xloc>832</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -814,8 +865,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>724</xloc>
-      <yloc>80</yloc>
+      <xloc>720</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -854,8 +905,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1164</xloc>
-      <yloc>80</yloc>
+      <xloc>1152</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -894,8 +945,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1389</xloc>
-      <yloc>264</yloc>
+      <xloc>1376</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -934,8 +985,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>284</xloc>
-      <yloc>432</yloc>
+      <xloc>720</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -946,7 +997,8 @@
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>${Internal.Entry.Current.Directory}stage_player_ESNL</transname>
+      <transname>stage_player_ESNL</transname>
+      <directory>/</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -973,8 +1025,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>284</xloc>
-      <yloc>80</yloc>
+      <xloc>272</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -986,7 +1038,6 @@
       <trans_object_id/>
       <filename/>
       <transname>${Internal.Entry.Current.Directory}team_split</transname>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -1013,8 +1064,100 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>724</xloc>
-      <yloc>432</yloc>
+      <xloc>960</xloc>
+      <yloc>384</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>CREATE Postgres DWH</name>
+      <description/>
+      <type>JOB</type>
+      <attributes/>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>BBS_ETL_CREATE_POSTGRES_DWH_JOB</jobname>
+      <directory>/</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>1</nr>
+      <xloc>608</xloc>
+      <yloc>384</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>BBS_ORA2Postgres</name>
+      <description/>
+      <type>JOB</type>
+      <attributes/>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>BBS_ORA2Postgres</jobname>
+      <directory>/</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>272</xloc>
+      <yloc>384</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Truncate Postgres</name>
+      <description/>
+      <type>SQL</type>
+      <attributes/>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BALLGAME_DDL_POSTGRES_DIRECTORY}truncate_postgres.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>Postgres Ballgame Digital Ocean</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1093,7 +1236,7 @@
     </hop>
     <hop>
       <from>Start</from>
-      <to>CREATE DWH</to>
+      <to>CREATE Oracle DWH</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1101,8 +1244,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>CREATE DWH</from>
-      <to>Erase DWH</to>
+      <from>CREATE Oracle DWH</from>
+      <to>Erase Oracle DWH</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1110,7 +1253,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Erase DWH</from>
+      <from>Erase Oracle DWH</from>
       <to>Abort</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1119,7 +1262,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>CREATE DWH</from>
+      <from>CREATE Oracle DWH</from>
       <to>Abort</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1210,15 +1353,6 @@
     </hop>
     <hop>
       <from>Datamart</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Datamart</from>
       <to>Abort</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1245,7 +1379,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Erase DWH</from>
+      <from>Erase Oracle DWH</from>
       <to>stage_player</to>
       <from_nr>0</from_nr>
       <to_nr>1</to_nr>
@@ -1298,16 +1432,105 @@
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Datamart</from>
+      <to>CREATE Postgres DWH</to>
+      <from_nr>0</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CREATE Postgres DWH</from>
+      <to>Abort</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>BBS_ORA2Postgres</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>BBS_ORA2Postgres</from>
+      <to>Abort</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CREATE Postgres DWH</from>
+      <to>Truncate Postgres</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Truncate Postgres</from>
+      <to>BBS_ORA2Postgres</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Truncate Postgres</from>
+      <to>Abort</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
       <note>European Baseball and Softball Stats</note>
       <xloc>16</xloc>
-      <yloc>16</yloc>
+      <yloc>0</yloc>
       <width>233</width>
       <heigth>26</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>
+
+
+
+
+                                                   PostgreSQL                                                   </note>
+      <xloc>128</xloc>
+      <yloc>352</yloc>
+      <width>572</width>
+      <heigth>136</heigth>
+      <fontname>.AppleSystemUIFont</fontname>
+      <fontsize>18</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
