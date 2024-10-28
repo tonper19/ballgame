@@ -1,18 +1,8 @@
-export class PlayerInterpreter {
+import { Interpreter } from './Interpreter.js';
+
+export class PlayerInterpreter  extends Interpreter {
 
 	_surNameMatcher = /<strong>(.*)<\/strong><br>\s(.*)/
-
-	constructor(container) {
-		this.container = container;
-	}
-
-	_getProperty(prop) {
-		return this.container.querySelector(prop)?.textContent;
-	}
-
-	_getPropertyAsHTML(prop) {
-		return this.container.querySelector(prop)?.innerHTML;
-	}
 	
 	_playerNameCleanup(playerName){
 		return playerName?.replaceAll(',', ' ').replaceAll('  ',' ');
