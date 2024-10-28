@@ -1,10 +1,10 @@
 import fs from 'fs';
 import { JSDOM } from 'jsdom';
-import axios from 'axios';
 import { extractFieldingData } from '../data-extractor/FieldingDataExtractor.js';
+import { getWebPage } from '../tools/request.js';
 
 async function urlFieldingDataProcessor(url) {
-	return axios.get(url)
+	return getWebPage(url)
 			.then(function (response) {
 				const dom = new JSDOM(response.data);
 				return extractFieldingData(dom);
