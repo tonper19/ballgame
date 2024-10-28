@@ -1,85 +1,49 @@
-import { TeamInterpreter } from './TeamInterpreter.js';
 import { formatLeadingZero } from '../utils.js';
+import { Interpreter } from './Interpreter.js';
 
-export class TeamStandingInterpreter extends TeamInterpreter {
+export class TeamStandingInterpreter extends Interpreter {
 
-	getAB() {
-		return this._getProperty('.ab');
+	_fullNameMatcher = /(.*)\s.*.\s<br><small>(.*)<\/small>/
+
+	getPosition() {
+		return this._getProperty('td:nth-child(1)');
 	}
 
-	getR() {
-		return this._getProperty('.r');
+	getTeamImageUrl() {
+		return this._getPropertyNode('td:nth-child(2) a img')?.getAttribute('src');
 	}
 
-	getH() {
-		return this._getProperty('.h');
+	getTeamUrl() {
+		return this._getPropertyNode('td:nth-child(2) a')?.getAttribute('href');
 	}
 
-	getH2() {
-		return this._getProperty('.double');
+	getShortName() {
+		const nameContainer = this._getPropertyAsHTML('td:nth-child(3) a p');
+		return nameContainer?.match(this._fullNameMatcher)?.[1]?.trim();
 	}
 
-	getH3() {
-		return this._getProperty('.triple');
+	getFullName() {
+		const nameContainer = this._getPropertyAsHTML('td:nth-child(3) a p');
+		return nameContainer?.match(this._fullNameMatcher)?.[2]?.trim();
 	}
 
-	getHR() {
-		return this._getProperty('.hr');
+	getW() {
+		return this._getProperty('td:nth-child(4)');
 	}
 
-	getRBI() {
-		return this._getProperty('.rbi');
+	getL() {
+		return this._getProperty('td:nth-child(5)');
 	}
 
-	getTB() {
-		return this._getProperty('.tb');
+	getT() {
+		return this._getProperty('td:nth-child(6)');
 	}
 
-	getAVG() {
-		return formatLeadingZero(this._getProperty('.avg'));
+	getPCT() {
+		return formatLeadingZero(this._getProperty('td:nth-child(7)'));
 	}
 
-	getSLG() {
-		return formatLeadingZero(this._getProperty('.slg'));
-	}
-
-	getOBP() {
-		return formatLeadingZero(this._getProperty('.obp'));
-	}
-
-	getOPS() {
-		return formatLeadingZero(this._getProperty('.ops'));
-	}
-
-	getBB() {
-		return this._getProperty('.bb');
-	}
-
-	getHBP() {
-			return this._getProperty('.hbp');
-	}
-
-	getSO() {
-		return this._getProperty('.so');
-	}
-
-	getGDP() {
-		return this._getProperty('.gdp');
-	}
-
-	getSF() {
-		return this._getProperty('.sf');
-	}
-
-	getSH() {
-		return this._getProperty('.sh');
-	}
-
-	getSB() {
-		return this._getProperty('.sb');
-	}
-
-	getCS() {
-		return this._getProperty('.cs');
+	getGB() {
+		return this._getProperty('td:nth-child(8)');
 	}
 }
