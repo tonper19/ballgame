@@ -1,10 +1,10 @@
 import fs from 'fs';
 import { JSDOM } from 'jsdom';
-import axios from 'axios';
 import { extractPitchingData } from '../data-extractor/PitchingDataExtractor.js';
+import { getWebPage } from '../tools/request.js';
 
 async function urlPitchingDataProcessor(url) {
-	return axios.get(url)
+	return getWebPage(url)
 			.then(function (response) {
 				const dom = new JSDOM(response.data);
 				return extractPitchingData(dom);
