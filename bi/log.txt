@@ -6,13 +6,55 @@ eu-sabr-ballgame@gmail.com
 
 Version log
 
------------
+----------------
+
+v0.21.20241117  (17/11/2024)
+
+- Players and Teams chapters showing the player age and average based on season.
+
+
+
+v0.20.20241114 (14/11/2024)
+
+- WBSC Premier 12 Tournament introduced.
+
+
+
+v0.19.20241031 (31/10/2024)
+
+- Teams Batting Stats contains the two values that calculates the Pythagorean Winning Percentage (W%): 
+
+Scored Runs (R) and Runs Scored Against (RA) side by side.
+
+
+
+v0.18.20241003.2 (03/10/2024)
+
+- Apply filter button: the new filter button must be clicked in order to apply all filter criteria at once.
+
+
+
+v0.17.20240908 (08/09/2024)
+
+- Individual stats refactoring: stats names and acronyms, filter.
+
+
+
+v0.16.20240904 (04/09/2024)
+
+- League pitching and defense stats refactoring: stats names and acronyms, use of bar charts in trends.
+
+
+
+v0.15.20240830 (30/08/2024)
+
+- League batting stats refactoring: stats names and acronyms, use of bar charts in trends.
+
+
 
 v0.14.20240819 (19/08/2024)
 
 - Tenerife Summer League, Canary Islands (IC) Spain
-
-
 
 
 
@@ -187,5 +229,4 @@ If you really need to edit a dossier, open it without data from the MicroStrateg
 - Individual batting and pitcher rankings in non formula stats (count only)
 
  for a season/league.
-
 
