@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/09/21 21:16:41.642</modified_date>
+  <modified_date>2024/11/24 12:08:56.651</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -1498,10 +1498,10 @@
   </hops>
   <notepads>
     <notepad>
-      <note>European Baseball and Softball Stats</note>
+      <note>Canary Islands Baseball and Softball Stats</note>
       <xloc>16</xloc>
       <yloc>0</yloc>
-      <width>233</width>
+      <width>265</width>
       <heigth>26</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
