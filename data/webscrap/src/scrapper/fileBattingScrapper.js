@@ -1,23 +1,17 @@
-const { get } = require('axios');
-const { JSDOM } = require('jsdom');
-const { extractBattingData } = require('./BattingDataExtractor');
-
-async function urlBattingDataProcessor(url) {
-	return get(url)
-			.then(function (response) {
-				const dom = new JSDOM(response.data);
-				return extractBattingData(dom);
-			});
-}
-
-async function fileBattingDataProcessor(file) {
-	const dom = await JSDOM.fromFile(file);
-	return extractBattingData(dom);
-}
+import fs from 'fs';
+import { JSDOM } from 'jsdom';
+import { extractBattingData } from '../data-extractor/BattingDataExtractor.js';
 
 const file = process.argv[2];
+const fileName = process.argv[3] || 'batting.csv';
 
-fileBattingDataProcessor(file).then((data) => {
-	console.log(data);
-	console.log('Finish');
+JSDOM.fromFile(file).then((dom) => {
+	console.log(`Processing ${file}`);
+	const data = extractBattingData(dom);
+	const csv = data.join('\n');
+	console.log(`Writing ${fileName}`);
+	fs.writeFileSync(fileName, csv);
+	console.log('Data written');
+}).catch((error) => {
+	console.error(error);
 });
