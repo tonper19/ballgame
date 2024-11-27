@@ -27,7 +27,7 @@ printf "##################\n"
 
 /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABLGS2024.htm ../csv/stats_batting_raw_cablgs_2024.csv
 /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABLGS2024.htm ../csv/stats_pitching_raw_cablgs_2024.csv
-#/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABLGS2024.htm ../csv/stats_fielding_raw_cablgs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABLGS2024.htm ../csv/stats_fielding_raw_cablgs_2024.csv
 
 printf "\n"
 printf "##################\n"
@@ -36,7 +36,7 @@ printf "##################\n"
 
 /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABGCS2024.htm ../csv/stats_batting_raw_cabgcs_2024.csv
 /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABGCS2024.htm ../csv/stats_pitching_raw_cabgcs_2024.csv
-#/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABGCS2024.htm ../csv/stats_fielding_raw_cabgcs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABGCS2024.htm ../csv/stats_fielding_raw_cabgcs_2024.csv
 
 printf "\n"
 printf "##################\n"
@@ -45,4 +45,4 @@ printf "##################\n"
 
 /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABTFS2024.htm ../csv/stats_batting_raw_cabtfs_2024.csv
 /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABTFS2024.htm ../csv/stats_pitching_raw_cabtfs_2024.csv
-#/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABTFS2024.htm ../csv/stats_fielding_raw_cabtfs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/csv/CanaryIslands/CABTFS2024.htm ../csv/stats_fielding_raw_cabtfs_2024.csv

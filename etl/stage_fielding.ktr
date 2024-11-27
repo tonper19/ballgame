@@ -428,7 +428,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:11.057</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/11/27 13:40:50.637</modified_date>
+    <modified_date>2024/11/27 22:32:47.620</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -532,22 +532,22 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TWL Fielding 2024 (Change filename)</from>
-      <to>2024 TWL</to>
+      <from>TWL13 Fielding 2024 (Change filename)</from>
+      <to>2024 TWL13</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>2024 TWL</from>
-      <to>TWL</to>
+      <from>2024 TWL13</from>
+      <to>TWL13</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TWL</from>
+      <from>TWL13</from>
       <to>BASEBALL (M)</to>
       <enabled>N</enabled>
     </hop>
     <hop>
-      <from>CABLGS Fielding 2024 (Change)</from>
+      <from>CABLGS Fielding 2024</from>
       <to>2024 CABLGS</to>
       <enabled>Y</enabled>
     </hop>
@@ -557,7 +557,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CABGCS Fielding 2024 (Change)</from>
+      <from>CABGCS Fielding 2024</from>
       <to>2024 CABGCS</to>
       <enabled>Y</enabled>
     </hop>
@@ -567,7 +567,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CABTFS Fielding 2024 (Change)</from>
+      <from>CABTFS Fielding 2024</from>
       <to>2024 CABTFS</to>
       <enabled>Y</enabled>
     </hop>
@@ -579,17 +579,17 @@
     <hop>
       <from>CABLGS</from>
       <to>SOFTBALL (M)</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>CABGCS</from>
       <to>SOFTBALL (M)</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>CABTFS</from>
       <to>SOFTBALL (M)</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>SOFTBALL (M)</from>
@@ -1069,7 +1069,7 @@
     </GUI>
   </step>
   <step>
-    <name>2024 TWL</name>
+    <name>2024 TWL13</name>
     <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
@@ -1108,7 +1108,7 @@
     </GUI>
   </step>
   <step>
-    <name>TWL</name>
+    <name>TWL13</name>
     <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
@@ -1126,7 +1126,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>TWL</nullif>
+        <nullif>TWL13</nullif>
         <length>8</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1159,7 +1159,7 @@
     </GUI>
   </step>
   <step>
-    <name>TWL Fielding 2024 (Change filename)</name>
+    <name>TWL13 Fielding 2024 (Change filename)</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1506,7 +1506,7 @@
     </GUI>
   </step>
   <step>
-    <name>CABLGS Fielding 2024 (Change)</name>
+    <name>CABLGS Fielding 2024</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1516,7 +1516,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_tsl_2024.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_cablgs_2024.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1802,7 +1802,7 @@
     </GUI>
   </step>
   <step>
-    <name>CABGCS Fielding 2024 (Change)</name>
+    <name>CABGCS Fielding 2024</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1812,7 +1812,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_tsl_2024.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_cabgcs_2024.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2098,7 +2098,7 @@
     </GUI>
   </step>
   <step>
-    <name>CABTFS Fielding 2024 (Change)</name>
+    <name>CABTFS Fielding 2024</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -2108,7 +2108,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_tsl_2024.csv</filename>
+    <filename>${BALLGAME_CSV_DIRECTORY}stats_fielding_raw_cabtfs_2024.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
