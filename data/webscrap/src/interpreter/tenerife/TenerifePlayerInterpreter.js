@@ -26,6 +26,6 @@ export class TenerifePlayerInterpreter extends PlayerInterpreter {
 	}
 
 	getTeam() {
-		return removeSpaces(this.playerStatsContainer[1].replaceAll(',', ' ')).slice(0, 7);
+		return removeSpaces(this.playerStatsContainer[1].replaceAll(',', ' ')).slice(0, 5);
 	}
 }

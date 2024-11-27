@@ -66,7 +66,7 @@ describe('TenerifePitchingPlayerInterpreter with correct data', () => {
 	describe('getTeam', () => {
 		it('should return the player\'s team', () => {
 			const result = playerInterpreter.getTeam();
-			expect(result).toBe('CARIBEN');
+			expect(result).toBe('CARIB');
 		});
 	});	
 	
