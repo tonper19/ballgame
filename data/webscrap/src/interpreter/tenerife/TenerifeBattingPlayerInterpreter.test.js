@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 
 const input = `
 <!-- 0 and 1 -->
-<td align=left><font face=verdana size=1 color="#000000">Mario Ismel Herrera, CARDEN&nbsp;</td>
+<td align=left><font face=verdana size=1 color="#000000">Mario Ismel Herrera, CARDENALES&nbsp;</td>
 <!--2 avg-->
 <td align=right><font face=verdana size=1 color="#000000"> .667&nbsp;</td>
 <!--3 gp-gs -->
@@ -65,7 +65,7 @@ describe('TenerifeBattingPlayerInterpreter with correct data', () => {
 	describe('getTeam', () => {
 		it('should return the player\'s team', () => {
 			const result = playerInterpreter.getTeam();
-			expect(result).toBe('CARDEN');
+			expect(result).toBe('CARDE');
 		});
 	});
 

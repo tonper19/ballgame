@@ -1,9 +1,9 @@
 import { removeSpaces } from '../../utils.js';
-import { PlayerInterpreter } from '../PlayerInterpreter.js';
+import { TenerifePlayerInterpreter } from './TenerifePlayerInterpreter.js';
 
 const regex = /([A-Z,\s]+,)\s([A-Z,-\s]+)([\d.,\s]+)+(\d+-\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+([\d-]+)/i;
 
-export class TenerifeBattingPlayerInterpreter extends PlayerInterpreter {
+export class TenerifeBattingPlayerInterpreter extends TenerifePlayerInterpreter {
 
 	constructor(container) {
 		super(container);
@@ -16,20 +16,6 @@ export class TenerifeBattingPlayerInterpreter extends PlayerInterpreter {
 		}
 
 		this.playerStatsContainer = match.slice(1);
-	}
-
-	getPlayerSurName() {
-		const playerSurnameCandidate = this.playerStatsContainer[0].replaceAll(',', ' ').replaceAll('  ', ' ').trim();
-		return playerSurnameCandidate.split(' ').splice(1).join(' ');
-	}
-
-	getPlayerFirstName() {
-		const playerSurnameCandidate = this.playerStatsContainer[0].replaceAll(',', ' ').replaceAll('  ', ' ').trim();
-		return playerSurnameCandidate.split(' ').toSpliced(1)[0];
-	}
-
-	getTeam() {
-		return removeSpaces(this.playerStatsContainer[1].replaceAll(',', ' ')).slice(0, 7);
 	}
 
 	getAB() {
