@@ -1,14 +1,17 @@
+import fs from 'fs';
 import { JSDOM } from 'jsdom';
 import { extractPitchingData } from '../data-extractor/PitchingDataExtractor.js';
 
-async function filePitchingDataProcessor(file) {
-	const dom = await JSDOM.fromFile(file);
-	return extractPitchingData(dom);
-}
-
 const file = process.argv[2];
+const fileName = process.argv[3] || 'pitching.csv';
 
-filePitchingDataProcessor(file).then((data) => {
-	console.log(data);
-	console.log('Finish');
+JSDOM.fromFile(file).then((dom) => {
+	console.log(`Processing ${file}`);
+	const data = extractPitchingData(dom);
+	const csv = data.join('\n');
+	console.log(`Writing ${fileName}`);
+	fs.writeFileSync(fileName, csv);
+	console.log('Data written');
+}).catch((error) => {
+	console.error(error);
 });

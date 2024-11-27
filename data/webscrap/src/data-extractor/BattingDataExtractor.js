@@ -53,10 +53,10 @@ function extractBattingDataFromTable(document, tableSelector, InterpreterClass) 
 function createPlayerDataExtractor(document) {
 	return document.body.textContent.includes('(All games Sorted by Batting avg)')
 			? extractTenerifeBattingData
-			: extractWBSCDat;
+			: extractWBSCData;
 }
 
-function extractWBSCDat(document) {
+function extractWBSCData(document) {
 	return [
 		HEADER,
 		...extractBattingDataFromTable(document, '.stats-content tbody tr', BattingPlayerInterpreter)
