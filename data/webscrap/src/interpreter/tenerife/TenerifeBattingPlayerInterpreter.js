@@ -6,16 +6,7 @@ const regex = /([A-Z,\s]+,)\s([A-Z,-\s]+)([\d.,\s]+)+(\d+-\d+)\s+(\d+)\s+(\d+)\s
 export class TenerifeBattingPlayerInterpreter extends TenerifePlayerInterpreter {
 
 	constructor(container) {
-		super(container);
-		const containerText = container.textContent.replaceAll('\n', '')
-		const match = containerText.match(regex);
-
-		if (!match) {
-			console.error(containerText);
-			throw new Error('Invalid input format');
-		}
-
-		this.playerStatsContainer = match.slice(1);
+		super(container, regex);
 	}
 
 	getAB() {
