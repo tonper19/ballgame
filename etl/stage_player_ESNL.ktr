@@ -429,7 +429,7 @@
     <created_user/>
     <created_date>2023/12/29 11:42:11.229</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/11/24 12:16:16.256</modified_date>
+    <modified_date>2024/11/29 14:37:45.363</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -695,6 +695,26 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       <to>STG Player Table Out</to>
       <enabled>N</enabled>
     </hop>
+    <hop>
+      <from>TWL BB</from>
+      <to>Canaries TWL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Canaries TWL</from>
+      <to>Sort TWL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort TWL</from>
+      <to>IC TWL Unique</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>IC TWL Unique</from>
+      <to>STG Player Table Out</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>AT</name>
@@ -933,8 +953,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>304</yloc>
+      <xloc>976</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1062,8 +1082,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>304</yloc>
+      <xloc>1104</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1097,8 +1117,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>304</yloc>
+      <xloc>640</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1249,8 +1269,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>384</yloc>
+      <xloc>832</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1284,8 +1304,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>384</yloc>
+      <xloc>592</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1354,8 +1374,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>64</yloc>
+      <xloc>736</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1389,8 +1409,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>160</yloc>
+      <xloc>704</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1428,8 +1448,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>160</yloc>
+      <xloc>992</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1557,8 +1577,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1040</xloc>
-      <yloc>160</yloc>
+      <xloc>1088</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2145,8 +2165,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>304</yloc>
+      <xloc>848</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2357,8 +2377,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>384</yloc>
+      <xloc>704</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2569,8 +2589,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>160</yloc>
+      <xloc>864</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2781,8 +2801,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>64</yloc>
+      <xloc>848</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3039,8 +3059,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>384</yloc>
+      <xloc>976</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3168,8 +3188,8 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1040</xloc>
-      <yloc>64</yloc>
+      <xloc>1088</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3207,8 +3227,317 @@ Check ${BALLGAME_CSV_DIRECTORY} value in kettle.properties file</note>
       </output>
     </remotesteps>
     <GUI>
+      <xloc>960</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>IC TWL Unique</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>player_name</name>
+        <case_insensitive>Y</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort TWL</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>player_name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>uniform_number</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Team</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>position</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>bats</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>throws</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>ht</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>wt</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>yob</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>TWL BB</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${BALLGAME_CSV_DIRECTORY}RosterTWL.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>uniform_number</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>player_name</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>25</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>position</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>bats</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>throws</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ht</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>wt</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>yob</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Canaries TWL</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Team</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>IC</nullif>
+        <length>3</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>912</xloc>
-      <yloc>64</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
