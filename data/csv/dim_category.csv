@@ -1,5 +1,11 @@
 SPORT_ID,GENDER,ID,ERA_INNINGS,COUNTRY_ID,NAME
 BB,M,WBSC12,9,WL,WBSC Premier 12
+SBFP,M,CABLGS,7,IC,Copa Cabildo La Gomera Sofbol
+SBFP,M,CABGCS,7,IC,Copa Cabildo Gran Canaria Sofbol
+SBFP,M,CABTFS,7,IC,Copa Cabildo Tenerife Sofbol
+BB,M,TWL13,7,IC,Tenerife Winter League U13
+BB,M,TWL15,7,IC,Tenerife Winter League U15
+BB,M,TWL18,7,IC,Tenerife Winter League U18
 BB,M,CCU13,9,ES,U13 Clubs Championship
 BB,M,TSL,9,IC,Tenerife Summer League
 BB,M,D1,9,BE,Baseball 1st Division
