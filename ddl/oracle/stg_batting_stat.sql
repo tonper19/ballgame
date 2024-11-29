@@ -20,7 +20,7 @@ license file in the root directory of this source tree.
 	season_year number(*,0),
 	last_name varchar2(255 byte),
 	first_name varchar2(255 byte),
-	team varchar2(3 byte),
+	team varchar2(8 byte),
   country_id varchar2(2 byte),  -- 20240224
 	ab number(*,0),
 	r number(*,0),
