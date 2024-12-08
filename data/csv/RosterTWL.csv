@@ -132,18 +132,18 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 4,Belicchi Ricardo,IF/P,R,R,,,2010
 11,van Gool Sjors,P/IF/OF,R,R,181,60,2010
 ,Delgado Diego,P,,,,,2009
-,von Jagemann Hannes,C/2B,R,R,172,58,2009
-,Honicke Henry,IF,R,R,170,57,2009
-,Jentges Tobias,IF,R,R,165,58,2009
-,Bolz Maximilian,IF,R,R,180,75,2009
-,Kutzner Gideon,SS/OF,R,R,177,64,2011
-,Grot Simon,IF/OF,R,R,170,58,2009
-,Schoepplenber Julius,P/1B,L,L,175,70,2009
-,Gienger Leonard,P/C/IF,L,R,177,58,2009
-,Beljak Marian,P/1B/OF,L,L,187,62,2010
-,Marusczyk Oswin,1B/2B/OF,L,R,168,55,2010
-,Herrmann Kiian,P/C/IF,R,R,195,78,2010
-,Cegiel Nalu,P/IF/OF,R,R,194,80,2009
+10,von Jagemann Hannes,C/2B,R,R,172,58,2009
+23,Honicke Henry,IF,R,R,170,57,2009
+20,Jentges Tobias,IF,R,R,165,58,2009
+24,Bolz Maximilian,IF,R,R,180,75,2009
+12,Kutzner Gideon,SS/OF,R,R,177,64,2011
+14,Grot Simon,IF/OF,R,R,170,58,2009
+13,Schoepplenber Julius,P/1B,L,L,175,70,2009
+8,Gienger Leonard,P/C/IF,L,R,177,58,2009
+56,Beljak Marian,P/1B/OF,L,L,187,62,2010
+86,Marusczyk Oswin,1B/2B/OF,L,R,168,55,2010
+9,Herrmann Kiian,P/C/IF,R,R,195,78,2010
+15,Cegiel Nalu,P/IF/OF,R,R,194,80,2009
 ,Warlies Jayme,P/1B/OF,L,L,176,70,2009
 ,Waller Nikolas,P/IF,R,R,172,65,2009
 12,Handly Paul,2B/SS/OF,R,R,158,44,2010
@@ -159,7 +159,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 10,Waller Nikolas,P/IF,R,R,172,65,2009
 ,Fornasaris Enea,C/1B,R,R,188,83,2009
 5,Benelli Serse,P/C/IF,R,R,162,52,2011
-11,H. Nagy Botond,P/IF/C,R,R,162,58,2010
+11,Hegedus Nagy Botond,P/IF/C,R,R,162,58,2010
 13,Okac Filip,1B/OF/P,L,R,193,86,2008
 12,Balog Simon,OF/1B/P,R,R,182,65,2009
 11,Kopecky Toby,OF/3B/C,R,R,158,50,2009

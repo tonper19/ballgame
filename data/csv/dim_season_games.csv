@@ -1,7 +1,7 @@
 season_year,sport_id,gender,category_id,country_id,number_of_games,pa_coefficient,innings_pitched_percent
 2024,BB,M,WBSC12,WL,8,2.7,0.8
 2024,BB,M,TWL13,IC,3,2.7,0.8
-2024,BB,M,TWL15,IC,2,2.7,0.8
+2024,BB,M,TWL15,IC,4,2.7,0.8
 2024,BB,M,TWL18,IC,1,2.7,0.8
 2024,SBFP,M,CABLGS,IC,9,2.7,0.8
 2024,SBFP,M,CABGCS,IC,8,2.7,0.8
