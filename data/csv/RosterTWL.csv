@@ -90,7 +90,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 0,Karady Matej,OF/SS/,R,R,165,47,2011
 15,Liam Hegen Cooper,P/IF/OF,L,R,170,55,2011
 0,Rudolph Ben,P/C/SS,R,R,150,37,2012
-0,Rathe-Schneider Sander,P/3B/OF,R,R,170,59,2011
+0,Rathe Schneider Sander,P/3B/OF,R,R,170,59,2011
 0,Koppel Karl,P/C/SS,R,R,156,50,2011
 5,ten Dam Jens,P/SS/,R,R,160,50,2012
 4,Kortman Julien,P/2B/OF,R,R,154,37,2012
@@ -159,7 +159,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 10,Waller Nikolas,P/IF,R,R,172,65,2009
 ,Fornasaris Enea,C/1B,R,R,188,83,2009
 5,Benelli Serse,P/C/IF,R,R,162,52,2011
-11,Hegedus-Nagy Botond,P/IF/C,R,R,162,58,2010
+11,H. Nagy Botond,P/IF/C,R,R,162,58,2010
 13,Okac Filip,1B/OF/P,L,R,193,86,2008
 12,Balog Simon,OF/1B/P,R,R,182,65,2009
 11,Kopecky Toby,OF/3B/C,R,R,158,50,2009
@@ -203,7 +203,7 @@ uniform_number,player_name,position,bats,throws,ht,wt,yob
 ,Reenock Lucas,SS/P,L,R,180,71,2011
 ,Moreno Moises,IF,L,R,154,47,2010
 8,Walo Sebastian,OF/C,R,R,182,82,2009
-2,Rathe-Schneider Sader,P/3B/OF,R,R,170,59,2011
+2,Rathe Schneider Sader,P/3B/OF,R,R,170,59,2011
 36,Fermin Luis,P/IF/OF,R,R,168,55,2010
 52,Castañeda Nelson,SS/OF,R,R,170,56,2010
 24,Hunte Canyon,1B/3B,R,R,170,80,2009
