@@ -1,8 +1,9 @@
-import { TenerifeBattingPlayerInterpreter } from './TenerifeBattingPlayerInterpreter.js';
-import { describe, expect, it } from 'vitest';
 import { JSDOM } from 'jsdom';
+import { describe, expect, it } from 'vitest';
+import { TenerifeBattingPlayerInterpreter } from './TenerifeBattingPlayerInterpreter.js';
 
-const input = `
+describe('TenerifeBattingPlayerInterpreter with correct data', () => {
+	const input = `
 <!-- 0 and 1 -->
 <td align=left><font face=verdana size=1 color="#000000">Mario Ismel Herrera, CARDENALES&nbsp;</td>
 <!--2 avg-->
@@ -44,8 +45,6 @@ const input = `
 <!--20 sb-att-->
 <td align=center><font face=verdana size=1 color="#000000">25-42&nbsp;</td>
 `;
-
-describe('TenerifeBattingPlayerInterpreter with correct data', () => {
 	const playerInterpreter = new TenerifeBattingPlayerInterpreter(new JSDOM(input).window.document.body);
 
 	describe('getPlayerSurName', () => {
@@ -138,74 +137,112 @@ describe('TenerifeBattingPlayerInterpreter with correct data', () => {
 			expect(result).toBe('');
 		});
 	});
-	
+
 	describe('getOBP', () => {
 		it('should return the player\'s OBP', () => {
 			const result = playerInterpreter.getOBP();
 			expect(result).toBe('');
 		});
 	});
-	
+
 	describe('getOPS', () => {
 		it('should return the player\'s OPS', () => {
 			const result = playerInterpreter.getOPS();
 			expect(result).toBe('');
 		});
 	});
-		
+
 	describe('getBB', () => {
 		it('should return the player\'s BB', () => {
 			const result = playerInterpreter.getBB();
 			expect(result).toBe('4');
 		});
 	});
-			
+
 	describe('getHBP', () => {
 		it('should return the player\'s HBP', () => {
 			const result = playerInterpreter.getHBP();
 			expect(result).toBe('3');
 		});
 	});
-				
+
 	describe('getSO', () => {
 		it('should return the player\'s SO', () => {
 			const result = playerInterpreter.getSO();
 			expect(result).toBe('51');
 		});
 	});
-					
+
 	describe('getGDP', () => {
 		it('should return the player\'s GDP', () => {
 			const result = playerInterpreter.getGDP();
 			expect(result).toBe('5');
 		});
 	});
-						
+
 	describe('getSF', () => {
 		it('should return the player\'s SF', () => {
 			const result = playerInterpreter.getSF();
 			expect(result).toBe('8');
 		});
 	});
-							
+
 	describe('getSH', () => {
 		it('should return the player\'s SH', () => {
 			const result = playerInterpreter.getSH();
 			expect(result).toBe('9');
 		});
 	});
-								
+
 	describe('getSB', () => {
 		it('should return the player\'s SB', () => {
 			const result = playerInterpreter.getSB();
 			expect(result).toBe('25');
 		});
 	});
-									
+
 	describe('getCS', () => {
 		it('should return the player\'s CS', () => {
 			const result = playerInterpreter.getCS();
 			expect(result).toBe('17');
+		});
+	});
+});
+
+describe('TenerifeBattingPlayerInterpreter with special cases', () => {
+	const input = `
+	<tr bgcolor="#ffffff">
+<td align=left><font color="#000000" face=verdana size=1>Nelson Casta�eda, RED&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000"> .500&nbsp;</td>
+<td align=center><font face=verdana size=1 color="#000000">4-4&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">14&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">5&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">7&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">2&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">8&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">9&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000"> .643&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">2&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">3&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000"> .563&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=right><font face=verdana size=1 color="#000000">0&nbsp;</td>
+<td align=center><font face=verdana size=1 color="#000000">0-0&nbsp;</td>
+</tr>
+	`;
+	const playerInterpreter = new TenerifeBattingPlayerInterpreter(new JSDOM(input).window.document.body);
+	describe('getPlayerSurName', () => {
+		it('should return the player\'s surname', () => {
+			const result = playerInterpreter.getPlayerSurName();
+			expect(result).toBe('Castañeda');
+		});
+		it('should return the player\'s first name', () => {
+			const result = playerInterpreter.getPlayerFirstName();
+			expect(result).toBe('Nelson');
 		});
 	});
 });

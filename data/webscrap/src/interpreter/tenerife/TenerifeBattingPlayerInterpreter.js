@@ -1,7 +1,7 @@
 import { removeSpaces } from '../../utils.js';
 import { TenerifePlayerInterpreter } from './TenerifePlayerInterpreter.js';
 
-const regex = /([A-Z,\s]+,)\s([A-Z,-\s]+)([\d.,\s]+)+(\d+-\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+([\d-]+)/i;
+const regex = /(.+,)\s([A-Z,-\s]+)([\d.,\s]+)+(\d+-\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+(\d+)\s+(\d+)\s+([\d-]+)/i;
 
 export class TenerifeBattingPlayerInterpreter extends TenerifePlayerInterpreter {
 

@@ -19,7 +19,7 @@ export class TenerifePlayerInterpreter extends PlayerInterpreter {
             throw new TypeError('Provided regex is not a valid RegExp object');
         }
 
-        const containerText = container.textContent.replace(/\n+/g, '');
+        const containerText = container.textContent.replace(/\n+/g, '').replaceAll('\ufffd', 'ñ');
 		const match = containerText.match(regex);
 
 		if (!match) {
