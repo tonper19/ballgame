@@ -14,7 +14,7 @@ async function urlFieldingDataProcessor(url) {
 const file = process.argv[2];
 const fileName = process.argv[3] || 'fielding.csv';
 
-JSDOM.fromFile(file).then((dom) => {
+JSDOM.fromFile(file, { contentType: 'text/html; charset=utf-8' }).then((dom) => {
 	console.log(`Processing ${file}`);
 	const data = extractFieldingData(dom);
 	const csv = data.join('\n');
