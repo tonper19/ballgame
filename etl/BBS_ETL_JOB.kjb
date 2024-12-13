@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2023/12/29 11:42:10.767</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/12/08 11:31:13.709</modified_date>
+  <modified_date>2024/12/12 17:12:15.839</modified_date>
   <parameters>
     </parameters>
   <connection>
@@ -1709,7 +1709,7 @@
 
                                                    PostgreSQL                                                   </note>
       <xloc>128</xloc>
-      <yloc>576</yloc>
+      <yloc>592</yloc>
       <width>572</width>
       <heigth>136</heigth>
       <fontname>.AppleSystemUIFont</fontname>
