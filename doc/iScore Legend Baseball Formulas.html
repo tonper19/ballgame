@@ -1,0 +1,940 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script type="text/javascript" async="" src="iScore%20Legend%20Baseball%20Formulas_files/google-analytics_ga.js"></script><script async="" src="iScore%20Legend%20Baseball%20Formulas_files/google-analytics_analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"b1a9c81048",applicationID:"2747470"};;/*! For license information please see nr-loader-rum-1.277.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555:(e,t,r)=>{"use strict";r.d(t,{Vp:()=>c,fn:()=>s,x1:()=>u});var n=r(384),i=r(8122);const o={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){try{const t=c(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}function c(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function u(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.a)(t,o);const r=(0,n.nY)(e);r&&(r.info=a[e])}},5217:(e,t,r)=>{"use strict";r.d(t,{D0:()=>m,gD:()=>b,xN:()=>v});r(860).K7.genericEvents;const n="experimental.marks",i="experimental.measures",o="experimental.resources";var a=r(993);const s=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var c=r(2614),u=r(944),l=r(384),d=r(8122);const f="[data-nr-mask]",g=()=>{const e={feature_flags:[],experimental:{marks:!1,measures:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},harvest:{tooManyRequestsDelay:60},jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},logging:{enabled:!0,harvestTimeSeconds:10,autoStart:!0,level:a.p_.INFO},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},performance:{get capture_marks(){return e.feature_flags.includes(n)||e.experimental.marks},set capture_marks(t){e.experimental.marks=t},get capture_measures(){return e.feature_flags.includes(i)||e.experimental.measures},set capture_measures(t){e.experimental.measures=t},resources:{get enabled(){return e.feature_flags.includes(o)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:c.wk,inactiveMs:c.BB},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){s(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,u.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){s(t)?e.block_selector+=",".concat(t):""!==t&&(0,u.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,u.R)(7,t)}},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},soft_navigations:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},ssl:void 0,user_actions:{enabled:!0}}},p={},h="All configuration objects require an agent identifier!";function m(e){if(!e)throw new Error(h);if(!p[e])throw new Error("Configuration for ".concat(e," was never set"));return p[e]}function v(e,t){if(!e)throw new Error(h);p[e]=(0,d.a)(t,g());const r=(0,l.nY)(e);r&&(r.init=p[e])}function b(e,t){if(!e)throw new Error(h);var r=m(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}},3371:(e,t,r)=>{"use strict";r.d(t,{V:()=>f,f:()=>d});var n=r(8122),i=r(384),o=r(6154),a=r(9324);let s=0;const c={buildEnv:a.F3,distMethod:a.Xs,version:a.xv,originTime:o.WN},u={customTransaction:void 0,disabled:!1,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,onerror:void 0,ptid:void 0,releaseIds:{},appMetadata:{},session:void 0,denyList:void 0,timeKeeper:void 0,obfuscator:void 0},l={};function d(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!l[e])throw new Error("Runtime for ".concat(e," was never set"));return l[e]}function f(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");l[e]={...(0,n.a)(t,u),...c},Object.hasOwnProperty.call(l[e],"harvestCount")||Object.defineProperty(l[e],"harvestCount",{get:()=>++s});const r=(0,i.nY)(e);r&&(r.runtime=l[e])}},9324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>o,xv:()=>n});const n="1.277.0",i="PROD",o="CDN"},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>c,RI:()=>i,WN:()=>l,bv:()=>o,gm:()=>a,mw:()=>s,sb:()=>u});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,o="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),s=Boolean("hidden"===a?.document?.visibilityState),c=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=c&&"undefined"==typeof SharedWorker,l=((()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)())},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>c,Ze:()=>d,x3:()=>u});var n=r(7836),i=r(3606),o=r(860),a=r(2646);const s={};function c(e,t){const r={staged:!1,priority:o.P3[t]||0};l(e),s[e].get(t)||s[e].set(t,r)}function u(e,t){e&&s[e]&&(s[e].get(t)&&s[e].delete(t),g(e,t,!1),s[e].size&&f(e))}function l(e){if(!e)throw new Error("agentIdentifier required");s[e]||(s[e]=new Map)}function d(e="",t="feature",r=!1){if(l(e),!e||!s[e].get(t)||r)return g(e,t);s[e].get(t).staged=!0,f(e)}function f(e){const t=Array.from(s[e]);t.every((([e,t])=>t.staged))&&(t.sort(((e,t)=>e[1].priority-t[1].priority)),t.forEach((([t])=>{s[e].delete(t),g(e,t)})))}function g(e,t,r=!0){const o=e?n.ee.get(e):n.ee,s=i.i.handlers;if(!o.aborted&&o.backlog&&s){if(r){const e=o.backlog[t],r=s[t];if(r){for(let t=0;e&&t<e.length;++t)p(e[t],r);Object.entries(r).forEach((([e,t])=>{Object.values(t||{}).forEach((t=>{t[0]?.on&&t[0]?.context()instanceof a.y&&t[0].on(e,t[1])}))}))}}o.isolatedBacklog||delete s[t],o.backlog[t]=null,o.emit("drain-"+t,[])}}function p(e,t){var r=e[1];Object.values(t[r]||{}).forEach((t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],o=e[2];n.apply(i,o)}}))}},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>c,ee:()=>u});var n=r(384),i=r(8990),o=r(3371),a=r(2646),s=r(5607);const c="nr@context:".concat(s.W),u=function e(t,r){var n={},s={},l={},d=!1;try{d=16===r.length&&(0,o.f)(r).isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(u.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var a=g(n),c=h(e),l=c.length,d=0;d<l;d++)c[d].apply(a,r);var p=v()[s[e]];p&&p.push([f,e,r,a]);return a},get:m,listeners:h,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach((([e,n])=>{s[n]=t,t in r||(r[t]=[])}))},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach((e=>{delete f.backlog[e]}))},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:d?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:d};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,c,(()=>new a.y(c))):new a.y(c)}function p(e,t){n[e]=h(e).concat(t)}function h(e){return n[e]||[]}function m(t){return l[t]=l[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),l=(0,n.Zm)();l.ee||(l.ee=u)},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>o});var n=r(9908);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.d,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.d);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function o(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>o,jT:()=>n,sp:()=>i})},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?o(t,r++).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var s=0;s<e;s++)a.push(o(r,i++).toString(16));return a.join("")}},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>u,iL:()=>c,tS:()=>s,uh:()=>i,wk:()=>o});const n="NRBA",i="SESSION",o=144e5,a=18e5,s={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944:(e,t,r)=>{"use strict";function n(e,t){"function"==typeof console.debug&&console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t)}r.d(t,{R:()=>n})},5284:(e,t,r)=>{"use strict";r.d(t,{t:()=>c,B:()=>s});var n=r(7836),i=r(6154);const o="newrelic";const a=new Set,s={};function c(e,t){const r=n.ee.get(t);s[t]??={},e&&"object"==typeof e&&(a.has(t)||(r.emit("rumresp",[e]),s[t]=e,a.add(t),function(e={}){try{i.gm.dispatchEvent(new CustomEvent(o,{detail:e}))}catch(e){}}({loaded:!0})))}},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout((()=>{i=clearTimeout(i)}),t)),n||(clearTimeout(i),i=setTimeout((()=>{e.apply(this,r)}),t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>o,sB:()=>a});var n=r(3878);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.sp)("load",e,t)}function a(e){if(i())return e();(0,n.DD)("DOMContentLoaded",e)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>o,US:()=>l,Zm:()=>a,bQ:()=>c,dV:()=>s,nY:()=>u,pV:()=>d});var n=r(6154),i=r(1863);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function s(){let e=a();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket}),e}function c(e,t){let r=a();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t}function u(e){let t=a();return t.initializedAgents?.[e]}function l(e,t){a()[e]=t}function d(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},2843:(e,t,r)=>{"use strict";r.d(t,{u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},3434:(e,t,r)=>{"use strict";r.d(t,{Jt:()=>o,YM:()=>c});var n=r(7836),i=r(5607);const o="nr@original:".concat(i.W);var a=Object.prototype.hasOwnProperty,s=!1;function c(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,o){n||(n="");const a="-"===n.charAt(0);for(let s=0;s<t.length;s++){const c=t[s],u=e[c];l(u)||(e[c]=r(u,a?c+n:n,i,c,o))}},r.flag=o,r;function r(t,r,n,s,c){return l(t)?t:(r||(r=""),nrWrapper[o]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach((function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})})),t}catch(e){u([e],r)}for(var n in e)a.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var o,a,l,d;try{a=this,o=[...arguments],l="function"==typeof n?n(o,a):n||{}}catch(t){u([t,"",[o,a,s],l],e)}i(r+"start",[o,a,s],l,c);try{return d=t.apply(a,o)}catch(e){throw i(r+"err",[o,a,e],l,c),e}finally{i(r+"end",[o,a,d],l,c)}}}function i(r,n,i,o){if(!s||t){var a=s;s=!0;try{e.emit(r,n,i,t,o)}catch(t){u([t,r,n,i],e)}s=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function l(e){return!(e&&"function"==typeof e&&e.apply&&!e[o])}},993:(e,t,r)=>{"use strict";r.d(t,{ET:()=>o,p_:()=>i});var n=r(860);const i={ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"},o="log";n.K7.logging},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>s,rs:()=>i,xV:()=>a,z_:()=>o});const n=r(860).K7.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},6344:(e,t,r)=>{"use strict";r.d(t,{G4:()=>i});var n=r(2614);r(860).K7.sessionReplay;const i={RECORD:"recordReplay",PAUSE:"pauseReplay",REPLAY_RUNNING:"replayRunning",ERROR_DURING_REPLAY:"errorDuringReplay"};n.g.ERROR,n.g.FULL,n.g.OFF},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>o});var n=r(7836),i=r(1687);class o{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},7603:(e,t,r)=>{"use strict";r.d(t,{j:()=>K});var n=r(860),i=r(2555),o=r(3371),a=r(9908),s=r(7836),c=r(1687),u=r(5289),l=r(6154),d=r(944),f=r(3969),g=r(384),p=r(6344);const h=["setErrorHandler","finished","addToTrace","addRelease","recordCustomEvent","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start",p.G4.RECORD,p.G4.PAUSE,"log","wrapLogger"],m=["setErrorHandler","finished","addToTrace","addRelease"];var v=r(1863),b=r(2614),y=r(993);var w=r(2646),A=r(3434);const R=new Map;function _(e,t,r,n){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,d.R)(29);const i=function(e){return(e||s.ee).get("logger")}(e),o=(0,A.YM)(i),a=new w.y(s.P);a.level=n.level,a.customAttributes=n.customAttributes;const c=t[r]?.[A.Jt]||t[r];return R.set(c,a),o.inPlace(t,[r],"wrap-logger-",(()=>R.get(c))),i}function E(){const e=(0,g.pV)();h.forEach((t=>{e[t]=(...r)=>function(t,...r){let n=[];return Object.values(e.initializedAgents).forEach((e=>{e&&e.api?e.exposed&&e.api[t]&&n.push(e.api[t](...r)):(0,d.R)(38,t)})),n.length>1?n:n[0]}(t,...r)}))}const x={};function N(e,t,g=!1){t||(0,c.Ak)(e,"api");const h={};var w=s.ee.get(e),A=w.get("tracer");x[e]=b.g.OFF,w.on(p.G4.REPLAY_RUNNING,(t=>{x[e]=t}));var R="api-",E=R+"ixn-";function N(t,r,n,o){const a=(0,i.Vp)(e);return null===r?delete a.jsAttributes[t]:(0,i.x1)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),S(R,n,!0,o||null===r?"session":void 0)(t,r)}function T(){}h.log=function(e,{customAttributes:t={},level:r=y.p_.INFO}={}){(0,a.p)(f.xV,["API/log/called"],void 0,n.K7.metrics,w),function(e,t,r={},i=y.p_.INFO){(0,a.p)(f.xV,["API/logging/".concat(i.toLowerCase(),"/called")],void 0,n.K7.metrics,e),(0,a.p)(y.ET,[(0,v.t)(),t,r,i],void 0,n.K7.logging,e)}(w,e,t,r)},h.wrapLogger=(e,t,{customAttributes:r={},level:i=y.p_.INFO}={})=>{(0,a.p)(f.xV,["API/wrapLogger/called"],void 0,n.K7.metrics,w),_(w,e,t,{customAttributes:r,level:i})},m.forEach((e=>{h[e]=S(R,e,!0,"api")})),h.addPageAction=S(R,"addPageAction",!0,n.K7.genericEvents),h.recordCustomEvent=S(R,"recordCustomEvent",!0,n.K7.genericEvents),h.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,o.f)(e).customTransaction=(r||"http://custom.transaction")+t,S(R,"setPageViewName",!0)()},h.setCustomAttribute=function(e,t,r=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof t)||null===t)return N(e,t,"setCustomAttribute",r);(0,d.R)(40,typeof t)}else(0,d.R)(39,typeof e)},h.setUserId=function(e){if("string"==typeof e||null===e)return N("enduser.id",e,"setUserId",!0);(0,d.R)(41,typeof e)},h.setApplicationVersion=function(e){if("string"==typeof e||null===e)return N("application.version",e,"setApplicationVersion",!1);(0,d.R)(42,typeof e)},h.start=()=>{try{(0,a.p)(f.xV,["API/start/called"],void 0,n.K7.metrics,w),w.emit("manual-start-all")}catch(e){(0,d.R)(23,e)}},h[p.G4.RECORD]=function(){(0,a.p)(f.xV,["API/recordReplay/called"],void 0,n.K7.metrics,w),(0,a.p)(p.G4.RECORD,[],void 0,n.K7.sessionReplay,w)},h[p.G4.PAUSE]=function(){(0,a.p)(f.xV,["API/pauseReplay/called"],void 0,n.K7.metrics,w),(0,a.p)(p.G4.PAUSE,[],void 0,n.K7.sessionReplay,w)},h.interaction=function(e){return(new T).get("object"==typeof e?e:{})};const k=T.prototype={createTracer:function(e,t){var r={},i=this,o="function"==typeof t;return(0,a.p)(f.xV,["API/createTracer/called"],void 0,n.K7.metrics,w),g||(0,a.p)(E+"tracer",[(0,v.t)(),e,r],i,n.K7.spa,w),function(){if(A.emit((o?"":"no-")+"fn-start",[(0,v.t)(),i,o],r),o)try{return t.apply(this,arguments)}catch(e){const t="string"==typeof e?new Error(e):e;throw A.emit("fn-err",[arguments,this,t],r),t}finally{A.emit("fn-end",[(0,v.t)()],r)}}}};function S(e,t,r,i){return function(){return(0,a.p)(f.xV,["API/"+t+"/called"],void 0,n.K7.metrics,w),i&&(0,a.p)(e+t,[r?(0,v.t)():performance.now(),...arguments],r?null:this,i,w),r?void 0:this}}function j(){r.e(296).then(r.bind(r,8778)).then((({setAPI:t})=>{t(e),(0,c.Ze)(e,"api")})).catch((e=>{(0,d.R)(27,e),w.abort()}))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{k[e]=S(E,e,void 0,g?n.K7.softNav:n.K7.spa)})),h.setCurrentRouteName=g?S(E,"routeName",void 0,n.K7.softNav):S(R,"routeName",!0,n.K7.spa),h.noticeError=function(t,r){"string"==typeof t&&(t=new Error(t)),(0,a.p)(f.xV,["API/noticeError/called"],void 0,n.K7.metrics,w),(0,a.p)("err",[t,(0,v.t)(),!1,r,!!x[e]],void 0,n.K7.jserrors,w)},l.RI?(0,u.GG)((()=>j()),!0):j(),h}var T=r(5217),k=r(8122);const S={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},j={};var I=r(5284);const O=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};let P=!1;function K(e,t={},r,n){let{init:a,info:c,loader_config:u,runtime:d={},exposed:f=!0}=t;d.loaderType=r;const p=(0,g.pV)();c||(a=p.init,c=p.info,u=p.loader_config),(0,T.xN)(e.agentIdentifier,a||{}),function(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");j[e]=(0,k.a)(t,S);const r=(0,g.nY)(e);r&&(r.loader_config=j[e])}(e.agentIdentifier,u||{}),c.jsAttributes??={},l.bv&&(c.jsAttributes.isWorker=!0),(0,i.x1)(e.agentIdentifier,c);const h=(0,T.D0)(e.agentIdentifier),m=[c.beacon,c.errorBeacon];P||(h.proxy.assets&&(O(h.proxy.assets),m.push(h.proxy.assets)),h.proxy.beacon&&m.push(h.proxy.beacon),E(),(0,g.US)("activatedFeatures",I.B),e.runSoftNavOverSpa&&=!0===h.soft_navigations.enabled&&h.feature_flags.includes("soft_nav")),d.denyList=[...h.ajax.deny_list||[],...h.ajax.block_internal?m:[]],d.ptid=e.agentIdentifier,(0,o.V)(e.agentIdentifier,d),e.ee=s.ee.get(e.agentIdentifier),void 0===e.api&&(e.api=N(e.agentIdentifier,n,e.runSoftNavOverSpa)),void 0===e.exposed&&(e.exposed=f),P=!0}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>o,K7:()=>n,P3:()=>i});const n={ajax:"ajax",genericEvents:"generic_events",jserrors:"jserrors",logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},i={[n.pageViewEvent]:1,[n.pageViewTiming]:2,[n.metrics]:3,[n.jserrors]:4,[n.spa]:5,[n.ajax]:6,[n.sessionTrace]:7,[n.softNav]:8,[n.sessionReplay]:9,[n.logging]:10,[n.genericEvents]:11},o={[n.pageViewTiming]:"events",[n.ajax]:"events",[n.spa]:"events",[n.softNav]:"events",[n.metrics]:"jserrors",[n.jserrors]:"jserrors",[n.sessionTrace]:"browser/blobs",[n.sessionReplay]:"browser/blobs",[n.logging]:"browser/logs",[n.genericEvents]:"ins"}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>"nr-rum-1.277.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.277.0.PROD:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),l=0;l<u.length;l++){var d=u[l];if(d.getAttribute("src")==r||d.getAttribute("data-webpack")==t+o){s=d;break}}if(!s){c=!0;var f={296:"sha512-bgyk8oLZSHYvrAao0R6AmQfmJRmNFkX7vJuPaA86HO30l33QuEHvLph+PCKHPsvisjRfV4QttmmwKppx2C2EkQ=="};(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r,0!==s.src.indexOf(window.location.origin+"/")&&(s.crossOrigin="anonymous"),f[a]&&(s.integrity=f[a])}e[r]=[n];var g=(t,n)=>{s.onerror=s.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=g.bind(null,s.onerror),s.onload=g.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={840:0,374:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=self["webpackChunk:NRBA-1.277.0.PROD"]=self["webpackChunk:NRBA-1.277.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(944),t=i(6344),r=i(9566);class n{agentIdentifier;constructor(e=(0,r.LA)(16)){this.agentIdentifier=e}#e(t,...r){if("function"==typeof this.api?.[t])return this.api[t](...r);(0,e.R)(35,t)}addPageAction(e,t){return this.#e("addPageAction",e,t)}recordCustomEvent(e,t){return this.#e("recordCustomEvent",e,t)}setPageViewName(e,t){return this.#e("setPageViewName",e,t)}setCustomAttribute(e,t,r){return this.#e("setCustomAttribute",e,t,r)}noticeError(e,t){return this.#e("noticeError",e,t)}setUserId(e){return this.#e("setUserId",e)}setApplicationVersion(e){return this.#e("setApplicationVersion",e)}setErrorHandler(e){return this.#e("setErrorHandler",e)}addRelease(e,t){return this.#e("addRelease",e,t)}log(e,t){return this.#e("log",e,t)}}class o extends n{#e(t,...r){if("function"==typeof this.api?.[t])return this.api[t](...r);(0,e.R)(35,t)}start(){return this.#e("start")}finished(e){return this.#e("finished",e)}recordReplay(){return this.#e(t.G4.RECORD)}pauseReplay(){return this.#e(t.G4.PAUSE)}addToTrace(e){return this.#e("addToTrace",e)}setCurrentRouteName(e){return this.#e("setCurrentRouteName",e)}interaction(){return this.#e("interaction")}wrapLogger(e,t,r){return this.#e("wrapLogger",e,t,r)}}var a=i(860),s=i(5217);const c=Object.values(a.K7);function u(e){const t={};return c.forEach((r=>{t[r]=function(e,t){return!0===(0,s.gD)(t,"".concat(e,".enabled"))}(r,e)})),t}var l=i(7603);var d=i(1687),f=i(4234),g=i(5289),p=i(6154),h=i(384);const m=e=>p.RI&&!0===(0,s.gD)(e,"privacy.cookies_enabled");function v(e){return!!(0,h.dV)().o.MO&&m(e)&&!0===(0,s.gD)(e,"session_trace.enabled")}var b=i(6389);class y extends f.W{constructor(e,t,r=!0){super(e.agentIdentifier,t),this.auto=r,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===e.init[this.featureName].autoStart&&(this.auto=!1),this.auto?(0,d.Ak)(e.agentIdentifier,t):this.ee.on("manual-start-all",(0,b.J)((()=>{(0,d.Ak)(e.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator(e)})))}importAggregator(t,r={}){if(this.featAggregate||!this.auto)return;let n;this.onAggregateImported=new Promise((e=>{n=e}));const o=async()=>{let o;try{if(m(this.agentIdentifier)){const{setupAgentSession:e}=await i.e(296).then(i.bind(i,3861));o=e(t)}}catch(t){(0,e.R)(20,t),this.ee.emit("internal-error",[t]),this.featureName===a.K7.sessionReplay&&this.abortHandler?.()}try{if(t.sharedAggregator)await t.sharedAggregator;else{t.sharedAggregator=i.e(296).then(i.bind(i,9337));const{EventAggregator:e}=await t.sharedAggregator;t.sharedAggregator=new e}if(!this.#t(this.featureName,o))return(0,d.Ze)(this.agentIdentifier,this.featureName),void n(!1);const{lazyFeatureLoader:e}=await i.e(296).then(i.bind(i,6103)),{Aggregate:a}=await e(this.featureName,"aggregate");this.featAggregate=new a(t,r),n(!0)}catch(t){(0,e.R)(34,t),this.abortHandler?.(),(0,d.Ze)(this.agentIdentifier,this.featureName,!0),n(!1),this.ee&&this.ee.abort()}};p.RI?(0,g.GG)((()=>o()),!0):o()}#t(e,t){switch(e){case a.K7.sessionReplay:return v(this.agentIdentifier)&&!!t;case a.K7.sessionTrace:return!!t;default:return!0}}}var w=i(6630);class A extends y{static featureName=w.T;constructor(e,t=!0){super(e,w.T,t),this.importAggregator(e)}}var R=i(9908),_=i(2843),E=i(3878),x=i(782),N=i(1863);class T extends y{static featureName=x.T;constructor(e,t=!0){super(e,x.T,t),p.RI&&((0,_.u)((()=>(0,R.p)("docHidden",[(0,N.t)()],void 0,x.T,this.ee)),!0),(0,E.sp)("pagehide",(()=>(0,R.p)("winPagehide",[(0,N.t)()],void 0,x.T,this.ee))),this.importAggregator(e))}}var k=i(3969);class S extends y{static featureName=k.TZ;constructor(e,t=!0){super(e,k.TZ,t),this.importAggregator(e)}}new class extends o{constructor(t,r){super(r),p.gm?(this.features={},(0,h.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(A),this.runSoftNavOverSpa=[...this.desiredFeatures].some((e=>e.featureName===a.K7.softNav)),(0,l.j)(this,t,t.loaderType||"agent"),this.run()):(0,e.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}run(){try{const t=u(this.agentIdentifier),r=[...this.desiredFeatures];r.sort(((e,t)=>a.P3[e.featureName]-a.P3[t.featureName])),r.forEach((r=>{if(!t[r.featureName]&&r.featureName!==a.K7.pageViewEvent)return;if(this.runSoftNavOverSpa&&r.featureName===a.K7.spa)return;if(!this.runSoftNavOverSpa&&r.featureName===a.K7.softNav)return;const n=function(e){switch(e){case a.K7.ajax:return[a.K7.jserrors];case a.K7.sessionTrace:return[a.K7.ajax,a.K7.pageViewEvent];case a.K7.sessionReplay:return[a.K7.sessionTrace];case a.K7.pageViewTiming:return[a.K7.pageViewEvent];default:return[]}}(r.featureName).filter((e=>!(e in this.features)));n.length>0&&(0,e.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)}))}catch(t){(0,e.R)(22,t);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,h.Zm)();delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return r.ee.get(this.agentIdentifier).abort(),!1}}}({features:[A,T,S],loaderType:"lite"})})()})();</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQKBKFK');</script>
+<!-- End Google Tag Manager -->
+
+<title>Legend Baseball</title>
+<style>
+body { 
+	font: 90%/150% Arial, Helvetica, sans-serif;
+	color: #666;
+	background: #eeeeee;
+	margin:0px;
+	padding:0px;
+}
+table { font-family:Arial;font-size:10pt; }
+
+h1 { margin: 0px;padding: 0px; }
+h2 { margin: 0px;padding: 0px;margin-bottom:8px;color:#000080 }
+h3 { margin: 0px;padding: 0px;margin-bottom:8px;color:#0000CC }
+
+.container {
+	background:#FFFFFF;
+	border:1px solid #E0E0E0;
+	padding:10px;
+}
+
+.rounded {
+	-moz-border-radius:20px;
+	-khtml-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius:20px;
+}
+
+.legendbox
+{
+	-moz-border-radius:6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQKBKFK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35980179-1']);
+  _gaq.push(['_setDomainName', 'iscoresports.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<table width="100%" border="0" cellspacing="5" cellpadding="10">
+	<tbody><tr>
+		<td width="100%" align="center">
+			<a href="http://data.iscorecentral.com/legend.php?s=baseball">Baseball</a>
+			&nbsp;&nbsp;
+			<a href="http://data.iscorecentral.com/legend.php?s=basketball">Basketball</a>
+			&nbsp;&nbsp;
+			<a href="http://data.iscorecentral.com/legend.php?s=football">Football</a>
+			&nbsp;&nbsp;
+			<a href="http://data.iscorecentral.com/legend.php?s=lacrosse">Lacrosse</a>
+			&nbsp;&nbsp;
+			<a href="http://data.iscorecentral.com/legend.php?s=soccer">Soccer</a>
+
+			<br>
+			<br>
+						
+			<table width="100%" border="0" class="container rounded" cellspacing="0" cellpadding="8">
+				<tbody><tr>
+					<td><a href="http://iscoresports.com/"><img border="0" src="iScore%20Legend%20Baseball%20Formulas_files/iscorelogo.png" width="140" alt="iScore Sports"></a></td>
+<!--
+					<TD><a href='http://iscoresports.com/baseball'><IMG border='0' src='http://iscoresports.com/images/icon_baseball_72x72.png'></a></TD>
+-->
+					<td nowrap="nowrap" align="center" style="padding-left:20px"><h1>Baseball Stats Legend</h1></td>
+					<td width="100%">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="4" align="left" style="padding-top:10px">
+
+
+<table><tbody><tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Batting - Basic</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">bat_games</th><td>-</td><td style="white-space:nowrap">Batting Games Played</td></tr>
+<tr><th align="right">bat_seq</th><td>-</td><td style="white-space:nowrap">The Order in which the Player Batted</td></tr>
+<tr><th align="right">bat_pa</th><td>-</td><td style="white-space:nowrap">Plate Appearances</td></tr>
+<tr><th align="right">bat_ab</th><td>-</td><td style="white-space:nowrap">At Bats</td></tr>
+<tr><th align="right">bat_runs</th><td>-</td><td style="white-space:nowrap">Runs</td></tr>
+<tr><th align="right">bat_hits</th><td>-</td><td style="white-space:nowrap">Hits</td></tr>
+<tr><th align="right">bat_bunt_singles</th><td>-</td><td style="white-space:nowrap">Bunt Singles</td></tr>
+<tr><th align="right">bat_1b</th><td>-</td><td style="white-space:nowrap">Singles</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_2b</th><td>-</td><td style="white-space:nowrap">Doubles</td></tr>
+<tr><th align="right">bat_3b</th><td>-</td><td style="white-space:nowrap">Triples</td></tr>
+<tr><th align="right">bat_hr</th><td>-</td><td style="white-space:nowrap">Homeruns</td></tr>
+<tr><th align="right">bat_xbh</th><td>-</td><td style="white-space:nowrap">Extra Base Hits</td></tr>
+<tr><th align="right">bat_tb</th><td>-</td><td style="white-space:nowrap">Total Bases</td></tr>
+<tr><th align="right">bat_ob</th><td>-</td><td style="white-space:nowrap">On Base</td></tr>
+<tr><th align="right">bat_rbi</th><td>-</td><td style="white-space:nowrap">Runs Batted In</td></tr>
+<tr><th align="right">bat_avg</th><td>-</td><td style="white-space:nowrap">Batting Average</td></tr>
+<tr><th align="right">bat_bb</th><td>-</td><td style="white-space:nowrap">Walks</td></tr>
+<tr><th align="right">bat_bbi</th><td>-</td><td style="white-space:nowrap">Intentional Walks</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_ko_looking</th><td>-</td><td style="white-space:nowrap">Strike Outs Looking</td></tr>
+<tr><th align="right">bat_ko_swinging</th><td>-</td><td style="white-space:nowrap">Strike Outs Swinging</td></tr>
+<tr><th align="right">bat_strikeouts</th><td>-</td><td style="white-space:nowrap">Strike Outs (Kc+Ks)</td></tr>
+<tr><th align="right">bat_hbp</th><td>-</td><td style="white-space:nowrap">Hit By Pitch</td></tr>
+<tr><th align="right">bat_sb</th><td>-</td><td style="white-space:nowrap">Stolen Bases</td></tr>
+<tr><th align="right">bat_cs</th><td>-</td><td style="white-space:nowrap">Caught Stealing</td></tr>
+<tr><th align="right">bat_picked</th><td>-</td><td style="white-space:nowrap">Times Picked Off</td></tr>
+<tr><th align="right">bat_scb</th><td>-</td><td style="white-space:nowrap">Sacrifice Bunts</td></tr>
+<tr><th align="right">bat_sf</th><td>-</td><td style="white-space:nowrap">Sacrifice Flys</td></tr>
+<tr><th align="right">bat_sac</th><td>-</td><td style="white-space:nowrap">Sacrifices</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_runners_lob</th><td>-</td><td style="white-space:nowrap">Left on Base (Individual). Times the Player Left Runners on Base</td></tr>
+<tr><th align="right">bat_lob</th><td>-</td><td style="white-space:nowrap">Left on Base (Team). Times the Player was Left on Base</td></tr>
+<tr><th align="right">bat_roe</th><td>-</td><td style="white-space:nowrap">Reached on Error</td></tr>
+<tr><th align="right">bat_fc</th><td>-</td><td style="white-space:nowrap">Reached on Fielder's Choice</td></tr>
+<tr><th align="right">bat_ci</th><td>-</td><td style="white-space:nowrap">Reached on Catcher's Interference</td></tr>
+<tr><th align="right">bat_gidp</th><td>-</td><td style="white-space:nowrap">Grounded into Double Play</td></tr>
+<tr><th align="right">bat_gitp</th><td>-</td><td style="white-space:nowrap">Grounded into Triple Play</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Batting - Advanced</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">bat_runs_created</th><td>-</td><td style="white-space:nowrap">Runs Created</td></tr>
+<tr><th align="right">bat_bb_per_k</th><td>-</td><td style="white-space:nowrap">Walks per Strikeout(BB/K)</td></tr>
+<tr><th align="right">bat_bb_per_pa</th><td>-</td><td style="white-space:nowrap">Walks per Plate Appearance (BB/PA)</td></tr>
+<tr><th align="right">bat_rpa</th><td>-</td><td style="white-space:nowrap">Runs per Appearance</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_obp</th><td>-</td><td style="white-space:nowrap">On Base Percentage</td></tr>
+<tr><th align="right">bat_obpe</th><td>-</td><td style="white-space:nowrap">On Base Percentage w/ROE</td></tr>
+<tr><th align="right">bat_slg</th><td>-</td><td style="white-space:nowrap">Slugging Percentage</td></tr>
+<tr><th align="right">bat_ops</th><td>-</td><td style="white-space:nowrap">On Base Plus Slugging Percentage</td></tr>
+<tr><th align="right">bat_gpa</th><td>-</td><td style="white-space:nowrap">Gross Production Average</td></tr>
+<tr><th align="right">bat_babip</th><td>-</td><td style="white-space:nowrap">Batting Average on Balls in Play</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_inverse_rpa</th><td>-</td><td style="white-space:nowrap">Inverse RPA</td></tr>
+<tr><th align="right">bat_contact_percentage</th><td>-</td><td style="white-space:nowrap">Contact Percentage (AB-K/AB}</td></tr>
+<tr><th align="right">bat_contact_percentage2</th><td>-</td><td style="white-space:nowrap">Contact Percentage (AB-K/PA}</td></tr>
+<tr><th align="right">bat_pa_risp</th><td>-</td><td style="white-space:nowrap">Plate Appearances with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_ab_risp</th><td>-</td><td style="white-space:nowrap">At Bats with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_bb_risp</th><td>-</td><td style="white-space:nowrap">Walks with Runners in Scoring Position</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_hbp_risp</th><td>-</td><td style="white-space:nowrap">Hit by Pitches with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_sac_risp</th><td>-</td><td style="white-space:nowrap">Sacrifices with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_ci_risp</th><td>-</td><td style="white-space:nowrap">Catchers Intereference with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_hits_risp</th><td>-</td><td style="white-space:nowrap">Hits with Runners in Scoring Position</td></tr>
+<tr><th align="right">bat_avg_risp</th><td>-</td><td style="white-space:nowrap">Batting Average with Runners in Scoring Position</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Batting - Hit Type and Power</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">bat_ground_balls_s</th><td>-</td><td style="white-space:nowrap">Soft Ground Balls</td></tr>
+<tr><th align="right">bat_ground_balls_m</th><td>-</td><td style="white-space:nowrap">Medium Ground Balls</td></tr>
+<tr><th align="right">bat_ground_balls_h</th><td>-</td><td style="white-space:nowrap">Hard Ground Balls</td></tr>
+<tr><th align="right">bat_line_drives_s</th><td>-</td><td style="white-space:nowrap">Soft Line Drives</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_line_drives_m</th><td>-</td><td style="white-space:nowrap">Medium Line Drives</td></tr>
+<tr><th align="right">bat_line_drives_h</th><td>-</td><td style="white-space:nowrap">Hard Line Drives</td></tr>
+<tr><th align="right">bat_popups_s</th><td>-</td><td style="white-space:nowrap">Soft Popups</td></tr>
+<tr><th align="right">bat_popups_m</th><td>-</td><td style="white-space:nowrap">Medium Popups</td></tr>
+<tr><th align="right">bat_popups_h</th><td>-</td><td style="white-space:nowrap">Hard Popups</td></tr>
+<tr><th align="right">bat_fly_balls_s</th><td>-</td><td style="white-space:nowrap">Soft Flyballs</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_fly_balls_m</th><td>-</td><td style="white-space:nowrap">Medium Flyballs</td></tr>
+<tr><th align="right">bat_fly_balls_h</th><td>-</td><td style="white-space:nowrap">Hard Flyballs</td></tr>
+<tr><th align="right">bat_ground_ball_percentage</th><td>-</td><td style="white-space:nowrap">Ground Ball Percentage</td></tr>
+<tr><th align="right">bat_line_drive_percentage</th><td>-</td><td style="white-space:nowrap">Line Drive Percentage</td></tr>
+<tr><th align="right">bat_popup_percentage</th><td>-</td><td style="white-space:nowrap">Popup Percentage</td></tr>
+<tr><th align="right">bat_fly_ball_percentage</th><td>-</td><td style="white-space:nowrap">Flyball Percentage</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_soft_hit_percentage</th><td>-</td><td style="white-space:nowrap">Soft Hit Percentage</td></tr>
+<tr><th align="right">bat_medium_hit_percentage</th><td>-</td><td style="white-space:nowrap">Medium Hit Percentage</td></tr>
+<tr><th align="right">bat_hard_hit_percentage</th><td>-</td><td style="white-space:nowrap">Hard Hit Percentage</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Batting - Plate Discipline</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">bat_strikes_looking</th><td>-</td><td style="white-space:nowrap">Strikes Looking</td></tr>
+<tr><th align="right">bat_strikes_swinging</th><td>-</td><td style="white-space:nowrap">Strikes Swinging</td></tr>
+<tr><th align="right">bat_foul_balls</th><td>-</td><td style="white-space:nowrap">Fouls</td></tr>
+<tr><th align="right">bat_balls</th><td>-</td><td style="white-space:nowrap">Balls</td></tr>
+<tr><th align="right">bat_intentional_balls</th><td>-</td><td style="white-space:nowrap">Intentional Balls</td></tr>
+<tr><th align="right">bat_bip</th><td>-</td><td style="white-space:nowrap">Balls in Play</td></tr>
+<tr><th align="right">bat_total_pitches</th><td>-</td><td style="white-space:nowrap">Total Pitches</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_swinging_strike_percent</th><td>-</td><td style="white-space:nowrap">Swinging Strike Percentage (Ss/TP)</td></tr>
+<tr><th align="right">bat_o_total</th><td>-</td><td style="white-space:nowrap">Total Pitches Ouside the Zone</td></tr>
+<tr><th align="right">bat_z_total</th><td>-</td><td style="white-space:nowrap">Total Pitches Inside the Zone</td></tr>
+<tr><th align="right">bat_o_swing</th><td>-</td><td style="white-space:nowrap">Swings Outside the Zone</td></tr>
+<tr><th align="right">bat_z_swing</th><td>-</td><td style="white-space:nowrap">Swings Inside the Zone</td></tr>
+<tr><th align="right">bat_o_contact</th><td>-</td><td style="white-space:nowrap">Contact Outside the Zone</td></tr>
+<tr><th align="right">bat_z_contact</th><td>-</td><td style="white-space:nowrap">Contact Inside the Zone</td></tr>
+<tr><th align="right">bat_first_pitch</th><td>-</td><td style="white-space:nowrap">Total First Pitches</td></tr>
+<tr><th align="right">bat_first_strike</th><td>-</td><td style="white-space:nowrap">First Pitch Strikes</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_first_ball</th><td>-</td><td style="white-space:nowrap">First Pitch Balls</td></tr>
+<tr><th align="right">bat_first_pitch_swing</th><td>-</td><td style="white-space:nowrap">First Pitch Swings</td></tr>
+<tr><th align="right">bat_first_pitch_swing_percent</th><td>-</td><td style="white-space:nowrap">First Pitch Swing Percentage</td></tr>
+<tr><th align="right">bat_first_pitch_swing_strike</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Strike</td></tr>
+<tr><th align="right">bat_first_pitch_foul</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Foul</td></tr>
+<tr><th align="right">bat_first_pitch_bunt</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Bunt</td></tr>
+<tr><th align="right">bat_first_pitch_single</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Single</td></tr>
+<tr><th align="right">bat_first_pitch_double</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Double</td></tr>
+<tr><th align="right">bat_first_pitch_triple</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Triple</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_first_pitch_homerun</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Homerun</td></tr>
+<tr><th align="right">bat_first_pitch_hit</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Hit</td></tr>
+<tr><th align="right">bat_first_pitch_ci</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Catchers Interference</td></tr>
+<tr><th align="right">bat_first_pitch_fc</th><td>-</td><td style="white-space:nowrap">First Pitch Swings for a Fielders Choice</td></tr>
+<tr><th align="right">bat_first_pitch_roe</th><td>-</td><td style="white-space:nowrap">First Pitch Error</td></tr>
+<tr><th align="right">bat_first_pitch_sf</th><td>-</td><td style="white-space:nowrap">First Pitch Sacrifice Fly</td></tr>
+<tr><th align="right">bat_first_pitch_scb</th><td>-</td><td style="white-space:nowrap">First Pitch Sac Bunt</td></tr>
+<tr><th align="right">bat_first_pitch_out</th><td>-</td><td style="white-space:nowrap">First Pitch Out</td></tr>
+<tr><th align="right">bat_first_pitch_swing_success</th><td>-</td><td style="white-space:nowrap">First Pitch Swing Success Rate</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Batting - Batting Quality</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">bat_qab_1</th><td>-</td><td style="white-space:nowrap">Quality at Bat Type 1</td></tr>
+<tr><th align="right">bat_qab_1_percentage</th><td>-</td><td style="white-space:nowrap">Quality at Bats Type 1/Plate Appearance</td></tr>
+<tr><th align="right">bat_qab_2</th><td>-</td><td style="white-space:nowrap">Quality at Bat Type 2</td></tr>
+<tr><th align="right">bat_qab_2_percentage</th><td>-</td><td style="white-space:nowrap">Quality at Bat Type 2/Plate Appearance</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_qab_3</th><td>-</td><td style="white-space:nowrap">Quality at Bat Type 3</td></tr>
+<tr><th align="right">bat_qab_3_percentage</th><td>-</td><td style="white-space:nowrap">Quality at Bat Type 3/Plate Appearance</td></tr>
+<tr><th align="right">bat_bat_1</th><td>-</td><td style="white-space:nowrap">1 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_2</th><td>-</td><td style="white-space:nowrap">2 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_3</th><td>-</td><td style="white-space:nowrap">3 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_4</th><td>-</td><td style="white-space:nowrap">4 Pitch Plate Appearances</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_bat_5</th><td>-</td><td style="white-space:nowrap">5 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_6</th><td>-</td><td style="white-space:nowrap">6 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_7</th><td>-</td><td style="white-space:nowrap">7 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_8</th><td>-</td><td style="white-space:nowrap">8 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_9</th><td>-</td><td style="white-space:nowrap">9 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_10</th><td>-</td><td style="white-space:nowrap">10 Pitch Plate Appearances</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">bat_bat_11</th><td>-</td><td style="white-space:nowrap">11 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_12</th><td>-</td><td style="white-space:nowrap">12 Pitch Plate Appearances</td></tr>
+<tr><th align="right">bat_bat_13</th><td>-</td><td style="white-space:nowrap">Plate Appearances with 13 or more Pitches</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Pitching - Record</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">pit_games</th><td>-</td><td style="white-space:nowrap">Pitching Games</td></tr>
+<tr><th align="right">pit_seq</th><td>-</td><td style="white-space:nowrap">The Order in which the Player Pitched</td></tr>
+<tr><th align="right">pit_win</th><td>-</td><td style="white-space:nowrap">Wins</td></tr>
+<tr><th align="right">pit_loss</th><td>-</td><td style="white-space:nowrap">Losses</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_save</th><td>-</td><td style="white-space:nowrap">Saves</td></tr>
+<tr><th align="right">pit_holds</th><td>-</td><td style="white-space:nowrap">Holds</td></tr>
+<tr><th align="right">pit_save_op</th><td>-</td><td style="white-space:nowrap">Save Opportunites</td></tr>
+<tr><th align="right">pit_blown_save</th><td>-</td><td style="white-space:nowrap">Blown Saves</td></tr>
+<tr><th align="right">pit_save_percent</th><td>-</td><td style="white-space:nowrap">Save Percent</td></tr>
+<tr><th align="right">pit_starts</th><td>-</td><td style="white-space:nowrap">Starts</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_finishes</th><td>-</td><td style="white-space:nowrap">Finishes</td></tr>
+<tr><th align="right">pit_complete_games</th><td>-</td><td style="white-space:nowrap">Complete Games</td></tr>
+<tr><th align="right">pit_game_score_g</th><td>-</td><td style="white-space:nowrap">Game Score</td></tr>
+<tr><th align="right">pit_quality_starts</th><td>-</td><td style="white-space:nowrap">Quality Starts</td></tr>
+<tr><th align="right">pit_tough_losses</th><td>-</td><td style="white-space:nowrap">Tough Losses</td></tr>
+<tr><th align="right">pit_cheap_wins</th><td>-</td><td style="white-space:nowrap">Cheap Wins</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_shutouts</th><td>-</td><td style="white-space:nowrap">Shutouts</td></tr>
+<tr><th align="right">pit_game_sum</th><td>-</td><td style="white-space:nowrap">Pitching Games Totals</td></tr>
+<tr><th align="right">pit_game_score</th><td>-</td><td style="white-space:nowrap">Total Game Score</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Pitching - Basic</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">pit_ip</th><td>-</td><td style="white-space:nowrap">Innings Pitched</td></tr>
+<tr><th align="right">pit_bf</th><td>-</td><td style="white-space:nowrap">Batters Faced</td></tr>
+<tr><th align="right">pit_balls</th><td>-</td><td style="white-space:nowrap">Balls</td></tr>
+<tr><th align="right">pit_strikes</th><td>-</td><td style="white-space:nowrap">Strikes</td></tr>
+<tr><th align="right">pit_ball_strike_ratio</th><td>-</td><td style="white-space:nowrap">Ball to Strike Ratio</td></tr>
+<tr><th align="right">pit_pitches</th><td>-</td><td style="white-space:nowrap">Pitches</td></tr>
+<tr><th align="right">pit_runs</th><td>-</td><td style="white-space:nowrap">Runs Allowed</td></tr>
+<tr><th align="right">pit_game_innings_avg</th><td>-</td><td style="white-space:nowrap">Game Innings Average</td></tr>
+<tr><th align="right">pit_run_average</th><td>-</td><td style="white-space:nowrap">Run Average</td></tr>
+<tr><th align="right">pit_er</th><td>-</td><td style="white-space:nowrap">Earned Runs</td></tr>
+<tr><th align="right">pit_era</th><td>-</td><td style="white-space:nowrap">Earned Run Average</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_era9</th><td>-</td><td style="white-space:nowrap">Earned Run Average (for 9 innings)</td></tr>
+<tr><th align="right">pit_fip</th><td>-</td><td style="white-space:nowrap">Fielding Independent Pitching (using 3.10 constant)</td></tr>
+<tr><th align="right">pit_outs</th><td>-</td><td style="white-space:nowrap">Outs</td></tr>
+<tr><th align="right">pit_strikeouts</th><td>-</td><td style="white-space:nowrap">Strikeouts</td></tr>
+<tr><th align="right">pit_strikeouts_looking</th><td>-</td><td style="white-space:nowrap">Strikeouts Looking</td></tr>
+<tr><th align="right">pit_strikeouts_swinging</th><td>-</td><td style="white-space:nowrap">Strikeouts Swinging</td></tr>
+<tr><th align="right">pit_hits</th><td>-</td><td style="white-space:nowrap">Hits</td></tr>
+<tr><th align="right">pit_walks</th><td>-</td><td style="white-space:nowrap">Walks</td></tr>
+<tr><th align="right">pit_int_walks</th><td>-</td><td style="white-space:nowrap">Intentional Walks</td></tr>
+<tr><th align="right">pit_strikeout_to_walk</th><td>-</td><td style="white-space:nowrap">Strikeout to Walk Ratio</td></tr>
+<tr><th align="right">pit_k_per_innings</th><td>-</td><td style="white-space:nowrap">Strikeouts per Game Innings</td></tr>
+<tr><th align="right">pit_bb_per_innings</th><td>-</td><td style="white-space:nowrap">Walks per Game Innings</td></tr>
+<tr><th align="right">pit_hits_per_innings</th><td>-</td><td style="white-space:nowrap">Hits per Game Innings</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_hit_batters</th><td>-</td><td style="white-space:nowrap">Hit Batters</td></tr>
+<tr><th align="right">pit_balks</th><td>-</td><td style="white-space:nowrap">Balks</td></tr>
+<tr><th align="right">pit_wild_pitch</th><td>-</td><td style="white-space:nowrap">Wild Pitches</td></tr>
+<tr><th align="right">pit_ci</th><td>-</td><td style="white-space:nowrap">Catcher's Inteferences</td></tr>
+<tr><th align="right">pit_scb</th><td>-</td><td style="white-space:nowrap">Sacrifice Bunts</td></tr>
+<tr><th align="right">pit_scf</th><td>-</td><td style="white-space:nowrap">Sacrifice Flys</td></tr>
+<tr><th align="right">pit_bunt</th><td>-</td><td style="white-space:nowrap">Bunts Allowed</td></tr>
+<tr><th align="right">pit_1B</th><td>-</td><td style="white-space:nowrap">Singles Allowed</td></tr>
+<tr><th align="right">pit_2B</th><td>-</td><td style="white-space:nowrap">Doubles Allowed</td></tr>
+<tr><th align="right">pit_3B</th><td>-</td><td style="white-space:nowrap">Triples Allowed</td></tr>
+<tr><th align="right">pit_homeruns</th><td>-</td><td style="white-space:nowrap">Homeruns Allowed</td></tr>
+<tr><th align="right">pit_whip</th><td>-</td><td style="white-space:nowrap">Walk plus Hits per Inning Pitched</td></tr>
+<tr><th align="right">pit_on_base_percentage</th><td>-</td><td style="white-space:nowrap">On Base Percentage</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_batting_average_against</th><td>-</td><td style="white-space:nowrap">Batting Average Against</td></tr>
+<tr><th align="right">pit_babip_against</th><td>-</td><td style="white-space:nowrap">Batting Average on Balls in Play Against</td></tr>
+<tr><th align="right">pit_game_innings</th><td>-</td><td style="white-space:nowrap">Game Innings</td></tr>
+<tr><th align="right">pit_inherited_runners</th><td>-</td><td style="white-space:nowrap">Inherited Runners</td></tr>
+<tr><th align="right">pit_inherited_runners_scored</th><td>-</td><td style="white-space:nowrap">Inherited Runners who Scored</td></tr>
+<tr><th align="right">pit_lob</th><td>-</td><td style="white-space:nowrap">Runners Left On Base</td></tr>
+<tr><th align="right">pit_pick_success</th><td>-</td><td style="white-space:nowrap">Pickoffs Successful</td></tr>
+<tr><th align="right">pit_pick_failed</th><td>-</td><td style="white-space:nowrap">Pickoffs Failed</td></tr>
+<tr><th align="right">pit_strikes_looking</th><td>-</td><td style="white-space:nowrap">Strikes Looking</td></tr>
+<tr><th align="right">pit_strikes_swinging</th><td>-</td><td style="white-space:nowrap">Strikes Swinging</td></tr>
+<tr><th align="right">pit_fouls</th><td>-</td><td style="white-space:nowrap">Fouls</td></tr>
+<tr><th align="right">pit_outs_per_inning</th><td>-</td><td style="white-space:nowrap">Outs per Inning multiplied by Games</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Pitching - Effectiveness</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">pit_ground_outs</th><td>-</td><td style="white-space:nowrap">Ground Outs</td></tr>
+<tr><th align="right">pit_air_outs</th><td>-</td><td style="white-space:nowrap">Air Outs</td></tr>
+<tr><th align="right">pit_ground_fly_ratio</th><td>-</td><td style="white-space:nowrap">Ground Out to Air Out Ratio</td></tr>
+<tr><th align="right">pit_first_strikes</th><td>-</td><td style="white-space:nowrap">First Pitch Strikes</td></tr>
+<tr><th align="right">pit_first_balls</th><td>-</td><td style="white-space:nowrap">First Pitch Balls</td></tr>
+<tr><th align="right">pit_first_strike_percent</th><td>-</td><td style="white-space:nowrap">First Pitch Strikes Percentage</td></tr>
+<tr><th align="right">pit_leadoff_walk</th><td>-</td><td style="white-space:nowrap">Leadoff Walks</td></tr>
+<tr><th align="right">pit_leadoff_hit</th><td>-</td><td style="white-space:nowrap">Leadoff Hit</td></tr>
+<tr><th align="right">pit_leadoff_hit_batter</th><td>-</td><td style="white-space:nowrap">Leadoff Hit Batter</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_leadoff_ci</th><td>-</td><td style="white-space:nowrap">Leadoff Catcher Interference</td></tr>
+<tr><th align="right">pit_leadoff_error</th><td>-</td><td style="white-space:nowrap">Leadoff Error</td></tr>
+<tr><th align="right">pit_leadoff_strikeout</th><td>-</td><td style="white-space:nowrap">Leadoff Strikeout</td></tr>
+<tr><th align="right">pit_leadoff_field_out</th><td>-</td><td style="white-space:nowrap">Leadoff Fielding Out</td></tr>
+<tr><th align="right">pit_123</th><td>-</td><td style="white-space:nowrap">123 Innings</td></tr>
+<tr><th align="right">pit_first_strike_field_out</th><td>-</td><td style="white-space:nowrap">First Strike Field Outs</td></tr>
+<tr><th align="right">pit_first_strike_strikeout</th><td>-</td><td style="white-space:nowrap">First Strike Strikeouts</td></tr>
+<tr><th align="right">pit_first_strike_hit</th><td>-</td><td style="white-space:nowrap">First Strike Hits</td></tr>
+<tr><th align="right">pit_first_strike_walk</th><td>-</td><td style="white-space:nowrap">First Strike Walks</td></tr>
+<tr><th align="right">pit_3</th><td>-</td><td style="white-space:nowrap">3 Pitch Innings</td></tr>
+<tr><th align="right">pit_4</th><td>-</td><td style="white-space:nowrap">4 Pitch Innings</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_5</th><td>-</td><td style="white-space:nowrap">5 Pitch Innings</td></tr>
+<tr><th align="right">pit_6</th><td>-</td><td style="white-space:nowrap">6 Pitch Innings</td></tr>
+<tr><th align="right">pit_7</th><td>-</td><td style="white-space:nowrap">7 Pitch Innings</td></tr>
+<tr><th align="right">pit_8</th><td>-</td><td style="white-space:nowrap">8 Pitch Innings</td></tr>
+<tr><th align="right">pit_9</th><td>-</td><td style="white-space:nowrap">9 Pitch Innings</td></tr>
+<tr><th align="right">pit_10</th><td>-</td><td style="white-space:nowrap">10 Pitch Innings</td></tr>
+<tr><th align="right">pit_11</th><td>-</td><td style="white-space:nowrap">11 Pitch Innings</td></tr>
+<tr><th align="right">pit_12</th><td>-</td><td style="white-space:nowrap">12 Pitch Innings</td></tr>
+<tr><th align="right">pit_13</th><td>-</td><td style="white-space:nowrap">13 Pitch Innings</td></tr>
+<tr><th align="right">pit_14</th><td>-</td><td style="white-space:nowrap">14 Pitch Innings</td></tr>
+<tr><th align="right">pit_15</th><td>-</td><td style="white-space:nowrap">15 Pitch Innings</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_16</th><td>-</td><td style="white-space:nowrap">Innings with 16 or More Pitches</td></tr>
+<tr><th align="right">pit_1pa</th><td>-</td><td style="white-space:nowrap">1 Pitch Appearances</td></tr>
+<tr><th align="right">pit_2pa</th><td>-</td><td style="white-space:nowrap">2 Pitch Appearances</td></tr>
+<tr><th align="right">pit_3pa</th><td>-</td><td style="white-space:nowrap">3 Pitch Appearances</td></tr>
+<tr><th align="right">pit_4pa</th><td>-</td><td style="white-space:nowrap">4 Pitch Appearances</td></tr>
+<tr><th align="right">pit_5pa</th><td>-</td><td style="white-space:nowrap">5 Pitch Appearances</td></tr>
+<tr><th align="right">pit_6pa</th><td>-</td><td style="white-space:nowrap">6 Pitch Appearances</td></tr>
+<tr><th align="right">pit_7pa</th><td>-</td><td style="white-space:nowrap">7 Pitch Appearances</td></tr>
+<tr><th align="right">pit_8pa</th><td>-</td><td style="white-space:nowrap">8 Pitch or More Appearances</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Pitching - Hit Type and Power</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">pit_ground_balls_s</th><td>-</td><td style="white-space:nowrap">Soft Ground Balls</td></tr>
+<tr><th align="right">pit_ground_balls_m</th><td>-</td><td style="white-space:nowrap">Medium Ground Balls</td></tr>
+<tr><th align="right">pit_ground_balls_h</th><td>-</td><td style="white-space:nowrap">Hard Ground Balls</td></tr>
+<tr><th align="right">pit_line_drives_s</th><td>-</td><td style="white-space:nowrap">Soft Line Drives</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_line_drives_m</th><td>-</td><td style="white-space:nowrap">Medium Line Drives</td></tr>
+<tr><th align="right">pit_line_drives_h</th><td>-</td><td style="white-space:nowrap">Hard Line Drives</td></tr>
+<tr><th align="right">pit_popups_s</th><td>-</td><td style="white-space:nowrap">Soft Popups</td></tr>
+<tr><th align="right">pit_popups_m</th><td>-</td><td style="white-space:nowrap">Medium Popups</td></tr>
+<tr><th align="right">pit_popups_h</th><td>-</td><td style="white-space:nowrap">Hard Popups</td></tr>
+<tr><th align="right">pit_fly_balls_s</th><td>-</td><td style="white-space:nowrap">Soft Flyballs</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_fly_balls_m</th><td>-</td><td style="white-space:nowrap">Medium Flyballs</td></tr>
+<tr><th align="right">pit_fly_balls_h</th><td>-</td><td style="white-space:nowrap">Hard Flyballs</td></tr>
+<tr><th align="right">pit_bip</th><td>-</td><td style="white-space:nowrap">Balls in Play</td></tr>
+<tr><th align="right">pit_ground_ball_percentage</th><td>-</td><td style="white-space:nowrap">Ground Ball Percentage</td></tr>
+<tr><th align="right">pit_line_drive_percentage</th><td>-</td><td style="white-space:nowrap">Line Drive Percentage</td></tr>
+<tr><th align="right">pit_popup_percentage</th><td>-</td><td style="white-space:nowrap">Popup Percentage</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_fly_ball_percentage</th><td>-</td><td style="white-space:nowrap">Flyball Percentage</td></tr>
+<tr><th align="right">pit_soft_hit_percentage</th><td>-</td><td style="white-space:nowrap">Soft Hit Percentage</td></tr>
+<tr><th align="right">pit_medium_hit_percentage</th><td>-</td><td style="white-space:nowrap">Medium Hit Percentage</td></tr>
+<tr><th align="right">pit_hard_hit_percentage</th><td>-</td><td style="white-space:nowrap">Hard Hit Percentage</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Pitching - Pitch Types</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">pit_strike_percentage</th><td>-</td><td style="white-space:nowrap">Total Strike Percentage</td></tr>
+<tr><th align="right">pit_ball_percentage</th><td>-</td><td style="white-space:nowrap">Total Ball Percentage</td></tr>
+<tr><th align="right">pit_fastballs</th><td>-</td><td style="white-space:nowrap">Fastballs</td></tr>
+<tr><th align="right">pit_fastballs_strike</th><td>-</td><td style="white-space:nowrap">Fastballs for a Strike</td></tr>
+<tr><th align="right">pit_fastball_strike_percentage</th><td>-</td><td style="white-space:nowrap">Fastball Strike Percentage</td></tr>
+<tr><th align="right">pit_curves</th><td>-</td><td style="white-space:nowrap">Curves</td></tr>
+<tr><th align="right">pit_curves_strike</th><td>-</td><td style="white-space:nowrap">Curves for a Strike</td></tr>
+<tr><th align="right">pit_curves_strike_percentage</th><td>-</td><td style="white-space:nowrap">Curveball Strike Percentage</td></tr>
+<tr><th align="right">pit_sliders</th><td>-</td><td style="white-space:nowrap">Sliders</td></tr>
+<tr><th align="right">pit_sliders_strike</th><td>-</td><td style="white-space:nowrap">Sliders for a Strike</td></tr>
+<tr><th align="right">pit_sliders_strike_percentage</th><td>-</td><td style="white-space:nowrap">Slider Strike Percentage</td></tr>
+<tr><th align="right">pit_cutters</th><td>-</td><td style="white-space:nowrap">Cutters</td></tr>
+<tr><th align="right">pit_cutters_strike</th><td>-</td><td style="white-space:nowrap">Cutters for a Strike</td></tr>
+<tr><th align="right">pit_cutters_strike_percentage</th><td>-</td><td style="white-space:nowrap">Cutter Strike Percentage</td></tr>
+<tr><th align="right">pit_changes</th><td>-</td><td style="white-space:nowrap">Changeups</td></tr>
+<tr><th align="right">pit_changes_strike</th><td>-</td><td style="white-space:nowrap">Changeups for a Strike</td></tr>
+<tr><th align="right">pit_changes_strike_percentage</th><td>-</td><td style="white-space:nowrap">Changeup Strike Percentage</td></tr>
+<tr><th align="right">pit_splitter</th><td>-</td><td style="white-space:nowrap">Splitters</td></tr>
+<tr><th align="right">pit_splitter_strike</th><td>-</td><td style="white-space:nowrap">Splitters for a Strike</td></tr>
+<tr><th align="right">pit_splitter_strike_percentage</th><td>-</td><td style="white-space:nowrap">Splitter Strike Percentage</td></tr>
+<tr><th align="right">pit_knuckle</th><td>-</td><td style="white-space:nowrap">Knuckleballs</td></tr>
+<tr><th align="right">pit_knuckle_strike</th><td>-</td><td style="white-space:nowrap">Knuckleballs for a Strike</td></tr>
+<tr><th align="right">pit_knuckle_strike_percentage</th><td>-</td><td style="white-space:nowrap">Knuckleball Strike Percentage</td></tr>
+<tr><th align="right">pit_dropball</th><td>-</td><td style="white-space:nowrap">Dropballs</td></tr>
+<tr><th align="right">pit_dropball_strike</th><td>-</td><td style="white-space:nowrap">Dropballs for a Strike</td></tr>
+<tr><th align="right">pit_dropball_strike_percentage</th><td>-</td><td style="white-space:nowrap">Dropball Strike Percentage</td></tr>
+<tr><th align="right">pit_riseball</th><td>-</td><td style="white-space:nowrap">Riseballs</td></tr>
+<tr><th align="right">pit_riseball_strike</th><td>-</td><td style="white-space:nowrap">Riseballs for a Strike</td></tr>
+<tr><th align="right">pit_riseball_strike_percentage</th><td>-</td><td style="white-space:nowrap">Riseball Strike Percentage</td></tr>
+<tr><th align="right">pit_screwball</th><td>-</td><td style="white-space:nowrap">Screwballs</td></tr>
+<tr><th align="right">pit_screwball_strike</th><td>-</td><td style="white-space:nowrap">Screwballs for a Strike</td></tr>
+<tr><th align="right">pit_screwball_strike_percentage</th><td>-</td><td style="white-space:nowrap">Screwball Strike Percentage</td></tr>
+<tr><th align="right">pit_dropcurve</th><td>-</td><td style="white-space:nowrap">Dropcurves</td></tr>
+<tr><th align="right">pit_dropcurve_strike</th><td>-</td><td style="white-space:nowrap">Dropcurves for a Strike</td></tr>
+<tr><th align="right">pit_dropcurve_strike_percentage</th><td>-</td><td style="white-space:nowrap">Dropcurve Strike Percentage</td></tr>
+<tr><th align="right">pit_other</th><td>-</td><td style="white-space:nowrap">Other Pitches</td></tr>
+<tr><th align="right">pit_other_strike</th><td>-</td><td style="white-space:nowrap">Other Pitches for a Strike</td></tr>
+<tr><th align="right">pit_other_strike_percentage</th><td>-</td><td style="white-space:nowrap">Other Strike Percentage</td></tr>
+<tr><th align="right">pit_fastball_min</th><td>-</td><td style="white-space:nowrap">Minimum Fastball Speed</td></tr>
+<tr><th align="right">pit_fastball_max</th><td>-</td><td style="white-space:nowrap">Maximimum Fastball Speed</td></tr>
+<tr><th align="right">pit_fastball_speed_total</th><td>-</td><td style="white-space:nowrap">Total Fastball Speed</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_fastball_speed_count</th><td>-</td><td style="white-space:nowrap">Fastball Speed Count</td></tr>
+<tr><th align="right">pit_fastball_avg</th><td>-</td><td style="white-space:nowrap">Average Fastball Speed</td></tr>
+<tr><th align="right">pit_curve_min</th><td>-</td><td style="white-space:nowrap">Minimum Curve Speed</td></tr>
+<tr><th align="right">pit_curve_max</th><td>-</td><td style="white-space:nowrap">Maximimum Curve Speed</td></tr>
+<tr><th align="right">pit_curve_speed_total</th><td>-</td><td style="white-space:nowrap">Total Curve Speed</td></tr>
+<tr><th align="right">pit_curve_speed_count</th><td>-</td><td style="white-space:nowrap">Curve Speed Count</td></tr>
+<tr><th align="right">pit_curve_avg</th><td>-</td><td style="white-space:nowrap">Average Curve Speed</td></tr>
+<tr><th align="right">pit_slider_min</th><td>-</td><td style="white-space:nowrap">Minimum Slider Speed</td></tr>
+<tr><th align="right">pit_slider_max</th><td>-</td><td style="white-space:nowrap">Maximimum Slider Speed</td></tr>
+<tr><th align="right">pit_slider_speed_total</th><td>-</td><td style="white-space:nowrap">Total Slider Speed</td></tr>
+<tr><th align="right">pit_slider_speed_count</th><td>-</td><td style="white-space:nowrap">Slider Speed Count</td></tr>
+<tr><th align="right">pit_slider_avg</th><td>-</td><td style="white-space:nowrap">Average Slider Speed</td></tr>
+<tr><th align="right">pit_cutter_min</th><td>-</td><td style="white-space:nowrap">Minimum Cutter Speed</td></tr>
+<tr><th align="right">pit_cutter_max</th><td>-</td><td style="white-space:nowrap">Maximimum Cutter Speed</td></tr>
+<tr><th align="right">pit_cutter_speed_total</th><td>-</td><td style="white-space:nowrap">Total Cutter Speed</td></tr>
+<tr><th align="right">pit_cutter_speed_count</th><td>-</td><td style="white-space:nowrap">Cutter Speed Count</td></tr>
+<tr><th align="right">pit_cutter_avg</th><td>-</td><td style="white-space:nowrap">Average Cutter Speed</td></tr>
+<tr><th align="right">pit_change_min</th><td>-</td><td style="white-space:nowrap">Minimum Change Speed</td></tr>
+<tr><th align="right">pit_change_max</th><td>-</td><td style="white-space:nowrap">Maximimum Change Speed</td></tr>
+<tr><th align="right">pit_change_speed_total</th><td>-</td><td style="white-space:nowrap">Total Change Speed</td></tr>
+<tr><th align="right">pit_change_speed_count</th><td>-</td><td style="white-space:nowrap">Change Speed Count</td></tr>
+<tr><th align="right">pit_change_avg</th><td>-</td><td style="white-space:nowrap">Average Change Speed</td></tr>
+<tr><th align="right">pit_splitter_min</th><td>-</td><td style="white-space:nowrap">Minimum Splitter Speed</td></tr>
+<tr><th align="right">pit_splitter_max</th><td>-</td><td style="white-space:nowrap">Maximimum Splitter Speed</td></tr>
+<tr><th align="right">pit_splitter_speed_total</th><td>-</td><td style="white-space:nowrap">Total Splitter Speed</td></tr>
+<tr><th align="right">pit_splitter_speed_count</th><td>-</td><td style="white-space:nowrap">Splitter Speed Count</td></tr>
+<tr><th align="right">pit_splitter_avg</th><td>-</td><td style="white-space:nowrap">Average Splitter Speed</td></tr>
+<tr><th align="right">pit_knuckle_min</th><td>-</td><td style="white-space:nowrap">Minimum Knuckle Speed</td></tr>
+<tr><th align="right">pit_knuckle_max</th><td>-</td><td style="white-space:nowrap">Maximimum Knuckle Speed</td></tr>
+<tr><th align="right">pit_knuckle_speed_total</th><td>-</td><td style="white-space:nowrap">Total Knuckle Speed</td></tr>
+<tr><th align="right">pit_knuckle_speed_count</th><td>-</td><td style="white-space:nowrap">Knuckle Speed Count</td></tr>
+<tr><th align="right">pit_knuckle_avg</th><td>-</td><td style="white-space:nowrap">Average Knuckle Speed</td></tr>
+<tr><th align="right">pit_dropball_min</th><td>-</td><td style="white-space:nowrap">Minimum Dropball Speed</td></tr>
+<tr><th align="right">pit_dropball_max</th><td>-</td><td style="white-space:nowrap">Maximimum Dropball Speed</td></tr>
+<tr><th align="right">pit_dropball_speed_total</th><td>-</td><td style="white-space:nowrap">Total Dropball Speed</td></tr>
+<tr><th align="right">pit_dropball_speed_count</th><td>-</td><td style="white-space:nowrap">Dropball Speed Count</td></tr>
+<tr><th align="right">pit_dropball_avg</th><td>-</td><td style="white-space:nowrap">Average Dropball Speed</td></tr>
+<tr><th align="right">pit_riseball_min</th><td>-</td><td style="white-space:nowrap">Minimum Riseball Speed</td></tr>
+<tr><th align="right">pit_riseball_max</th><td>-</td><td style="white-space:nowrap">Maximimum Riseball Speed</td></tr>
+<tr><th align="right">pit_riseball_speed_total</th><td>-</td><td style="white-space:nowrap">Total Riseball Speed</td></tr>
+<tr><th align="right">pit_riseball_speed_count</th><td>-</td><td style="white-space:nowrap">Riseball Speed Count</td></tr>
+<tr><th align="right">pit_riseball_avg</th><td>-</td><td style="white-space:nowrap">Average Riseball Speed</td></tr>
+<tr><th align="right">pit_screwball_min</th><td>-</td><td style="white-space:nowrap">Minimum Screwball Speed</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_screwball_max</th><td>-</td><td style="white-space:nowrap">Maximimum Screwball Speed</td></tr>
+<tr><th align="right">pit_screwball_speed_total</th><td>-</td><td style="white-space:nowrap">Total Screwball Speed</td></tr>
+<tr><th align="right">pit_screwball_speed_count</th><td>-</td><td style="white-space:nowrap">Screwball Speed Count</td></tr>
+<tr><th align="right">pit_screwball_avg</th><td>-</td><td style="white-space:nowrap">Average Screwball Speed</td></tr>
+<tr><th align="right">pit_dropcurve_min</th><td>-</td><td style="white-space:nowrap">Minimum Dropcurve Speed</td></tr>
+<tr><th align="right">pit_dropcurve_max</th><td>-</td><td style="white-space:nowrap">Maximimum Dropcurve Speed</td></tr>
+<tr><th align="right">pit_dropcurve_speed_total</th><td>-</td><td style="white-space:nowrap">Total Dropcurve Speed</td></tr>
+<tr><th align="right">pit_dropcurve_speed_count</th><td>-</td><td style="white-space:nowrap">Dropcurve Speed Count</td></tr>
+<tr><th align="right">pit_dropcurve_avg</th><td>-</td><td style="white-space:nowrap">Average Dropcurve Speed</td></tr>
+<tr><th align="right">pit_other_min</th><td>-</td><td style="white-space:nowrap">Minimum Other Speed</td></tr>
+<tr><th align="right">pit_other_max</th><td>-</td><td style="white-space:nowrap">Maximimum Other Speed</td></tr>
+<tr><th align="right">pit_other_speed_total</th><td>-</td><td style="white-space:nowrap">Total Other Speed</td></tr>
+<tr><th align="right">pit_other_speed_count</th><td>-</td><td style="white-space:nowrap">Other Speed Count</td></tr>
+<tr><th align="right">pit_other_avg</th><td>-</td><td style="white-space:nowrap">Average Other Speed</td></tr>
+<tr><th align="right">pit_00_count</th><td>-</td><td style="white-space:nowrap">Total 0-0 Counts</td></tr>
+<tr><th align="right">pit_00_strike</th><td>-</td><td style="white-space:nowrap">0-0 Count Strikes</td></tr>
+<tr><th align="right">pit_00_strike_percentage</th><td>-</td><td style="white-space:nowrap">0-0 Strike Percentage</td></tr>
+<tr><th align="right">pit_00_positive</th><td>-</td><td style="white-space:nowrap">0-0 Count Positive Outcome (Out, K, DT, Err, FC)</td></tr>
+<tr><th align="right">pit_00_negative</th><td>-</td><td style="white-space:nowrap">0-0 Count Negative Outcome (Hit, BB, HBP)</td></tr>
+<tr><th align="right">pit_00_neutral</th><td>-</td><td style="white-space:nowrap">0-0 Count Neutral Outcome (SAC, SF, CI, etc)</td></tr>
+<tr><th align="right">pit_01_count</th><td>-</td><td style="white-space:nowrap">Total 0-1 Counts</td></tr>
+<tr><th align="right">pit_01_strike</th><td>-</td><td style="white-space:nowrap">0-1 Count Strikes</td></tr>
+<tr><th align="right">pit_01_strike_percentage</th><td>-</td><td style="white-space:nowrap">0-1 Strike Percentage</td></tr>
+<tr><th align="right">pit_01_positive</th><td>-</td><td style="white-space:nowrap">0-1 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_01_negative</th><td>-</td><td style="white-space:nowrap">0-1 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_01_neutral</th><td>-</td><td style="white-space:nowrap">0-1 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_02_count</th><td>-</td><td style="white-space:nowrap">Total 0-2 Counts</td></tr>
+<tr><th align="right">pit_02_strike</th><td>-</td><td style="white-space:nowrap">0-2 Count Strikes</td></tr>
+<tr><th align="right">pit_02_strike_percentage</th><td>-</td><td style="white-space:nowrap">0-2 Strike Percentage</td></tr>
+<tr><th align="right">pit_02_positive</th><td>-</td><td style="white-space:nowrap">0-2 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_02_negative</th><td>-</td><td style="white-space:nowrap">0-2 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_02_neutral</th><td>-</td><td style="white-space:nowrap">0-2 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_10_count</th><td>-</td><td style="white-space:nowrap">Total 1-0 Counts</td></tr>
+<tr><th align="right">pit_10_strike</th><td>-</td><td style="white-space:nowrap">1-0 Count Strikes</td></tr>
+<tr><th align="right">pit_10_strike_percentage</th><td>-</td><td style="white-space:nowrap">1-0 Strike Percentage</td></tr>
+<tr><th align="right">pit_10_positive</th><td>-</td><td style="white-space:nowrap">1-0 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_10_negative</th><td>-</td><td style="white-space:nowrap">1-0 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_10_neutral</th><td>-</td><td style="white-space:nowrap">1-0 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_11_count</th><td>-</td><td style="white-space:nowrap">Total 1-1 Counts</td></tr>
+<tr><th align="right">pit_11_strike</th><td>-</td><td style="white-space:nowrap">1-1 Count Strikes</td></tr>
+<tr><th align="right">pit_11_strike_percentage</th><td>-</td><td style="white-space:nowrap">1-1 Strike Percentage</td></tr>
+<tr><th align="right">pit_11_positive</th><td>-</td><td style="white-space:nowrap">1-1 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_11_negative</th><td>-</td><td style="white-space:nowrap">1-1 Count Negative Outcome</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">pit_11_neutral</th><td>-</td><td style="white-space:nowrap">1-1 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_12_count</th><td>-</td><td style="white-space:nowrap">Total 1-2 Counts</td></tr>
+<tr><th align="right">pit_12_strike</th><td>-</td><td style="white-space:nowrap">1-2 Count Strikes</td></tr>
+<tr><th align="right">pit_12_strike_percentage</th><td>-</td><td style="white-space:nowrap">1-2 Strike Percentage</td></tr>
+<tr><th align="right">pit_12_positive</th><td>-</td><td style="white-space:nowrap">1-2 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_12_negative</th><td>-</td><td style="white-space:nowrap">1-2 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_12_neutral</th><td>-</td><td style="white-space:nowrap">1-2 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_20_count</th><td>-</td><td style="white-space:nowrap">Total 2-0 Counts</td></tr>
+<tr><th align="right">pit_20_strike</th><td>-</td><td style="white-space:nowrap">2-0 Count Strikes</td></tr>
+<tr><th align="right">pit_20_strike_percentage</th><td>-</td><td style="white-space:nowrap">2-0 Strike Percentage</td></tr>
+<tr><th align="right">pit_20_positive</th><td>-</td><td style="white-space:nowrap">2-0 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_20_negative</th><td>-</td><td style="white-space:nowrap">2-0 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_20_neutral</th><td>-</td><td style="white-space:nowrap">2-0 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_21_count</th><td>-</td><td style="white-space:nowrap">Total 2-1 Counts</td></tr>
+<tr><th align="right">pit_21_strike</th><td>-</td><td style="white-space:nowrap">2-1 Count Strikes</td></tr>
+<tr><th align="right">pit_21_strike_percentage</th><td>-</td><td style="white-space:nowrap">2-1 Strike Percentage</td></tr>
+<tr><th align="right">pit_21_positive</th><td>-</td><td style="white-space:nowrap">2-1 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_21_negative</th><td>-</td><td style="white-space:nowrap">2-1 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_21_neutral</th><td>-</td><td style="white-space:nowrap">2-1 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_22_count</th><td>-</td><td style="white-space:nowrap">Total 2-2 Counts</td></tr>
+<tr><th align="right">pit_22_strike</th><td>-</td><td style="white-space:nowrap">2-2 Count Strikes</td></tr>
+<tr><th align="right">pit_22_strike_percentage</th><td>-</td><td style="white-space:nowrap">2-2 Strike Percentage</td></tr>
+<tr><th align="right">pit_22_positive</th><td>-</td><td style="white-space:nowrap">2-2 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_22_negative</th><td>-</td><td style="white-space:nowrap">2-2 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_22_neutral</th><td>-</td><td style="white-space:nowrap">2-2 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_30_count</th><td>-</td><td style="white-space:nowrap">Total 3-0 Counts</td></tr>
+<tr><th align="right">pit_30_strike</th><td>-</td><td style="white-space:nowrap">3-0 Count Strikes</td></tr>
+<tr><th align="right">pit_30_strike_percentage</th><td>-</td><td style="white-space:nowrap">3-0 Strike Percentage</td></tr>
+<tr><th align="right">pit_30_positive</th><td>-</td><td style="white-space:nowrap">3-0 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_30_negative</th><td>-</td><td style="white-space:nowrap">3-0 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_30_neutral</th><td>-</td><td style="white-space:nowrap">3-0 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_31_count</th><td>-</td><td style="white-space:nowrap">Total 3-1 Counts</td></tr>
+<tr><th align="right">pit_31_strike</th><td>-</td><td style="white-space:nowrap">3-1 Count Strikes</td></tr>
+<tr><th align="right">pit_31_strike_percentage</th><td>-</td><td style="white-space:nowrap">3-1 Strike Percentage</td></tr>
+<tr><th align="right">pit_31_positive</th><td>-</td><td style="white-space:nowrap">3-1 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_31_negative</th><td>-</td><td style="white-space:nowrap">3-1 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_31_neutral</th><td>-</td><td style="white-space:nowrap">3-1 Count Neutral Outcome</td></tr>
+<tr><th align="right">pit_32_count</th><td>-</td><td style="white-space:nowrap">Total 3-2 Counts</td></tr>
+<tr><th align="right">pit_32_strike</th><td>-</td><td style="white-space:nowrap">3-2 Count Strikes</td></tr>
+<tr><th align="right">pit_32_strike_percentage</th><td>-</td><td style="white-space:nowrap">3-2 Strike Percentage</td></tr>
+<tr><th align="right">pit_32_positive</th><td>-</td><td style="white-space:nowrap">3-2 Count Positive Outcome</td></tr>
+<tr><th align="right">pit_32_negative</th><td>-</td><td style="white-space:nowrap">3-2 Count Negative Outcome</td></tr>
+<tr><th align="right">pit_32_neutral</th><td>-</td><td style="white-space:nowrap">3-2 Count Neutral Outcome</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Fielding - Basic</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">fld_games</th><td>-</td><td style="white-space:nowrap">Fielding Games</td></tr>
+<tr><th align="right">fld_started</th><td>-</td><td style="white-space:nowrap">Games Started</td></tr>
+<tr><th align="right">fld_throw_errors</th><td>-</td><td style="white-space:nowrap">Throwing Errors</td></tr>
+<tr><th align="right">fld_field_errors</th><td>-</td><td style="white-space:nowrap">Fielding Errors</td></tr>
+<tr><th align="right">fld_errors</th><td>-</td><td style="white-space:nowrap">Errors</td></tr>
+<tr><th align="right">fld_putouts</th><td>-</td><td style="white-space:nowrap">Putouts</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_assists</th><td>-</td><td style="white-space:nowrap">Assists</td></tr>
+<tr><th align="right">fld_steals_allowed</th><td>-</td><td style="white-space:nowrap">Stolen Bases Allowed</td></tr>
+<tr><th align="right">fld_caught_stealing</th><td>-</td><td style="white-space:nowrap">Caught Stealing</td></tr>
+<tr><th align="right">fld_double_plays</th><td>-</td><td style="white-space:nowrap">Double Plays</td></tr>
+<tr><th align="right">fld_triple_plays</th><td>-</td><td style="white-space:nowrap">Triple Plays</td></tr>
+<tr><th align="right">fld_passed_balls</th><td>-</td><td style="white-space:nowrap">Passes Balls</td></tr>
+<tr><th align="right">fld_pickoff_failed</th><td>-</td><td style="white-space:nowrap">Pickoff Failed</td></tr>
+<tr><th align="right">fld_pickoff_success</th><td>-</td><td style="white-space:nowrap">Pickoff Succeeded</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_outs_played</th><td>-</td><td style="white-space:nowrap">Outs Played</td></tr>
+<tr><th align="right">fld_fielding_percentage</th><td>-</td><td style="white-space:nowrap">Fielding Percentage</td></tr>
+<tr><th align="right">fld_fielding_percentage_1</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Pitcher</td></tr>
+<tr><th align="right">fld_fielding_percentage_2</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Catcher</td></tr>
+<tr><th align="right">fld_fielding_percentage_3</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at First</td></tr>
+<tr><th align="right">fld_fielding_percentage_4</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Second</td></tr>
+<tr><th align="right">fld_fielding_percentage_5</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Third</td></tr>
+<tr><th align="right">fld_fielding_percentage_6</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Shortstop</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_fielding_percentage_7</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Left Field</td></tr>
+<tr><th align="right">fld_fielding_percentage_8</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Center Field</td></tr>
+<tr><th align="right">fld_fielding_percentage_9</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Right Field</td></tr>
+<tr><th align="right">fld_fielding_percentage_10</th><td>-</td><td style="white-space:nowrap">Fielding Percentage at Other Field</td></tr>
+<tr><th align="right">fld_innings_played</th><td>-</td><td style="white-space:nowrap">Innings Played</td></tr>
+<tr><th align="right">fld_appeared</th><td>-</td><td style="white-space:nowrap">Innings Appeared</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Fielding - Infield</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">fld_putouts_1</th><td>-</td><td style="white-space:nowrap">Putouts at Pitcher</td></tr>
+<tr><th align="right">fld_assists_1</th><td>-</td><td style="white-space:nowrap">Assists at Pitcher</td></tr>
+<tr><th align="right">fld_throw_errors_1</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Pitcher</td></tr>
+<tr><th align="right">fld_field_errors_1</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Pitcher</td></tr>
+<tr><th align="right">fld_appeared_1</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Pitcher</td></tr>
+<tr><th align="right">fld_outs_played_1</th><td>-</td><td style="white-space:nowrap">Out Played at Pitcher</td></tr>
+<tr><th align="right">fld_putouts_2</th><td>-</td><td style="white-space:nowrap">Putouts at Catcher</td></tr>
+<tr><th align="right">fld_assists_2</th><td>-</td><td style="white-space:nowrap">Assists at Catcher</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_throw_errors_2</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Catcher</td></tr>
+<tr><th align="right">fld_field_errors_2</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Catcher</td></tr>
+<tr><th align="right">fld_appeared_2</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Catcher</td></tr>
+<tr><th align="right">fld_outs_played_2</th><td>-</td><td style="white-space:nowrap">Out Played at Catcher</td></tr>
+<tr><th align="right">fld_putouts_3</th><td>-</td><td style="white-space:nowrap">Putouts at First</td></tr>
+<tr><th align="right">fld_assists_3</th><td>-</td><td style="white-space:nowrap">Assists at First</td></tr>
+<tr><th align="right">fld_throw_errors_3</th><td>-</td><td style="white-space:nowrap">Throwing Errors at First</td></tr>
+<tr><th align="right">fld_field_errors_3</th><td>-</td><td style="white-space:nowrap">Fielding Errors at First</td></tr>
+<tr><th align="right">fld_appeared_3</th><td>-</td><td style="white-space:nowrap">Innings Appeared at First</td></tr>
+<tr><th align="right">fld_outs_played_3</th><td>-</td><td style="white-space:nowrap">Out Played at First</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_putouts_4</th><td>-</td><td style="white-space:nowrap">Putouts at Second</td></tr>
+<tr><th align="right">fld_assists_4</th><td>-</td><td style="white-space:nowrap">Assists at Second</td></tr>
+<tr><th align="right">fld_throw_errors_4</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Second</td></tr>
+<tr><th align="right">fld_field_errors_4</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Second</td></tr>
+<tr><th align="right">fld_appeared_4</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Second</td></tr>
+<tr><th align="right">fld_outs_played_4</th><td>-</td><td style="white-space:nowrap">Out Played at Second</td></tr>
+<tr><th align="right">fld_putouts_5</th><td>-</td><td style="white-space:nowrap">Putouts at Third</td></tr>
+<tr><th align="right">fld_assists_5</th><td>-</td><td style="white-space:nowrap">Assists at Third</td></tr>
+<tr><th align="right">fld_throw_errors_5</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Third</td></tr>
+<tr><th align="right">fld_field_errors_5</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Third</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_appeared_5</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Third</td></tr>
+<tr><th align="right">fld_outs_played_5</th><td>-</td><td style="white-space:nowrap">Out Played at Third</td></tr>
+<tr><th align="right">fld_putouts_6</th><td>-</td><td style="white-space:nowrap">Putouts at Shortstop</td></tr>
+<tr><th align="right">fld_assists_6</th><td>-</td><td style="white-space:nowrap">Assists at Shortstop</td></tr>
+<tr><th align="right">fld_throw_errors_6</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Shortstop</td></tr>
+<tr><th align="right">fld_field_errors_6</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Shortstop</td></tr>
+<tr><th align="right">fld_appeared_6</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Shortstop</td></tr>
+<tr><th align="right">fld_outs_played_6</th><td>-</td><td style="white-space:nowrap">Out Played at Shortstop</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+<tr><td><table class="legendbox" style="border:solid 1px" width="100%">
+<tbody><tr><td colspan="4"><span style="background-color:#dddddd;padding-left:10;padding-right:10"><b>Fielding - Outfield</b></span></td></tr><tr><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">player_number</th><td>-</td><td style="white-space:nowrap">Player Number</td></tr>
+<tr><th align="right">player_name</th><td>-</td><td style="white-space:nowrap">Player Name</td></tr>
+<tr><th align="right">fld_putouts_7</th><td>-</td><td style="white-space:nowrap">Putouts at Left Field</td></tr>
+<tr><th align="right">fld_assists_7</th><td>-</td><td style="white-space:nowrap">Assists at Left Field</td></tr>
+<tr><th align="right">fld_throw_errors_7</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Left Field</td></tr>
+<tr><th align="right">fld_field_errors_7</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Left Field</td></tr>
+<tr><th align="right">fld_appeared_7</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Left Field</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_outs_played_7</th><td>-</td><td style="white-space:nowrap">Out Played at Left Field</td></tr>
+<tr><th align="right">fld_putouts_8</th><td>-</td><td style="white-space:nowrap">Putouts at Center Field</td></tr>
+<tr><th align="right">fld_assists_8</th><td>-</td><td style="white-space:nowrap">Assists at Center Field</td></tr>
+<tr><th align="right">fld_throw_errors_8</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Center Field</td></tr>
+<tr><th align="right">fld_field_errors_8</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Center Field</td></tr>
+<tr><th align="right">fld_appeared_8</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Center Field</td></tr>
+<tr><th align="right">fld_outs_played_8</th><td>-</td><td style="white-space:nowrap">Out Played at Center Field</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_putouts_9</th><td>-</td><td style="white-space:nowrap">Putouts at Right Field</td></tr>
+<tr><th align="right">fld_assists_9</th><td>-</td><td style="white-space:nowrap">Assists at Right Field</td></tr>
+<tr><th align="right">fld_throw_errors_9</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Right Field</td></tr>
+<tr><th align="right">fld_field_errors_9</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Right Field</td></tr>
+<tr><th align="right">fld_appeared_9</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Right Field</td></tr>
+<tr><th align="right">fld_outs_played_9</th><td>-</td><td style="white-space:nowrap">Out Played at Right Field</td></tr>
+<tr><th align="right">fld_putouts_10</th><td>-</td><td style="white-space:nowrap">Putouts at Other Field</td></tr>
+</tbody></table></td><td width="10">&nbsp;</td><td valign="top"><table style="font-size:8pt" width="100%"><tbody><tr><th align="right">fld_assists_10</th><td>-</td><td style="white-space:nowrap">Assists at Other Field</td></tr>
+<tr><th align="right">fld_throw_errors_10</th><td>-</td><td style="white-space:nowrap">Throwing Errors at Other Field</td></tr>
+<tr><th align="right">fld_field_errors_10</th><td>-</td><td style="white-space:nowrap">Fielding Errors at Other Field</td></tr>
+<tr><th align="right">fld_appeared_10</th><td>-</td><td style="white-space:nowrap">Innings Appeared at Other Field</td></tr>
+<tr><th align="right">fld_outs_played_10</th><td>-</td><td style="white-space:nowrap">Out Played at Other Field</td></tr>
+</tbody></table></td></tr></tbody></table></td></tr>
+</tbody></table><br><b>FORMULAS:</b><br><br>
+bat_ab = bat_pa - bat_bb - bat_hbp - (bat_scb+bat_sf) - bat_ci<br>
+bat_hits = bat_bunt_singles+bat_1b+bat_2b+bat_3b+bat_hr<br>
+bat_xbh = bat_2b+bat_3b+bat_hr<br>
+bat_tb = bat_bunt_singles+bat_1b+(2*bat_2b)+(3*bat_3b)+(4*bat_hr)<br>
+bat_ob = bat_bunt_singles + bat_1b + bat_2b + bat_3b + bat_hr + bat_bb + bat_hbp<br>
+bat_runs_created = (bat_hits + bat_bb + bat_hbp - bat_cs - bat_gidp) * 
+(bat_tb + (.26*(bat_bb - bat_bbi + bat_hbp)) + (.52*(bat_scb + bat_sf + 
+bat_sb))) /(bat_ab + bat_bb + bat_hbp + bat_scb + bat_sf)<br>
+bat_avg = bat_hits/bat_ab<br>
+bat_strikeouts = bat_ko_looking+bat_ko_swinging<br>
+bat_bb_per_k = bat_bb/bat_strikeouts<br>
+bat_bb_per_pa = bat_bb/bat_pa<br>
+bat_sac = bat_scb+bat_sf<br>
+bat_rpa = (bat_runs + bat_rbi - bat_hr)/bat_pa<br>
+bat_obp = bat_ob/(bat_ab + bat_bb + bat_hbp + bat_sf)<br>
+bat_obpe = (bat_ob+bat_roe)/(bat_ab + bat_bb + bat_hbp + bat_sf)<br>
+bat_slg = bat_tb/bat_ab<br>
+bat_ops = bat_obp+bat_slg<br>
+bat_gpa = ((1.8 * bat_obp) + bat_slg) / 4.0<br>
+bat_babip = (bat_hits-bat_hr)/(bat_ab-bat_strikeouts-bat_hr+bat_sf)<br>
+bat_inverse_rpa = 1/bat_rpa<br>
+bat_contact_percentage = (bat_ab - bat_strikeouts)/bat_ab<br>
+bat_contact_percentage2 = (bat_ab - bat_strikeouts)/bat_pa<br>
+bat_ab_risp = bat_pa_risp - bat_bb_risp - bat_hbp_risp - bat_sac_risp - bat_ci_risp<br>
+bat_avg_risp = bat_hits_risp/bat_ab_risp<br>
+bat_ground_ball_percentage = 100*(bat_ground_balls_s+bat_ground_balls_m+bat_ground_balls_h)/bat_bip<br>
+bat_line_drive_percentage = 100*(bat_line_drives_s+bat_line_drives_m+bat_line_drives_h)/bat_bip<br>
+bat_popup_percentage = 100*(bat_popups_s+bat_popups_m+bat_popups_h)/bat_bip<br>
+bat_fly_ball_percentage = 100*(bat_fly_balls_s+bat_fly_balls_m+bat_fly_balls_h)/bat_bip<br>
+bat_soft_hit_percentage = 100*(bat_ground_balls_s+bat_line_drives_s+bat_popups_s+bat_fly_balls_s)/bat_bip<br>
+bat_medium_hit_percentage = 100*(bat_ground_balls_m+bat_line_drives_m+bat_popups_m+bat_fly_balls_m)/bat_bip<br>
+bat_hard_hit_percentage = 100*(bat_ground_balls_h+bat_line_drives_h+bat_popups_h+bat_fly_balls_h)/bat_bip<br>
+bat_total_pitches = bat_strikes_looking+bat_strikes_swinging+bat_foul_balls+bat_balls+bat_intentional_balls+bat_bip<br>
+bat_swinging_strike_percent = 100*bat_strikes_swinging/bat_total_pitches<br>
+bat_first_pitch = bat_first_strike+bat_first_ball<br>
+bat_first_pitch_swing = 
+bat_first_pitch_swing_strike+bat_first_pitch_foul+bat_first_pitch_bunt+bat_first_pitch_single+bat_first_pitch_double+bat_first_pitch_triple+bat_first_pitch_homerun+bat_first_pitch_ci+bat_first_pitch_fc+bat_first_pitch_roe+bat_first_pitch_sf+bat_first_pitch_scb+bat_first_pitch_out<br>
+bat_first_pitch_swing_percent = 100*bat_first_pitch_swing/bat_first_pitch<br>
+bat_first_pitch_hit = 
+bat_first_pitch_bunt+bat_first_pitch_single+bat_first_pitch_double+bat_first_pitch_triple+bat_first_pitch_homerun<br>
+bat_first_pitch_swing_success = 100*(bat_first_pitch_hit+bat_first_pitch_scb+bat_first_pitch_sf)/bat_first_pitch_swing<br>
+bat_qab_1_percentage = 100*bat_qab_1/bat_pa<br>
+bat_qab_2_percentage = 100*bat_qab_2/bat_pa<br>
+bat_qab_3_percentage = 100*bat_qab_3/bat_pa<br>
+pit_blown_save = pit_save_op-pit_save<br>
+pit_save_percent = 100*pit_save/pit_save_op<br>
+pit_game_score_g = pit_game_score/pit_starts<br>
+pit_ip = pit_game_sum*pit_outs/pit_outs_per_inning<br>
+pit_ball_strike_ratio = pit_balls/pit_strikes<br>
+pit_pitches = pit_balls+pit_strikes<br>
+pit_game_innings_avg = pit_game_innings/pit_game_sum<br>
+pit_run_average = pit_runs/pit_ip<br>
+pit_era = (pit_er*pit_game_innings_avg)/(pit_ip)<br>
+pit_era9 = (pit_er*9)/pit_ip<br>
+pit_fip = (((13*pit_homeruns)+(3*(pit_walks+pit_hit_batters))-(2*pit_strikeouts))/pit_ip)+3.1<br>
+pit_strikeout_to_walk = (pit_strikeouts)/pit_walks<br>
+pit_k_per_innings = (pit_strikeouts*pit_game_innings_avg)/(pit_ip)<br>
+pit_bb_per_innings = (pit_walks*pit_game_innings_avg)/(pit_ip)<br>
+pit_hits_per_innings = (pit_hits*pit_game_innings_avg)/(pit_ip)<br>
+pit_whip = (pit_walks+pit_hits)/pit_ip<br>
+pit_on_base_percentage = (pit_walks+pit_hits+pit_hit_batters)/(pit_bf-pit_scb)<br>
+pit_batting_average_against = pit_hits/(pit_bf - pit_walks - pit_hit_batters - pit_scb - pit_scf - pit_ci)<br>
+pit_babip_against = (pit_hits-pit_homeruns)/((pit_bf - pit_walks - 
+pit_hit_batters - pit_scb - pit_scf - 
+pit_ci)-pit_strikeouts-pit_homeruns+pit_scf)<br>
+pit_ground_fly_ratio = pit_ground_outs/pit_air_outs<br>
+pit_first_strike_percent = pit_first_strikes/(pit_first_strikes+pit_first_balls)<br>
+pit_bip = 
+pit_ground_balls_s+pit_ground_balls_m+pit_ground_balls_h+pit_line_drives_s+pit_line_drives_m+pit_line_drives_h+pit_popups_s+pit_popups_m+pit_popups_h+pit_fly_balls_s+pit_fly_balls_m+pit_fly_balls_h<br>
+pit_ground_ball_percentage = 100*(pit_ground_balls_s+pit_ground_balls_m+pit_ground_balls_h)/pit_bip<br>
+pit_line_drive_percentage = 100*(pit_line_drives_s+pit_line_drives_m+pit_line_drives_h)/pit_bip<br>
+pit_popup_percentage = 100*(pit_popups_s+pit_popups_m+pit_popups_h)/pit_bip<br>
+pit_fly_ball_percentage = 100*(pit_fly_balls_s+pit_fly_balls_m+pit_fly_balls_h)/pit_bip<br>
+pit_soft_hit_percentage = 100*(pit_ground_balls_s+pit_line_drives_s+pit_popups_s+pit_fly_balls_s)/pit_bip<br>
+pit_medium_hit_percentage = 100*(pit_ground_balls_m+pit_line_drives_m+pit_popups_m+pit_fly_balls_m)/pit_bip<br>
+pit_hard_hit_percentage = 100*(pit_ground_balls_h+pit_line_drives_h+pit_popups_h+pit_fly_balls_h)/pit_bip<br>
+pit_strike_percentage = 100*(pit_strikes/(pit_strikes + pit_balls))<br>
+pit_ball_percentage = 100*(pit_balls/(pit_strikes + pit_balls))<br>
+pit_fastball_strike_percentage = 100*(pit_fastballs_strike/pit_fastballs)<br>
+pit_curves_strike_percentage = 100*(pit_curves_strike/pit_curves)<br>
+pit_sliders_strike_percentage = 100*(pit_sliders_strike/pit_sliders)<br>
+pit_cutters_strike_percentage = 100*(pit_cutters_strike/pit_cutters)<br>
+pit_changes_strike_percentage = 100*(pit_changes_strike/pit_changes)<br>
+pit_splitter_strike_percentage = 100*(pit_splitter_strike/pit_splitter)<br>
+pit_knuckle_strike_percentage = 100*(pit_knuckle_strike/pit_knuckle)<br>
+pit_dropball_strike_percentage = 100*(pit_dropball_strike/pit_dropball)<br>
+pit_riseball_strike_percentage = 100*(pit_riseball_strike/pit_riseball)<br>
+pit_screwball_strike_percentage = 100*(pit_screwball_strike/pit_screwball)<br>
+pit_dropcurve_strike_percentage = 100*(pit_dropcurve_strike/pit_dropcurve)<br>
+pit_other_strike_percentage = 100*(pit_other_strike/pit_other)<br>
+pit_fastball_avg = pit_fastball_speed_total/pit_fastball_speed_count<br>
+pit_curve_avg = pit_curve_speed_total/pit_curve_speed_count<br>
+pit_slider_avg = pit_slider_speed_total/pit_slider_speed_count<br>
+pit_cutter_avg = pit_cutter_speed_total/pit_cutter_speed_count<br>
+pit_change_avg = pit_change_speed_total/pit_change_speed_count<br>
+pit_splitter_avg = pit_splitter_speed_total/pit_splitter_speed_count<br>
+pit_knuckle_avg = pit_knuckle_speed_total/pit_knuckle_speed_count<br>
+pit_dropball_avg = pit_dropball_speed_total/pit_dropball_speed_count<br>
+pit_riseball_avg = pit_riseball_speed_total/pit_riseball_speed_count<br>
+pit_screwball_avg = pit_screwball_speed_total/pit_screwball_speed_count<br>
+pit_dropcurve_avg = pit_dropcurve_speed_total/pit_dropcurve_speed_count<br>
+pit_other_avg = pit_other_speed_total/pit_other_speed_count<br>
+pit_00_strike_percentage = 100*pit_00_strike/pit_00_count<br>
+pit_01_strike_percentage = 100*pit_01_strike/pit_01_count<br>
+pit_02_strike_percentage = 100*pit_02_strike/pit_02_count<br>
+pit_10_strike_percentage = 100*pit_10_strike/pit_10_count<br>
+pit_11_strike_percentage = 100*pit_11_strike/pit_11_count<br>
+pit_12_strike_percentage = 100*pit_12_strike/pit_12_count<br>
+pit_20_strike_percentage = 100*pit_20_strike/pit_20_count<br>
+pit_21_strike_percentage = 100*pit_21_strike/pit_21_count<br>
+pit_22_strike_percentage = 100*pit_22_strike/pit_22_count<br>
+pit_30_strike_percentage = 100*pit_30_strike/pit_30_count<br>
+pit_31_strike_percentage = 100*pit_31_strike/pit_31_count<br>
+pit_32_strike_percentage = 100*pit_32_strike/pit_32_count<br>
+fld_errors = fld_throw_errors+fld_field_errors<br>
+fld_outs_played = 
+fld_outs_played_1+fld_outs_played_2+fld_outs_played_3+fld_outs_played_4+fld_outs_played_5+fld_outs_played_6+fld_outs_played_7+fld_outs_played_8+fld_outs_played_9+fld_outs_played_10<br>
+fld_fielding_percentage = (fld_putouts+fld_assists)/(fld_putouts+fld_assists+fld_errors)<br>
+fld_fielding_percentage_1 = (fld_putouts_1+fld_assists_1)/(fld_putouts_1+fld_assists_1+fld_throw_errors_1+fld_field_errors_1)<br>
+fld_fielding_percentage_2 = (fld_putouts_2+fld_assists_2)/(fld_putouts_2+fld_assists_2+fld_throw_errors_2+fld_field_errors_2)<br>
+fld_fielding_percentage_3 = (fld_putouts_3+fld_assists_3)/(fld_putouts_3+fld_assists_3+fld_throw_errors_3+fld_field_errors_3)<br>
+fld_fielding_percentage_4 = (fld_putouts_4+fld_assists_4)/(fld_putouts_4+fld_assists_4+fld_throw_errors_4+fld_field_errors_4)<br>
+fld_fielding_percentage_5 = (fld_putouts_5+fld_assists_5)/(fld_putouts_5+fld_assists_5+fld_throw_errors_5+fld_field_errors_5)<br>
+fld_fielding_percentage_6 = (fld_putouts_6+fld_assists_6)/(fld_putouts_6+fld_assists_6+fld_throw_errors_6+fld_field_errors_6)<br>
+fld_fielding_percentage_7 = (fld_putouts_7+fld_assists_7)/(fld_putouts_7+fld_assists_7+fld_throw_errors_7+fld_field_errors_7)<br>
+fld_fielding_percentage_8 = (fld_putouts_8+fld_assists_8)/(fld_putouts_8+fld_assists_8+fld_throw_errors_8+fld_field_errors_8)<br>
+fld_fielding_percentage_9 = (fld_putouts_9+fld_assists_9)/(fld_putouts_9+fld_assists_9+fld_throw_errors_9+fld_field_errors_9)<br>
+fld_fielding_percentage_10 = 
+(fld_putouts_10+fld_assists_10)/
+(fld_putouts_10+fld_assists_10+fld_throw_errors_10+fld_field_errors_10)<br>
+fld_innings_played = fld_outs_played/3.0<br>
+
+
+
+
+<style>
+.footnotes th { background-color:black;color:white; }
+.odd th { background-color:#dddddd;color:black }
+.even th { background-color:white;color:black }
+.odd td { background-color:#dddddd;color:black }
+.even td { background-color:white;color:black }
+</style>
+
+<br>
+<br>
+<b>FOOTNOTES:</b>
+<br><br>
+
+<table class="footnotes legendbox" style="border:solid 1px" cellspacing="0" cellpadding="3">
+
+<tbody><tr><th>Stat</th><th>Notes</th></tr>
+<tr class="odd">
+	<th nowrap="nowrap">Quality at Bats<br>(QAB)</th>
+	<td>Quality at Bats are a statistics that has become popular to talk 
+about, but there is not a hard and fast definition for what makes up a 
+QAB. We have decided to create a few variants and allow you to customize
+ the QAB value to what you think is important. The following tables show
+ our defaults:<br><br>
+
+		<table cellpadding="5">
+		<tbody><tr>
+		<td valign="top">
+		<b>QAB-1</b>
+		<ul>
+		<li>Base Hit</li>
+		<li>Sac Bunt</li>
+		<li>Sac Fly</li>
+		<li>Hard ground ball</li>
+		<li>Hard line drive</li>
+		<li>Hard fly ball</li>
+		<li>6+ pitches</li>
+		</ul>
+		</td>
+		<td valign="top">
+
+		<b>QAB-2</b>
+		<ul>
+		<li>Base Hit</li>
+		<li>RBI</li>
+		<li>Sac Bunt</li>
+		<li>Sac Fly</li>
+		<li>6+ Pitches</li>
+		</ul>
+		</td>
+		<td valign="top">
+		<b>QAB-3</b>
+		<ul>
+		<li>Hit w/RISP</li>
+		<li>RBI</li>
+		<li>Sac Bunt</li>
+		<li>Sac Fly</li>
+		<li>6+ Pitches</li>
+		</ul>
+		</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+
+<tr class="even">
+	<th nowrap="nowrap">Game Score<br>(GSc)</th>
+	<td>
+		Game score is described here: <a target="_blank" href="http://en.wikipedia.org/wiki/Game_score">http://en.wikipedia.org/wiki/Game_score</a><br>
+			<ol>
+			<li>Start with 50 points.</li>
+			<li>Add 1 point for each out recorded, so 3 points for every complete inning pitched.</li>
+			<li>Add 2 points for each inning completed after the 4th.</li>
+			<li>Add 1 point for each strikeout.</li>
+			<li>Subtract 2 points for each hit allowed.</li>
+			<li>Subtract 4 points for each earned run allowed.</li>
+			<li>Subtract 2 points for each unearned run allowed.</li>
+			<li>Subtract 1 point for each walk.</li>
+			</ol>
+	</td>
+
+</tr>
+
+<tr class="odd">
+	<th nowrap="nowrap">Quality Start<br>(QS)</th>
+	<td>
+		Related to Game Score above, a Quality Start is defined as a Game Score &gt; 50.
+	</td>
+</tr>
+
+<tr class="even">
+	<th nowrap="nowrap">Tough Loss<br>(TL)</th>
+	<td>
+		Related to Game Score above, a Tough Loss is a pitcher that gets a Loss but had a Quality Start.
+	</td>
+</tr>
+
+<tr class="odd">
+	<th nowrap="nowrap">Cheap Wins<br>(CW)</th>
+	<td>
+		Related to Game Score above, a Cheap Win is a pitcher that gets a Win but had a non Quality Start.
+	</td>
+</tr>
+
+<tr class="even">
+	<th nowrap="nowrap">Runs Created<br>(RC)</th>
+	<td>
+		We use the "technical" version as described here: <a href="http://en.wikipedia.org/wiki/Runs_created" target="_blank">http://en.wikipedia.org/wiki/Runs_created</a>
+		<br><br>
+		<img src="iScore%20Legend%20Baseball%20Formulas_files/20e70af2c13e15e07ecd8dd094607f8e.png">
+		<br><br>
+	</td>
+</tr>
+
+
+</tbody></table>
+
+
+<br><br>
+
+<i>Copyright 2009-2024, Sports Illustrated Play, LLC</i>
+
+<br><br>
+
+
+					</td>
+				</tr>
+			</tbody></table>
+			<br>
+		</td>
+	</tr>
+</tbody></table>
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b1a9c81048","applicationID":"2747470","transactionName":"ZlwBYxECW0RSUxYIWF8WNkUKTFlSVFUMBRlBURM=","queueTime":0,"applicationTime":11,"atts":"ShsCFVkYSEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+
+<div id="ConnectiveDocSignExtentionInstalled" data-extension-version="1.0.4"></div></body></html>
