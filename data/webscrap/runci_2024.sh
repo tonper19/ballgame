@@ -52,42 +52,42 @@ printf "#########################\n"
 # /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U15.htm ../csv/stats_pitching_raw_twlu15_2024.csv
 # /Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U15.htm ../csv/stats_fielding_raw_twlu15_2024.csv
 
+# printf "\n"
+# printf "#######################################\n"
+# printf "##  2024 Tenerife Winter League U18  ##\n"
+# printf "#######################################\n"
+
+# /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_batting_raw_twlu18_2024.csv
+# /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_pitching_raw_twlu18_2024.csv
+# /Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_fielding_raw_twlu18_2024.csv
+
+printf "#########################\n"
+printf "#      Softball         #\n"
+printf "#########################\n"
+
 printf "\n"
-printf "#######################################\n"
-printf "##  2024 Tenerife Winter League U18  ##\n"
-printf "#######################################\n"
+printf "##################\n"
+printf "##  La Gomera   ##\n"
+printf "##################\n"
 
-/Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_batting_raw_twlu18_2024.csv
-/Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_pitching_raw_twlu18_2024.csv
-/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/TWL2024U18.htm ../csv/stats_fielding_raw_twlu18_2024.csv
+/Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_batting_raw_cablgs_2024.csv
+/Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_pitching_raw_cablgs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_fielding_raw_cablgs_2024.csv
 
-# printf "#########################\n"
-# printf "#      Softball         #\n"
-# printf "#########################\n"
+printf "\n"
+printf "##################\n"
+printf "## Gran Canaria ##\n"
+printf "##################\n"
 
-# printf "\n"
-# printf "##################\n"
-# printf "##  La Gomera   ##\n"
-# printf "##################\n"
+/Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_batting_raw_cabgcs_2024.csv
+/Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_pitching_raw_cabgcs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_fielding_raw_cabgcs_2024.csv
 
-# /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_batting_raw_cablgs_2024.csv
-# /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_pitching_raw_cablgs_2024.csv
-# /Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABLGS2024.htm ../csv/stats_fielding_raw_cablgs_2024.csv
+printf "\n"
+printf "##################\n"
+printf "##   Tenerife   ##\n"
+printf "##################\n"
 
-# printf "\n"
-# printf "##################\n"
-# printf "## Gran Canaria ##\n"
-# printf "##################\n"
-
-# /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_batting_raw_cabgcs_2024.csv
-# /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_pitching_raw_cabgcs_2024.csv
-# /Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABGCS2024.htm ../csv/stats_fielding_raw_cabgcs_2024.csv
-
-# printf "\n"
-# printf "##################\n"
-# printf "##   Tenerife   ##\n"
-# printf "##################\n"
-
-# /Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_batting_raw_cabtfs_2024.csv
-# /Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_pitching_raw_cabtfs_2024.csv
-# /Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_fielding_raw_cabtfs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileBattingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_batting_raw_cabtfs_2024.csv
+/Users/tonper/.asdf/shims/npm run filePitchingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_pitching_raw_cabtfs_2024.csv
+/Users/tonper/.asdf/shims/npm run fileFieldingScrapper ~/Development/DWH/ballgame/data/HTML/CABTFS2024.htm ../csv/stats_fielding_raw_cabtfs_2024.csv
