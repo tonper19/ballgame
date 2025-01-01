@@ -12,7 +12,7 @@ license file in the root directory of this source tree.
 -- 02/03/2024  Tony Pérez  season data to calculate stat leaders
 -- 21/03/2024  Tony Pérez  Club/Stadium geo location (latitude/longitude)
 -- 07/04/2024  Tony Pérez  Season/League Rankings
-
+-- 01/01/2025  Tony Pérez  Attribute/Metric move from MicroStrategy to query
 with sport_category as
 (
   select dsp.id  sport_id
@@ -495,6 +495,14 @@ select dpl.last_name  player_last_name
       ,dpl.uniform_number  player_uniform_number
       ,dpl.license_number  player_license_number
       ,dpl.license_type  player_license_type
+       -- approximate age at the time of the season
+      ,case
+         when dpl.yob is null then 0
+         when dpl.yob < 1940 then 0
+         when (stat.season_year - dpl.yob) < 0 then 0
+         else (stat.season_year - dpl.yob)
+       end  player_age_at_season
+
       ,stat.*
        -- Batting Ranks
       ,rank() over (partition by stat.sport_id
@@ -740,10 +748,64 @@ select dpl.last_name  player_last_name
                                 ,stat.season_year
                     order by stat.fps_fly_outs desc nulls last)  fps_rank_fly_outs
 
-
       ,dsg.number_of_games  season_number_of_games
       ,dsg.pa_coefficient  season_pa_coefficient
       ,dsg.innings_pitched_percent  season_innings_pitched_percent
+      -- move attributes to query
+      ,case
+         when (stat.fbs_at_bats
+              + stat.fbs_base_on_balls
+              + stat.fbs_hit_by_pitchs
+              + stat.fbs_bunts
+              + stat.fbs_sacrfice_flies) >=
+              trunc(dsg.number_of_games * dsg.pa_coefficient)
+              then 'Y'
+         else 'N'
+       end  qualifies_batting_leaderboard
+      ,case
+         when stat.fps_innings_pitched_dec >=
+              (dsg.number_of_games * dsg.innings_pitched_percent)
+              then 'Y'
+         else 'N'
+       end  qualifies_pitching_leaderboard
+      ,case
+         when (stat.ffs_stolen_bases_against +
+              + stat.ffs_players_caught_steeling
+              + stat.ffs_passed_balls
+              + stat.ffs_catcher_interferences) >= 1
+              then 'Y'
+         else 'N'
+       end  is_catcher_attr
+
+      ,stat.category_id
+       || ' ('
+       || stat.country_id
+       || ')'  category_country  -- "Category" attribute in Mstr
+      ,stat.club_name
+       || ' ('
+       || stat.country_id
+       || ')'  club_name_country  -- "Club Name (C)" attribute in Mstr
+      ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name) ||
+       rtrim(
+         case
+           when coalesce(fps_inning_outs_pitched, 0) > 0 then ' (P)'
+           else ' '
+         end)  player_full_name_pitcher_flag  --  "Player Full Name (Pitcher flag)" attribute in Mstr
+
+      -- move metrics to query
+      ,trunc(dsg.number_of_games * dsg.pa_coefficient)  q_min_plate_appearances
+      ,(dsg.number_of_games * dsg.innings_pitched_percent)  q_min_inning_pitched
+      ,(stat.fbs_at_bats
+       + stat.fbs_base_on_balls
+       + stat.fbs_hit_by_pitchs
+       + stat.fbs_bunts
+       + stat.fbs_sacrfice_flies)  fbs_plate_appearances
+      ,(stat.fps_at_bats
+       + stat.fps_walks
+       + stat.fps_hit_by_pitchs
+       + stat.fps_bunts_against
+       + stat.fps_sacrifice_flies_against)  fps_batters_faced
+
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
