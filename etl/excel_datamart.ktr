@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2024/01/21 20:30:51.633</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/05/03 17:42:27.973</modified_date>
+    <modified_date>2025/01/02 16:57:15.517</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -497,11 +497,6 @@
     </hop>
     <hop>
       <from>Select values</from>
-      <to>Datamart XLSX</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
       <to>Datamart CSV</to>
       <enabled>Y</enabled>
     </hop>
@@ -532,7 +527,7 @@ license file in the root directory of this source tree.
 -- 02/03/2024  Tony Pérez  season data to calculate stat leaders
 -- 21/03/2024  Tony Pérez  Club/Stadium geo location (latitude/longitude)
 -- 07/04/2024  Tony Pérez  Season/League Rankings
-
+-- 02/01/2025  Tony Pérez  Metric move from MicroStrategy to query
 with sport_category as
 (
   select dsp.id  sport_id
@@ -545,12 +540,7 @@ with sport_category as
         ,dca.name  category_name
         ,dco.country_name  federation_country_name
         ,dco.federation_id  federation_id
-        ,dco.address  federation_address
-        ,dco.postal_code  federation_postal_code
         ,dco.city  federation_city
-        ,dco.province  federation_province_region
-        ,dco.email  federation_email
-        ,dco.webpage  federation_webpage
     from c##baseball.dim_sport  dsp
    inner join c##baseball.dim_category  dca
       on dsp.id  = dca.sport_id
@@ -630,30 +620,18 @@ with sport_category as
                               ,fbs.country_id
                               ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
-        ,dcl.address  bat_club_address
-        ,dcl.postal_code  bat_club_postal_code
         ,dcl.city  bat_club_city
         ,dcl.province  bat_club_province
         ,dcl.country  bat_club_country
         ,dcl.email  bat_club_email
         ,dcl.webpage  bat_club_webpage
-        ,dcl.ballpark_id  bat_ballpark_id
-        ,dcl.president  bat_club_president
-        ,dcl.secretary  bat_club_secretary
-        ,dcl.treasurer  bat_club_treasurer
-        ,dcl.governance_person  bat_governance_person
         ,dcl.club_latitude  bat_club_latitude
         ,dcl.club_longitude  bat_club_longitude
         ,dcl.stadium_latitude  bat_stadium_latitude
         ,dcl.stadium_longitude  bat_stadium_longitude
         ,sc.federation_country_name  bat_federation_country_name
         ,sc.federation_id  bat_federation_id
-        ,sc.federation_address  bat_federation_address
-        ,sc.federation_postal_code  bat_federation_postal_code
         ,sc.federation_city  bat_federation_city
-        ,sc.federation_province_region  bat_federation_province_region
-        ,sc.federation_email  bat_federation_email
-        ,sc.federation_webpage  bat_federation_webpage
     from c##baseball.fact_batting_stat  fbs
    inner join sport_category  sc
       on fbs.sport_id = sc.sport_id
@@ -712,30 +690,16 @@ with sport_category as
                               ,fps.season_year)  league_strike_outs
         ,sc.era_innings
         ,dcl.name  pit_club_name
-        ,dcl.address  pit_club_address
-        ,dcl.postal_code  pit_club_postal_code
         ,dcl.city  pit_club_city
         ,dcl.province  pit_club_province
         ,dcl.country  pit_club_country
-        ,dcl.email  pit_club_email
-        ,dcl.webpage  pit_club_webpage
-        ,dcl.ballpark_id  pit_ballpark_id
-        ,dcl.president  pit_club_president
-        ,dcl.secretary  pit_club_secretary
-        ,dcl.treasurer  pit_club_treasurer
-        ,dcl.governance_person  pit_governance_person
         ,dcl.club_latitude  pit_club_latitude
         ,dcl.club_longitude  pit_club_longitude
         ,dcl.stadium_latitude  pit_stadium_latitude
         ,dcl.stadium_longitude  pit_stadium_longitude
         ,sc.federation_country_name  pit_federation_country_name
         ,sc.federation_id  pit_federation_id
-        ,sc.federation_address  pit_federation_address
-        ,sc.federation_postal_code  pit_federation_postal_code
         ,sc.federation_city  pit_federation_city
-        ,sc.federation_province_region  pit_federation_province_region
-        ,sc.federation_email  pit_federation_email
-        ,sc.federation_webpage  pit_federation_webpage
     from c##baseball.fact_pitching_stat  fps
    inner join sport_category  sc
       on fps.sport_id = sc.sport_id
@@ -750,30 +714,16 @@ with sport_category as
 (
   select ffs.*
         ,dcl.name  fld_club_name
-        ,dcl.address  fld_club_address
-        ,dcl.postal_code  fld_club_postal_code
         ,dcl.city  fld_club_city
         ,dcl.province  fld_club_province
         ,dcl.country  fld_club_country
-        ,dcl.email  fld_club_email
-        ,dcl.webpage  fld_club_webpage
-        ,dcl.ballpark_id  fld_ballpark_id
-        ,dcl.president  fld_club_president
-        ,dcl.secretary  fld_club_secretary
-        ,dcl.treasurer  fld_club_treasurer
-        ,dcl.governance_person  fld_governance_person
         ,dcl.club_latitude  fld_club_latitude
         ,dcl.club_longitude  fld_club_longitude
         ,dcl.stadium_latitude  fld_stadium_latitude
         ,dcl.stadium_longitude  fld_stadium_longitude
         ,sc.federation_country_name  fld_federation_country_name
         ,sc.federation_id  fld_federation_id
-        ,sc.federation_address  fld_federation_address
-        ,sc.federation_postal_code  fld_federation_postal_code
         ,sc.federation_city  fld_federation_city
-        ,sc.federation_province_region  fld_federation_province_region
-        ,sc.federation_email  fld_federation_email
-        ,sc.federation_webpage  fld_federation_webpage
     from c##baseball.fact_fielding_stat  ffs
    inner join sport_category  sc
       on ffs.sport_id = sc.sport_id
@@ -856,30 +806,16 @@ with sport_category as
           ) / fps.league_innings_pitched)  fps_fip_constant
          --
         ,coalesce(bat_club_name,pit_club_name)  club_name
-        ,coalesce(bat_club_address,pit_club_address)  club_address
-        ,coalesce(bat_club_postal_code,pit_club_postal_code)  club_postal_code
         ,coalesce(bat_club_city,pit_club_city)  club_city
         ,coalesce(bat_club_province,pit_club_province)  club_province
         ,coalesce(bat_club_country,pit_club_country)  club_country
-        ,coalesce(bat_club_email,pit_club_email)  club_email
-        ,coalesce(bat_club_webpage,pit_club_webpage)  club_webpage
-        ,coalesce(bat_ballpark_id,pit_ballpark_id)  ballpark_id
-        ,coalesce(bat_club_president,pit_club_president)  club_president
-        ,coalesce(bat_club_secretary,pit_club_secretary)  club_secretary
-        ,coalesce(bat_club_treasurer,pit_club_treasurer)  club_treasurer
-        ,coalesce(bat_governance_person,pit_governance_person)  club_governance_person
         ,coalesce(bat_club_latitude,pit_club_latitude)  club_latitude
         ,coalesce(bat_club_longitude,pit_club_longitude)  club_longitude
         ,coalesce(bat_stadium_latitude,pit_stadium_latitude)  stadium_latitude
         ,coalesce(bat_stadium_longitude,pit_stadium_longitude)  stadium_longitude
         ,coalesce(bat_federation_country_name, pit_federation_country_name) federation_country_name
         ,coalesce(bat_federation_id, pit_federation_id)  federation_id
-        ,coalesce(bat_federation_address, pit_federation_address) federation_address
-        ,coalesce(bat_federation_postal_code, pit_federation_postal_code)  federation_postal_code
         ,coalesce(bat_federation_city, pit_federation_city) federation_city
-        ,coalesce(bat_federation_province_region, pit_federation_province_region)  federation_province_region
-        ,coalesce(bat_federation_email, pit_federation_email)  federation_email
-        ,coalesce(bat_federation_webpage, pit_federation_webpage)  federation_webpage
      from batting_stat  fbs
      full outer join pitching_stat  fps
        on fbs.sport_id = fps.sport_id
@@ -969,30 +905,16 @@ with sport_category as
         ,ffs.passed_balls  ffs_passed_balls
         ,ffs.catcher_interferences  ffs_catcher_interferences
         ,coalesce(club_name,fld_club_name)  club_name
-        ,coalesce(club_address,fld_club_address)  club_address
-        ,coalesce(club_postal_code,fld_club_postal_code)  club_postal_code
         ,coalesce(club_city,fld_club_city)  club_city
         ,coalesce(club_province,fld_club_province)  club_province
         ,coalesce(club_country,fld_club_country)  club_country
-        ,coalesce(club_email,fld_club_email)  club_email
-        ,coalesce(club_webpage,fld_club_webpage)  club_webpage
-        ,coalesce(ballpark_id,fld_ballpark_id)  ballpark_id
-        ,coalesce(club_president,fld_club_president)  club_president
-        ,coalesce(club_secretary,fld_club_secretary)  club_secretary
-        ,coalesce(club_treasurer,fld_club_treasurer)  club_treasurer
-        ,coalesce(club_governance_person,fld_governance_person)  club_governance_person
         ,coalesce(club_latitude,fld_club_latitude)  club_latitude
         ,coalesce(club_longitude,fld_club_longitude)  club_longitude
         ,coalesce(stadium_latitude,fld_stadium_latitude)  stadium_latitude
         ,coalesce(stadium_longitude,fld_stadium_longitude)  stadium_longitude
         ,coalesce(federation_country_name, fld_federation_country_name) federation_country_name
         ,coalesce(federation_id, fld_federation_id)  federation_id
-        ,coalesce(federation_address, fld_federation_address) federation_address
-        ,coalesce(federation_postal_code, fld_federation_postal_code)  federation_postal_code
         ,coalesce(federation_city, fld_federation_city) federation_city
-        ,coalesce(federation_province_region, fld_federation_province_region)  federation_province_region
-        ,coalesce(federation_email, fld_federation_email)  federation_email
-        ,coalesce(federation_webpage, fld_federation_webpage)  federation_webpage
      from stats_bp  sbp
      full outer join fielding_stat  ffs
        on sbp.sport_id = ffs.sport_id
@@ -1015,6 +937,14 @@ select dpl.last_name  player_last_name
       ,dpl.uniform_number  player_uniform_number
       ,dpl.license_number  player_license_number
       ,dpl.license_type  player_license_type
+       -- approximate age at the time of the season
+      ,case
+         when dpl.yob is null then 0
+         when dpl.yob &lt; 1940 then 0
+         when (stat.season_year - dpl.yob) &lt; 0 then 0
+         else (stat.season_year - dpl.yob)
+       end  player_age_at_season
+
       ,stat.*
        -- Batting Ranks
       ,rank() over (partition by stat.sport_id
@@ -1260,10 +1190,65 @@ select dpl.last_name  player_last_name
                                 ,stat.season_year
                     order by stat.fps_fly_outs desc nulls last)  fps_rank_fly_outs
 
-
       ,dsg.number_of_games  season_number_of_games
       ,dsg.pa_coefficient  season_pa_coefficient
       ,dsg.innings_pitched_percent  season_innings_pitched_percent
+
+      -- move attributes to query
+      ,case
+         when (stat.fbs_at_bats
+              + stat.fbs_base_on_balls
+              + stat.fbs_hit_by_pitchs
+              + stat.fbs_bunts
+              + stat.fbs_sacrfice_flies) >=
+              trunc(dsg.number_of_games * dsg.pa_coefficient)
+              then 'Y'
+         else 'N'
+       end  qualifies_batting_leaderboard  -- should replace metric "Qualifies for Batting Leader"
+      ,case
+         when stat.fps_innings_pitched_dec >=
+              (dsg.number_of_games * dsg.innings_pitched_percent)
+              then 'Y'
+         else 'N'
+       end  qualifies_pitching_leaderboard  -- should replace metric "Qualifies for Pitching Leader"
+      ,case
+         when (stat.ffs_stolen_bases_against +
+              + stat.ffs_players_caught_steeling
+              + stat.ffs_passed_balls
+              + stat.ffs_catcher_interferences) >= 1
+              then 'Y'
+         else 'N'
+       end  is_catcher_attr  -- should replace attribute "Is Catcher" and metric "Is Catcher Metric"
+
+      ,stat.category_id
+       || ' ('
+       || stat.country_id
+       || ')'  category_country  -- "Category" attribute in Mstr
+      ,stat.club_name
+       || ' ('
+       || stat.country_id
+       || ')'  club_name_country  -- "Club Name (C)" attribute in Mstr
+      ,initcap(dpl.last_name) || ', ' || initcap(dpl.first_name) ||
+       rtrim(
+         case
+           when coalesce(fps_inning_outs_pitched, 0) > 0 then ' (P)'
+           else ' '
+         end)  player_full_name_pitcher_flag  --  "Player Full Name (Pitcher flag)" attribute in Mstr
+
+      -- move metrics to query
+      ,trunc(dsg.number_of_games * dsg.pa_coefficient)  q_min_plate_appearances  -- should replace metric "FBS QMin PA for Leader Classification"
+      ,(dsg.number_of_games * dsg.innings_pitched_percent)  q_min_inning_pitched  -- should replace metric "FPS Min IP for Leader Classification"
+      ,(stat.fbs_at_bats
+       + stat.fbs_base_on_balls
+       + stat.fbs_hit_by_pitchs
+       + stat.fbs_bunts
+       + stat.fbs_sacrfice_flies)  fbs_plate_appearances  -- should replace metric "FBS PA (Plate Appearance)"
+      ,(stat.fps_at_bats
+       + stat.fps_walks
+       + stat.fps_hit_by_pitchs
+       + stat.fps_bunts_against
+       + stat.fps_sacrifice_flies_against)  fps_batters_faced  -- should replace metric "FPS BF (Batters Faced)"
+
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
     on dpl.id  = stat.player_id
@@ -1356,7 +1341,7 @@ select dpl.last_name  player_last_name
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>PLAYER_POSITION</name>
-        <length>16</length>
+        <length>32</length>
         <precision>-1</precision>
         <origin>Datamart</origin>
         <comments>PLAYER_POSITION</comments>
@@ -1501,6 +1486,29 @@ select dpl.last_name  player_last_name
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>PLAYER_AGE_AT_SEASON</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>PLAYER_AGE_AT_SEASON</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -3172,52 +3180,6 @@ select dpl.last_name  player_last_name
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>CLUB_ADDRESS</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_ADDRESS</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_POSTAL_CODE</name>
-        <length>16</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_POSTAL_CODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
         <name>CLUB_CITY</name>
         <length>50</length>
         <precision>-1</precision>
@@ -3269,167 +3231,6 @@ select dpl.last_name  player_last_name
         <precision>-1</precision>
         <origin>Datamart</origin>
         <comments>CLUB_COUNTRY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_EMAIL</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_EMAIL</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_WEBPAGE</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_WEBPAGE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>BALLPARK_ID</name>
-        <length>8</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>BALLPARK_ID</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_PRESIDENT</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_PRESIDENT</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_SECRETARY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_SECRETARY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_TREASURER</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_TREASURER</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CLUB_GOVERNANCE_PERSON</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>CLUB_GOVERNANCE_PERSON</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -3586,126 +3387,11 @@ select dpl.last_name  player_last_name
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>FEDERATION_ADDRESS</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>FEDERATION_ADDRESS</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>FEDERATION_POSTAL_CODE</name>
-        <length>16</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>FEDERATION_POSTAL_CODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
         <name>FEDERATION_CITY</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Datamart</origin>
         <comments>FEDERATION_CITY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>FEDERATION_PROVINCE_REGION</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>FEDERATION_PROVINCE_REGION</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>FEDERATION_EMAIL</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>FEDERATION_EMAIL</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Europe/Brussels</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>FEDERATION_WEBPAGE</name>
-        <length>255</length>
-        <precision>-1</precision>
-        <origin>Datamart</origin>
-        <comments>FEDERATION_WEBPAGE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -4710,6 +4396,236 @@ select dpl.last_name  player_last_name
         <date_format_timezone>Europe/Brussels</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>QUALIFIES_BATTING_LEADERBOARD</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>QUALIFIES_BATTING_LEADERBOARD</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>QUALIFIES_PITCHING_LEADERBOARD</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>QUALIFIES_PITCHING_LEADERBOARD</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>IS_CATCHER_ATTR</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>IS_CATCHER_ATTR</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CATEGORY_COUNTRY</name>
+        <length>25</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>CATEGORY_COUNTRY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CLUB_NAME_COUNTRY</name>
+        <length>260</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>CLUB_NAME_COUNTRY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PLAYER_FULL_NAME_PITCHER_FLAG</name>
+        <length>516</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>PLAYER_FULL_NAME_PITCHER_FLAG</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>Q_MIN_PLATE_APPEARANCES</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>Q_MIN_PLATE_APPEARANCES</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>Q_MIN_INNING_PITCHED</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>Q_MIN_INNING_PITCHED</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FBS_PLATE_APPEARANCES</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FBS_PLATE_APPEARANCES</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>FPS_BATTERS_FACED</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Datamart</origin>
+        <comments>FPS_BATTERS_FACED</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Europe/Brussels</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -4888,6 +4804,18 @@ select dpl.last_name  player_last_name
         <precision>-1</precision>
       </field>
       <field>
+        <name>PLAYER_AGE_AT_SEASON</name>
+        <type>BigNumber</type>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
         <name>SPORT_ID</name>
         <type>String</type>
         <format/>
@@ -5752,30 +5680,6 @@ select dpl.last_name  player_last_name
         <precision>-1</precision>
       </field>
       <field>
-        <name>CLUB_ADDRESS</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_POSTAL_CODE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
         <name>CLUB_CITY</name>
         <type>String</type>
         <format/>
@@ -5801,90 +5705,6 @@ select dpl.last_name  player_last_name
       </field>
       <field>
         <name>CLUB_COUNTRY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_EMAIL</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_WEBPAGE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BALLPARK_ID</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_PRESIDENT</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_SECRETARY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_TREASURER</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CLUB_GOVERNANCE_PERSON</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -5968,67 +5788,7 @@ select dpl.last_name  player_last_name
         <precision>-1</precision>
       </field>
       <field>
-        <name>FEDERATION_ADDRESS</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FEDERATION_POSTAL_CODE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
         <name>FEDERATION_CITY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FEDERATION_PROVINCE_REGION</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FEDERATION_EMAIL</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FEDERATION_WEBPAGE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -6555,1858 +6315,125 @@ select dpl.last_name  player_last_name
         <length>-1</length>
         <precision>-1</precision>
       </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Datamart XLSX</name>
-    <type>TypeExitExcelWriterStep</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <makeSheetActive>Y</makeSheetActive>
-    <startingCell>A1</startingCell>
-    <appendOmitHeader>N</appendOmitHeader>
-    <appendOffset>0</appendOffset>
-    <appendEmpty>0</appendEmpty>
-    <rowWritingMethod>overwrite</rowWritingMethod>
-    <forceFormulaRecalculation>N</forceFormulaRecalculation>
-    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
-    <appendLines>N</appendLines>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>${BALLGAME_DM_DIRECTORY}ballgame_dm</name>
-      <extention>xlsx</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>datamart</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <stream_data>N</stream_data>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <protected_by/>
-      <splitevery>0</splitevery>
-      <if_file_exists>new</if_file_exists>
-      <if_sheet_exists>new</if_sheet_exists>
-    </file>
-    <template>
-      <enabled>N</enabled>
-      <sheet_enabled>N</sheet_enabled>
-      <filename>template.xls</filename>
-      <sheetname/>
-      <hidden>N</hidden>
-    </template>
-    <fields>
       <field>
-        <name>PLAYER_LAST_NAME</name>
+        <name>QUALIFIES_BATTING_LEADERBOARD</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_LAST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_FIRST_NAME</name>
+        <name>QUALIFIES_PITCHING_LEADERBOARD</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_FIRST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_FULL_NAME</name>
+        <name>IS_CATCHER_ATTR</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_FULL_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_POSITION</name>
+        <name>CATEGORY_COUNTRY</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_POSITION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_BATS</name>
+        <name>CLUB_NAME_COUNTRY</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_BATS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_THROWS</name>
+        <name>PLAYER_FULL_NAME_PITCHER_FLAG</name>
         <type>String</type>
         <format/>
-        <title>PLAYER_THROWS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_YOB</name>
+        <name>Q_MIN_PLATE_APPEARANCES</name>
         <type>BigNumber</type>
-        <format/>
-        <title>PLAYER_YOB</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_UNIFORM_NUMBER</name>
-        <type>String</type>
-        <format/>
-        <title>PLAYER_UNIFORM_NUMBER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>PLAYER_LICENSE_NUMBER</name>
-        <type>String</type>
-        <format/>
-        <title>PLAYER_LICENSE_NUMBER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>PLAYER_LICENSE_TYPE</name>
-        <type>String</type>
-        <format/>
-        <title>PLAYER_LICENSE_TYPE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>SPORT_ID</name>
-        <type>String</type>
-        <format/>
-        <title>SPORT_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>GENDER_ID</name>
-        <type>String</type>
-        <format/>
-        <title>GENDER_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CATEGORY_ID</name>
-        <type>String</type>
-        <format/>
-        <title>CATEGORY_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_ID</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>COUNTRY_ID</name>
-        <type>String</type>
-        <format/>
-        <title>COUNTRY_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>SEASON_YEAR</name>
+        <name>Q_MIN_INNING_PITCHED</name>
         <type>BigNumber</type>
-        <format/>
-        <title>SEASON_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>PLAYER_ID</name>
-        <type>String</type>
-        <format/>
-        <title>PLAYER_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>TEAM_ID</name>
+        <name>FBS_PLATE_APPEARANCES</name>
         <type>BigNumber</type>
-        <format/>
-        <title>TEAM_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>FBS_AT_BATS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_AT_BATS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RUNS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_HITS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_HITS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_DOUBLES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_DOUBLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_TRIPLES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_TRIPLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_HOME_RUNS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_HOME_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RBI</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_RBI</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_TOTAL_BASES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_TOTAL_BASES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_BASE_ON_BALLS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_BASE_ON_BALLS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_HIT_BY_PITCHS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_STRIKE_OUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_STRIKE_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_GROUND_INTO_DOUBLEPLAYS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_SACRFICE_FLIES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_SACRFICE_FLIES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_BUNTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_BUNTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_STOLEN_BASES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_STOLEN_BASES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_CAUGHT_STEALING</name>
-        <type>Integer</type>
-        <format/>
-        <title>FBS_CAUGHT_STEALING</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_LEAGUE_OBP</name>
+        <name>FPS_BATTERS_FACED</name>
         <type>BigNumber</type>
-        <format/>
-        <title>FBS_LEAGUE_OBP</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_LEAGUE_SLG</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_LEAGUE_SLG</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_WINS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_WINS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LOSSES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_LOSSES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_GAMES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_GAMES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_GAMES_STARTED</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_GAMES_STARTED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_SAVES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_SAVES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_COMPLETE_GAMES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_COMPLETE_GAMES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_SHUTOUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_SHUTOUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_INNINGS_PITCHED_LABEL</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_INNINGS_PITCHED_LABEL</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_INNINGS_PITCHED_DEC</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_INNINGS_PITCHED_DEC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_ERA_INNINGS_CALC</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_ERA_INNINGS_CALC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_INNING_OUTS_PITCHED</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_INNING_OUTS_PITCHED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_HITS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_HITS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RUNS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_EARNED_RUNS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_EARNED_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_WALKS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_WALKS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_STRIKE_OUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_STRIKE_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_DOUBLES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_DOUBLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_TRIPLES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_TRIPLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_HOME_RUNS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_HOME_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_AT_BATS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_AT_BATS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_WILD_PITCHES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_WILD_PITCHES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_HIT_BY_PITCHS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_HIT_BY_PITCHS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_BALKS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_BALKS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_SACRIFICE_FLIES_AGAINST</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_SACRIFICE_FLIES_AGAINST</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_BUNTS_AGAINST</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_BUNTS_AGAINST</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_GROUND_OUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_GROUND_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_FLY_OUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FPS_FLY_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_EARNED_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_EARNED_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_INNINGS_PITCHED</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_INNINGS_PITCHED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_HOME_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_HOME_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_WALKS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_WALKS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_HIT_BY_PITCHS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_HIT_BY_PITCHS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_LEAGUE_STRIKE_OUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_LEAGUE_STRIKE_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_FIP_CONSTANT</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_FIP_CONSTANT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_GAMES_PLAYED_AT_POSITION</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_GAMES_PLAYED_AT_POSITION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_TOTAL_CHANCES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_TOTAL_CHANCES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_TOTAL_SUCCESSFUL_CHANCES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_PUTOUTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_PUTOUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_ASSISTS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_ASSISTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_ERRORS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_ERRORS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_DOUBLEPLAYS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_DOUBLEPLAYS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_STOLEN_BASES_AGAINST</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_STOLEN_BASES_AGAINST</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_PLAYERS_CAUGHT_STEELING</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_PLAYERS_CAUGHT_STEELING</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_PASSED_BALLS</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_PASSED_BALLS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FFS_CATCHER_INTERFERENCES</name>
-        <type>Integer</type>
-        <format/>
-        <title>FFS_CATCHER_INTERFERENCES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_NAME</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_ADDRESS</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_ADDRESS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_POSTAL_CODE</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_POSTAL_CODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_CITY</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_PROVINCE</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_PROVINCE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_COUNTRY</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_EMAIL</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_EMAIL</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_WEBPAGE</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_WEBPAGE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>BALLPARK_ID</name>
-        <type>String</type>
-        <format/>
-        <title>BALLPARK_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_PRESIDENT</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_PRESIDENT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_SECRETARY</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_SECRETARY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_TREASURER</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_TREASURER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_GOVERNANCE_PERSON</name>
-        <type>String</type>
-        <format/>
-        <title>CLUB_GOVERNANCE_PERSON</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_LATITUDE</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>CLUB_LATITUDE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CLUB_LONGITUDE</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>CLUB_LONGITUDE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>STADIUM_LATITUDE</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>STADIUM_LATITUDE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>STADIUM_LONGITUDE</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>STADIUM_LONGITUDE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_COUNTRY_NAME</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_COUNTRY_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_ID</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_ADDRESS</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_ADDRESS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_POSTAL_CODE</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_POSTAL_CODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_CITY</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_PROVINCE_REGION</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_PROVINCE_REGION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_EMAIL</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_EMAIL</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FEDERATION_WEBPAGE</name>
-        <type>String</type>
-        <format/>
-        <title>FEDERATION_WEBPAGE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_AT_BATS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_AT_BATS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_HITS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_HITS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_DOUBLES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_DOUBLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_TRIPLES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_TRIPLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_HOME_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_HOME_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_RBI</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_RBI</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_TOTAL_BASES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_TOTAL_BASES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_BASE_ON_BALLS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_BASE_ON_BALLS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_HIT_BY_PITCHS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_HIT_BY_PITCHS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_STRIKE_OUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_STRIKE_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_GROUND_INTO_DOUBLEPLAYS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_GROUND_INTO_DOUBLEPLAYS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_SACRFICE_FLIES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_SACRFICE_FLIES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_BUNTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_BUNTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_STOLEN_BASES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_STOLEN_BASES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FBS_RANK_CAUGHT_STEALING</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FBS_RANK_CAUGHT_STEALING</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_WINS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_WINS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_LOSSES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_LOSSES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_GAMES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_GAMES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_GAMES_STARTED</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_GAMES_STARTED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_SAVES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_SAVES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_COMPLETE_GAMES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_COMPLETE_GAMES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_SHUTOUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_SHUTOUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_INNINGS_PITCHED_DEC</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_INNINGS_PITCHED_DEC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_HITS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_HITS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_EARNED_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_EARNED_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_WALKS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_WALKS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_STRIKE_OUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_STRIKE_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_DOUBLES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_DOUBLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_TRIPLES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_TRIPLES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_HOME_RUNS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_HOME_RUNS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_AT_BATS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_AT_BATS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_WILD_PITCHES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_WILD_PITCHES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_HIT_BY_PITCHS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_HIT_BY_PITCHS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_BALKS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_BALKS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_SACRIFICE_FLIES_AGAINST</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_SACRIFICE_FLIES_AGAINST</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_BUNTS_AGAINST</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_BUNTS_AGAINST</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_GROUND_OUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_GROUND_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>FPS_RANK_FLY_OUTS</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>FPS_RANK_FLY_OUTS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>SEASON_NUMBER_OF_GAMES</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>SEASON_NUMBER_OF_GAMES</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>SEASON_PA_COEFFICIENT</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>SEASON_PA_COEFFICIENT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
-        <type>BigNumber</type>
-        <format/>
-        <title>SEASON_INNINGS_PITCHED_PERCENT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
+        <format>######0.0###################;-######0.0###################</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
     <attributes/>
@@ -8418,8 +6445,8 @@ select dpl.last_name  player_last_name
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>286</yloc>
+      <xloc>512</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -8436,599 +6463,587 @@ select dpl.last_name  player_last_name
     </partitioning>
     <fields>
       <field>
-        <name>Player_Last_Name</name>
+        <name>PLAYER_LAST_NAME</name>
         <rename/>
       </field>
       <field>
-        <name>Player_First_Name</name>
+        <name>PLAYER_FIRST_NAME</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Full_Name</name>
+        <name>PLAYER_FULL_NAME</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Position</name>
+        <name>PLAYER_POSITION</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Bats</name>
+        <name>PLAYER_BATS</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Throws</name>
+        <name>PLAYER_THROWS</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Yob</name>
+        <name>PLAYER_YOB</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Uniform_Number</name>
+        <name>PLAYER_UNIFORM_NUMBER</name>
         <rename/>
       </field>
       <field>
-        <name>Player_License_Number</name>
+        <name>PLAYER_LICENSE_NUMBER</name>
         <rename/>
       </field>
       <field>
-        <name>Player_License_Type</name>
+        <name>PLAYER_LICENSE_TYPE</name>
         <rename/>
       </field>
       <field>
-        <name>Sport_Id</name>
+        <name>PLAYER_AGE_AT_SEASON</name>
         <rename/>
       </field>
       <field>
-        <name>Gender_Id</name>
+        <name>SPORT_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Category_Id</name>
+        <name>GENDER_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Id</name>
+        <name>CATEGORY_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Country_Id</name>
+        <name>CLUB_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Season_Year</name>
+        <name>COUNTRY_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Player_Id</name>
+        <name>SEASON_YEAR</name>
         <rename/>
       </field>
       <field>
-        <name>Team_Id</name>
+        <name>PLAYER_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_At_Bats</name>
+        <name>TEAM_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Runs</name>
+        <name>FBS_AT_BATS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Hits</name>
+        <name>FBS_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Doubles</name>
+        <name>FBS_HITS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Triples</name>
+        <name>FBS_DOUBLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Home_Runs</name>
+        <name>FBS_TRIPLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rbi</name>
+        <name>FBS_HOME_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Total_Bases</name>
+        <name>FBS_RBI</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Base_On_Balls</name>
+        <name>FBS_TOTAL_BASES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Hit_By_Pitchs</name>
+        <name>FBS_BASE_ON_BALLS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Strike_Outs</name>
+        <name>FBS_HIT_BY_PITCHS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Ground_Into_Doubleplays</name>
+        <name>FBS_STRIKE_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Sacrfice_Flies</name>
+        <name>FBS_GROUND_INTO_DOUBLEPLAYS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Bunts</name>
+        <name>FBS_SACRFICE_FLIES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Stolen_Bases</name>
+        <name>FBS_BUNTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Caught_Stealing</name>
+        <name>FBS_STOLEN_BASES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_League_Obp</name>
+        <name>FBS_CAUGHT_STEALING</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_League_Slg</name>
+        <name>FBS_LEAGUE_OBP</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Wins</name>
+        <name>FBS_LEAGUE_SLG</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Losses</name>
+        <name>FPS_WINS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Games</name>
+        <name>FPS_LOSSES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Games_Started</name>
+        <name>FPS_GAMES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Saves</name>
+        <name>FPS_GAMES_STARTED</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Complete_Games</name>
+        <name>FPS_SAVES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Shutouts</name>
+        <name>FPS_COMPLETE_GAMES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Innings_Pitched_Label</name>
+        <name>FPS_SHUTOUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Innings_Pitched_Dec</name>
+        <name>FPS_INNINGS_PITCHED_LABEL</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Era_Innings_Calc</name>
+        <name>FPS_INNINGS_PITCHED_DEC</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Inning_Outs_Pitched</name>
+        <name>FPS_ERA_INNINGS_CALC</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Hits</name>
+        <name>FPS_INNING_OUTS_PITCHED</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Runs</name>
+        <name>FPS_HITS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Earned_Runs</name>
+        <name>FPS_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Walks</name>
+        <name>FPS_EARNED_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Strike_Outs</name>
+        <name>FPS_WALKS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Doubles</name>
+        <name>FPS_STRIKE_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Triples</name>
+        <name>FPS_DOUBLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Home_Runs</name>
+        <name>FPS_TRIPLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_At_Bats</name>
+        <name>FPS_HOME_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Wild_Pitches</name>
+        <name>FPS_AT_BATS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Hit_By_Pitchs</name>
+        <name>FPS_WILD_PITCHES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Balks</name>
+        <name>FPS_HIT_BY_PITCHS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Sacrifice_Flies_Against</name>
+        <name>FPS_BALKS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Bunts_Against</name>
+        <name>FPS_SACRIFICE_FLIES_AGAINST</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Ground_Outs</name>
+        <name>FPS_BUNTS_AGAINST</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Fly_Outs</name>
+        <name>FPS_GROUND_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Earned_Runs</name>
+        <name>FPS_FLY_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Innings_Pitched</name>
+        <name>FPS_LEAGUE_EARNED_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Home_Runs</name>
+        <name>FPS_LEAGUE_INNINGS_PITCHED</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Walks</name>
+        <name>FPS_LEAGUE_HOME_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Hit_By_Pitchs</name>
+        <name>FPS_LEAGUE_WALKS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_League_Strike_Outs</name>
+        <name>FPS_LEAGUE_HIT_BY_PITCHS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Fip_Constant</name>
+        <name>FPS_LEAGUE_STRIKE_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Games_Played_At_Position</name>
+        <name>FPS_FIP_CONSTANT</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Total_Chances</name>
+        <name>FFS_GAMES_PLAYED_AT_POSITION</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Total_Successful_Chances</name>
+        <name>FFS_TOTAL_CHANCES</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Putouts</name>
+        <name>FFS_TOTAL_SUCCESSFUL_CHANCES</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Assists</name>
+        <name>FFS_PUTOUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Errors</name>
+        <name>FFS_ASSISTS</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Doubleplays</name>
+        <name>FFS_ERRORS</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Stolen_Bases_Against</name>
+        <name>FFS_DOUBLEPLAYS</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Players_Caught_Steeling</name>
+        <name>FFS_STOLEN_BASES_AGAINST</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Passed_Balls</name>
+        <name>FFS_PLAYERS_CAUGHT_STEELING</name>
         <rename/>
       </field>
       <field>
-        <name>Ffs_Catcher_Interferences</name>
+        <name>FFS_PASSED_BALLS</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Name</name>
+        <name>FFS_CATCHER_INTERFERENCES</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Address</name>
+        <name>CLUB_NAME</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Postal_Code</name>
+        <name>CLUB_CITY</name>
         <rename/>
       </field>
       <field>
-        <name>Club_City</name>
+        <name>CLUB_PROVINCE</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Province</name>
+        <name>CLUB_COUNTRY</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Country</name>
+        <name>CLUB_LATITUDE</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Email</name>
+        <name>CLUB_LONGITUDE</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Webpage</name>
+        <name>STADIUM_LATITUDE</name>
         <rename/>
       </field>
       <field>
-        <name>Ballpark_Id</name>
+        <name>STADIUM_LONGITUDE</name>
         <rename/>
       </field>
       <field>
-        <name>Club_President</name>
+        <name>FEDERATION_COUNTRY_NAME</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Secretary</name>
+        <name>FEDERATION_ID</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Treasurer</name>
+        <name>FEDERATION_CITY</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Governance_Person</name>
+        <name>FBS_RANK_AT_BATS</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Latitude</name>
+        <name>FBS_RANK_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Club_Longitude</name>
+        <name>FBS_RANK_HITS</name>
         <rename/>
       </field>
       <field>
-        <name>Stadium_Latitude</name>
+        <name>FBS_RANK_DOUBLES</name>
         <rename/>
       </field>
       <field>
-        <name>Stadium_Longitude</name>
+        <name>FBS_RANK_TRIPLES</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Country_Name</name>
+        <name>FBS_RANK_HOME_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Id</name>
+        <name>FBS_RANK_RBI</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Address</name>
+        <name>FBS_RANK_TOTAL_BASES</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Postal_Code</name>
+        <name>FBS_RANK_BASE_ON_BALLS</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_City</name>
+        <name>FBS_RANK_HIT_BY_PITCHS</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Province_Region</name>
+        <name>FBS_RANK_STRIKE_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Email</name>
+        <name>FBS_RANK_GROUND_INTO_DOUBLEPLAYS</name>
         <rename/>
       </field>
       <field>
-        <name>Federation_Webpage</name>
+        <name>FBS_RANK_SACRFICE_FLIES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_At_Bats</name>
+        <name>FBS_RANK_BUNTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Runs</name>
+        <name>FBS_RANK_STOLEN_BASES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Hits</name>
+        <name>FBS_RANK_CAUGHT_STEALING</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Doubles</name>
+        <name>FPS_RANK_WINS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Triples</name>
+        <name>FPS_RANK_LOSSES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Home_Runs</name>
+        <name>FPS_RANK_GAMES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Rbi</name>
+        <name>FPS_RANK_GAMES_STARTED</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Total_Bases</name>
+        <name>FPS_RANK_SAVES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Base_On_Balls</name>
+        <name>FPS_RANK_COMPLETE_GAMES</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Hit_By_Pitchs</name>
+        <name>FPS_RANK_SHUTOUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Strike_Outs</name>
+        <name>FPS_RANK_INNINGS_PITCHED_DEC</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Ground_Into_Doubleplays</name>
+        <name>FPS_RANK_HITS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Sacrfice_Flies</name>
+        <name>FPS_RANK_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Bunts</name>
+        <name>FPS_RANK_EARNED_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Stolen_Bases</name>
+        <name>FPS_RANK_WALKS</name>
         <rename/>
       </field>
       <field>
-        <name>Fbs_Rank_Caught_Stealing</name>
+        <name>FPS_RANK_STRIKE_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Wins</name>
+        <name>FPS_RANK_DOUBLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Losses</name>
+        <name>FPS_RANK_TRIPLES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Games</name>
+        <name>FPS_RANK_HOME_RUNS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Games_Started</name>
+        <name>FPS_RANK_AT_BATS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Saves</name>
+        <name>FPS_RANK_WILD_PITCHES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Complete_Games</name>
+        <name>FPS_RANK_HIT_BY_PITCHS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Shutouts</name>
+        <name>FPS_RANK_BALKS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Innings_Pitched_Dec</name>
+        <name>FPS_RANK_SACRIFICE_FLIES_AGAINST</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Hits</name>
+        <name>FPS_RANK_BUNTS_AGAINST</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Runs</name>
+        <name>FPS_RANK_GROUND_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Earned_Runs</name>
+        <name>FPS_RANK_FLY_OUTS</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Walks</name>
+        <name>SEASON_NUMBER_OF_GAMES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Strike_Outs</name>
+        <name>SEASON_PA_COEFFICIENT</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Doubles</name>
+        <name>SEASON_INNINGS_PITCHED_PERCENT</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Triples</name>
+        <name>QUALIFIES_BATTING_LEADERBOARD</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Home_Runs</name>
+        <name>QUALIFIES_PITCHING_LEADERBOARD</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_At_Bats</name>
+        <name>IS_CATCHER_ATTR</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Wild_Pitches</name>
+        <name>CATEGORY_COUNTRY</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Hit_By_Pitchs</name>
+        <name>CLUB_NAME_COUNTRY</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Balks</name>
+        <name>PLAYER_FULL_NAME_PITCHER_FLAG</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Sacrifice_Flies_Against</name>
+        <name>Q_MIN_PLATE_APPEARANCES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Bunts_Against</name>
+        <name>Q_MIN_INNING_PITCHED</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Ground_Outs</name>
+        <name>FBS_PLATE_APPEARANCES</name>
         <rename/>
       </field>
       <field>
-        <name>Fps_Rank_Fly_Outs</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Season_Number_Of_Games</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Season_Pa_Coefficient</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Season_Innings_Pitched_Percent</name>
+        <name>FPS_BATTERS_FACED</name>
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>

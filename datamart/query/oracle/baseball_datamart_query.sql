@@ -12,7 +12,7 @@ license file in the root directory of this source tree.
 -- 02/03/2024  Tony Pérez  season data to calculate stat leaders
 -- 21/03/2024  Tony Pérez  Club/Stadium geo location (latitude/longitude)
 -- 07/04/2024  Tony Pérez  Season/League Rankings
--- 01/01/2025  Tony Pérez  Attribute/Metric move from MicroStrategy to query
+-- 02/01/2025  Tony Pérez  Metric move from MicroStrategy to query
 with sport_category as
 (
   select dsp.id  sport_id
@@ -25,12 +25,7 @@ with sport_category as
         ,dca.name  category_name
         ,dco.country_name  federation_country_name
         ,dco.federation_id  federation_id
-        ,dco.address  federation_address
-        ,dco.postal_code  federation_postal_code
         ,dco.city  federation_city
-        ,dco.province  federation_province_region
-        ,dco.email  federation_email
-        ,dco.webpage  federation_webpage
     from c##baseball.dim_sport  dsp
    inner join c##baseball.dim_category  dca
       on dsp.id  = dca.sport_id
@@ -110,30 +105,18 @@ with sport_category as
                               ,fbs.country_id
                               ,fbs.season_year)  league_slg_divisor
         ,dcl.name  bat_club_name
-        ,dcl.address  bat_club_address
-        ,dcl.postal_code  bat_club_postal_code
         ,dcl.city  bat_club_city
         ,dcl.province  bat_club_province
         ,dcl.country  bat_club_country
         ,dcl.email  bat_club_email
         ,dcl.webpage  bat_club_webpage
-        ,dcl.ballpark_id  bat_ballpark_id
-        ,dcl.president  bat_club_president
-        ,dcl.secretary  bat_club_secretary
-        ,dcl.treasurer  bat_club_treasurer
-        ,dcl.governance_person  bat_governance_person
         ,dcl.club_latitude  bat_club_latitude
         ,dcl.club_longitude  bat_club_longitude
         ,dcl.stadium_latitude  bat_stadium_latitude
         ,dcl.stadium_longitude  bat_stadium_longitude
         ,sc.federation_country_name  bat_federation_country_name
         ,sc.federation_id  bat_federation_id
-        ,sc.federation_address  bat_federation_address
-        ,sc.federation_postal_code  bat_federation_postal_code
         ,sc.federation_city  bat_federation_city
-        ,sc.federation_province_region  bat_federation_province_region
-        ,sc.federation_email  bat_federation_email
-        ,sc.federation_webpage  bat_federation_webpage
     from c##baseball.fact_batting_stat  fbs
    inner join sport_category  sc
       on fbs.sport_id = sc.sport_id
@@ -192,30 +175,16 @@ with sport_category as
                               ,fps.season_year)  league_strike_outs
         ,sc.era_innings
         ,dcl.name  pit_club_name
-        ,dcl.address  pit_club_address
-        ,dcl.postal_code  pit_club_postal_code
         ,dcl.city  pit_club_city
         ,dcl.province  pit_club_province
         ,dcl.country  pit_club_country
-        ,dcl.email  pit_club_email
-        ,dcl.webpage  pit_club_webpage
-        ,dcl.ballpark_id  pit_ballpark_id
-        ,dcl.president  pit_club_president
-        ,dcl.secretary  pit_club_secretary
-        ,dcl.treasurer  pit_club_treasurer
-        ,dcl.governance_person  pit_governance_person
         ,dcl.club_latitude  pit_club_latitude
         ,dcl.club_longitude  pit_club_longitude
         ,dcl.stadium_latitude  pit_stadium_latitude
         ,dcl.stadium_longitude  pit_stadium_longitude
         ,sc.federation_country_name  pit_federation_country_name
         ,sc.federation_id  pit_federation_id
-        ,sc.federation_address  pit_federation_address
-        ,sc.federation_postal_code  pit_federation_postal_code
         ,sc.federation_city  pit_federation_city
-        ,sc.federation_province_region  pit_federation_province_region
-        ,sc.federation_email  pit_federation_email
-        ,sc.federation_webpage  pit_federation_webpage
     from c##baseball.fact_pitching_stat  fps
    inner join sport_category  sc
       on fps.sport_id = sc.sport_id
@@ -230,30 +199,16 @@ with sport_category as
 (
   select ffs.*
         ,dcl.name  fld_club_name
-        ,dcl.address  fld_club_address
-        ,dcl.postal_code  fld_club_postal_code
         ,dcl.city  fld_club_city
         ,dcl.province  fld_club_province
         ,dcl.country  fld_club_country
-        ,dcl.email  fld_club_email
-        ,dcl.webpage  fld_club_webpage
-        ,dcl.ballpark_id  fld_ballpark_id
-        ,dcl.president  fld_club_president
-        ,dcl.secretary  fld_club_secretary
-        ,dcl.treasurer  fld_club_treasurer
-        ,dcl.governance_person  fld_governance_person
         ,dcl.club_latitude  fld_club_latitude
         ,dcl.club_longitude  fld_club_longitude
         ,dcl.stadium_latitude  fld_stadium_latitude
         ,dcl.stadium_longitude  fld_stadium_longitude
         ,sc.federation_country_name  fld_federation_country_name
         ,sc.federation_id  fld_federation_id
-        ,sc.federation_address  fld_federation_address
-        ,sc.federation_postal_code  fld_federation_postal_code
         ,sc.federation_city  fld_federation_city
-        ,sc.federation_province_region  fld_federation_province_region
-        ,sc.federation_email  fld_federation_email
-        ,sc.federation_webpage  fld_federation_webpage
     from c##baseball.fact_fielding_stat  ffs
    inner join sport_category  sc
       on ffs.sport_id = sc.sport_id
@@ -336,30 +291,16 @@ with sport_category as
           ) / fps.league_innings_pitched)  fps_fip_constant
          --
         ,coalesce(bat_club_name,pit_club_name)  club_name
-        ,coalesce(bat_club_address,pit_club_address)  club_address
-        ,coalesce(bat_club_postal_code,pit_club_postal_code)  club_postal_code
         ,coalesce(bat_club_city,pit_club_city)  club_city
         ,coalesce(bat_club_province,pit_club_province)  club_province
         ,coalesce(bat_club_country,pit_club_country)  club_country
-        ,coalesce(bat_club_email,pit_club_email)  club_email
-        ,coalesce(bat_club_webpage,pit_club_webpage)  club_webpage
-        ,coalesce(bat_ballpark_id,pit_ballpark_id)  ballpark_id
-        ,coalesce(bat_club_president,pit_club_president)  club_president
-        ,coalesce(bat_club_secretary,pit_club_secretary)  club_secretary
-        ,coalesce(bat_club_treasurer,pit_club_treasurer)  club_treasurer
-        ,coalesce(bat_governance_person,pit_governance_person)  club_governance_person
         ,coalesce(bat_club_latitude,pit_club_latitude)  club_latitude
         ,coalesce(bat_club_longitude,pit_club_longitude)  club_longitude
         ,coalesce(bat_stadium_latitude,pit_stadium_latitude)  stadium_latitude
         ,coalesce(bat_stadium_longitude,pit_stadium_longitude)  stadium_longitude
         ,coalesce(bat_federation_country_name, pit_federation_country_name) federation_country_name
         ,coalesce(bat_federation_id, pit_federation_id)  federation_id
-        ,coalesce(bat_federation_address, pit_federation_address) federation_address
-        ,coalesce(bat_federation_postal_code, pit_federation_postal_code)  federation_postal_code
         ,coalesce(bat_federation_city, pit_federation_city) federation_city
-        ,coalesce(bat_federation_province_region, pit_federation_province_region)  federation_province_region
-        ,coalesce(bat_federation_email, pit_federation_email)  federation_email
-        ,coalesce(bat_federation_webpage, pit_federation_webpage)  federation_webpage
      from batting_stat  fbs
      full outer join pitching_stat  fps
        on fbs.sport_id = fps.sport_id
@@ -449,30 +390,16 @@ with sport_category as
         ,ffs.passed_balls  ffs_passed_balls
         ,ffs.catcher_interferences  ffs_catcher_interferences
         ,coalesce(club_name,fld_club_name)  club_name
-        ,coalesce(club_address,fld_club_address)  club_address
-        ,coalesce(club_postal_code,fld_club_postal_code)  club_postal_code
         ,coalesce(club_city,fld_club_city)  club_city
         ,coalesce(club_province,fld_club_province)  club_province
         ,coalesce(club_country,fld_club_country)  club_country
-        ,coalesce(club_email,fld_club_email)  club_email
-        ,coalesce(club_webpage,fld_club_webpage)  club_webpage
-        ,coalesce(ballpark_id,fld_ballpark_id)  ballpark_id
-        ,coalesce(club_president,fld_club_president)  club_president
-        ,coalesce(club_secretary,fld_club_secretary)  club_secretary
-        ,coalesce(club_treasurer,fld_club_treasurer)  club_treasurer
-        ,coalesce(club_governance_person,fld_governance_person)  club_governance_person
         ,coalesce(club_latitude,fld_club_latitude)  club_latitude
         ,coalesce(club_longitude,fld_club_longitude)  club_longitude
         ,coalesce(stadium_latitude,fld_stadium_latitude)  stadium_latitude
         ,coalesce(stadium_longitude,fld_stadium_longitude)  stadium_longitude
         ,coalesce(federation_country_name, fld_federation_country_name) federation_country_name
         ,coalesce(federation_id, fld_federation_id)  federation_id
-        ,coalesce(federation_address, fld_federation_address) federation_address
-        ,coalesce(federation_postal_code, fld_federation_postal_code)  federation_postal_code
         ,coalesce(federation_city, fld_federation_city) federation_city
-        ,coalesce(federation_province_region, fld_federation_province_region)  federation_province_region
-        ,coalesce(federation_email, fld_federation_email)  federation_email
-        ,coalesce(federation_webpage, fld_federation_webpage)  federation_webpage
      from stats_bp  sbp
      full outer join fielding_stat  ffs
        on sbp.sport_id = ffs.sport_id
@@ -751,6 +678,7 @@ select dpl.last_name  player_last_name
       ,dsg.number_of_games  season_number_of_games
       ,dsg.pa_coefficient  season_pa_coefficient
       ,dsg.innings_pitched_percent  season_innings_pitched_percent
+
       -- move attributes to query
       ,case
          when (stat.fbs_at_bats
@@ -761,13 +689,13 @@ select dpl.last_name  player_last_name
               trunc(dsg.number_of_games * dsg.pa_coefficient)
               then 'Y'
          else 'N'
-       end  qualifies_batting_leaderboard
+       end  qualifies_batting_leaderboard  -- should replace metric "Qualifies for Batting Leader"
       ,case
          when stat.fps_innings_pitched_dec >=
               (dsg.number_of_games * dsg.innings_pitched_percent)
               then 'Y'
          else 'N'
-       end  qualifies_pitching_leaderboard
+       end  qualifies_pitching_leaderboard  -- should replace metric "Qualifies for Pitching Leader"
       ,case
          when (stat.ffs_stolen_bases_against +
               + stat.ffs_players_caught_steeling
@@ -775,7 +703,7 @@ select dpl.last_name  player_last_name
               + stat.ffs_catcher_interferences) >= 1
               then 'Y'
          else 'N'
-       end  is_catcher_attr
+       end  is_catcher_attr  -- should replace attribute "Is Catcher" and metric "Is Catcher Metric"
 
       ,stat.category_id
        || ' ('
@@ -793,18 +721,18 @@ select dpl.last_name  player_last_name
          end)  player_full_name_pitcher_flag  --  "Player Full Name (Pitcher flag)" attribute in Mstr
 
       -- move metrics to query
-      ,trunc(dsg.number_of_games * dsg.pa_coefficient)  q_min_plate_appearances
-      ,(dsg.number_of_games * dsg.innings_pitched_percent)  q_min_inning_pitched
+      ,trunc(dsg.number_of_games * dsg.pa_coefficient)  q_min_plate_appearances  -- should replace metric "FBS QMin PA for Leader Classification"
+      ,(dsg.number_of_games * dsg.innings_pitched_percent)  q_min_inning_pitched  -- should replace metric "FPS Min IP for Leader Classification"
       ,(stat.fbs_at_bats
        + stat.fbs_base_on_balls
        + stat.fbs_hit_by_pitchs
        + stat.fbs_bunts
-       + stat.fbs_sacrfice_flies)  fbs_plate_appearances
+       + stat.fbs_sacrfice_flies)  fbs_plate_appearances  -- should replace metric "FBS PA (Plate Appearance)"
       ,(stat.fps_at_bats
        + stat.fps_walks
        + stat.fps_hit_by_pitchs
        + stat.fps_bunts_against
-       + stat.fps_sacrifice_flies_against)  fps_batters_faced
+       + stat.fps_sacrifice_flies_against)  fps_batters_faced  -- should replace metric "FPS BF (Batters Faced)"
 
   from c##baseball.dim_player  dpl
   left outer join all_stats  stat
